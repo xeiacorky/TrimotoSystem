@@ -37,12 +37,6 @@ public class MainDashboard extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         pnlDashboard = new javax.swing.JPanel();
         pnlswitcher = new javax.swing.JPanel();
-        pnlmanage = new ManageMotorcycles();
-        pnlInspection = new MotorcycleInspection();
-        pnlmaintenance = new MaintenanceRecording();
-        pnlprocessing = new RentalProcessing();
-        pnlviewrecords = new ViewMotorcycleRecords();
-        pnlrentaltransaction = new ViewRentalTransaction();
         pnloverview = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -71,6 +65,12 @@ public class MainDashboard extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         lblformaintenancetitle1 = new javax.swing.JLabel();
         lbltotalvalue4 = new javax.swing.JLabel();
+        pnlmanage = new ManageMotorcycles();
+        pnlInspection = new MotorcycleInspection();
+        pnlmaintenance = new MaintenanceRecording();
+        pnlprocessing = new RentalProcessing();
+        pnlviewrecords = new ViewMotorcycleRecords();
+        pnlrentaltransaction = new ViewRentalTransaction();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1200, 750));
@@ -187,12 +187,6 @@ public class MainDashboard extends javax.swing.JFrame {
         pnlDashboard.setLayout(new javax.swing.BoxLayout(pnlDashboard, javax.swing.BoxLayout.LINE_AXIS));
 
         pnlswitcher.setLayout(new java.awt.CardLayout());
-        pnlswitcher.add(pnlmanage, "manage");
-        pnlswitcher.add(pnlInspection, "inspection");
-        pnlswitcher.add(pnlmaintenance, "maintenance");
-        pnlswitcher.add(pnlprocessing, "processing");
-        pnlswitcher.add(pnlviewrecords, "records");
-        pnlswitcher.add(pnlrentaltransaction, "transactions");
 
         pnloverview.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.default.pressedBackground"));
         pnloverview.setForeground(java.awt.Color.gray);
@@ -461,6 +455,12 @@ public class MainDashboard extends javax.swing.JFrame {
         );
 
         pnlswitcher.add(pnloverview, "dashboard");
+        pnlswitcher.add(pnlmanage, "manage");
+        pnlswitcher.add(pnlInspection, "inspection");
+        pnlswitcher.add(pnlmaintenance, "maintenance");
+        pnlswitcher.add(pnlprocessing, "processing");
+        pnlswitcher.add(pnlviewrecords, "records");
+        pnlswitcher.add(pnlrentaltransaction, "transactions");
 
         pnlDashboard.add(pnlswitcher);
 
@@ -520,7 +520,8 @@ public class MainDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_MaintenanceRecordingActionPerformed
 
     private void RentalProcessingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RentalProcessingActionPerformed
-        // TODO add your handling code here:
+        CardLayout cl = (CardLayout) pnlswitcher.getLayout();
+        cl.show(pnlswitcher, "processing");
     }//GEN-LAST:event_RentalProcessingActionPerformed
 
     private void ViewMotorcycleRecordsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewMotorcycleRecordsActionPerformed
