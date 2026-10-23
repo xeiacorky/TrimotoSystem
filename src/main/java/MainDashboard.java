@@ -5,9 +5,7 @@ public class MainDashboard extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainDashboard.class.getName());
 
-    /**
-     * Creates new form MainDashboard
-     */
+    
     public MainDashboard() {
  
             
