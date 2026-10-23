@@ -522,8 +522,7 @@ public class MainDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_MaintenanceRecordingActionPerformed
 
     private void RentalProcessingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RentalProcessingActionPerformed
-        CardLayout cl = (CardLayout) pnlswitcher.getLayout();
-        cl.show(pnlswitcher, "processing");
+        // TODO add your handling code here:
     }//GEN-LAST:event_RentalProcessingActionPerformed
 
     private void ViewMotorcycleRecordsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewMotorcycleRecordsActionPerformed
