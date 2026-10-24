@@ -77,9 +77,9 @@ public class MainDashboard extends javax.swing.JFrame {
         pnlInspection = new MotorcycleInspection();
         pnlmaintenance = new MaintenanceRecording();
         pnlprocessing = new RentalProcessing();
-        pnlviewrecords = new ViewMotorcycleRecords();
         pnlrentaltransaction = new ViewRentalTransaction();
         pnlmanage = new ManageMotorcycles();
+        pnlviewrecords = new ViewMotorcycleRecords();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1200, 750));
@@ -99,29 +99,36 @@ public class MainDashboard extends javax.swing.JFrame {
         jLabel1.setText("Rental Management");
 
         btndashboard.setText("Dashboard");
+        btndashboard.setFocusPainted(false);
         btndashboard.addActionListener(this::btndashboardActionPerformed);
 
         btninspect.setText("Motorcycle Inspection");
+        btninspect.setFocusPainted(false);
         btninspect.addActionListener(this::btninspectActionPerformed);
 
         btnmanagemotor.setText("Manage Motorcycles");
+        btnmanagemotor.setFocusPainted(false);
         btnmanagemotor.addActionListener(this::btnmanagemotorActionPerformed);
 
         btnmaintenance.setText("Maintenance Recording");
+        btnmaintenance.setFocusPainted(false);
         btnmaintenance.addActionListener(this::btnmaintenanceActionPerformed);
 
         btnrentalprocess.setText("Rental Processing");
+        btnrentalprocess.setFocusPainted(false);
         btnrentalprocess.addActionListener(this::btnrentalprocessActionPerformed);
 
         btnMotorcyclerecords.setText("View Motorcycle Records");
+        btnMotorcyclerecords.setFocusPainted(false);
         btnMotorcyclerecords.addActionListener(this::btnMotorcyclerecordsActionPerformed);
 
         btnRentalTransac.setText("View Rental Transaction");
+        btnRentalTransac.setFocusPainted(false);
         btnRentalTransac.addActionListener(this::btnRentalTransacActionPerformed);
 
         jLabel7.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Trimoto | Offline System");
+        jLabel7.setText("Trimoto | Online System");
 
         javax.swing.GroupLayout pnlsidebarLayout = new javax.swing.GroupLayout(pnlsidebar);
         pnlsidebar.setLayout(pnlsidebarLayout);
@@ -202,9 +209,9 @@ public class MainDashboard extends javax.swing.JFrame {
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HeaderLayout.createSequentialGroup()
                 .addContainerGap(38, Short.MAX_VALUE)
-                .addGroup(HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbldate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(lbldate, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(22, 22, 22))
         );
 
@@ -282,7 +289,7 @@ public class MainDashboard extends javax.swing.JFrame {
         );
 
         overview.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.default.pressedBackground"));
-        overview.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        overview.setLayout(new java.awt.GridLayout(1, 0, 15, 0));
 
         pnlTotalcard.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -314,7 +321,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addContainerGap(133, Short.MAX_VALUE))
         );
 
-        overview.add(pnlTotalcard, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 0, -1, -1));
+        overview.add(pnlTotalcard);
 
         pnlavailable.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -346,7 +353,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addContainerGap(133, Short.MAX_VALUE))
         );
 
-        overview.add(pnlavailable, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 0, -1, -1));
+        overview.add(pnlavailable);
 
         pnlrented.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -378,7 +385,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addContainerGap(132, Short.MAX_VALUE))
         );
 
-        overview.add(pnlrented, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 0, -1, -1));
+        overview.add(pnlrented);
 
         pnlformainte.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -410,7 +417,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addContainerGap(133, Short.MAX_VALUE))
         );
 
-        overview.add(pnlformainte, new org.netbeans.lib.awtextra.AbsoluteConstraints(559, 0, -1, -1));
+        overview.add(pnlformainte);
 
         pnlforinspect.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -442,7 +449,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addContainerGap(133, Short.MAX_VALUE))
         );
 
-        overview.add(pnlforinspect, new org.netbeans.lib.awtextra.AbsoluteConstraints(745, 0, -1, -1));
+        overview.add(pnlforinspect);
 
         javax.swing.GroupLayout pnloverviewLayout = new javax.swing.GroupLayout(pnloverview);
         pnloverview.setLayout(pnloverviewLayout);
@@ -477,9 +484,9 @@ public class MainDashboard extends javax.swing.JFrame {
         pnlswitcher.add(pnlInspection, "inspection");
         pnlswitcher.add(pnlmaintenance, "maintenance");
         pnlswitcher.add(pnlprocessing, "processing");
-        pnlswitcher.add(pnlviewrecords, "records");
         pnlswitcher.add(pnlrentaltransaction, "transactions");
         pnlswitcher.add(pnlmanage, "manage");
+        pnlswitcher.add(pnlviewrecords, "records");
 
         pnlDashboard.add(pnlswitcher);
 

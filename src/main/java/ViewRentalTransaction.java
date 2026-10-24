@@ -18,6 +18,9 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
     private void initComponents() {
 
         viewtransac = new javax.swing.JDialog();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        btnsave = new javax.swing.JButton();
         description = new javax.swing.JLabel();
         title = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -27,15 +30,34 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
         btnreturnedmark = new javax.swing.JButton();
         btnrefresh = new javax.swing.JButton();
 
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane2.setViewportView(jTextArea1);
+
+        btnsave.setText("Save");
+        btnsave.addActionListener(this::btnsaveActionPerformed);
+
         javax.swing.GroupLayout viewtransacLayout = new javax.swing.GroupLayout(viewtransac.getContentPane());
         viewtransac.getContentPane().setLayout(viewtransacLayout);
         viewtransacLayout.setHorizontalGroup(
             viewtransacLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(viewtransacLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2)
+                .addContainerGap())
+            .addGroup(viewtransacLayout.createSequentialGroup()
+                .addGap(316, 316, 316)
+                .addComponent(btnsave)
+                .addContainerGap(312, Short.MAX_VALUE))
         );
         viewtransacLayout.setVerticalGroup(
             viewtransacLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(viewtransacLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnsave)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         description.setText("Review rental history and transaction status.");
@@ -111,15 +133,22 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
         viewtransac.setVisible(true);
     }//GEN-LAST:event_btnviewtransacActionPerformed
 
+    private void btnsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnsaveActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnrefresh;
     private javax.swing.JButton btnreturnedmark;
+    private javax.swing.JButton btnsave;
     private javax.swing.JButton btnviewtransac;
     private javax.swing.JLabel description;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel title;
     private javax.swing.JDialog viewtransac;
     // End of variables declaration//GEN-END:variables
