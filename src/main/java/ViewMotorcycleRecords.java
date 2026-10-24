@@ -35,6 +35,9 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         btnrefresh = new javax.swing.JButton();
         btnedit = new javax.swing.JButton();
         btndelete = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        btnviewinspectionrecord = new javax.swing.JButton();
+        btnviewmaintenancerecord = new javax.swing.JButton();
 
         javax.swing.GroupLayout viewrecordsLayout = new javax.swing.GroupLayout(viewrecords.getContentPane());
         viewrecords.getContentPane().setLayout(viewrecordsLayout);
@@ -65,20 +68,24 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         ));
         recordsscrollpane.setViewportView(recordstable);
 
-        jPanel1.setLayout(new java.awt.GridLayout(1, 3, 15, 0));
+        jPanel1.setLayout(new java.awt.GridLayout(1, 6, 15, 0));
 
         btnview.setText("View ");
         btnview.addActionListener(this::btnviewActionPerformed);
-        jPanel1.add(btnview);
 
         btnrefresh.setText("Refresh");
-        jPanel1.add(btnrefresh);
 
         btnedit.setText("Edit");
-        jPanel1.add(btnedit);
 
         btndelete.setText("Delete");
-        jPanel1.add(btndelete);
+
+        jPanel2.setLayout(new java.awt.GridLayout(1, 2, 15, 0));
+
+        btnviewinspectionrecord.setText("View Inspection Record");
+        jPanel2.add(btnviewinspectionrecord);
+
+        btnviewmaintenancerecord.setText("View Maintenance Record");
+        jPanel2.add(btnviewmaintenancerecord);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -92,7 +99,17 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(title)
                             .addComponent(description)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(btnview, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(15, 15, 15)
+                                    .addComponent(btnrefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(15, 15, 15)
+                                    .addComponent(btnedit, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(15, 15, 15)
+                                    .addComponent(btndelete, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 405, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -105,7 +122,15 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                 .addComponent(description)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(recordsscrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnview, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnrefresh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnedit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btndelete))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -123,8 +148,11 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
     private javax.swing.JButton btnedit;
     private javax.swing.JButton btnrefresh;
     private javax.swing.JButton btnview;
+    private javax.swing.JButton btnviewinspectionrecord;
+    private javax.swing.JButton btnviewmaintenancerecord;
     private javax.swing.JLabel description;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane recordsscrollpane;
     private javax.swing.JTable recordstable;
     private javax.swing.JLabel title;

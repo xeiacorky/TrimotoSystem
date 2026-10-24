@@ -25,6 +25,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        viewinspect = new javax.swing.JDialog();
         title = new javax.swing.JLabel();
         description = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -44,8 +45,21 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         txtoverallcondition = new javax.swing.JTextField();
         lblremarks = new javax.swing.JLabel();
         txtremarks = new javax.swing.JTextField();
+        lblInspectionphase = new javax.swing.JLabel();
+        cbinspectionphase = new javax.swing.JComboBox<>();
         btnclear = new javax.swing.JButton();
         btnsaveinspect = new javax.swing.JButton();
+
+        javax.swing.GroupLayout viewinspectLayout = new javax.swing.GroupLayout(viewinspect.getContentPane());
+        viewinspect.getContentPane().setLayout(viewinspectLayout);
+        viewinspectLayout.setHorizontalGroup(
+            viewinspectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        viewinspectLayout.setVerticalGroup(
+            viewinspectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setBackground(javax.swing.UIManager.getDefaults().getColor("Button.default.pressedBackground"));
         setPreferredSize(new java.awt.Dimension(900, 550));
@@ -57,7 +71,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
-        jPanel1.setLayout(new java.awt.GridLayout(8, 2, 15, 15));
+        jPanel1.setLayout(new java.awt.GridLayout(9, 2, 15, 15));
 
         lblmotor.setText("Motorcycle:");
         jPanel1.add(lblmotor);
@@ -103,6 +117,12 @@ public class MotorcycleInspection extends javax.swing.JPanel {
 
         txtremarks.addActionListener(this::txtremarksActionPerformed);
         jPanel1.add(txtremarks);
+
+        lblInspectionphase.setText("Inspection Phase:");
+        jPanel1.add(lblInspectionphase);
+
+        cbinspectionphase.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pre-Rental", "Post-Rental" }));
+        jPanel1.add(cbinspectionphase);
 
         btnclear.setText("Clear");
         jPanel1.add(btnclear);
@@ -151,11 +171,13 @@ public class MotorcycleInspection extends javax.swing.JPanel {
     private javax.swing.JButton btnclear;
     private javax.swing.JButton btnsaveinspect;
     private javax.swing.JCheckBox cbfull;
+    private javax.swing.JComboBox<String> cbinspectionphase;
     private javax.swing.JCheckBox cbpartial;
     private javax.swing.JComboBox<String> cmbmileage;
     private javax.swing.JComboBox<String> cmbmotorcycle;
     private javax.swing.JLabel description;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblInspectionphase;
     private javax.swing.JLabel lblfuel;
     private javax.swing.JLabel lblinspectiondate;
     private javax.swing.JLabel lblinspecttype;
@@ -169,5 +191,6 @@ public class MotorcycleInspection extends javax.swing.JPanel {
     private javax.swing.JTextField txtinspectdate;
     private javax.swing.JTextField txtoverallcondition;
     private javax.swing.JTextField txtremarks;
+    private javax.swing.JDialog viewinspect;
     // End of variables declaration//GEN-END:variables
 }
