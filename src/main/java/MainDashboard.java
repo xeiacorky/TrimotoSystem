@@ -190,7 +190,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(pnlsidebar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 700));
+        getContentPane().add(pnlsidebar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 710));
 
         Header.setBackground(new java.awt.Color(255, 255, 255));
         Header.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 204, 204))));
