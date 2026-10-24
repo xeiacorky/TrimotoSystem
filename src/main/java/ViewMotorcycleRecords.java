@@ -34,47 +34,65 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         jTextArea1 = new javax.swing.JTextArea();
         btnsave = new javax.swing.JButton();
         viewmainte = new javax.swing.JDialog();
-        jPanel11 = new javax.swing.JPanel();
-        lblmotor1 = new javax.swing.JLabel();
+        btnsavemainte = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        lblmotor2 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        lblmaintenancetype = new javax.swing.JLabel();
-        jPanel12 = new javax.swing.JPanel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        lbldescri = new javax.swing.JLabel();
-        txtdescri = new javax.swing.JTextField();
         lblmaintenancedate = new javax.swing.JLabel();
         txtmaintedate = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        lblmaintenancetype = new javax.swing.JLabel();
+        jComboBox4 = new javax.swing.JComboBox<>();
+        jLabel12 = new javax.swing.JLabel();
+        jTextField12 = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jTextField19 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jTextField11 = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jTextField13 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jTextField15 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        btnsavemainte = new javax.swing.JButton();
+        jTextField14 = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel21 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jLabel15 = new javax.swing.JLabel();
+        jTextField16 = new javax.swing.JTextField();
         viewinspect = new javax.swing.JDialog();
-        jPanel10 = new javax.swing.JPanel();
+        btnviewinspectsave = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
         lblmotor = new javax.swing.JLabel();
         cmbmotorcycle = new javax.swing.JComboBox<>();
-        lblinspecttype = new javax.swing.JLabel();
-        pnlinspectcheckbox = new javax.swing.JPanel();
-        cbpartial = new javax.swing.JCheckBox();
-        cbfull = new javax.swing.JCheckBox();
         lblinspectiondate = new javax.swing.JLabel();
         txtinspectdate = new javax.swing.JTextField();
-        lblfuel = new javax.swing.JLabel();
-        txtfuel = new javax.swing.JTextField();
-        lblmileage = new javax.swing.JLabel();
-        txtmileage = new javax.swing.JTextField();
-        lbloverallcondi = new javax.swing.JLabel();
-        cbcondition = new javax.swing.JComboBox<>();
-        lblremarks = new javax.swing.JLabel();
-        txtremarks = new javax.swing.JTextField();
         lblInspectionphase = new javax.swing.JLabel();
         cbinspectionphase = new javax.swing.JComboBox<>();
-        btnviewinspectsave = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        lblfuel = new javax.swing.JLabel();
+        txtfuel = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jComboBox8 = new javax.swing.JComboBox<>();
+        jLabel22 = new javax.swing.JLabel();
+        jComboBox9 = new javax.swing.JComboBox<>();
+        lblheadlightandsignal = new javax.swing.JLabel();
+        cbheadlight = new javax.swing.JComboBox<>();
+        jLabel23 = new javax.swing.JLabel();
+        jComboBox10 = new javax.swing.JComboBox<>();
+        jLabel24 = new javax.swing.JLabel();
+        jComboBox11 = new javax.swing.JComboBox<>();
+        jLabel25 = new javax.swing.JLabel();
+        jComboBox12 = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        jComboBox13 = new javax.swing.JComboBox<>();
+        lbloverallcondi = new javax.swing.JLabel();
+        cbcondition = new javax.swing.JComboBox<>();
+        jLabel26 = new javax.swing.JLabel();
+        jComboBox14 = new javax.swing.JComboBox<>();
+        jLabel27 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
         screen1viewrecords = new javax.swing.JDialog();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
@@ -156,137 +174,178 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
-        jPanel11.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel11.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
-        jPanel11.setLayout(new java.awt.GridLayout(8, 2, 15, 15));
+        btnsavemainte.setText("Save");
 
-        lblmotor1.setText("Motorcycle:");
-        jPanel11.add(lblmotor1);
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
+        jPanel1.setLayout(new java.awt.GridLayout(12, 2, 15, 15));
+
+        lblmotor2.setText("Motorcycle:");
+        jPanel1.add(lblmotor2);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel11.add(jComboBox1);
-
-        lblmaintenancetype.setText("Maintenance Type");
-        jPanel11.add(lblmaintenancetype);
-
-        jPanel12.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel12.setLayout(new java.awt.GridLayout(1, 2));
-
-        jCheckBox1.setText("Service");
-        jPanel12.add(jCheckBox1);
-
-        jCheckBox2.setText("Repair");
-        jPanel12.add(jCheckBox2);
-
-        jPanel11.add(jPanel12);
-
-        lbldescri.setText("Description:");
-        jPanel11.add(lbldescri);
-
-        txtdescri.addActionListener(this::txtdescriActionPerformed);
-        jPanel11.add(txtdescri);
+        jPanel1.add(jComboBox1);
 
         lblmaintenancedate.setText("Maintenance Date:");
-        jPanel11.add(lblmaintenancedate);
-        jPanel11.add(txtmaintedate);
+        jPanel1.add(lblmaintenancedate);
+        jPanel1.add(txtmaintedate);
 
-        jLabel1.setText("Current Mileage:");
-        jPanel11.add(jLabel1);
-        jPanel11.add(jTextField1);
+        lblmaintenancetype.setText("Maintenance Type:");
+        jPanel1.add(lblmaintenancetype);
 
-        jLabel2.setText("Cost:");
-        jPanel11.add(jLabel2);
-        jPanel11.add(jTextField2);
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Preventive", "Corrective" }));
+        jPanel1.add(jComboBox4);
+
+        jLabel12.setText("Service Category");
+        jPanel1.add(jLabel12);
+        jPanel1.add(jTextField12);
+
+        jLabel16.setText("Work Performed:");
+        jPanel1.add(jLabel16);
+        jPanel1.add(jTextField19);
+
+        jLabel13.setText("Parts Replaced:");
+        jPanel1.add(jLabel13);
+        jPanel1.add(jTextField11);
+
+        jLabel17.setText("Odometer Reading(km):");
+        jPanel1.add(jLabel17);
+        jPanel1.add(jTextField13);
+
+        jLabel2.setText("Maintenance Cost:");
+        jPanel1.add(jLabel2);
+        jPanel1.add(jTextField15);
 
         jLabel3.setText("Next Service Mileage:");
-        jPanel11.add(jLabel3);
-        jPanel11.add(jTextField3);
+        jPanel1.add(jLabel3);
+        jPanel1.add(jTextField14);
 
-        jLabel4.setText("Status:");
-        jPanel11.add(jLabel4);
-        jPanel11.add(jTextField4);
+        jLabel14.setText("Maintenance Status:");
+        jPanel1.add(jLabel14);
 
-        btnsavemainte.setText("Save");
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pending", "In Progress", "Completed" }));
+        jPanel1.add(jComboBox2);
+
+        jLabel21.setText("Motorcycle Availability:");
+        jPanel1.add(jLabel21);
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Available", "Under Maintenance" }));
+        jPanel1.add(jComboBox3);
+
+        jLabel15.setText("Remarks");
+        jPanel1.add(jLabel15);
+        jPanel1.add(jTextField16);
 
         javax.swing.GroupLayout viewmainteLayout = new javax.swing.GroupLayout(viewmainte.getContentPane());
         viewmainte.getContentPane().setLayout(viewmainteLayout);
         viewmainteLayout.setHorizontalGroup(
             viewmainteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewmainteLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
-                .addContainerGap())
             .addGroup(viewmainteLayout.createSequentialGroup()
                 .addGap(308, 308, 308)
                 .addComponent(btnsavemainte)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(320, Short.MAX_VALUE))
+            .addGroup(viewmainteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
+                .addContainerGap())
         );
         viewmainteLayout.setVerticalGroup(
             viewmainteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(viewmainteLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnsavemainte)
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel10.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
-        jPanel10.setLayout(new java.awt.GridLayout(8, 2, 15, 15));
+        btnviewinspectsave.setText("Save");
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
+        jPanel5.setLayout(new java.awt.GridLayout(15, 2, 15, 15));
 
         lblmotor.setText("Motorcycle:");
-        jPanel10.add(lblmotor);
+        jPanel5.add(lblmotor);
 
         cmbmotorcycle.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel10.add(cmbmotorcycle);
-
-        lblinspecttype.setText("Inspection Type: ");
-        jPanel10.add(lblinspecttype);
-
-        pnlinspectcheckbox.setBackground(new java.awt.Color(255, 255, 255));
-        pnlinspectcheckbox.setLayout(new java.awt.GridLayout(1, 0));
-
-        cbpartial.setText("Partial Inspection");
-        pnlinspectcheckbox.add(cbpartial);
-
-        cbfull.setText("Full Inspection");
-        cbfull.addActionListener(this::cbfullActionPerformed);
-        pnlinspectcheckbox.add(cbfull);
-
-        jPanel10.add(pnlinspectcheckbox);
+        jPanel5.add(cmbmotorcycle);
 
         lblinspectiondate.setText("Inspection Date:");
-        jPanel10.add(lblinspectiondate);
-        jPanel10.add(txtinspectdate);
-
-        lblfuel.setText("Fuel Level:");
-        jPanel10.add(lblfuel);
-        jPanel10.add(txtfuel);
-
-        lblmileage.setText("Mileage:");
-        jPanel10.add(lblmileage);
-        jPanel10.add(txtmileage);
-
-        lbloverallcondi.setText("Overall Condition:");
-        jPanel10.add(lbloverallcondi);
-
-        cbcondition.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Minor Damage", "Needs Repair", "Unsafe" }));
-        jPanel10.add(cbcondition);
-
-        lblremarks.setText("Remarks");
-        jPanel10.add(lblremarks);
-
-        txtremarks.addActionListener(this::txtremarksActionPerformed);
-        jPanel10.add(txtremarks);
+        jPanel5.add(lblinspectiondate);
+        jPanel5.add(txtinspectdate);
 
         lblInspectionphase.setText("Inspection Phase:");
-        jPanel10.add(lblInspectionphase);
+        jPanel5.add(lblInspectionphase);
 
         cbinspectionphase.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pre-Rental", "Post-Rental" }));
-        jPanel10.add(cbinspectionphase);
+        jPanel5.add(cbinspectionphase);
 
-        btnviewinspectsave.setText("Save");
+        jLabel19.setText("Odometer Reading:");
+        jPanel5.add(jLabel19);
+        jPanel5.add(jTextField1);
+
+        lblfuel.setText("Fuel Level:");
+        jPanel5.add(lblfuel);
+        jPanel5.add(txtfuel);
+
+        jLabel4.setText("Tire Condition:");
+        jPanel5.add(jLabel4);
+
+        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Scratched", "Dented" }));
+        jPanel5.add(jComboBox8);
+
+        jLabel22.setText("Brake Condition:");
+        jPanel5.add(jLabel22);
+
+        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Worn", "Damaged" }));
+        jPanel5.add(jComboBox9);
+
+        lblheadlightandsignal.setText("Headlight and Signal Lights:");
+        jPanel5.add(lblheadlightandsignal);
+
+        cbheadlight.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Functional", "Not Functional" }));
+        jPanel5.add(cbheadlight);
+
+        jLabel23.setText("Horns");
+        jPanel5.add(jLabel23);
+
+        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Functional", "Not Functional" }));
+        jPanel5.add(jComboBox10);
+
+        jLabel24.setText("Mirrors");
+        jPanel5.add(jLabel24);
+
+        jComboBox11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Complete", "Missing", "Damaged" }));
+        jPanel5.add(jComboBox11);
+
+        jLabel25.setText("Motorcycle Body:");
+        jPanel5.add(jLabel25);
+
+        jComboBox12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Needs Repair" }));
+        jPanel5.add(jComboBox12);
+
+        jLabel1.setText("Engine Condition:");
+        jPanel5.add(jLabel1);
+
+        jComboBox13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Normal", "Unusual Noise", "Other Issue" }));
+        jPanel5.add(jComboBox13);
+
+        lbloverallcondi.setText("Overall Condition:");
+        jPanel5.add(lbloverallcondi);
+
+        cbcondition.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Minor Damage", "Needs Repair", "Unsafe" }));
+        jPanel5.add(cbcondition);
+
+        jLabel26.setText("Readiness Status:");
+        jPanel5.add(jLabel26);
+
+        jComboBox14.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ready", "Not Ready" }));
+        jPanel5.add(jComboBox14);
+
+        jLabel27.setText("Inspection Notes:");
+        jPanel5.add(jLabel27);
+        jPanel5.add(jTextField2);
 
         javax.swing.GroupLayout viewinspectLayout = new javax.swing.GroupLayout(viewinspect.getContentPane());
         viewinspect.getContentPane().setLayout(viewinspectLayout);
@@ -299,20 +358,20 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
             .addGroup(viewinspectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(viewinspectLayout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
         );
         viewinspectLayout.setVerticalGroup(
             viewinspectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewinspectLayout.createSequentialGroup()
-                .addContainerGap(431, Short.MAX_VALUE)
+                .addContainerGap(570, Short.MAX_VALUE)
                 .addComponent(btnviewinspectsave)
                 .addGap(16, 16, 16))
             .addGroup(viewinspectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(viewinspectLayout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(64, Short.MAX_VALUE)))
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 552, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(51, Short.MAX_VALUE)))
         );
 
         jTextArea2.setColumns(20);
@@ -613,18 +672,6 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                            
     }//GEN-LAST:event_btnviewmaintenancerecordActionPerformed
 
-    private void cbfullActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbfullActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbfullActionPerformed
-
-    private void txtremarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtremarksActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtremarksActionPerformed
-
-    private void txtdescriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdescriActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtdescriActionPerformed
-
     private void btneditinspectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditinspectActionPerformed
         viewinspect.pack(); // Automatically sizes the dialog to fit your labels/tables
         viewinspect.setLocationRelativeTo(this); // Centers it on your main screen
@@ -681,23 +728,44 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
     private javax.swing.JButton btnviewinspectsave;
     private javax.swing.JButton btnviewmaintenancerecord;
     private javax.swing.JComboBox<String> cbcondition;
-    private javax.swing.JCheckBox cbfull;
+    private javax.swing.JComboBox<String> cbheadlight;
     private javax.swing.JComboBox<String> cbinspectionphase;
-    private javax.swing.JCheckBox cbpartial;
     private javax.swing.JComboBox<String> cmbmotorcycle;
     private javax.swing.JLabel description;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox10;
+    private javax.swing.JComboBox<String> jComboBox11;
+    private javax.swing.JComboBox<String> jComboBox12;
+    private javax.swing.JComboBox<String> jComboBox13;
+    private javax.swing.JComboBox<String> jComboBox14;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JComboBox<String> jComboBox7;
+    private javax.swing.JComboBox<String> jComboBox8;
+    private javax.swing.JComboBox<String> jComboBox9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -705,12 +773,11 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -723,27 +790,28 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
     private javax.swing.JTextArea jTextArea5;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField14;
+    private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField16;
+    private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JLabel lblInspectionphase;
-    private javax.swing.JLabel lbldescri;
     private javax.swing.JLabel lblfuel;
+    private javax.swing.JLabel lblheadlightandsignal;
     private javax.swing.JLabel lblinspectiondate;
-    private javax.swing.JLabel lblinspecttype;
     private javax.swing.JLabel lblmaintenancedate;
     private javax.swing.JLabel lblmaintenancetype;
-    private javax.swing.JLabel lblmileage;
     private javax.swing.JLabel lblmotor;
-    private javax.swing.JLabel lblmotor1;
+    private javax.swing.JLabel lblmotor2;
     private javax.swing.JLabel lbloverallcondi;
-    private javax.swing.JLabel lblremarks;
-    private javax.swing.JPanel pnlinspectcheckbox;
     private javax.swing.JScrollPane recordsscrollpane;
     private javax.swing.JTable recordstable;
     private javax.swing.JDialog screen1viewdmgreport;
@@ -752,12 +820,9 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
     private javax.swing.JDialog screen1viewrecords;
     private javax.swing.JLabel title;
     private javax.swing.JLabel title1;
-    private javax.swing.JTextField txtdescri;
     private javax.swing.JTextField txtfuel;
     private javax.swing.JTextField txtinspectdate;
     private javax.swing.JTextField txtmaintedate;
-    private javax.swing.JTextField txtmileage;
-    private javax.swing.JTextField txtremarks;
     private javax.swing.JDialog viewdmg;
     private javax.swing.JDialog viewinspect;
     private javax.swing.JDialog viewmainte;
