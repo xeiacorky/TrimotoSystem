@@ -32,10 +32,25 @@ public class RentalProcessing extends javax.swing.JPanel {
         motor = new javax.swing.JComboBox<>();
         lblrenter = new javax.swing.JLabel();
         txtname = new javax.swing.JTextField();
+        lblage = new javax.swing.JLabel();
+        txtage = new javax.swing.JTextField();
+        lbladdress = new javax.swing.JLabel();
+        txtaddress = new javax.swing.JTextField();
+        lblnumber = new javax.swing.JLabel();
+        txtcontnumber = new javax.swing.JTextField();
         lblduration = new javax.swing.JLabel();
-        txtduration = new javax.swing.JTextField();
+        lbldura = new javax.swing.JTextField();
         driverlicense = new javax.swing.JLabel();
         txtdriverslicense = new javax.swing.JTextField();
+        lblamount = new javax.swing.JLabel();
+        txtamount = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        cbpartial = new javax.swing.JCheckBox();
+        cbfull = new javax.swing.JCheckBox();
+        lblexpectedreturn = new javax.swing.JLabel();
+        txtreturn = new javax.swing.JTextField();
+        btnclear = new javax.swing.JButton();
         btnprocessrental = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(900, 550));
@@ -47,7 +62,7 @@ public class RentalProcessing extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
-        jPanel1.setLayout(new java.awt.GridLayout(5, 2, 15, 15));
+        jPanel1.setLayout(new java.awt.GridLayout(11, 2, 15, 15));
 
         lblmotor.setText("Motorcycle:");
         jPanel1.add(lblmotor);
@@ -59,15 +74,50 @@ public class RentalProcessing extends javax.swing.JPanel {
         jPanel1.add(lblrenter);
         jPanel1.add(txtname);
 
+        lblage.setText("Age:");
+        jPanel1.add(lblage);
+        jPanel1.add(txtage);
+
+        lbladdress.setText("Address:");
+        jPanel1.add(lbladdress);
+
+        txtaddress.addActionListener(this::txtaddressActionPerformed);
+        jPanel1.add(txtaddress);
+
+        lblnumber.setText("Contact Number:");
+        jPanel1.add(lblnumber);
+        jPanel1.add(txtcontnumber);
+
         lblduration.setText("Rental Duration (Days):");
         jPanel1.add(lblduration);
+        jPanel1.add(lbldura);
 
-        txtduration.addActionListener(this::txtdurationActionPerformed);
-        jPanel1.add(txtduration);
-
-        driverlicense.setText("Drivers License:");
+        driverlicense.setText("Driver's License #:");
         jPanel1.add(driverlicense);
         jPanel1.add(txtdriverslicense);
+
+        lblamount.setText("Enter Amount:");
+        jPanel1.add(lblamount);
+        jPanel1.add(txtamount);
+        jPanel1.add(jLabel6);
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new java.awt.GridLayout(1, 0));
+
+        cbpartial.setText("Partial Payment");
+        jPanel3.add(cbpartial);
+
+        cbfull.setText("Full Payment");
+        jPanel3.add(cbfull);
+
+        jPanel1.add(jPanel3);
+
+        lblexpectedreturn.setText("Expected Return Date: ");
+        jPanel1.add(lblexpectedreturn);
+        jPanel1.add(txtreturn);
+
+        btnclear.setText("Clear");
+        jPanel1.add(btnclear);
 
         btnprocessrental.setText("Process Rental");
         btnprocessrental.addActionListener(this::btnprocessrentalActionPerformed);
@@ -82,7 +132,7 @@ public class RentalProcessing extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(title)
                     .addComponent(description))
-                .addContainerGap(617, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -96,32 +146,47 @@ public class RentalProcessing extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(description)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(250, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(57, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtdurationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdurationActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtdurationActionPerformed
 
     private void btnprocessrentalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnprocessrentalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnprocessrentalActionPerformed
 
+    private void txtaddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtaddressActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtaddressActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnclear;
     private javax.swing.JButton btnprocessrental;
+    private javax.swing.JCheckBox cbfull;
+    private javax.swing.JCheckBox cbpartial;
     private javax.swing.JLabel description;
     private javax.swing.JLabel driverlicense;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel lbladdress;
+    private javax.swing.JLabel lblage;
+    private javax.swing.JLabel lblamount;
+    private javax.swing.JTextField lbldura;
     private javax.swing.JLabel lblduration;
+    private javax.swing.JLabel lblexpectedreturn;
     private javax.swing.JLabel lblmotor;
+    private javax.swing.JLabel lblnumber;
     private javax.swing.JLabel lblrenter;
     private javax.swing.JComboBox<String> motor;
     private javax.swing.JLabel title;
+    private javax.swing.JTextField txtaddress;
+    private javax.swing.JTextField txtage;
+    private javax.swing.JTextField txtamount;
+    private javax.swing.JTextField txtcontnumber;
     private javax.swing.JTextField txtdriverslicense;
-    private javax.swing.JTextField txtduration;
     private javax.swing.JTextField txtname;
+    private javax.swing.JTextField txtreturn;
     // End of variables declaration//GEN-END:variables
 }

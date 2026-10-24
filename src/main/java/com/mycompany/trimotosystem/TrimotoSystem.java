@@ -4,31 +4,7 @@ import java.awt.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-// ==========================================
-// 1. SHARED DATA REPOSITORY & MODELS
-// ==========================================
-class SharedData {
-    public static final ArrayList<Motorcycle> motorcycles = new ArrayList<>();
-    public static final ArrayList<InspectionRecord> inspections = new ArrayList<>();
-    public static final ArrayList<MaintenanceRecord> maintenance = new ArrayList<>();
-    public static final ArrayList<RentalTransaction> rentals = new ArrayList<>();
 
-
-    public static Motorcycle findMotorcycle(String id) {
-        for (Motorcycle bike : motorcycles) {
-            if (bike.id.equalsIgnoreCase(id)) return bike;
-        }
-        return null;
-    }
-
-    public static InspectionRecord latestInspection(String motorcycleId) {
-        for (int i = inspections.size() - 1; i >= 0; i--) {
-            InspectionRecord record = inspections.get(i);
-            if (record.motorcycleId.equalsIgnoreCase(motorcycleId)) return record;
-        }
-        return null;
-    }
-}
 
 class Motorcycle {
     String id, brand, model, type, status;

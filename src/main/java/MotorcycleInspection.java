@@ -29,13 +29,22 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         description = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         lblmotor = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        lblinspect = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        lblcondition = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        lbldmgfindings = new javax.swing.JLabel();
-        txtdmgfindings = new javax.swing.JTextField();
+        cmbmotorcycle = new javax.swing.JComboBox<>();
+        lblinspecttype = new javax.swing.JLabel();
+        pnlinspectcheckbox = new javax.swing.JPanel();
+        cbpartial = new javax.swing.JCheckBox();
+        cbfull = new javax.swing.JCheckBox();
+        lblinspectiondate = new javax.swing.JLabel();
+        txtinspectdate = new javax.swing.JTextField();
+        lblfuel = new javax.swing.JLabel();
+        txtfuel = new javax.swing.JTextField();
+        lblmileage = new javax.swing.JLabel();
+        cmbmileage = new javax.swing.JComboBox<>();
+        lbloverallcondi = new javax.swing.JLabel();
+        txtoverallcondition = new javax.swing.JTextField();
+        lblremarks = new javax.swing.JLabel();
+        txtremarks = new javax.swing.JTextField();
+        btnclear = new javax.swing.JButton();
         btnsaveinspect = new javax.swing.JButton();
 
         setBackground(javax.swing.UIManager.getDefaults().getColor("Button.default.pressedBackground"));
@@ -48,27 +57,55 @@ public class MotorcycleInspection extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
-        jPanel1.setLayout(new java.awt.GridLayout(5, 2, 15, 15));
+        jPanel1.setLayout(new java.awt.GridLayout(8, 2, 15, 15));
 
         lblmotor.setText("Motorcycle:");
         jPanel1.add(lblmotor);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(jComboBox1);
+        cmbmotorcycle.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.add(cmbmotorcycle);
 
-        lblinspect.setText("Inspector:");
-        jPanel1.add(lblinspect);
-        jPanel1.add(jTextField1);
+        lblinspecttype.setText("Inspection Type: ");
+        jPanel1.add(lblinspecttype);
 
-        lblcondition.setText("Condition:");
-        jPanel1.add(lblcondition);
+        pnlinspectcheckbox.setBackground(new java.awt.Color(255, 255, 255));
+        pnlinspectcheckbox.setLayout(new java.awt.GridLayout(1, 0));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Minor Damage", "Needs Repair", "Unsafe" }));
-        jPanel1.add(jComboBox2);
+        cbpartial.setText("Partial Inspection");
+        pnlinspectcheckbox.add(cbpartial);
 
-        lbldmgfindings.setText("Damage/Findings:");
-        jPanel1.add(lbldmgfindings);
-        jPanel1.add(txtdmgfindings);
+        cbfull.setText("Full Inspection");
+        cbfull.addActionListener(this::cbfullActionPerformed);
+        pnlinspectcheckbox.add(cbfull);
+
+        jPanel1.add(pnlinspectcheckbox);
+
+        lblinspectiondate.setText("Inspection Date:");
+        jPanel1.add(lblinspectiondate);
+        jPanel1.add(txtinspectdate);
+
+        lblfuel.setText("Fuel Level:");
+        jPanel1.add(lblfuel);
+        jPanel1.add(txtfuel);
+
+        lblmileage.setText("Mileage:");
+        jPanel1.add(lblmileage);
+
+        cmbmileage.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Minor Damage", "Needs Repair", "Unsafe" }));
+        jPanel1.add(cmbmileage);
+
+        lbloverallcondi.setText("Overall Condition");
+        jPanel1.add(lbloverallcondi);
+        jPanel1.add(txtoverallcondition);
+
+        lblremarks.setText("Remarks");
+        jPanel1.add(lblremarks);
+
+        txtremarks.addActionListener(this::txtremarksActionPerformed);
+        jPanel1.add(txtremarks);
+
+        btnclear.setText("Clear");
+        jPanel1.add(btnclear);
 
         btnsaveinspect.setText("Save Inspection");
         jPanel1.add(btnsaveinspect);
@@ -96,24 +133,41 @@ public class MotorcycleInspection extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(description)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(250, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(78, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cbfullActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbfullActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbfullActionPerformed
+
+    private void txtremarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtremarksActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtremarksActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnclear;
     private javax.swing.JButton btnsaveinspect;
+    private javax.swing.JCheckBox cbfull;
+    private javax.swing.JCheckBox cbpartial;
+    private javax.swing.JComboBox<String> cmbmileage;
+    private javax.swing.JComboBox<String> cmbmotorcycle;
     private javax.swing.JLabel description;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel lblcondition;
-    private javax.swing.JLabel lbldmgfindings;
-    private javax.swing.JLabel lblinspect;
+    private javax.swing.JLabel lblfuel;
+    private javax.swing.JLabel lblinspectiondate;
+    private javax.swing.JLabel lblinspecttype;
+    private javax.swing.JLabel lblmileage;
     private javax.swing.JLabel lblmotor;
+    private javax.swing.JLabel lbloverallcondi;
+    private javax.swing.JLabel lblremarks;
+    private javax.swing.JPanel pnlinspectcheckbox;
     private javax.swing.JLabel title;
-    private javax.swing.JTextField txtdmgfindings;
+    private javax.swing.JTextField txtfuel;
+    private javax.swing.JTextField txtinspectdate;
+    private javax.swing.JTextField txtoverallcondition;
+    private javax.swing.JTextField txtremarks;
     // End of variables declaration//GEN-END:variables
 }

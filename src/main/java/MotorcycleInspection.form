@@ -47,8 +47,8 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="description" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" pref="240" max="-2" attributes="0"/>
-              <EmptySpace pref="250" max="32767" attributes="0"/>
+              <Component id="jPanel1" min="-2" pref="412" max="-2" attributes="0"/>
+              <EmptySpace pref="78" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -82,7 +82,7 @@
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
         <Property name="columns" type="int" value="2"/>
         <Property name="horizontalGap" type="int" value="15"/>
-        <Property name="rows" type="int" value="5"/>
+        <Property name="rows" type="int" value="8"/>
         <Property name="verticalGap" type="int" value="15"/>
       </Layout>
       <SubComponents>
@@ -91,7 +91,7 @@
             <Property name="text" type="java.lang.String" value="Motorcycle:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
+        <Component class="javax.swing.JComboBox" name="cmbmotorcycle">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -106,19 +106,58 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblinspect">
+        <Component class="javax.swing.JLabel" name="lblinspecttype">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Inspector:"/>
+            <Property name="text" type="java.lang.String" value="Inspection Type: "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblcondition">
+        <Container class="javax.swing.JPanel" name="pnlinspectcheckbox">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Condition:"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+            <Property name="columns" type="int" value="0"/>
+            <Property name="rows" type="int" value="1"/>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JCheckBox" name="cbpartial">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Partial Inspection"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="cbfull">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Full Inspection"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbfullActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="lblinspectiondate">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Inspection Date:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox2">
+        <Component class="javax.swing.JTextField" name="txtinspectdate">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblfuel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Fuel Level:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtfuel">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblmileage">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Mileage:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cmbmileage">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -133,12 +172,27 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="lbldmgfindings">
+        <Component class="javax.swing.JLabel" name="lbloverallcondi">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Damage/Findings:"/>
+            <Property name="text" type="java.lang.String" value="Overall Condition"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtdmgfindings">
+        <Component class="javax.swing.JTextField" name="txtoverallcondition">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblremarks">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Remarks"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtremarks">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtremarksActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnclear">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Clear"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnsaveinspect">
           <Properties>

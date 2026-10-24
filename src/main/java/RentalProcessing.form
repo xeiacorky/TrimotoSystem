@@ -27,7 +27,7 @@
                   <Component id="title" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="description" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="617" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
@@ -44,8 +44,8 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="description" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" pref="240" max="-2" attributes="0"/>
-              <EmptySpace pref="250" max="32767" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="57" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -79,7 +79,7 @@
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
         <Property name="columns" type="int" value="2"/>
         <Property name="horizontalGap" type="int" value="15"/>
-        <Property name="rows" type="int" value="5"/>
+        <Property name="rows" type="int" value="11"/>
         <Property name="verticalGap" type="int" value="15"/>
       </Layout>
       <SubComponents>
@@ -110,22 +110,88 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtname">
         </Component>
+        <Component class="javax.swing.JLabel" name="lblage">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Age:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtage">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbladdress">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Address:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtaddress">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtaddressActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblnumber">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Contact Number:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtcontnumber">
+        </Component>
         <Component class="javax.swing.JLabel" name="lblduration">
           <Properties>
             <Property name="text" type="java.lang.String" value="Rental Duration (Days):"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtduration">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtdurationActionPerformed"/>
-          </Events>
+        <Component class="javax.swing.JTextField" name="lbldura">
         </Component>
         <Component class="javax.swing.JLabel" name="driverlicense">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Drivers License:"/>
+            <Property name="text" type="java.lang.String" value="Driver&apos;s License #:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtdriverslicense">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblamount">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Enter Amount:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtamount">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel6">
+        </Component>
+        <Container class="javax.swing.JPanel" name="jPanel3">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+            <Property name="columns" type="int" value="0"/>
+            <Property name="rows" type="int" value="1"/>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JCheckBox" name="cbpartial">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Partial Payment"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="cbfull">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Full Payment"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="lblexpectedreturn">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Expected Return Date: "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtreturn">
+        </Component>
+        <Component class="javax.swing.JButton" name="btnclear">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Clear"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnprocessrental">
           <Properties>

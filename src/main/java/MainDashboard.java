@@ -7,9 +7,21 @@ public class MainDashboard extends javax.swing.JFrame {
 
     
     public MainDashboard() {
- 
-            
+        
+        try {
+    javax.swing.UIManager.setLookAndFeel(javax.swing.UIManager.getSystemLookAndFeelClassName());
+} catch (Exception e) {
+    e.printStackTrace(); //wag aalisin
+}
+            new javax.swing.Timer(1000, e -> {
+    String formattedDate = java.time.LocalDate.now().format(
+        java.time.format.DateTimeFormatter.ofPattern("MMMM dd, yyyy")
+    );
+    lbldate.setText(formattedDate);
+}).start();
         initComponents();
+        
+        
         
 
     }
@@ -18,7 +30,7 @@ public class MainDashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        pnlsidebar = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         btndashboard = new javax.swing.JButton();
@@ -28,8 +40,10 @@ public class MainDashboard extends javax.swing.JFrame {
         btnrentalprocess = new javax.swing.JButton();
         btnMotorcyclerecords = new javax.swing.JButton();
         btnRentalTransac = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
         Header = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        lbldate = new javax.swing.JLabel();
         pnlDashboard = new javax.swing.JPanel();
         pnlswitcher = new javax.swing.JPanel();
         pnloverview = new javax.swing.JPanel();
@@ -48,32 +62,32 @@ public class MainDashboard extends javax.swing.JFrame {
         pnlTotalcard = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         lbltotalvalue = new javax.swing.JLabel();
-        jPanel11 = new javax.swing.JPanel();
+        pnlavailable = new javax.swing.JPanel();
         lblAvailabletitle = new javax.swing.JLabel();
         lbltotalvalue2 = new javax.swing.JLabel();
-        jPanel12 = new javax.swing.JPanel();
+        pnlrented = new javax.swing.JPanel();
         lbltotalvalue1 = new javax.swing.JLabel();
         lblrentedtitle = new javax.swing.JLabel();
-        jPanel13 = new javax.swing.JPanel();
+        pnlformainte = new javax.swing.JPanel();
         lblformaintenancetitle = new javax.swing.JLabel();
         lbltotalvalue3 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        pnlforinspect = new javax.swing.JPanel();
         lblformaintenancetitle1 = new javax.swing.JLabel();
         lbltotalvalue4 = new javax.swing.JLabel();
-        pnlmanage = new ManageMotorcycles();
         pnlInspection = new MotorcycleInspection();
         pnlmaintenance = new MaintenanceRecording();
         pnlprocessing = new RentalProcessing();
         pnlviewrecords = new ViewMotorcycleRecords();
         pnlrentaltransaction = new ViewRentalTransaction();
+        pnlmanage = new ManageMotorcycles();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1200, 750));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 153));
-        jPanel1.setForeground(new java.awt.Color(242, 242, 242));
+        pnlsidebar.setBackground(new java.awt.Color(4, 41, 79));
+        pnlsidebar.setForeground(new java.awt.Color(242, 242, 242));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -105,38 +119,48 @@ public class MainDashboard extends javax.swing.JFrame {
         btnRentalTransac.setText("View Rental Transaction");
         btnRentalTransac.addActionListener(this::btnRentalTransacActionPerformed);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btndashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnmanagemotor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btninspect, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnmaintenance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnrentalprocess, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnMotorcyclerecords, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnRentalTransac, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        jLabel7.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Trimoto | Offline System");
+
+        javax.swing.GroupLayout pnlsidebarLayout = new javax.swing.GroupLayout(pnlsidebar);
+        pnlsidebar.setLayout(pnlsidebarLayout);
+        pnlsidebarLayout.setHorizontalGroup(
+            pnlsidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlsidebarLayout.createSequentialGroup()
+                .addGroup(pnlsidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlsidebarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(pnlsidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btndashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnmanagemotor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btninspect, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnmaintenance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnrentalprocess, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnMotorcyclerecords, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                            .addComponent(btnRentalTransac, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(pnlsidebarLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(pnlsidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(pnlsidebarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        pnlsidebarLayout.setVerticalGroup(
+            pnlsidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlsidebarLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addGap(30, 30, 30)
                 .addComponent(btndashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(36, 36, 36)
                 .addComponent(btnmanagemotor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btninspect, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -148,35 +172,43 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addComponent(btnMotorcyclerecords, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRentalTransac, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(320, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 268, Short.MAX_VALUE)
+                .addComponent(jLabel7)
+                .addContainerGap())
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 700));
+        getContentPane().add(pnlsidebar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 700));
 
+        Header.setBackground(new java.awt.Color(255, 255, 255));
         Header.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 204, 204))));
         Header.setForeground(new java.awt.Color(255, 255, 255));
 
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
-        jLabel3.setText("Motorcycle Rental System");
+        jLabel3.setText("Motorcycle Rental, Inspection, and Maintenance Management System");
 
         javax.swing.GroupLayout HeaderLayout = new javax.swing.GroupLayout(Header);
         Header.setLayout(HeaderLayout);
         HeaderLayout.setHorizontalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HeaderLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(14, 14, 14)
                 .addComponent(jLabel3)
-                .addContainerGap(722, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 193, Short.MAX_VALUE)
+                .addComponent(lbldate, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         HeaderLayout.setVerticalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HeaderLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel3)
-                .addContainerGap(25, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HeaderLayout.createSequentialGroup()
+                .addContainerGap(38, Short.MAX_VALUE)
+                .addGroup(HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbldate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(22, 22, 22))
         );
 
-        getContentPane().add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, -10, 990, 80));
+        getContentPane().add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, -10, 990, 90));
 
         pnlDashboard.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.default.pressedBackground"));
         pnlDashboard.setLayout(new javax.swing.BoxLayout(pnlDashboard, javax.swing.BoxLayout.LINE_AXIS));
@@ -239,7 +271,7 @@ public class MainDashboard extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel10)
-                .addContainerGap(795, Short.MAX_VALUE))
+                .addContainerGap(777, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -254,7 +286,7 @@ public class MainDashboard extends javax.swing.JFrame {
 
         pnlTotalcard.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel6.setForeground(java.awt.Color.gray);
+        jLabel6.setForeground(new java.awt.Color(41, 128, 185));
         jLabel6.setText("Total Motorcycles");
 
         lbltotalvalue.setFont(new java.awt.Font("SansSerif", 1, 28)); // NOI18N
@@ -284,65 +316,61 @@ public class MainDashboard extends javax.swing.JFrame {
 
         overview.add(pnlTotalcard, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 0, -1, -1));
 
-        jPanel11.setBackground(new java.awt.Color(255, 255, 255));
+        pnlavailable.setBackground(new java.awt.Color(255, 255, 255));
 
+        lblAvailabletitle.setForeground(new java.awt.Color(39, 174, 96));
         lblAvailabletitle.setText("Available");
 
         lbltotalvalue2.setFont(new java.awt.Font("SansSerif", 1, 28)); // NOI18N
         lbltotalvalue2.setForeground(new java.awt.Color(39, 174, 96));
         lbltotalvalue2.setText("0");
 
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlavailableLayout = new javax.swing.GroupLayout(pnlavailable);
+        pnlavailable.setLayout(pnlavailableLayout);
+        pnlavailableLayout.setHorizontalGroup(
+            pnlavailableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlavailableLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblAvailabletitle)
+                .addGroup(pnlavailableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblAvailabletitle)
+                    .addComponent(lbltotalvalue2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(115, Short.MAX_VALUE))
-            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel11Layout.createSequentialGroup()
-                    .addGap(16, 16, 16)
-                    .addComponent(lbltotalvalue2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(114, Short.MAX_VALUE)))
         );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
+        pnlavailableLayout.setVerticalGroup(
+            pnlavailableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlavailableLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblAvailabletitle)
-                .addContainerGap(176, Short.MAX_VALUE))
-            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel11Layout.createSequentialGroup()
-                    .addGap(38, 38, 38)
-                    .addComponent(lbltotalvalue2)
-                    .addContainerGap(123, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbltotalvalue2)
+                .addContainerGap(133, Short.MAX_VALUE))
         );
 
-        overview.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 0, -1, -1));
+        overview.add(pnlavailable, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 0, -1, -1));
 
-        jPanel12.setBackground(new java.awt.Color(255, 255, 255));
+        pnlrented.setBackground(new java.awt.Color(255, 255, 255));
 
         lbltotalvalue1.setFont(new java.awt.Font("SansSerif", 1, 28)); // NOI18N
         lbltotalvalue1.setForeground(new java.awt.Color(142, 68, 173));
         lbltotalvalue1.setText("0");
 
+        lblrentedtitle.setForeground(new java.awt.Color(142, 68, 173));
         lblrentedtitle.setText("Rented");
 
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlrentedLayout = new javax.swing.GroupLayout(pnlrented);
+        pnlrented.setLayout(pnlrentedLayout);
+        pnlrentedLayout.setHorizontalGroup(
+            pnlrentedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlrentedLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlrentedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblrentedtitle)
                     .addComponent(lbltotalvalue1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(124, Short.MAX_VALUE))
         );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
+        pnlrentedLayout.setVerticalGroup(
+            pnlrentedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlrentedLayout.createSequentialGroup()
                 .addGap(7, 7, 7)
                 .addComponent(lblrentedtitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -350,30 +378,31 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addContainerGap(132, Short.MAX_VALUE))
         );
 
-        overview.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 0, -1, -1));
+        overview.add(pnlrented, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 0, -1, -1));
 
-        jPanel13.setBackground(new java.awt.Color(255, 255, 255));
+        pnlformainte.setBackground(new java.awt.Color(255, 255, 255));
 
+        lblformaintenancetitle.setForeground(new java.awt.Color(214, 123, 38));
         lblformaintenancetitle.setText("For Maintenance");
 
         lbltotalvalue3.setFont(new java.awt.Font("SansSerif", 1, 28)); // NOI18N
         lbltotalvalue3.setForeground(new java.awt.Color(214, 123, 38));
         lbltotalvalue3.setText("0");
 
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlformainteLayout = new javax.swing.GroupLayout(pnlformainte);
+        pnlformainte.setLayout(pnlformainteLayout);
+        pnlformainteLayout.setHorizontalGroup(
+            pnlformainteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlformainteLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlformainteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblformaintenancetitle)
                     .addComponent(lbltotalvalue3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(77, Short.MAX_VALUE))
         );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
+        pnlformainteLayout.setVerticalGroup(
+            pnlformainteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlformainteLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblformaintenancetitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -381,30 +410,31 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addContainerGap(133, Short.MAX_VALUE))
         );
 
-        overview.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(559, 0, -1, -1));
+        overview.add(pnlformainte, new org.netbeans.lib.awtextra.AbsoluteConstraints(559, 0, -1, -1));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        pnlforinspect.setBackground(new java.awt.Color(255, 255, 255));
 
+        lblformaintenancetitle1.setForeground(new java.awt.Color(227, 191, 78));
         lblformaintenancetitle1.setText("For Inspection");
 
         lbltotalvalue4.setFont(new java.awt.Font("SansSerif", 1, 28)); // NOI18N
         lbltotalvalue4.setForeground(new java.awt.Color(227, 191, 78));
         lbltotalvalue4.setText("0");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlforinspectLayout = new javax.swing.GroupLayout(pnlforinspect);
+        pnlforinspect.setLayout(pnlforinspectLayout);
+        pnlforinspectLayout.setHorizontalGroup(
+            pnlforinspectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlforinspectLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlforinspectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblformaintenancetitle1)
                     .addComponent(lbltotalvalue4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(91, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        pnlforinspectLayout.setVerticalGroup(
+            pnlforinspectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlforinspectLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblformaintenancetitle1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -412,7 +442,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addContainerGap(133, Short.MAX_VALUE))
         );
 
-        overview.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(745, 0, -1, -1));
+        overview.add(pnlforinspect, new org.netbeans.lib.awtextra.AbsoluteConstraints(745, 0, -1, -1));
 
         javax.swing.GroupLayout pnloverviewLayout = new javax.swing.GroupLayout(pnloverview);
         pnloverview.setLayout(pnloverviewLayout);
@@ -420,19 +450,12 @@ public class MainDashboard extends javax.swing.JFrame {
             pnloverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnloverviewLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4))
-            .addGroup(pnloverviewLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(pnloverviewLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(overview, javax.swing.GroupLayout.PREFERRED_SIZE, 917, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(pnloverviewLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(pnloverviewLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(quickactions, javax.swing.GroupLayout.PREFERRED_SIZE, 922, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnloverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(overview, javax.swing.GroupLayout.PREFERRED_SIZE, 917, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(quickactions, javax.swing.GroupLayout.PREFERRED_SIZE, 922, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         pnloverviewLayout.setVerticalGroup(
             pnloverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -441,21 +464,22 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addGap(6, 6, 6)
                 .addComponent(jLabel5)
-                .addGap(6, 6, 6)
-                .addComponent(overview, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(overview, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(quickactions, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(quickactions, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pnlswitcher.add(pnloverview, "dashboard");
-        pnlswitcher.add(pnlmanage, "manage");
         pnlswitcher.add(pnlInspection, "inspection");
         pnlswitcher.add(pnlmaintenance, "maintenance");
         pnlswitcher.add(pnlprocessing, "processing");
         pnlswitcher.add(pnlviewrecords, "records");
         pnlswitcher.add(pnlrentaltransaction, "transactions");
+        pnlswitcher.add(pnlmanage, "manage");
 
         pnlDashboard.add(pnlswitcher);
 
@@ -576,13 +600,10 @@ public class MainDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JLabel lblAvailabletitle;
+    private javax.swing.JLabel lbldate;
     private javax.swing.JLabel lblformaintenancetitle;
     private javax.swing.JLabel lblformaintenancetitle1;
     private javax.swing.JLabel lblrentedtitle;
@@ -595,11 +616,16 @@ public class MainDashboard extends javax.swing.JFrame {
     private javax.swing.JPanel pnlDashboard;
     private MotorcycleInspection pnlInspection;
     private javax.swing.JPanel pnlTotalcard;
+    private javax.swing.JPanel pnlavailable;
+    private javax.swing.JPanel pnlforinspect;
+    private javax.swing.JPanel pnlformainte;
     private MaintenanceRecording pnlmaintenance;
     private ManageMotorcycles pnlmanage;
     private javax.swing.JPanel pnloverview;
     private RentalProcessing pnlprocessing;
     private ViewRentalTransaction pnlrentaltransaction;
+    private javax.swing.JPanel pnlrented;
+    private javax.swing.JPanel pnlsidebar;
     private javax.swing.JPanel pnlswitcher;
     private ViewMotorcycleRecords pnlviewrecords;
     private javax.swing.JPanel quickactions;

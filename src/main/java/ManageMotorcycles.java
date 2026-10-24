@@ -29,23 +29,21 @@ public class ManageMotorcycles extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         lblMotorID = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel10 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        txtmotorid = new javax.swing.JTextField();
+        brand = new javax.swing.JLabel();
+        txtbrand = new javax.swing.JTextField();
+        model = new javax.swing.JLabel();
+        txtmodel = new javax.swing.JTextField();
+        lblyear = new javax.swing.JLabel();
+        txtyear = new javax.swing.JTextField();
+        lblmileage = new javax.swing.JLabel();
+        txtmileage = new javax.swing.JTextField();
+        lbldailyrentalrate = new javax.swing.JLabel();
+        txtdailyrentalrate = new javax.swing.JTextField();
+        lblmotortype = new javax.swing.JLabel();
+        cmbtypes = new javax.swing.JComboBox<>();
+        btnclear = new javax.swing.JButton();
+        btnaddmotorcycle = new javax.swing.JButton();
 
         setBackground(javax.swing.UIManager.getDefaults().getColor("Button.default.pressedBackground"));
         setPreferredSize(new java.awt.Dimension(970, 551));
@@ -58,57 +56,52 @@ public class ManageMotorcycles extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
-        jPanel1.setLayout(new java.awt.GridLayout(9, 2, 15, 15));
+        jPanel1.setLayout(new java.awt.GridLayout(8, 2, 15, 15));
 
         lblMotorID.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         lblMotorID.setText("Motorcycle ID:");
         jPanel1.add(lblMotorID);
 
-        jTextField1.addActionListener(this::jTextField1ActionPerformed);
-        jPanel1.add(jTextField1);
+        txtmotorid.addActionListener(this::txtmotoridActionPerformed);
+        jPanel1.add(txtmotorid);
 
-        jLabel4.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        jLabel4.setText("Brand:");
-        jPanel1.add(jLabel4);
-        jPanel1.add(jTextField2);
+        brand.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        brand.setText("Brand:");
+        jPanel1.add(brand);
+        jPanel1.add(txtbrand);
 
-        jLabel5.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        jLabel5.setText("Model:");
-        jPanel1.add(jLabel5);
-        jPanel1.add(jTextField3);
+        model.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        model.setText("Model:");
+        jPanel1.add(model);
+        jPanel1.add(txtmodel);
 
-        jLabel6.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        jLabel6.setText("Year:");
-        jPanel1.add(jLabel6);
-        jPanel1.add(jTextField4);
+        lblyear.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        lblyear.setText("Year:");
+        jPanel1.add(lblyear);
+        jPanel1.add(txtyear);
 
-        jLabel7.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        jLabel7.setText("Mileage (km):");
-        jPanel1.add(jLabel7);
-        jPanel1.add(jTextField5);
+        lblmileage.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        lblmileage.setText("Mileage (km):");
+        jPanel1.add(lblmileage);
+        jPanel1.add(txtmileage);
 
-        jLabel8.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        jLabel8.setText("Daily Rental Rate:");
-        jPanel1.add(jLabel8);
-        jPanel1.add(jTextField6);
+        lbldailyrentalrate.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        lbldailyrentalrate.setText("Daily Rental Rate:");
+        jPanel1.add(lbldailyrentalrate);
+        jPanel1.add(txtdailyrentalrate);
 
-        jLabel9.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        jLabel9.setText("Motorcycle Type");
-        jPanel1.add(jLabel9);
+        lblmotortype.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        lblmotortype.setText("Motorcycle Type");
+        jPanel1.add(lblmotortype);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Scooter", "Standard Bike", "Sports Bike", "Adventure Bike", "Electic Bike", " " }));
-        jPanel1.add(jComboBox1);
+        cmbtypes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Scooter", "Standard Bike", "Sports Bike", "Adventure Bike", "Electic Bike", " " }));
+        jPanel1.add(cmbtypes);
 
-        jLabel10.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        jLabel10.setText("Technical Specifications:");
-        jPanel1.add(jLabel10);
-        jPanel1.add(jTextField7);
+        btnclear.setText("Clear");
+        jPanel1.add(btnclear);
 
-        jButton1.setText("Add Motorcycle");
-        jPanel1.add(jButton1);
-
-        jButton2.setText("Clear");
-        jPanel1.add(jButton2);
+        btnaddmotorcycle.setText("Add Motorcycle");
+        jPanel1.add(btnaddmotorcycle);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -117,54 +110,51 @@ public class ManageMotorcycles extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(6, 6, 6)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(19, 19, 19)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 925, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 926, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(6, 6, 6)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtmotoridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtmotoridActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtmotoridActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel brand;
+    private javax.swing.JButton btnaddmotorcycle;
+    private javax.swing.JButton btnclear;
+    private javax.swing.JComboBox<String> cmbtypes;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JLabel lblMotorID;
+    private javax.swing.JLabel lbldailyrentalrate;
+    private javax.swing.JLabel lblmileage;
+    private javax.swing.JLabel lblmotortype;
+    private javax.swing.JLabel lblyear;
+    private javax.swing.JLabel model;
+    private javax.swing.JTextField txtbrand;
+    private javax.swing.JTextField txtdailyrentalrate;
+    private javax.swing.JTextField txtmileage;
+    private javax.swing.JTextField txtmodel;
+    private javax.swing.JTextField txtmotorid;
+    private javax.swing.JTextField txtyear;
     // End of variables declaration//GEN-END:variables
 }

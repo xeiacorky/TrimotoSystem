@@ -25,21 +25,34 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        viewrecords = new javax.swing.JDialog();
         description = new javax.swing.JLabel();
         title = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        recordsscrollpane = new javax.swing.JScrollPane();
+        recordstable = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         btnview = new javax.swing.JButton();
-        btndelete = new javax.swing.JButton();
         btnrefresh = new javax.swing.JButton();
+        btnedit = new javax.swing.JButton();
+        btndelete = new javax.swing.JButton();
+
+        javax.swing.GroupLayout viewrecordsLayout = new javax.swing.GroupLayout(viewrecords.getContentPane());
+        viewrecords.getContentPane().setLayout(viewrecordsLayout);
+        viewrecordsLayout.setHorizontalGroup(
+            viewrecordsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        viewrecordsLayout.setVerticalGroup(
+            viewrecordsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         description.setText("Browse registered motorcycles and their current status.");
 
         title.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         title.setText("Motorcycle Records");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        recordstable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -50,18 +63,22 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                 "ID", "Brand", "Model", "Year", "Type", "Mileage", "Daily Rate", "Status"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        recordsscrollpane.setViewportView(recordstable);
 
         jPanel1.setLayout(new java.awt.GridLayout(1, 3, 15, 0));
 
-        btnview.setText("View Selected Motorcycle");
+        btnview.setText("View ");
+        btnview.addActionListener(this::btnviewActionPerformed);
         jPanel1.add(btnview);
-
-        btndelete.setText("Delete Selected");
-        jPanel1.add(btndelete);
 
         btnrefresh.setText("Refresh");
         jPanel1.add(btnrefresh);
+
+        btnedit.setText("Edit");
+        jPanel1.add(btnedit);
+
+        btndelete.setText("Delete");
+        jPanel1.add(btndelete);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -70,17 +87,14 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
+                    .addComponent(recordsscrollpane)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(title)
-                            .addComponent(description))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addComponent(description)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 405, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(353, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,22 +104,30 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(description)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addComponent(recordsscrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewActionPerformed
+        viewrecords.pack(); // Automatically sizes the dialog to fit your labels/tables
+        viewrecords.setLocationRelativeTo(this); // Centers it on your main screen
+        viewrecords.setVisible(true);
+    }//GEN-LAST:event_btnviewActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btndelete;
+    private javax.swing.JButton btnedit;
     private javax.swing.JButton btnrefresh;
     private javax.swing.JButton btnview;
     private javax.swing.JLabel description;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane recordsscrollpane;
+    private javax.swing.JTable recordstable;
     private javax.swing.JLabel title;
+    private javax.swing.JDialog viewrecords;
     // End of variables declaration//GEN-END:variables
 }

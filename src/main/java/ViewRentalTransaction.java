@@ -1,12 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 
-/**
- *
- * @author Jaynard
- */
 public class ViewRentalTransaction extends javax.swing.JPanel {
 
     /**
@@ -25,13 +17,26 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        viewtransac = new javax.swing.JDialog();
         description = new javax.swing.JLabel();
         title = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
+        btnviewtransac = new javax.swing.JButton();
         btnreturnedmark = new javax.swing.JButton();
         btnrefresh = new javax.swing.JButton();
+
+        javax.swing.GroupLayout viewtransacLayout = new javax.swing.GroupLayout(viewtransac.getContentPane());
+        viewtransac.getContentPane().setLayout(viewtransacLayout);
+        viewtransacLayout.setHorizontalGroup(
+            viewtransacLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        viewtransacLayout.setVerticalGroup(
+            viewtransacLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         description.setText("Review rental history and transaction status.");
 
@@ -42,18 +47,22 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Transaction ID", "Motorcycle ID", "Renter", "Days", "Total Cost", "Date", "Status"
+                "Transaction ID", "Motorcycle ID", "Renter", "Rental Days", "Total Cost", "Initial Payment", "Date Rented", "Return Date", "Status"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
 
         jPanel1.setLayout(new java.awt.GridLayout(1, 3, 15, 0));
+
+        btnviewtransac.setText("View Transaction Details");
+        btnviewtransac.addActionListener(this::btnviewtransacActionPerformed);
+        jPanel1.add(btnviewtransac);
 
         btnreturnedmark.setText("Mark Motorcycle Returned");
         jPanel1.add(btnreturnedmark);
@@ -78,7 +87,7 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(529, Short.MAX_VALUE))
+                .addContainerGap(344, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,14 +104,23 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnviewtransacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewtransacActionPerformed
+
+        viewtransac.pack(); // Automatically sizes the dialog to fit your labels/tables
+        viewtransac.setLocationRelativeTo(this); // Centers it on your main screen
+        viewtransac.setVisible(true);
+    }//GEN-LAST:event_btnviewtransacActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnrefresh;
     private javax.swing.JButton btnreturnedmark;
+    private javax.swing.JButton btnviewtransac;
     private javax.swing.JLabel description;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel title;
+    private javax.swing.JDialog viewtransac;
     // End of variables declaration//GEN-END:variables
 }
