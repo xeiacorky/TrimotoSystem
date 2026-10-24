@@ -374,6 +374,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                     .addContainerGap(51, Short.MAX_VALUE)))
         );
 
+        jTextArea2.setEditable(false);
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
         jScrollPane2.setViewportView(jTextArea2);
@@ -408,6 +409,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         btneditmainte.setText("Edit");
         btneditmainte.addActionListener(this::btneditmainteActionPerformed);
 
+        jTextArea3.setEditable(false);
         jTextArea3.setColumns(20);
         jTextArea3.setRows(5);
         jScrollPane3.setViewportView(jTextArea3);
@@ -439,6 +441,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         btneditinspect.setText("Edit");
         btneditinspect.addActionListener(this::btneditinspectActionPerformed);
 
+        jTextArea4.setEditable(false);
         jTextArea4.setColumns(20);
         jTextArea4.setRows(5);
         jScrollPane4.setViewportView(jTextArea4);
@@ -470,6 +473,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         btneditdmgreport.setText("Edit");
         btneditdmgreport.addActionListener(this::btneditdmgreportActionPerformed);
 
+        jTextArea5.setEditable(false);
         jTextArea5.setColumns(20);
         jTextArea5.setRows(5);
         jScrollPane5.setViewportView(jTextArea5);
