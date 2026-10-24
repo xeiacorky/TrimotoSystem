@@ -77,6 +77,9 @@ public class MainDashboard extends javax.swing.JFrame {
         pnlformainte = new javax.swing.JPanel();
         lblformaintenancetitle = new javax.swing.JLabel();
         lbltotalvalue3 = new javax.swing.JLabel();
+        pnlforinspect1 = new javax.swing.JPanel();
+        lblformaintenancetitle2 = new javax.swing.JLabel();
+        lbltotalvalue5 = new javax.swing.JLabel();
         pnlforinspect = new javax.swing.JPanel();
         lblformaintenancetitle1 = new javax.swing.JLabel();
         lbltotalvalue4 = new javax.swing.JLabel();
@@ -315,7 +318,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addGroup(pnlTotalcardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbltotalvalue, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         pnlTotalcardLayout.setVerticalGroup(
             pnlTotalcardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -347,7 +350,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addGroup(pnlavailableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblAvailabletitle)
                     .addComponent(lbltotalvalue2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
         pnlavailableLayout.setVerticalGroup(
             pnlavailableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -379,7 +382,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addGroup(pnlrentedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblrentedtitle)
                     .addComponent(lbltotalvalue1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         pnlrentedLayout.setVerticalGroup(
             pnlrentedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -396,7 +399,7 @@ public class MainDashboard extends javax.swing.JFrame {
         pnlformainte.setBackground(new java.awt.Color(255, 255, 255));
 
         lblformaintenancetitle.setForeground(new java.awt.Color(214, 123, 38));
-        lblformaintenancetitle.setText("For Maintenance");
+        lblformaintenancetitle.setText("Under Maintenance");
 
         lbltotalvalue3.setFont(new java.awt.Font("SansSerif", 1, 28)); // NOI18N
         lbltotalvalue3.setForeground(new java.awt.Color(214, 123, 38));
@@ -411,7 +414,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addGroup(pnlformainteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblformaintenancetitle)
                     .addComponent(lbltotalvalue3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         pnlformainteLayout.setVerticalGroup(
             pnlformainteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -420,18 +423,50 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addComponent(lblformaintenancetitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbltotalvalue3)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         overview.add(pnlformainte);
 
+        pnlforinspect1.setBackground(new java.awt.Color(255, 255, 255));
+
+        lblformaintenancetitle2.setForeground(new java.awt.Color(227, 191, 78));
+        lblformaintenancetitle2.setText("Under Inspection");
+
+        lbltotalvalue5.setFont(new java.awt.Font("SansSerif", 1, 28)); // NOI18N
+        lbltotalvalue5.setForeground(new java.awt.Color(227, 191, 78));
+        lbltotalvalue5.setText("0");
+
+        javax.swing.GroupLayout pnlforinspect1Layout = new javax.swing.GroupLayout(pnlforinspect1);
+        pnlforinspect1.setLayout(pnlforinspect1Layout);
+        pnlforinspect1Layout.setHorizontalGroup(
+            pnlforinspect1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlforinspect1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlforinspect1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblformaintenancetitle2)
+                    .addComponent(lbltotalvalue5, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
+        pnlforinspect1Layout.setVerticalGroup(
+            pnlforinspect1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlforinspect1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblformaintenancetitle2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbltotalvalue5)
+                .addContainerGap(133, Short.MAX_VALUE))
+        );
+
+        overview.add(pnlforinspect1);
+
         pnlforinspect.setBackground(new java.awt.Color(255, 255, 255));
 
-        lblformaintenancetitle1.setForeground(new java.awt.Color(227, 191, 78));
-        lblformaintenancetitle1.setText("For Inspection");
+        lblformaintenancetitle1.setForeground(new java.awt.Color(117, 80, 46));
+        lblformaintenancetitle1.setText("Under Repair");
 
         lbltotalvalue4.setFont(new java.awt.Font("SansSerif", 1, 28)); // NOI18N
-        lbltotalvalue4.setForeground(new java.awt.Color(227, 191, 78));
+        lbltotalvalue4.setForeground(new java.awt.Color(117, 80, 46));
         lbltotalvalue4.setText("0");
 
         javax.swing.GroupLayout pnlforinspectLayout = new javax.swing.GroupLayout(pnlforinspect);
@@ -443,7 +478,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addGroup(pnlforinspectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblformaintenancetitle1)
                     .addComponent(lbltotalvalue4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
         pnlforinspectLayout.setVerticalGroup(
             pnlforinspectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -619,18 +654,21 @@ public class MainDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel lbldate;
     private javax.swing.JLabel lblformaintenancetitle;
     private javax.swing.JLabel lblformaintenancetitle1;
+    private javax.swing.JLabel lblformaintenancetitle2;
     private javax.swing.JLabel lblrentedtitle;
     private javax.swing.JLabel lbltotalvalue;
     private javax.swing.JLabel lbltotalvalue1;
     private javax.swing.JLabel lbltotalvalue2;
     private javax.swing.JLabel lbltotalvalue3;
     private javax.swing.JLabel lbltotalvalue4;
+    private javax.swing.JLabel lbltotalvalue5;
     private javax.swing.JPanel overview;
     private javax.swing.JPanel pnlDashboard;
     private MotorcycleInspection pnlInspection;
     private javax.swing.JPanel pnlTotalcard;
     private javax.swing.JPanel pnlavailable;
     private javax.swing.JPanel pnlforinspect;
+    private javax.swing.JPanel pnlforinspect1;
     private javax.swing.JPanel pnlformainte;
     private MaintenanceRecording pnlmaintenance;
     private ManageMotorcycles pnlmanage;

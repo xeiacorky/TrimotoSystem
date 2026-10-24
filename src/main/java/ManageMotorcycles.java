@@ -46,6 +46,10 @@ public class ManageMotorcycles extends javax.swing.JPanel {
         txtdailyrentalrate = new javax.swing.JTextField();
         lblmotortype = new javax.swing.JLabel();
         cmbtypes = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
         btnclear = new javax.swing.JButton();
         btnaddmotorcycle = new javax.swing.JButton();
 
@@ -60,7 +64,7 @@ public class ManageMotorcycles extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
-        jPanel1.setLayout(new java.awt.GridLayout(8, 2, 15, 15));
+        jPanel1.setLayout(new java.awt.GridLayout(10, 2, 15, 15));
 
         lblMotorID.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         lblMotorID.setText("Motorcycle ID:");
@@ -100,6 +104,12 @@ public class ManageMotorcycles extends javax.swing.JPanel {
 
         cmbtypes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Scooter", "Standard Bike", "Sports Bike", "Adventure Bike", "Electic Bike", " " }));
         jPanel1.add(cmbtypes);
+
+        jLabel3.setText("Transmission Type:");
+        jPanel1.add(jLabel3);
+        jPanel1.add(jTextField1);
+        jPanel1.add(jLabel4);
+        jPanel1.add(jTextField2);
 
         btnclear.setText("Clear");
         jPanel1.add(btnclear);
@@ -147,7 +157,11 @@ public class ManageMotorcycles extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> cmbtypes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel lblMotorID;
     private javax.swing.JLabel lbldailyrentalrate;
     private javax.swing.JLabel lblmileage;

@@ -34,23 +34,30 @@ public class MaintenanceRecording extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         lblmotor = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        lblmaintenancetype = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        lbldescri = new javax.swing.JLabel();
-        txtdescri = new javax.swing.JTextField();
         lblmaintenancedate = new javax.swing.JLabel();
         txtmaintedate = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        lblmaintenancetype = new javax.swing.JLabel();
+        jComboBox4 = new javax.swing.JComboBox<>();
+        jLabel12 = new javax.swing.JLabel();
+        jTextField12 = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jTextField19 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jTextField11 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jTextField15 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel21 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jLabel15 = new javax.swing.JLabel();
+        jTextField13 = new javax.swing.JTextField();
         btnsavemaintenance = new javax.swing.JButton();
+        btnclear = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(900, 550));
 
@@ -61,7 +68,7 @@ public class MaintenanceRecording extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
-        jPanel1.setLayout(new java.awt.GridLayout(9, 2, 15, 15));
+        jPanel1.setLayout(new java.awt.GridLayout(12, 2, 15, 15));
 
         lblmotor.setText("Motorcycle:");
         jPanel1.add(lblmotor);
@@ -69,63 +76,78 @@ public class MaintenanceRecording extends javax.swing.JPanel {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel1.add(jComboBox1);
 
-        lblmaintenancetype.setText("Maintenance Type");
-        jPanel1.add(lblmaintenancetype);
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new java.awt.GridLayout(1, 2));
-
-        jCheckBox1.setText("Service");
-        jPanel2.add(jCheckBox1);
-
-        jCheckBox2.setText("Repair");
-        jPanel2.add(jCheckBox2);
-
-        jPanel1.add(jPanel2);
-
-        lbldescri.setText("Description:");
-        jPanel1.add(lbldescri);
-
-        txtdescri.addActionListener(this::txtdescriActionPerformed);
-        jPanel1.add(txtdescri);
-
         lblmaintenancedate.setText("Maintenance Date:");
         jPanel1.add(lblmaintenancedate);
         jPanel1.add(txtmaintedate);
 
-        jLabel1.setText("Current Mileage:");
-        jPanel1.add(jLabel1);
-        jPanel1.add(jTextField1);
+        lblmaintenancetype.setText("Maintenance Type:");
+        jPanel1.add(lblmaintenancetype);
 
-        jLabel2.setText("Cost:");
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Preventive", "Corrective" }));
+        jPanel1.add(jComboBox4);
+
+        jLabel12.setText("Service Category");
+        jPanel1.add(jLabel12);
+        jPanel1.add(jTextField12);
+
+        jLabel16.setText("Work Performed:");
+        jPanel1.add(jLabel16);
+        jPanel1.add(jTextField19);
+
+        jLabel7.setText("Parts Replaced:");
+        jPanel1.add(jLabel7);
+        jPanel1.add(jTextField9);
+
+        jLabel17.setText("Odometer Reading(km):");
+        jPanel1.add(jLabel17);
+        jPanel1.add(jTextField11);
+
+        jLabel2.setText("Maintenance Cost:");
         jPanel1.add(jLabel2);
-        jPanel1.add(jTextField2);
+        jPanel1.add(jTextField15);
 
         jLabel3.setText("Next Service Mileage:");
         jPanel1.add(jLabel3);
-        jPanel1.add(jTextField3);
+        jPanel1.add(jTextField6);
 
-        jLabel4.setText("Status:");
-        jPanel1.add(jLabel4);
-        jPanel1.add(jTextField4);
+        jLabel13.setText("Maintenance Status:");
+        jPanel1.add(jLabel13);
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pending", "In Progress", "Completed" }));
+        jPanel1.add(jComboBox2);
+
+        jLabel21.setText("Motorcycle Availability:");
+        jPanel1.add(jLabel21);
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Available", "Under Maintenance" }));
+        jPanel1.add(jComboBox3);
+
+        jLabel15.setText("Remarks");
+        jPanel1.add(jLabel15);
+        jPanel1.add(jTextField13);
 
         btnsavemaintenance.setText("Save Maintenance Record");
         btnsavemaintenance.addActionListener(this::btnsavemaintenanceActionPerformed);
-        jPanel1.add(btnsavemaintenance);
+
+        btnclear.setText("Clear");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(title)
-                    .addComponent(description))
-                .addContainerGap(617, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 882, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 882, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(title)
+                            .addComponent(description)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnclear, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29)
+                                .addComponent(btnsavemaintenance, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -136,14 +158,14 @@ public class MaintenanceRecording extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(description)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnsavemaintenance, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnclear, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtdescriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdescriActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtdescriActionPerformed
 
     private void btnsavemaintenanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsavemaintenanceActionPerformed
         // TODO add your handling code here:
@@ -151,27 +173,34 @@ public class MaintenanceRecording extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnclear;
     private javax.swing.JButton btnsavemaintenance;
     private javax.swing.JLabel description;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JLabel lbldescri;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField19;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JLabel lblmaintenancedate;
     private javax.swing.JLabel lblmaintenancetype;
     private javax.swing.JLabel lblmotor;
     private javax.swing.JLabel title;
-    private javax.swing.JTextField txtdescri;
     private javax.swing.JTextField txtmaintedate;
     // End of variables declaration//GEN-END:variables
 }
