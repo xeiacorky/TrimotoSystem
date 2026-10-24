@@ -1,3 +1,6 @@
+
+import javax.swing.UIManager;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
@@ -13,6 +16,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
      * Creates new form MotorcycleInspection
      */
     public MotorcycleInspection() {
+        UIManager.put("Button.focusWidth", 0);
         initComponents();
     }
 
@@ -40,9 +44,9 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         lblfuel = new javax.swing.JLabel();
         txtfuel = new javax.swing.JTextField();
         lblmileage = new javax.swing.JLabel();
-        cmbmileage = new javax.swing.JComboBox<>();
+        txtmileage = new javax.swing.JTextField();
         lbloverallcondi = new javax.swing.JLabel();
-        txtoverallcondition = new javax.swing.JTextField();
+        cbcondition = new javax.swing.JComboBox<>();
         lblremarks = new javax.swing.JLabel();
         txtremarks = new javax.swing.JTextField();
         lblInspectionphase = new javax.swing.JLabel();
@@ -104,13 +108,13 @@ public class MotorcycleInspection extends javax.swing.JPanel {
 
         lblmileage.setText("Mileage:");
         jPanel1.add(lblmileage);
+        jPanel1.add(txtmileage);
 
-        cmbmileage.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Minor Damage", "Needs Repair", "Unsafe" }));
-        jPanel1.add(cmbmileage);
-
-        lbloverallcondi.setText("Overall Condition");
+        lbloverallcondi.setText("Overall Condition:");
         jPanel1.add(lbloverallcondi);
-        jPanel1.add(txtoverallcondition);
+
+        cbcondition.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Minor Damage", "Needs Repair", "Unsafe" }));
+        jPanel1.add(cbcondition);
 
         lblremarks.setText("Remarks");
         jPanel1.add(lblremarks);
@@ -170,10 +174,10 @@ public class MotorcycleInspection extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnclear;
     private javax.swing.JButton btnsaveinspect;
+    private javax.swing.JComboBox<String> cbcondition;
     private javax.swing.JCheckBox cbfull;
     private javax.swing.JComboBox<String> cbinspectionphase;
     private javax.swing.JCheckBox cbpartial;
-    private javax.swing.JComboBox<String> cmbmileage;
     private javax.swing.JComboBox<String> cmbmotorcycle;
     private javax.swing.JLabel description;
     private javax.swing.JPanel jPanel1;
@@ -189,7 +193,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
     private javax.swing.JLabel title;
     private javax.swing.JTextField txtfuel;
     private javax.swing.JTextField txtinspectdate;
-    private javax.swing.JTextField txtoverallcondition;
+    private javax.swing.JTextField txtmileage;
     private javax.swing.JTextField txtremarks;
     private javax.swing.JDialog viewinspect;
     // End of variables declaration//GEN-END:variables

@@ -1,10 +1,14 @@
 
+import javax.swing.UIManager;
+
+
 public class ViewRentalTransaction extends javax.swing.JPanel {
 
     /**
      * Creates new form ViewRentalTransaction
      */
     public ViewRentalTransaction() {
+        UIManager.put("Button.focusWidth", 0);
         initComponents();
     }
 

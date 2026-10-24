@@ -1,3 +1,6 @@
+
+import javax.swing.UIManager;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
@@ -13,6 +16,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
      * Creates new form ViewMotorcycleRecords
      */
     public ViewMotorcycleRecords() {
+        UIManager.put("Button.focusWidth", 0);
         initComponents();
     }
 
@@ -63,47 +67,37 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         lblfuel = new javax.swing.JLabel();
         txtfuel = new javax.swing.JTextField();
         lblmileage = new javax.swing.JLabel();
-        cmbmileage = new javax.swing.JComboBox<>();
+        txtmileage = new javax.swing.JTextField();
         lbloverallcondi = new javax.swing.JLabel();
-        txtoverallcondition = new javax.swing.JTextField();
+        cbcondition = new javax.swing.JComboBox<>();
         lblremarks = new javax.swing.JLabel();
         txtremarks = new javax.swing.JTextField();
         lblInspectionphase = new javax.swing.JLabel();
         cbinspectionphase = new javax.swing.JComboBox<>();
         btnviewinspectsave = new javax.swing.JButton();
-        viewmotorcycle = new javax.swing.JDialog();
-        jPanel6 = new javax.swing.JPanel();
-        lblMotorID = new javax.swing.JLabel();
-        txtmotorid = new javax.swing.JTextField();
-        brand = new javax.swing.JLabel();
-        txtbrand = new javax.swing.JTextField();
-        model = new javax.swing.JLabel();
-        txtmodel = new javax.swing.JTextField();
-        lblyear = new javax.swing.JLabel();
-        txtyear = new javax.swing.JTextField();
-        lblmileage1 = new javax.swing.JLabel();
-        txtmileage = new javax.swing.JTextField();
-        lbldailyrentalrate = new javax.swing.JLabel();
-        txtdailyrentalrate = new javax.swing.JTextField();
-        lblmotortype = new javax.swing.JLabel();
-        cmbtypes = new javax.swing.JComboBox<>();
-        btnsavemanagemotorcycle = new javax.swing.JButton();
+        screen1viewrecords = new javax.swing.JDialog();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        btneditrecords = new javax.swing.JButton();
+        screen1viewmainte = new javax.swing.JDialog();
+        btneditmainte = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
+        screen1viewinspect = new javax.swing.JDialog();
+        btneditinspect = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea4 = new javax.swing.JTextArea();
         description = new javax.swing.JLabel();
         title = new javax.swing.JLabel();
         recordsscrollpane = new javax.swing.JScrollPane();
         recordstable = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
-        btnview = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
         btnrefresh = new javax.swing.JButton();
         btnedit = new javax.swing.JButton();
         btndelete = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        btnviewmaintenancerecord = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
         btnviewinspectionrecord = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        btnviewmaintenancerecord = new javax.swing.JButton();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -204,8 +198,8 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
             viewmainteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(viewmainteLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(btnsavemainte)
                 .addContainerGap(9, Short.MAX_VALUE))
         );
@@ -245,13 +239,13 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
 
         lblmileage.setText("Mileage:");
         jPanel10.add(lblmileage);
+        jPanel10.add(txtmileage);
 
-        cmbmileage.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Minor Damage", "Needs Repair", "Unsafe" }));
-        jPanel10.add(cmbmileage);
-
-        lbloverallcondi.setText("Overall Condition");
+        lbloverallcondi.setText("Overall Condition:");
         jPanel10.add(lbloverallcondi);
-        jPanel10.add(txtoverallcondition);
+
+        cbcondition.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Minor Damage", "Needs Repair", "Unsafe" }));
+        jPanel10.add(cbcondition);
 
         lblremarks.setText("Remarks");
         jPanel10.add(lblremarks);
@@ -276,7 +270,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                 .addComponent(btnviewinspectsave)
                 .addContainerGap(316, Short.MAX_VALUE))
             .addGroup(viewinspectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewinspectLayout.createSequentialGroup()
+                .addGroup(viewinspectLayout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
                     .addContainerGap()))
@@ -290,76 +284,101 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
             .addGroup(viewinspectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(viewinspectLayout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(52, Short.MAX_VALUE)))
+                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(64, Short.MAX_VALUE)))
         );
 
-        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel6.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
-        jPanel6.setLayout(new java.awt.GridLayout(7, 2, 15, 15));
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jScrollPane2.setViewportView(jTextArea2);
 
-        lblMotorID.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        lblMotorID.setText("Motorcycle ID:");
-        jPanel6.add(lblMotorID);
+        btneditrecords.setText("Edit");
+        btneditrecords.addActionListener(this::btneditrecordsActionPerformed);
 
-        txtmotorid.addActionListener(this::txtmotoridActionPerformed);
-        jPanel6.add(txtmotorid);
-
-        brand.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        brand.setText("Brand:");
-        jPanel6.add(brand);
-        jPanel6.add(txtbrand);
-
-        model.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        model.setText("Model:");
-        jPanel6.add(model);
-        jPanel6.add(txtmodel);
-
-        lblyear.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        lblyear.setText("Year:");
-        jPanel6.add(lblyear);
-        jPanel6.add(txtyear);
-
-        lblmileage1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        lblmileage1.setText("Mileage (km):");
-        jPanel6.add(lblmileage1);
-        jPanel6.add(txtmileage);
-
-        lbldailyrentalrate.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        lbldailyrentalrate.setText("Daily Rental Rate:");
-        jPanel6.add(lbldailyrentalrate);
-        jPanel6.add(txtdailyrentalrate);
-
-        lblmotortype.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        lblmotortype.setText("Motorcycle Type");
-        jPanel6.add(lblmotortype);
-
-        cmbtypes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Scooter", "Standard Bike", "Sports Bike", "Adventure Bike", "Electic Bike", " " }));
-        jPanel6.add(cmbtypes);
-
-        btnsavemanagemotorcycle.setText("Save");
-
-        javax.swing.GroupLayout viewmotorcycleLayout = new javax.swing.GroupLayout(viewmotorcycle.getContentPane());
-        viewmotorcycle.getContentPane().setLayout(viewmotorcycleLayout);
-        viewmotorcycleLayout.setHorizontalGroup(
-            viewmotorcycleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewmotorcycleLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 686, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(viewmotorcycleLayout.createSequentialGroup()
-                .addGap(311, 311, 311)
-                .addComponent(btnsavemanagemotorcycle)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        viewmotorcycleLayout.setVerticalGroup(
-            viewmotorcycleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(viewmotorcycleLayout.createSequentialGroup()
+        javax.swing.GroupLayout screen1viewrecordsLayout = new javax.swing.GroupLayout(screen1viewrecords.getContentPane());
+        screen1viewrecords.getContentPane().setLayout(screen1viewrecordsLayout);
+        screen1viewrecordsLayout.setHorizontalGroup(
+            screen1viewrecordsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(screen1viewrecordsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(screen1viewrecordsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2)
+                    .addGroup(screen1viewrecordsLayout.createSequentialGroup()
+                        .addGap(308, 308, 308)
+                        .addComponent(btneditrecords)
+                        .addGap(0, 308, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        screen1viewrecordsLayout.setVerticalGroup(
+            screen1viewrecordsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, screen1viewrecordsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnsavemanagemotorcycle)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addComponent(btneditrecords)
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
+
+        btneditmainte.setText("Edit");
+        btneditmainte.addActionListener(this::btneditmainteActionPerformed);
+
+        jTextArea3.setColumns(20);
+        jTextArea3.setRows(5);
+        jScrollPane3.setViewportView(jTextArea3);
+
+        javax.swing.GroupLayout screen1viewmainteLayout = new javax.swing.GroupLayout(screen1viewmainte.getContentPane());
+        screen1viewmainte.getContentPane().setLayout(screen1viewmainteLayout);
+        screen1viewmainteLayout.setHorizontalGroup(
+            screen1viewmainteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(screen1viewmainteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(screen1viewmainteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3)
+                    .addGroup(screen1viewmainteLayout.createSequentialGroup()
+                        .addGap(308, 308, 308)
+                        .addComponent(btneditmainte)
+                        .addGap(0, 308, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        screen1viewmainteLayout.setVerticalGroup(
+            screen1viewmainteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, screen1viewmainteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btneditmainte)
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
+
+        btneditinspect.setText("Edit");
+        btneditinspect.addActionListener(this::btneditinspectActionPerformed);
+
+        jTextArea4.setColumns(20);
+        jTextArea4.setRows(5);
+        jScrollPane4.setViewportView(jTextArea4);
+
+        javax.swing.GroupLayout screen1viewinspectLayout = new javax.swing.GroupLayout(screen1viewinspect.getContentPane());
+        screen1viewinspect.getContentPane().setLayout(screen1viewinspectLayout);
+        screen1viewinspectLayout.setHorizontalGroup(
+            screen1viewinspectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(screen1viewinspectLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(screen1viewinspectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4)
+                    .addGroup(screen1viewinspectLayout.createSequentialGroup()
+                        .addGap(308, 308, 308)
+                        .addComponent(btneditinspect)
+                        .addGap(0, 308, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        screen1viewinspectLayout.setVerticalGroup(
+            screen1viewinspectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, screen1viewinspectLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btneditinspect)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         description.setText("Browse registered motorcycles and their current status.");
@@ -382,34 +401,24 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
 
         jPanel1.setLayout(new java.awt.GridLayout(1, 6, 15, 0));
 
-        btnview.setText("View ");
-        btnview.addActionListener(this::btnviewActionPerformed);
-
-        btnrefresh.setText("Refresh");
-
-        btnedit.setText("Edit");
-
-        btndelete.setText("Delete");
-
         jPanel2.setLayout(new java.awt.GridLayout(1, 3, 15, 0));
 
-        btnviewmaintenancerecord.setText("View Maintenance Record");
-        btnviewmaintenancerecord.addActionListener(this::btnviewmaintenancerecordActionPerformed);
-        jPanel4.add(btnviewmaintenancerecord);
+        btnrefresh.setText("Refresh");
+        jPanel2.add(btnrefresh);
 
-        jPanel2.add(jPanel4);
+        btnedit.setText("Edit");
+        jPanel2.add(btnedit);
 
-        btnviewinspectionrecord.setText("View Inspection Record");
+        btndelete.setText("Delete");
+        jPanel2.add(btndelete);
+
+        btnviewinspectionrecord.setText("View Inspection");
         btnviewinspectionrecord.addActionListener(this::btnviewinspectionrecordActionPerformed);
-        jPanel3.add(btnviewinspectionrecord);
+        jPanel2.add(btnviewinspectionrecord);
 
-        jPanel2.add(jPanel3);
-
-        jButton1.setText("View Manage Motorcycles");
-        jButton1.addActionListener(this::jButton1ActionPerformed);
-        jPanel5.add(jButton1);
-
-        jPanel2.add(jPanel5);
+        btnviewmaintenancerecord.setText("View Maintenance");
+        btnviewmaintenancerecord.addActionListener(this::btnviewmaintenancerecordActionPerformed);
+        jPanel2.add(btnviewmaintenancerecord);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -424,16 +433,8 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                             .addComponent(title)
                             .addComponent(description)
                             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnview, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(15, 15, 15)
-                                .addComponent(btnrefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(15, 15, 15)
-                                .addComponent(btnedit, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(15, 15, 15)
-                                .addComponent(btndelete, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 405, Short.MAX_VALUE)))
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 820, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 65, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -445,46 +446,28 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                 .addComponent(description)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(recordsscrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnview, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnrefresh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnedit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btndelete))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(92, 92, 92)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewActionPerformed
-        viewrecords.pack(); // Automatically sizes the dialog to fit your labels/tables
-        viewrecords.setLocationRelativeTo(this); // Centers it on your main screen
-        viewrecords.setVisible(true);
-        //dapat andito yung input nung mga user
-    }//GEN-LAST:event_btnviewActionPerformed
-
     private void btnviewinspectionrecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewinspectionrecordActionPerformed
-        viewinspect.pack(); // Automatically sizes the dialog to fit your labels/tables
-        viewinspect.setLocationRelativeTo(this); // Centers it on your main screen
-        viewinspect.setVisible(true);
-//dapat andito yung input nung mga user
+        screen1viewinspect.pack(); // Automatically sizes the dialog to fit your labels/tables
+        screen1viewinspect.setLocationRelativeTo(this); // Centers it on your main screen
+        screen1viewinspect.setVisible(true);
+        //lalabas dito dapat yung mga input
             
     }//GEN-LAST:event_btnviewinspectionrecordActionPerformed
 
     private void btnviewmaintenancerecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewmaintenancerecordActionPerformed
-        viewmainte.pack(); // Automatically sizes the dialog to fit your labels/tables
-        viewmainte.setLocationRelativeTo(this); // Centers it on your main screen
-        viewmainte.setVisible(true);
-//dapat andito yung input nung mga user
+        screen1viewmainte.pack(); // Automatically sizes the dialog to fit your labels/tables
+        screen1viewmainte.setLocationRelativeTo(this); // Centers it on your main screen
+        screen1viewmainte.setVisible(true);
                            
     }//GEN-LAST:event_btnviewmaintenancerecordActionPerformed
-
-    private void btnsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnsaveActionPerformed
 
     private void cbfullActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbfullActionPerformed
         // TODO add your handling code here:
@@ -498,39 +481,47 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtdescriActionPerformed
 
-    private void txtmotoridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtmotoridActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtmotoridActionPerformed
+    private void btneditinspectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditinspectActionPerformed
+        viewinspect.pack(); // Automatically sizes the dialog to fit your labels/tables
+        viewinspect.setLocationRelativeTo(this); // Centers it on your main screen
+        viewinspect.setVisible(true);
+//dapat andito yung input nung mga user
+    }//GEN-LAST:event_btneditinspectActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        viewmotorcycle.pack(); // Automatically sizes the dialog to fit your labels/tables
-        viewmotorcycle.setLocationRelativeTo(this); // Centers it on your main screen
-        viewmotorcycle.setVisible(true);
-        
-        //dapat andito yung input nung mga user
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btneditmainteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditmainteActionPerformed
+        viewmainte.pack(); // Automatically sizes the dialog to fit your labels/tables
+        viewmainte.setLocationRelativeTo(this); // Centers it on your main screen
+        viewmainte.setVisible(true);
+//dapat andito yung input nung mga user
+    }//GEN-LAST:event_btneditmainteActionPerformed
+
+    private void btneditrecordsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditrecordsActionPerformed
+        //lalabas dapat rito yung mga tig input dun
+    }//GEN-LAST:event_btneditrecordsActionPerformed
+
+    private void btnsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnsaveActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel brand;
     private javax.swing.JButton btndelete;
     private javax.swing.JButton btnedit;
+    private javax.swing.JButton btneditinspect;
+    private javax.swing.JButton btneditmainte;
+    private javax.swing.JButton btneditrecords;
     private javax.swing.JButton btnrefresh;
     private javax.swing.JButton btnsave;
     private javax.swing.JButton btnsavemainte;
-    private javax.swing.JButton btnsavemanagemotorcycle;
-    private javax.swing.JButton btnview;
     private javax.swing.JButton btnviewinspectionrecord;
     private javax.swing.JButton btnviewinspectsave;
     private javax.swing.JButton btnviewmaintenancerecord;
+    private javax.swing.JComboBox<String> cbcondition;
     private javax.swing.JCheckBox cbfull;
     private javax.swing.JComboBox<String> cbinspectionphase;
     private javax.swing.JCheckBox cbpartial;
-    private javax.swing.JComboBox<String> cmbmileage;
     private javax.swing.JComboBox<String> cmbmotorcycle;
-    private javax.swing.JComboBox<String> cmbtypes;
     private javax.swing.JLabel description;
-    private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -543,19 +534,19 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextArea3;
+    private javax.swing.JTextArea jTextArea4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JLabel lblInspectionphase;
-    private javax.swing.JLabel lblMotorID;
-    private javax.swing.JLabel lbldailyrentalrate;
     private javax.swing.JLabel lbldescri;
     private javax.swing.JLabel lblfuel;
     private javax.swing.JLabel lblinspectiondate;
@@ -563,33 +554,25 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
     private javax.swing.JLabel lblmaintenancedate;
     private javax.swing.JLabel lblmaintenancetype;
     private javax.swing.JLabel lblmileage;
-    private javax.swing.JLabel lblmileage1;
     private javax.swing.JLabel lblmotor;
     private javax.swing.JLabel lblmotor1;
-    private javax.swing.JLabel lblmotortype;
     private javax.swing.JLabel lbloverallcondi;
     private javax.swing.JLabel lblremarks;
-    private javax.swing.JLabel lblyear;
-    private javax.swing.JLabel model;
     private javax.swing.JPanel pnlinspectcheckbox;
     private javax.swing.JScrollPane recordsscrollpane;
     private javax.swing.JTable recordstable;
+    private javax.swing.JDialog screen1viewinspect;
+    private javax.swing.JDialog screen1viewmainte;
+    private javax.swing.JDialog screen1viewrecords;
     private javax.swing.JLabel title;
-    private javax.swing.JTextField txtbrand;
-    private javax.swing.JTextField txtdailyrentalrate;
     private javax.swing.JTextField txtdescri;
     private javax.swing.JTextField txtfuel;
     private javax.swing.JTextField txtinspectdate;
     private javax.swing.JTextField txtmaintedate;
     private javax.swing.JTextField txtmileage;
-    private javax.swing.JTextField txtmodel;
-    private javax.swing.JTextField txtmotorid;
-    private javax.swing.JTextField txtoverallcondition;
     private javax.swing.JTextField txtremarks;
-    private javax.swing.JTextField txtyear;
     private javax.swing.JDialog viewinspect;
     private javax.swing.JDialog viewmainte;
-    private javax.swing.JDialog viewmotorcycle;
     private javax.swing.JDialog viewrecords;
     // End of variables declaration//GEN-END:variables
 }

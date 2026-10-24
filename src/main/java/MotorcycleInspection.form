@@ -174,7 +174,14 @@
             <Property name="text" type="java.lang.String" value="Mileage:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="cmbmileage">
+        <Component class="javax.swing.JTextField" name="txtmileage">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbloverallcondi">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Overall Condition:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cbcondition">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -188,13 +195,6 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lbloverallcondi">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Overall Condition"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtoverallcondition">
         </Component>
         <Component class="javax.swing.JLabel" name="lblremarks">
           <Properties>

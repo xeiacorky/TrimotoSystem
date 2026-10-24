@@ -1,3 +1,6 @@
+
+import javax.swing.UIManager;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
@@ -13,6 +16,7 @@ public class ManageMotorcycles extends javax.swing.JPanel {
      * Creates new form ManageMotorcycles
      */
     public ManageMotorcycles() {
+        UIManager.put("Button.focusWidth", 0);
         initComponents();
     }
 
