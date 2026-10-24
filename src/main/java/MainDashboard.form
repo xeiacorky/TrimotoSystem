@@ -721,7 +721,7 @@
                                       <Component id="lblformaintenancetitle2" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="lbltotalvalue5" alignment="0" min="-2" pref="41" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="44" max="32767" attributes="0"/>
+                                  <EmptySpace pref="60" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -743,7 +743,7 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="4e" green="bf" red="e3" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Under Inspection"/>
+                            <Property name="text" type="java.lang.String" value="For Inspection"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="lbltotalvalue5">

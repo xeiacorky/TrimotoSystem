@@ -431,7 +431,7 @@ public class MainDashboard extends javax.swing.JFrame {
         pnlforinspect1.setBackground(new java.awt.Color(255, 255, 255));
 
         lblformaintenancetitle2.setForeground(new java.awt.Color(227, 191, 78));
-        lblformaintenancetitle2.setText("Under Inspection");
+        lblformaintenancetitle2.setText("For Inspection");
 
         lbltotalvalue5.setFont(new java.awt.Font("SansSerif", 1, 28)); // NOI18N
         lbltotalvalue5.setForeground(new java.awt.Color(227, 191, 78));
@@ -446,7 +446,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addGroup(pnlforinspect1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblformaintenancetitle2)
                     .addComponent(lbltotalvalue5, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         pnlforinspect1Layout.setVerticalGroup(
             pnlforinspect1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
