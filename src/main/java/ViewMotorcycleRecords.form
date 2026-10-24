@@ -395,6 +395,152 @@
         </Component>
       </SubComponents>
     </Container>
+    <Container class="javax.swing.JDialog" name="viewmotorcycle">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jPanel6" min="-2" pref="686" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="311" max="-2" attributes="0"/>
+                  <Component id="btnsavemanagemotorcycle" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jPanel6" min="-2" pref="391" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="btnsavemanagemotorcycle" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="32" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="jPanel6">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                <EmptyBorder bottom="15" left="15" right="15" top="15"/>
+              </Border>
+            </Property>
+          </Properties>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+            <Property name="columns" type="int" value="2"/>
+            <Property name="horizontalGap" type="int" value="15"/>
+            <Property name="rows" type="int" value="7"/>
+            <Property name="verticalGap" type="int" value="15"/>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblMotorID">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Motorcycle ID:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtmotorid">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtmotoridActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="brand">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Brand:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtbrand">
+            </Component>
+            <Component class="javax.swing.JLabel" name="model">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Model:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtmodel">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblyear">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Year:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtyear">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblmileage1">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Mileage (km):"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtmileage">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lbldailyrentalrate">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Daily Rental Rate:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtdailyrentalrate">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblmotortype">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Motorcycle Type"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cmbtypes">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="6">
+                    <StringItem index="0" value="Scooter"/>
+                    <StringItem index="1" value="Standard Bike"/>
+                    <StringItem index="2" value="Sports Bike"/>
+                    <StringItem index="3" value="Adventure Bike"/>
+                    <StringItem index="4" value="Electic Bike"/>
+                    <StringItem index="5" value=" "/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JButton" name="btnsavemanagemotorcycle">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Save"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
   </NonVisualComponents>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -533,7 +679,7 @@
     <Container class="javax.swing.JPanel" name="jPanel2">
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
-        <Property name="columns" type="int" value="2"/>
+        <Property name="columns" type="int" value="3"/>
         <Property name="horizontalGap" type="int" value="15"/>
         <Property name="rows" type="int" value="1"/>
       </Layout>
@@ -562,6 +708,20 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnviewinspectionrecordActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel5">
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JButton" name="jButton1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="View Manage Motorcycles"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

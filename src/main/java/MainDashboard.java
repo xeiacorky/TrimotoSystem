@@ -1,9 +1,12 @@
 import java.awt.CardLayout;
+import javax.swing.UIManager;
 
 
 public class MainDashboard extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainDashboard.class.getName());
+    
+    
 
     
     public MainDashboard() {
@@ -19,6 +22,9 @@ public class MainDashboard extends javax.swing.JFrame {
     );
     lbldate.setText(formattedDate);
 }).start();
+ 
+            
+            UIManager.put("Button.focusWidth", 0);
         initComponents();
         
         
@@ -179,7 +185,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addComponent(btnMotorcyclerecords, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRentalTransac, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 268, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addContainerGap())
         );
@@ -476,7 +482,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(quickactions, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(quickactions, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
