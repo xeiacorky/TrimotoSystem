@@ -2,36 +2,67 @@ import java.awt.CardLayout;
 import javax.swing.UIManager;
 
 
-public class MainDashboard extends javax.swing.JFrame {
+public class MainDashboard extends javax.swing.JFrame {  
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainDashboard.class.getName());  
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainDashboard.class.getName());
-    
-    
-
-    
-    public MainDashboard() {
-        
+   public MainDashboard() {
         try {
-    javax.swing.UIManager.setLookAndFeel(javax.swing.UIManager.getSystemLookAndFeelClassName());
-} catch (Exception e) {
-    e.printStackTrace(); //wag aalisin
-}
-            new javax.swing.Timer(1000, e -> {
-    String formattedDate = java.time.LocalDate.now().format(
-        java.time.format.DateTimeFormatter.ofPattern("MMMM dd, yyyy")
-    );
-    lbldate.setText(formattedDate);
-}).start();
- 
-            
-            UIManager.put("Button.focusWidth", 0);
-        initComponents();
+            javax.swing.UIManager.setLookAndFeel(javax.swing.UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         
-        
-        
+        new javax.swing.Timer(1000, e -> {
+            String formattedDate = java.time.LocalDate.now().format(
+                java.time.format.DateTimeFormatter.ofPattern("MMMM dd, yyyy")
+            );
+            lbldate.setText(formattedDate);
+        }).start();
 
+        UIManager.put("Button.focusWidth", 0);
+        initComponents();
+        refreshDashboardCounters();
+    }
+   
+    public void refreshDashboardCounters() {
+        long total = TrimotoSystem.motorcycles.size();
+        long available = TrimotoSystem.motorcycles.stream()
+            .filter(m -> "Available".equalsIgnoreCase(m.status)).count();
+        long rented = TrimotoSystem.motorcycles.stream()
+            .filter(m -> "Rented".equalsIgnoreCase(m.status)).count();
+        long maintenance = TrimotoSystem.motorcycles.stream()
+            .filter(m -> "Under Maintenance".equalsIgnoreCase(m.status)).count();
+        long inspection = TrimotoSystem.motorcycles.stream()
+            .filter(m -> "For Inspection".equalsIgnoreCase(m.status)).count();
+        long repair = TrimotoSystem.motorcycles.stream()
+            .filter(m -> "Under Repair".equalsIgnoreCase(m.status)).count();
+
+        lbltotalvalue.setText(String.valueOf(total));
+        lbltotalvalue2.setText(String.valueOf(available));
+        lbltotalvalue1.setText(String.valueOf(rented));
+        lbltotalvalue3.setText(String.valueOf(maintenance));
+        lbltotalvalue5.setText(String.valueOf(inspection));
+        lbltotalvalue4.setText(String.valueOf(repair));
     }
 
+   private void showCard(String name) {
+        CardLayout cl = (CardLayout) pnlswitcher.getLayout();
+        cl.show(pnlswitcher, name);
+        refreshDashboardCounters();
+        if (pnlInspection != null) pnlInspection.refreshMotorcycleDropdown();
+        if (pnlmaintenance != null) pnlmaintenance.refreshMotorcycleDropdown();
+        if (pnlprocessing != null) pnlprocessing.refreshMotorcycleDropdown();
+        if (pnlviewrecords != null) pnlviewrecords.loadTableData();
+        if (pnlrentaltransaction != null) pnlrentaltransaction.loadTableData();
+    }
+
+    public void refreshAllPanels() {
+        refreshDashboardCounters();
+        if (pnlInspection != null) pnlInspection.refreshMotorcycleDropdown();
+        if (pnlmaintenance != null) pnlmaintenance.refreshMotorcycleDropdown();
+        if (pnlprocessing != null) pnlprocessing.refreshMotorcycleDropdown();
+        if (pnlviewrecords != null) pnlviewrecords.loadTableData();
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -538,78 +569,70 @@ public class MainDashboard extends javax.swing.JFrame {
 
     private void btndashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndashboardActionPerformed
         CardLayout cl = (CardLayout) pnlswitcher.getLayout();
-        cl.show(pnlswitcher, "dashboard");
+        showCard("dashboard");
     }//GEN-LAST:event_btndashboardActionPerformed
 
     private void btnrentalprocessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrentalprocessActionPerformed
         CardLayout cl = (CardLayout) pnlswitcher.getLayout();
-        cl.show(pnlswitcher, "processing");
+        showCard("processing");
     }//GEN-LAST:event_btnrentalprocessActionPerformed
 
     private void ManageMotorcycleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageMotorcycleActionPerformed
         CardLayout cl = (CardLayout) pnlswitcher.getLayout();
-        cl.show(pnlswitcher, "manage");
+        showCard("manage");
     }//GEN-LAST:event_ManageMotorcycleActionPerformed
 
     private void btnmanagemotorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmanagemotorActionPerformed
         CardLayout cl = (CardLayout) pnlswitcher.getLayout();
-        cl.show(pnlswitcher, "manage");
+       showCard("manage");
     }//GEN-LAST:event_btnmanagemotorActionPerformed
 
     private void btninspectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninspectActionPerformed
         CardLayout cl = (CardLayout) pnlswitcher.getLayout();
-        cl.show(pnlswitcher, "inspection");
+        showCard("inspection");
     }//GEN-LAST:event_btninspectActionPerformed
 
     private void btnmaintenanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmaintenanceActionPerformed
         CardLayout cl = (CardLayout) pnlswitcher.getLayout();
-        cl.show(pnlswitcher, "maintenance");
+       showCard("maintenance");
     }//GEN-LAST:event_btnmaintenanceActionPerformed
 
     private void btnMotorcyclerecordsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMotorcyclerecordsActionPerformed
         CardLayout cl = (CardLayout) pnlswitcher.getLayout();
-        cl.show(pnlswitcher, "records");
+        showCard("records");
     }//GEN-LAST:event_btnMotorcyclerecordsActionPerformed
 
     private void btnRentalTransacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRentalTransacActionPerformed
         CardLayout cl = (CardLayout) pnlswitcher.getLayout();
-        cl.show(pnlswitcher, "transactions");
+        showCard("transactions");
     }//GEN-LAST:event_btnRentalTransacActionPerformed
 
     private void MotorcycleInspectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MotorcycleInspectionActionPerformed
         CardLayout cl = (CardLayout) pnlswitcher.getLayout();
-        cl.show(pnlswitcher, "inspection");
+        showCard("inspection");
     }//GEN-LAST:event_MotorcycleInspectionActionPerformed
 
     private void MaintenanceRecordingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MaintenanceRecordingActionPerformed
         CardLayout cl = (CardLayout) pnlswitcher.getLayout();
-        cl.show(pnlswitcher, "maintenance");
+        showCard("maintenance");
     }//GEN-LAST:event_MaintenanceRecordingActionPerformed
 
     private void RentalProcessingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RentalProcessingActionPerformed
         CardLayout cl = (CardLayout) pnlswitcher.getLayout();
-        cl.show(pnlswitcher, "processing");
+        showCard("processing");
     }//GEN-LAST:event_RentalProcessingActionPerformed
 
     private void ViewMotorcycleRecordsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewMotorcycleRecordsActionPerformed
         CardLayout cl = (CardLayout) pnlswitcher.getLayout();
-        cl.show(pnlswitcher, "records");
+        showCard("records");
     }//GEN-LAST:event_ViewMotorcycleRecordsActionPerformed
 
     private void ViewRentalTransactionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewRentalTransactionsActionPerformed
         CardLayout cl = (CardLayout) pnlswitcher.getLayout();
-        cl.show(pnlswitcher, "transactions");
+        showCard("transactions");
     }//GEN-LAST:event_ViewRentalTransactionsActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+   public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -617,15 +640,12 @@ public class MainDashboard extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (Exception ex) {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new MainDashboard().setVisible(true));
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Header;
     private javax.swing.JButton MaintenanceRecording;
