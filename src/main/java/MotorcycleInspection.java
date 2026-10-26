@@ -5,17 +5,18 @@ import javax.swing.UIManager;
 public class MotorcycleInspection extends javax.swing.JPanel {
 
     public MotorcycleInspection() {
-       UIManager.put("Button.focusWidth", 0);
+        UIManager.put("Button.focusWidth", 0);
         initComponents();
         setupEvents();
     }
+
     public void refreshMotorcycleDropdown() {
         DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
         for (Motorcycle m : TrimotoSystem.motorcycles) {
-        model.addElement(m.id + " - " + m.brand + " " + m.model);
+            model.addElement(m.id + " - " + m.brand + " " + m.model);
+        }
+        cmbmotorcycle.setModel(model);
     }
-    cmbmotorcycle.setModel(model); // adjust combo box variable name accordingly
-}
 
     private void setupEvents() {
         btnsaveinspect.addActionListener(e -> saveInspection());
@@ -26,53 +27,53 @@ public class MotorcycleInspection extends javax.swing.JPanel {
 
     private void saveInspection() {
         if (cmbmotorcycle.getSelectedItem() == null) {
-        JOptionPane.showMessageDialog(this, "No motorcycle selected.");
-        return;
-    }
-
-    String selectedItem = cmbmotorcycle.getSelectedItem().toString();
-    String motorId = selectedItem.split(" - ")[0];
-    String date = txtinspectdate.getText().trim();
-    String phase = cbinspectionphase.getSelectedItem().toString();
-    String odometer = jTextField1.getText().trim();
-    String fuel = txtfuel.getText().trim();
-    String tires = jComboBox4.getSelectedItem().toString();
-    String brakes = jComboBox2.getSelectedItem().toString();
-    String headlight = cbheadlight.getSelectedItem().toString();
-    String horns = jComboBox6.getSelectedItem().toString();
-    String mirrors = jComboBox5.getSelectedItem().toString();
-    String body = jComboBox3.getSelectedItem().toString();
-    String engine = jComboBox1.getSelectedItem().toString();
-    String condition = cbcondition.getSelectedItem().toString();
-    String readiness = jComboBox7.getSelectedItem().toString();
-    String notes = jTextField2.getText().trim();
-
-    String insId = "INS-" + (TrimotoSystem.inspections.size() + 1001);
-    TrimotoSystem.inspections.add(new InspectionRecord(
-    insId, motorId, date, phase, odometer, fuel, tires, brakes, 
-    headlight, horns, mirrors, body, engine, condition, readiness, notes
-    ));
-
-   Motorcycle m = TrimotoSystem.findMotorcycleById(motorId);
-    if (m != null) {
-        if ("Needs Repair".equals(condition) || "Unsafe".equals(condition)) {
-            m.status = "Under Repair";
-        } else if ("Minor Damage".equals(condition)) {
-            m.status = "For Inspection";
-        } else {
-            m.status = "Available";
+            JOptionPane.showMessageDialog(this, "No motorcycle selected.");
+            return;
         }
+
+        String selectedItem = cmbmotorcycle.getSelectedItem().toString();
+        String motorId = selectedItem.split(" - ")[0];
+        String date = txtinspectdate.getText().trim();
+        String phase = cbinspectionphase.getSelectedItem().toString();
+        String odometer = jTextField1.getText().trim();
+        String fuel = txtfuel.getText().trim();
+        String tires = jComboBox4.getSelectedItem().toString();
+        String brakes = jComboBox2.getSelectedItem().toString();
+        String headlight = cbheadlight.getSelectedItem().toString();
+        String horns = jComboBox6.getSelectedItem().toString();
+        String mirrors = jComboBox5.getSelectedItem().toString();
+        String body = jComboBox3.getSelectedItem().toString();
+        String engine = jComboBox1.getSelectedItem().toString();
+        String condition = cbcondition.getSelectedItem().toString();
+        String readiness = jComboBox7.getSelectedItem().toString();
+        String notes = jTextField2.getText().trim();
+
+        String insId = "INS-" + (TrimotoSystem.inspections.size() + 1001);
+        TrimotoSystem.inspections.add(new InspectionRecord(
+            insId, motorId, date, phase, odometer, fuel, tires, brakes, 
+            headlight, horns, mirrors, body, engine, condition, readiness, notes
+        ));
+
+        Motorcycle m = TrimotoSystem.findMotorcycleById(motorId);
+        if (m != null) {
+            if ("Needs Repair".equals(condition) || "Unsafe".equals(condition)) {
+                m.status = "Under Repair";
+            } else if ("Minor Damage".equals(condition)) {
+                m.status = "For Inspection";
+            } else {
+                m.status = "Available";
+            }
+        }
+
+        java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
+        if (topWindow instanceof MainDashboard) {
+            ((MainDashboard) topWindow).refreshAllPanels();
+        }
+
+        JOptionPane.showMessageDialog(this, "Inspection Saved Successfully!");
+        clearForm();
     }
 
-    // --- ADD SNIPPET HERE ---
-    java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
-    if (topWindow instanceof MainDashboard) {
-        ((MainDashboard) topWindow).refreshAllPanels();
-    }
-
-    JOptionPane.showMessageDialog(this, "Inspection Saved Successfully!");
-    clearForm();
-}
     private void clearForm() {
         txtinspectdate.setText(java.time.LocalDate.now().toString());
         txtfuel.setText("");
