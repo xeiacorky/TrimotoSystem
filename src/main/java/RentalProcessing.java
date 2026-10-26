@@ -223,11 +223,9 @@ public class RentalProcessing extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnprocessrentalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnprocessrentalActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_btnprocessrentalActionPerformed
 
     private void txtaddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtaddressActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtaddressActionPerformed
 
 

@@ -16,13 +16,12 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
    public ViewRentalTransaction() {
         UIManager.put("Button.focusWidth", 0);
         initComponents();
-        addCustomComponents(); // Must run right after initComponents()
+        addCustomComponents(); 
         setupEvents();
         loadTableData();
     }
 
    private void addCustomComponents() {
-        // Restore bottom panel to 3 buttons only
         jPanel1.removeAll();
         jPanel1.setLayout(new java.awt.GridLayout(1, 3, 15, 0));
         jPanel1.add(btnviewtransac);
@@ -31,7 +30,6 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
         jPanel1.revalidate();
         jPanel1.repaint();
 
-        // Add Filter Status dropdown to the top bar
         lblStatusFilter = new javax.swing.JLabel("Filter:");
         cmbStatusFilter = new javax.swing.JComboBox<>(new String[] { "All", "Active", "Completed" });
         cmbStatusFilter.addActionListener(e -> searchTransaction());
@@ -388,7 +386,6 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
 
         populateTable.run();
 
-        // Top Search Bar inside the popup (starts completely empty)
         JPanel topSearchPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
         JLabel lblSearch = new JLabel("Search ID:");
         JTextField txtPopupSearch = new JTextField("", 15);
@@ -417,7 +414,6 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
             packTableColumns(jTableDetailView);
         });
 
-        // Bottom Action Buttons inside the popup (Close button removed)
         JPanel btnPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 5));
         JButton btnPopupEdit = new JButton("Edit");
         JButton btnPopupDelete = new JButton("Delete");
@@ -482,7 +478,6 @@ private void showRentalProcessingEditForm() {
 
         if (target == null) return;
 
-        // Rental Processing GUI Style Form Dialog
         javax.swing.JDialog editDialog = new javax.swing.JDialog(javax.swing.SwingUtilities.getWindowAncestor(this), "Edit Rental Transaction", java.awt.Dialog.ModalityType.APPLICATION_MODAL);
         
         JTextField txtRenter = new JTextField(target.renter);

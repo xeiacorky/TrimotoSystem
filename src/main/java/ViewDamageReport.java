@@ -1,4 +1,3 @@
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 public class ViewDamageReport extends javax.swing.JPanel {
@@ -7,60 +6,48 @@ public class ViewDamageReport extends javax.swing.JPanel {
         initComponents();
         setupEvents();
     }
-
-    public void refreshMotorcycleDropdown() {
-        DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
-        for (Motorcycle m : TrimotoSystem.motorcycles) {
-            model.addElement(m.id + " - " + m.brand + " " + m.model);
-        }
-        jComboBox1.setModel(model);
-    }
-
-    private void setupEvents() {
+private void setupEvents() {
         btndamagereport.addActionListener(e -> saveDamageReport());
         btnclear.addActionListener(e -> clearForm());
-        jTextField4.setText(java.time.LocalDate.now().toString());
-        refreshMotorcycleDropdown();
     }
 
     private void saveDamageReport() {
-        if (jComboBox1.getSelectedItem() == null) {
-            JOptionPane.showMessageDialog(this, "Please select a motorcycle.", "Input Error", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
+    String motorId = jComboBox1.getSelectedItem().toString();      
+    String location = jTextField7.getText().trim();     
+    String type = jComboBox5.getSelectedItem().toString(); 
+    String desc = jTextField5.getText().trim();         
+    String date = jTextField4.getText().trim();         
+    String action = jComboBox6.getSelectedItem().toString();
+    String status = jComboBox7.getSelectedItem().toString();
+    String notes = jTextField2.getText().trim();        
+    String cost = jTextField1.getText().trim();         
 
-        String selectedItem = jComboBox1.getSelectedItem().toString();
-        String motorId = selectedItem.split(" - ")[0]; // Extracts just the Motorcycle ID
-        String location = jTextField7.getText().trim();
-        String type = jComboBox5.getSelectedItem().toString();
-        String desc = jTextField5.getText().trim();
-        String date = jTextField4.getText().trim();
-        String action = jComboBox6.getSelectedItem().toString();
-        String status = jComboBox7.getSelectedItem().toString();
-        String notes = jTextField2.getText().trim();
-        String cost = jTextField1.getText().trim();
-
-        String dmgId = "DMG-" + (TrimotoSystem.damageReports.size() + 1001);
-        String formattedRecord = "Report ID: " + dmgId + "\n" +
-                                "Motorcycle: " + motorId + "\n" +
-                                "Date: " + (date.isEmpty() ? java.time.LocalDate.now().toString() : date) + "\n" +
-                                "Location: " + (location.isEmpty() ? "-" : location) + "\n" +
-                                "Type: " + type + "\n" +
-                                "Description: " + (desc.isEmpty() ? "-" : desc) + "\n" +
-                                "Action Required: " + action + "\n" +
-                                "Status: " + status + "\n" +
-                                "Notes: " + (notes.isEmpty() ? "-" : notes) + "\n" +
-                                "Cost: " + (cost.isEmpty() ? "0" : cost);
-
-        TrimotoSystem.damageReports.add(formattedRecord);
-        JOptionPane.showMessageDialog(this, "Damage Report Saved Successfully!");
-        clearForm();
+    if (motorId.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Motorcycle ID required.", "Input Error", JOptionPane.WARNING_MESSAGE);
+        return;
     }
+
+    String dmgId = "DMG-" + (TrimotoSystem.damageReports.size() + 1001);
+    String formattedRecord = "Report ID: " + dmgId + "\n" +
+                            "Motorcycle: " + motorId + "\n" +
+                            "Date: " + (date.isEmpty() ? java.time.LocalDate.now().toString() : date) + "\n" +
+                            "Location: " + (location.isEmpty() ? "-" : location) + "\n" +
+                            "Type: " + type + "\n" +
+                            "Description: " + (desc.isEmpty() ? "-" : desc) + "\n" +
+                            "Action Required: " + action + "\n" +
+                            "Status: " + status + "\n" +
+                             "Notes: " + (notes.isEmpty() ? "-" : notes) + "\n" +
+                            "Cost: " + (cost.isEmpty() ? "0" : cost);
+
+    TrimotoSystem.damageReports.add(formattedRecord);
+    JOptionPane.showMessageDialog(this, "Damage Report Saved Successfully!");
+    clearForm();
+}
 
     private void clearForm() {
         jTextField7.setText("");
         jTextField5.setText("");
-        jTextField4.setText(java.time.LocalDate.now().toString());
+        jTextField4.setText("");
         jTextField2.setText("");
         jTextField1.setText("");
     }

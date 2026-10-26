@@ -2,19 +2,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TrimotoSystem {
-    // Centralized data repositories
     public static final List<Motorcycle> motorcycles = new ArrayList<>();
     public static final List<InspectionRecord> inspections = new ArrayList<>();
     public static final List<MaintenanceRecord> maintenanceRecords = new ArrayList<>();
     public static final List<RentalTransaction> rentals = new ArrayList<>();
     public static final List<String> damageReports = new ArrayList<>();
 
-    // Static block starts clean without hardcoded sample data
     static {
         // Default sample motorcycles removed. System starts fresh.
     }
 
-    // Helper method to look up a motorcycle by ID
     public static Motorcycle findMotorcycleById(String id) {
         if (id == null) return null;
         for (Motorcycle m : motorcycles) {
@@ -25,8 +22,6 @@ public class TrimotoSystem {
         return null;
     }
 }
-
-// --- Data Model Classes ---
 
 class Motorcycle {
     String id, brand, model, type, status;
@@ -41,7 +36,7 @@ class Motorcycle {
         this.type = type;
         this.mileage = mileage;
         this.dailyRate = dailyRate;
-        this.status = "Available"; // Default status upon creation
+        this.status = "Available"; 
     }
 
     @Override

@@ -36,7 +36,6 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
     btndelete.addActionListener(e -> deleteSelectedMotorcycle());
     btnedit.addActionListener(e -> editSelectedMotorcycle());
     
-    // Updated lines using standard lambda:
     btnviewinspectsave.addActionListener(e -> btnviewinspectsaveActionPerformed(e));
     btnsavemainte.addActionListener(e -> btnsavemainteActionPerformed(e));
 }
@@ -1072,7 +1071,6 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         jScrollPane4.setViewportView(jTableInspectionView);
 
-        // Header Filter Panel
         JPanel filterPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
         JLabel lblFilter = new JLabel("Filter Status:");
         JComboBox<String> cmbFilter = new JComboBox<>(new String[]{"All", "Good", "Minor Damage", "Needs Repair", "Unsafe"});
@@ -1314,7 +1312,6 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         jScrollPane5.setHorizontalScrollBarPolicy(javax.swing.JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         jScrollPane5.setViewportView(jTableDamageView);
 
-        // Header Filter Panel
         JPanel filterPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
         JLabel lblFilter = new JLabel("Filter Status:");
         JComboBox<String> cmbFilter = new JComboBox<>(new String[]{"All", "Pending", "Under Repair", "Resolved"});
