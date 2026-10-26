@@ -1,7 +1,12 @@
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 
@@ -25,16 +30,16 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         }
     }
 
-    private void setupEvents() {
-        btnrefresh.addActionListener(e -> loadTableData());
-        btnsearch.addActionListener(e -> searchRecord());
-        btndelete.addActionListener(e -> deleteSelectedMotorcycle());
-        btnedit.addActionListener(e -> editSelectedMotorcycle());
-        
-        // Save action listeners for dialog popups
-        btnviewinspectsave.addActionListener(this::btnviewinspectsaveActionPerformed);
-        btnsavemainte.addActionListener(this::btnsavemainteActionPerformed);
-    }
+   private void setupEvents() {
+    btnrefresh.addActionListener(e -> loadTableData());
+    btnsearch.addActionListener(e -> searchRecord());
+    btndelete.addActionListener(e -> deleteSelectedMotorcycle());
+    btnedit.addActionListener(e -> editSelectedMotorcycle());
+    
+    // Updated lines using standard lambda:
+    btnviewinspectsave.addActionListener(e -> btnviewinspectsaveActionPerformed(e));
+    btnsavemainte.addActionListener(e -> btnsavemainteActionPerformed(e));
+}
 
     public void loadTableData() {
         DefaultTableModel model = (DefaultTableModel) recordstable.getModel();
@@ -228,7 +233,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
     private void packTableColumns(javax.swing.JTable table) {
         table.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         for (int column = 0; column < table.getColumnCount(); column++) {
-            int width = 85; // Minimum column width
+            int width = 85;
             
             Object headerValue = table.getColumnModel().getColumn(column).getHeaderValue();
             if (headerValue != null) {
@@ -242,9 +247,133 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                     width = Math.max(width, cellWidth);
                 }
             }
-            
             table.getColumnModel().getColumn(column).setPreferredWidth(width);
         }
+    }
+
+    
+
+       
+    private String getRecordField(Object obj, String fieldName) {
+        if (obj == null) return "-";
+        try {
+            java.lang.reflect.Field f = obj.getClass().getDeclaredField(fieldName);
+            f.setAccessible(true);
+            Object v = f.get(obj);
+            return v != null ? v.toString() : "-";
+        } catch (Exception e) {
+            return "-";
+        }
+    }
+
+    private void deleteSelectedInspection(String selectedMotorId) {
+        int selectedRow = jTableInspectionView.getSelectedRow();
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(screen1viewinspect, "Please select an inspection row to delete.", "Selection Required", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        int confirm = JOptionPane.showConfirmDialog(screen1viewinspect, "Are you sure you want to delete this inspection record?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+        if (confirm != JOptionPane.YES_OPTION) return;
+
+        String selectedRecId = jTableInspectionView.getValueAt(selectedRow, 0).toString();
+        TrimotoSystem.inspections.removeIf(r -> selectedRecId.equalsIgnoreCase(getRecordField(r, "recordId")));
+
+        JOptionPane.showMessageDialog(screen1viewinspect, "Inspection record deleted successfully.");
+        btnviewinspectionrecordActionPerformed(null);
+    }
+
+    private void deleteSelectedMaintenance(String selectedMotorId) {
+        int selectedRow = jTableMaintenanceView.getSelectedRow();
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(screen1viewmainte, "Please select a maintenance row to delete.", "Selection Required", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        int confirm = JOptionPane.showConfirmDialog(screen1viewmainte, "Are you sure you want to delete this maintenance record?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+        if (confirm != JOptionPane.YES_OPTION) return;
+
+        String selectedRecId = jTableMaintenanceView.getValueAt(selectedRow, 0).toString();
+        TrimotoSystem.maintenanceRecords.removeIf(r -> selectedRecId.equalsIgnoreCase(getRecordField(r, "recordId")));
+
+        JOptionPane.showMessageDialog(screen1viewmainte, "Maintenance record deleted successfully.");
+        btnviewmaintenancerecordActionPerformed(null);
+    }
+
+    private void deleteSelectedDamage(String selectedMotorId) {
+        int selectedRow = jTableDamageView.getSelectedRow();
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(screen1viewdmgreport, "Please select a damage report row to delete.", "Selection Required", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        int confirm = JOptionPane.showConfirmDialog(screen1viewdmgreport, "Are you sure you want to delete this damage report?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+        if (confirm != JOptionPane.YES_OPTION) return;
+
+        String selectedReportId = jTableDamageView.getValueAt(selectedRow, 0).toString();
+        TrimotoSystem.damageReports.removeIf(r -> r.contains("Report ID: " + selectedReportId));
+
+        JOptionPane.showMessageDialog(screen1viewdmgreport, "Damage report deleted successfully.");
+        btnviewdmgActionPerformed(null);
+    }
+
+    private void btnsavemainteActionPerformed(java.awt.event.ActionEvent evt) {
+        int tableRow = (jTableMaintenanceView != null) ? jTableMaintenanceView.getSelectedRow() : -1;
+        if (tableRow == -1) return;
+
+        String targetRecId = jTableMaintenanceView.getValueAt(tableRow, 0).toString();
+        for (MaintenanceRecord record : TrimotoSystem.maintenanceRecords) {
+            if (targetRecId.equalsIgnoreCase(getRecordField(record, "recordId"))) {
+                record.date = txtmaintedate.getText().trim();
+                record.type = jComboBox4.getSelectedItem().toString();
+                record.category = jTextField12.getText().trim();
+                record.workPerformed = jTextField19.getText().trim();
+                record.partsReplaced = jTextField11.getText().trim();
+                record.odometer = jTextField13.getText().trim();
+                try {
+                    record.cost = Double.parseDouble(jTextField15.getText().trim());
+                } catch (NumberFormatException ignored) {}
+                record.nextServiceMileage = jTextField14.getText().trim();
+                record.status = jComboBox2.getSelectedItem().toString();
+                record.availability = jComboBox3.getSelectedItem().toString();
+                record.remarks = jTextField16.getText().trim();
+                break;
+            }
+        }
+
+        JOptionPane.showMessageDialog(viewmainte, "Maintenance record updated!");
+        viewmainte.dispose();
+        btnviewmaintenancerecordActionPerformed(evt);
+    }
+    
+    private void btnviewinspectsaveActionPerformed(java.awt.event.ActionEvent evt) {
+        int tableRow = (jTableInspectionView != null) ? jTableInspectionView.getSelectedRow() : -1;
+        if (tableRow == -1) return;
+
+        String targetRecId = jTableInspectionView.getValueAt(tableRow, 0).toString();
+        for (InspectionRecord record : TrimotoSystem.inspections) {
+            if (targetRecId.equalsIgnoreCase(getRecordField(record, "recordId"))) {
+                record.date = txtinspectdate.getText().trim();
+                record.phase = cbinspectionphase.getSelectedItem().toString();
+                record.odometer = jTextField1.getText().trim();
+                record.fuel = txtfuel.getText().trim();
+                record.tires = jComboBox8.getSelectedItem().toString();
+                record.brakes = jComboBox9.getSelectedItem().toString();
+                record.headlight = cbheadlight.getSelectedItem().toString();
+                record.horns = jComboBox10.getSelectedItem().toString();
+                record.mirrors = jComboBox11.getSelectedItem().toString();
+                record.body = jComboBox12.getSelectedItem().toString();
+                record.engine = jComboBox13.getSelectedItem().toString();
+                record.condition = cbcondition.getSelectedItem().toString();
+                record.readiness = jComboBox14.getSelectedItem().toString();
+                record.notes = jTextField2.getText().trim();
+                break;
+            }
+        }
+
+        JOptionPane.showMessageDialog(viewinspect, "Inspection record updated!");
+        viewinspect.dispose();
+        btnviewinspectionrecordActionPerformed(evt);
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -904,46 +1033,79 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnviewinspectionrecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewinspectionrecordActionPerformed
-     int selectedRow = recordstable.getSelectedRow();
-        if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(this, "Please select a motorcycle row to view its inspection history.", "Selection Required", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        String selectedId = recordstable.getValueAt(selectedRow, 0).toString();
+        int selectedRow = recordstable.getSelectedRow();
+        String selectedId = selectedRow != -1 ? recordstable.getValueAt(selectedRow, 0).toString() : "";
 
         DefaultTableModel tableModel = new DefaultTableModel(
             new Object[][]{},
             new String[]{
-                "Date", "Phase", "Odometer", "Fuel Level", "Tire Condition", "Brake Condition", 
-                "Headlight & Signals", "Horns", "Mirrors", "Body Condition", "Engine Condition", 
-                "Overall Condition", "Readiness Status", "Inspection Notes"
+                "Inspection ID", "Motorcycle ID", "Date", "Phase", "Odometer", "Fuel Level", "Tire Condition", 
+                "Brake Condition", "Headlight & Signals", "Horns", "Mirrors", "Body Condition", 
+                "Engine Condition", "Overall Condition", "Readiness Status", "Inspection Notes"
             }
         ) {
             @Override
-            public boolean isCellEditable(int row, int column) {
-                return false;
-            }
+            public boolean isCellEditable(int row, int column) { return false; }
         };
-
-        for (InspectionRecord record : TrimotoSystem.inspections) {
-            if (record.motorcycleId != null && record.motorcycleId.equalsIgnoreCase(selectedId)) {
-                tableModel.addRow(new Object[]{
-                    record.date, record.phase, record.odometer, record.fuel, record.tires, 
-                    record.brakes, record.headlight, record.horns, record.mirrors, record.body, 
-                    record.engine, record.condition, record.readiness, record.notes
-                });
-            }
-        }
 
         if (jTableInspectionView == null) {
             jTableInspectionView = new javax.swing.JTable();
         }
         jTableInspectionView.setModel(tableModel);
-        packTableColumns(jTableInspectionView);
 
+        Runnable populateTable = () -> {
+            tableModel.setRowCount(0);
+            for (InspectionRecord r : TrimotoSystem.inspections) {
+                String rId = getRecordField(r, "recordId");
+                if (selectedId.isEmpty() || r.motorcycleId.equalsIgnoreCase(selectedId)) {
+                    tableModel.addRow(new Object[]{
+                        rId, r.motorcycleId, r.date, r.phase, r.odometer, r.fuel, r.tires, 
+                        r.brakes, r.headlight, r.horns, r.mirrors, r.body, 
+                        r.engine, r.condition, r.readiness, r.notes
+                    });
+                }
+            }
+            packTableColumns(jTableInspectionView);
+        };
+
+        populateTable.run();
         jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         jScrollPane4.setViewportView(jTableInspectionView);
+
+        // Header Filter Panel
+        JPanel filterPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
+        JLabel lblFilter = new JLabel("Filter Status:");
+        JComboBox<String> cmbFilter = new JComboBox<>(new String[]{"All", "Good", "Minor Damage", "Needs Repair", "Unsafe"});
+        JTextField txtSearch = new JTextField(12);
+        JButton btnFilter = new JButton("Apply Filter");
+
+        filterPanel.add(lblFilter);
+        filterPanel.add(cmbFilter);
+        filterPanel.add(new JLabel("Search ID/Keyword:"));
+        filterPanel.add(txtSearch);
+        filterPanel.add(btnFilter);
+
+        btnFilter.addActionListener(e -> {
+            String selectedFilter = cmbFilter.getSelectedItem().toString();
+            String keyword = txtSearch.getText().trim().toLowerCase();
+
+            tableModel.setRowCount(0);
+            for (InspectionRecord r : TrimotoSystem.inspections) {
+                String rId = getRecordField(r, "recordId");
+                boolean matchMotor = selectedId.isEmpty() || r.motorcycleId.equalsIgnoreCase(selectedId);
+                boolean matchCondition = "All".equalsIgnoreCase(selectedFilter) || selectedFilter.equalsIgnoreCase(r.condition);
+                boolean matchKey = keyword.isEmpty() || rId.toLowerCase().contains(keyword) || r.motorcycleId.toLowerCase().contains(keyword) || r.notes.toLowerCase().contains(keyword);
+
+                if (matchMotor && matchCondition && matchKey) {
+                    tableModel.addRow(new Object[]{
+                        rId, r.motorcycleId, r.date, r.phase, r.odometer, r.fuel, r.tires, 
+                        r.brakes, r.headlight, r.horns, r.mirrors, r.body, 
+                        r.engine, r.condition, r.readiness, r.notes
+                    });
+                }
+            }
+            packTableColumns(jTableInspectionView);
+        });
 
         JPanel btnContainer = new JPanel();
         btnContainer.add(btneditinspect);
@@ -953,56 +1115,88 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         btnContainer.add(btndeleteinspect);
 
         screen1viewinspect.getContentPane().removeAll();
-        screen1viewinspect.getContentPane().setLayout(new java.awt.BorderLayout(10, 10));
-        screen1viewinspect.getContentPane().add(jScrollPane4, java.awt.BorderLayout.CENTER);
-        screen1viewinspect.getContentPane().add(btnContainer, java.awt.BorderLayout.SOUTH);
+        screen1viewinspect.getContentPane().setLayout(new BorderLayout(10, 10));
+        screen1viewinspect.getContentPane().add(filterPanel, BorderLayout.NORTH);
+        screen1viewinspect.getContentPane().add(jScrollPane4, BorderLayout.CENTER);
+        screen1viewinspect.getContentPane().add(btnContainer, BorderLayout.SOUTH);
 
-        screen1viewinspect.setSize(950, 500);
+        screen1viewinspect.setSize(1000, 520);
         screen1viewinspect.setLocationRelativeTo(javax.swing.SwingUtilities.getWindowAncestor(this));
         screen1viewinspect.setVisible(true);
     }//GEN-LAST:event_btnviewinspectionrecordActionPerformed
 
     private void btnviewmaintenancerecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewmaintenancerecordActionPerformed
-  int selectedRow = recordstable.getSelectedRow();
-        if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(this, "Please select a motorcycle row to view its maintenance history.", "Selection Required", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        String selectedId = recordstable.getValueAt(selectedRow, 0).toString();
+        int selectedRow = recordstable.getSelectedRow();
+        String selectedId = selectedRow != -1 ? recordstable.getValueAt(selectedRow, 0).toString() : "";
 
         DefaultTableModel tableModel = new DefaultTableModel(
             new Object[][]{},
             new String[]{
-                "Date", "Type", "Service Category", "Work Performed", "Parts Replaced", 
-                "Odometer Reading (km)", "Maintenance Cost (₱)", "Next Service Mileage", 
-                "Status", "Availability", "Remarks"
+                "Maintenance ID", "Motorcycle ID", "Date", "Type", "Service Category", "Work Performed", 
+                "Parts Replaced", "Odometer Reading (km)", "Maintenance Cost (₱)", 
+                "Next Service Mileage", "Status", "Availability", "Remarks"
             }
         ) {
             @Override
-            public boolean isCellEditable(int row, int column) {
-                return false;
-            }
+            public boolean isCellEditable(int row, int column) { return false; }
         };
-
-        for (MaintenanceRecord record : TrimotoSystem.maintenanceRecords) {
-            if (record.motorcycleId != null && record.motorcycleId.equalsIgnoreCase(selectedId)) {
-                tableModel.addRow(new Object[]{
-                    record.date, record.type, record.category, record.workPerformed, record.partsReplaced, 
-                    record.odometer, record.cost, record.nextServiceMileage, record.status, 
-                    record.availability, record.remarks
-                });
-            }
-        }
 
         if (jTableMaintenanceView == null) {
             jTableMaintenanceView = new javax.swing.JTable();
         }
         jTableMaintenanceView.setModel(tableModel);
-        packTableColumns(jTableMaintenanceView);
 
+        Runnable populateTable = () -> {
+            tableModel.setRowCount(0);
+            for (MaintenanceRecord r : TrimotoSystem.maintenanceRecords) {
+                String rId = getRecordField(r, "recordId");
+                if (selectedId.isEmpty() || r.motorcycleId.equalsIgnoreCase(selectedId)) {
+                    tableModel.addRow(new Object[]{
+                        rId, r.motorcycleId, r.date, r.type, r.category, r.workPerformed, r.partsReplaced, 
+                        r.odometer, r.cost, r.nextServiceMileage, r.status, r.availability, r.remarks
+                    });
+                }
+            }
+            packTableColumns(jTableMaintenanceView);
+        };
+
+        populateTable.run();
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         jScrollPane3.setViewportView(jTableMaintenanceView);
+
+        // Header Filter Panel
+        JPanel filterPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
+        JLabel lblFilter = new JLabel("Filter Status:");
+        JComboBox<String> cmbFilter = new JComboBox<>(new String[]{"All", "Pending", "In Progress", "Completed"});
+        JTextField txtSearch = new JTextField(12);
+        JButton btnFilter = new JButton("Apply Filter");
+
+        filterPanel.add(lblFilter);
+        filterPanel.add(cmbFilter);
+        filterPanel.add(new JLabel("Search ID/Keyword:"));
+        filterPanel.add(txtSearch);
+        filterPanel.add(btnFilter);
+
+        btnFilter.addActionListener(e -> {
+            String selectedFilter = cmbFilter.getSelectedItem().toString();
+            String keyword = txtSearch.getText().trim().toLowerCase();
+
+            tableModel.setRowCount(0);
+            for (MaintenanceRecord r : TrimotoSystem.maintenanceRecords) {
+                String rId = getRecordField(r, "recordId");
+                boolean matchMotor = selectedId.isEmpty() || r.motorcycleId.equalsIgnoreCase(selectedId);
+                boolean matchStatus = "All".equalsIgnoreCase(selectedFilter) || selectedFilter.equalsIgnoreCase(r.status);
+                boolean matchKey = keyword.isEmpty() || rId.toLowerCase().contains(keyword) || r.motorcycleId.toLowerCase().contains(keyword) || r.workPerformed.toLowerCase().contains(keyword);
+
+                if (matchMotor && matchStatus && matchKey) {
+                    tableModel.addRow(new Object[]{
+                        rId, r.motorcycleId, r.date, r.type, r.category, r.workPerformed, r.partsReplaced, 
+                        r.odometer, r.cost, r.nextServiceMileage, r.status, r.availability, r.remarks
+                    });
+                }
+            }
+            packTableColumns(jTableMaintenanceView);
+        });
 
         JPanel btnContainer = new JPanel();
         btnContainer.add(btneditmainte);
@@ -1012,35 +1206,29 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         btnContainer.add(btndeletemainte);
 
         screen1viewmainte.getContentPane().removeAll();
-        screen1viewmainte.getContentPane().setLayout(new java.awt.BorderLayout(10, 10));
-        screen1viewmainte.getContentPane().add(jScrollPane3, java.awt.BorderLayout.CENTER);
-        screen1viewmainte.getContentPane().add(btnContainer, java.awt.BorderLayout.SOUTH);
+        screen1viewmainte.getContentPane().setLayout(new BorderLayout(10, 10));
+        screen1viewmainte.getContentPane().add(filterPanel, BorderLayout.NORTH);
+        screen1viewmainte.getContentPane().add(jScrollPane3, BorderLayout.CENTER);
+        screen1viewmainte.getContentPane().add(btnContainer, BorderLayout.SOUTH);
 
-        screen1viewmainte.setSize(950, 500);
+        screen1viewmainte.setSize(1000, 520);
         screen1viewmainte.setLocationRelativeTo(javax.swing.SwingUtilities.getWindowAncestor(this));
         screen1viewmainte.setVisible(true);
     }//GEN-LAST:event_btnviewmaintenancerecordActionPerformed
 
     private void btneditinspectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditinspectActionPerformed
-  int selectedRow = jTableInspectionView.getSelectedRow();
+        int selectedRow = jTableInspectionView.getSelectedRow();
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(screen1viewinspect, "Please select an inspection record row to edit.", "Selection Required", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
-        int mainSelectedRow = recordstable.getSelectedRow();
-        if (mainSelectedRow == -1) return;
-        String selectedId = recordstable.getValueAt(mainSelectedRow, 0).toString();
-
+        String targetRecId = jTableInspectionView.getValueAt(selectedRow, 0).toString();
         InspectionRecord targetRecord = null;
-        int recordIndex = 0;
         for (InspectionRecord record : TrimotoSystem.inspections) {
-            if (record.motorcycleId != null && record.motorcycleId.equalsIgnoreCase(selectedId)) {
-                if (recordIndex == selectedRow) {
-                    targetRecord = record;
-                    break;
-                }
-                recordIndex++;
+            if (targetRecId.equalsIgnoreCase(getRecordField(record, "recordId"))) {
+                targetRecord = record;
+                break;
             }
         }
 
@@ -1050,28 +1238,22 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
             viewinspect.setLocationRelativeTo(javax.swing.SwingUtilities.getWindowAncestor(this));
             viewinspect.setVisible(true);
         }
+
     }//GEN-LAST:event_btneditinspectActionPerformed
 
     private void btneditmainteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditmainteActionPerformed
-      int selectedRow = jTableMaintenanceView.getSelectedRow();
+        int selectedRow = jTableMaintenanceView.getSelectedRow();
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(screen1viewmainte, "Please select a maintenance row to edit.", "Selection Required", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
-        int mainSelectedRow = recordstable.getSelectedRow();
-        if (mainSelectedRow == -1) return;
-        String selectedId = recordstable.getValueAt(mainSelectedRow, 0).toString();
-
+        String targetRecId = jTableMaintenanceView.getValueAt(selectedRow, 0).toString();
         MaintenanceRecord targetRecord = null;
-        int recordIndex = 0;
         for (MaintenanceRecord record : TrimotoSystem.maintenanceRecords) {
-            if (record.motorcycleId != null && record.motorcycleId.equalsIgnoreCase(selectedId)) {
-                if (recordIndex == selectedRow) {
-                    targetRecord = record;
-                    break;
-                }
-                recordIndex++;
+            if (targetRecId.equalsIgnoreCase(getRecordField(record, "recordId"))) {
+                targetRecord = record;
+                break;
             }
         }
 
@@ -1081,6 +1263,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
             viewmainte.setLocationRelativeTo(javax.swing.SwingUtilities.getWindowAncestor(this));
             viewmainte.setVisible(true);
         }
+ 
     }//GEN-LAST:event_btneditmainteActionPerformed
 
     private void btneditrecordsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditrecordsActionPerformed
@@ -1091,45 +1274,84 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
     }//GEN-LAST:event_btnsaveActionPerformed
 
     private void btnviewdmgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewdmgActionPerformed
-       int selectedRow = recordstable.getSelectedRow();
-        if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(this, "Please select a motorcycle row to view its damage reports.", "Selection Required", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
 
-        String selectedId = recordstable.getValueAt(selectedRow, 0).toString();
+        int selectedRow = recordstable.getSelectedRow();
+        String selectedId = selectedRow != -1 ? recordstable.getValueAt(selectedRow, 0).toString() : "";
 
         DefaultTableModel tableModel = new DefaultTableModel(
             new Object[][]{},
             new String[]{
-                "Date", "Location", "Type", "Description", "Action Required", "Cost (₱)", "Status", "Notes"
+                "Report ID", "Motorcycle ID", "Date", "Location", "Type", "Description", "Action Required", "Cost (₱)", "Status", "Notes"
             }
         ) {
             @Override
-            public boolean isCellEditable(int row, int column) {
-                return false;
-            }
+            public boolean isCellEditable(int row, int column) { return false; }
         };
-
-        for (String record : TrimotoSystem.damageReports) {
-            if (record.contains("Motorcycle: " + selectedId) || record.contains(selectedId)) {
-                tableModel.addRow(new Object[]{
-                    extractField(record, "Date"), extractField(record, "Location"), 
-                    extractField(record, "Type"), extractField(record, "Description"), 
-                    extractField(record, "Action Required"), extractField(record, "Cost"), 
-                    extractField(record, "Status"), extractField(record, "Notes")
-                });
-            }
-        }
 
         if (jTableDamageView == null) {
             jTableDamageView = new javax.swing.JTable();
         }
         jTableDamageView.setModel(tableModel);
-        packTableColumns(jTableDamageView);
 
+        Runnable populateTable = () -> {
+            tableModel.setRowCount(0);
+            for (String r : TrimotoSystem.damageReports) {
+                String rId = extractField(r, "Report ID");
+                String motor = extractField(r, "Motorcycle");
+                if (selectedId.isEmpty() || r.contains("Motorcycle: " + selectedId) || motor.equalsIgnoreCase(selectedId)) {
+                    tableModel.addRow(new Object[]{
+                        rId, motor, extractField(r, "Date"), extractField(r, "Location"), 
+                        extractField(r, "Type"), extractField(r, "Description"), 
+                        extractField(r, "Action Required"), extractField(r, "Cost"), 
+                        extractField(r, "Status"), extractField(r, "Notes")
+                    });
+                }
+            }
+            packTableColumns(jTableDamageView);
+        };
+
+        populateTable.run();
         jScrollPane5.setHorizontalScrollBarPolicy(javax.swing.JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         jScrollPane5.setViewportView(jTableDamageView);
+
+        // Header Filter Panel
+        JPanel filterPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
+        JLabel lblFilter = new JLabel("Filter Status:");
+        JComboBox<String> cmbFilter = new JComboBox<>(new String[]{"All", "Pending", "Under Repair", "Resolved"});
+        JTextField txtSearch = new JTextField(12);
+        JButton btnFilter = new JButton("Apply Filter");
+
+        filterPanel.add(lblFilter);
+        filterPanel.add(cmbFilter);
+        filterPanel.add(new JLabel("Search ID/Keyword:"));
+        filterPanel.add(txtSearch);
+        filterPanel.add(btnFilter);
+
+        btnFilter.addActionListener(e -> {
+            String selectedFilter = cmbFilter.getSelectedItem().toString();
+            String keyword = txtSearch.getText().trim().toLowerCase();
+
+            tableModel.setRowCount(0);
+            for (String r : TrimotoSystem.damageReports) {
+                String rId = extractField(r, "Report ID");
+                String motor = extractField(r, "Motorcycle");
+                String status = extractField(r, "Status");
+
+                boolean matchMotor = selectedId.isEmpty() || r.contains("Motorcycle: " + selectedId) || motor.equalsIgnoreCase(selectedId);
+                boolean matchStatus = "All".equalsIgnoreCase(selectedFilter) || selectedFilter.equalsIgnoreCase(status);
+                boolean matchKey = keyword.isEmpty() || rId.toLowerCase().contains(keyword) || motor.toLowerCase().contains(keyword) || r.toLowerCase().contains(keyword);
+
+                if (matchMotor && matchStatus && matchKey) {
+                    tableModel.addRow(new Object[]{
+                        rId, motor, extractField(r, "Date"), extractField(r, "Location"), 
+                        extractField(r, "Type"), extractField(r, "Description"), 
+                        extractField(r, "Action Required"), extractField(r, "Cost"), 
+                        status, extractField(r, "Notes")
+                    });
+                }
+            }
+            packTableColumns(jTableDamageView);
+        });
 
         JPanel btnContainer = new JPanel();
         btnContainer.add(btneditdmgreport);
@@ -1139,35 +1361,31 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         btnContainer.add(btndeletedmg);
 
         screen1viewdmgreport.getContentPane().removeAll();
-        screen1viewdmgreport.getContentPane().setLayout(new java.awt.BorderLayout(10, 10));
-        screen1viewdmgreport.getContentPane().add(jScrollPane5, java.awt.BorderLayout.CENTER);
-        screen1viewdmgreport.getContentPane().add(btnContainer, java.awt.BorderLayout.SOUTH);
+        screen1viewdmgreport.getContentPane().setLayout(new BorderLayout(10, 10));
+        screen1viewdmgreport.getContentPane().add(filterPanel, BorderLayout.NORTH);
+        screen1viewdmgreport.getContentPane().add(jScrollPane5, BorderLayout.CENTER);
+        screen1viewdmgreport.getContentPane().add(btnContainer, BorderLayout.SOUTH);
 
-        screen1viewdmgreport.setSize(950, 500);
+        screen1viewdmgreport.setSize(1000, 520);
         screen1viewdmgreport.setLocationRelativeTo(javax.swing.SwingUtilities.getWindowAncestor(this));
         screen1viewdmgreport.setVisible(true);
+    
+
     }//GEN-LAST:event_btnviewdmgActionPerformed
 
     private void btneditdmgreportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditdmgreportActionPerformed
-     int selectedRow = jTableDamageView.getSelectedRow();
+        int selectedRow = jTableDamageView.getSelectedRow();
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(screen1viewdmgreport, "Please select a damage report row to edit.", "Selection Required", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
-        int mainSelectedRow = recordstable.getSelectedRow();
-        if (mainSelectedRow == -1) return;
-        String selectedId = recordstable.getValueAt(mainSelectedRow, 0).toString();
-
+        String targetReportId = jTableDamageView.getValueAt(selectedRow, 0).toString();
         String targetRecord = null;
-        int recordIndex = 0;
         for (String record : TrimotoSystem.damageReports) {
-            if (record.contains("Motorcycle: " + selectedId) || record.contains(selectedId)) {
-                if (recordIndex == selectedRow) {
-                    targetRecord = record;
-                    break;
-                }
-                recordIndex++;
+            if (record.contains("Report ID: " + targetReportId)) {
+                targetRecord = record;
+                break;
             }
         }
 
@@ -1177,10 +1395,11 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
             viewdmg.setLocationRelativeTo(javax.swing.SwingUtilities.getWindowAncestor(this));
             viewdmg.setVisible(true);
         }
+
     }//GEN-LAST:event_btneditdmgreportActionPerformed
 
     private void btnsavedmgreportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsavedmgreportActionPerformed
-String motorcycle = jTextField8.getText().trim();
+    String motorcycle = jTextField8.getText().trim();
         String location = jTextField7.getText().trim();
         String type = jComboBox5.getSelectedItem().toString();
         String description = jTextField5.getText().trim();
@@ -1195,17 +1414,11 @@ String motorcycle = jTextField8.getText().trim();
             return;
         }
 
-        try {
-            Double.parseDouble(cost);
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Please enter a valid numeric value for Repair Cost.", "Invalid Input", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        int mainSelectedRow = recordstable.getSelectedRow();
         int tableRow = (jTableDamageView != null) ? jTableDamageView.getSelectedRow() : -1;
+        String reportId = tableRow != -1 ? jTableDamageView.getValueAt(tableRow, 0).toString() : "DMG-" + (TrimotoSystem.damageReports.size() + 1001);
 
-        String formattedRecord = "Motorcycle: " + motorcycle + "\n" +
+        String formattedRecord = "Report ID: " + reportId + "\n" +
+                                 "Motorcycle: " + motorcycle + "\n" +
                                  "Date: " + date + "\n" +
                                  "Location: " + location + "\n" +
                                  "Type: " + type + "\n" +
@@ -1215,17 +1428,11 @@ String motorcycle = jTextField8.getText().trim();
                                  "Notes: " + (notes.isEmpty() ? "-" : notes) + "\n" +
                                  "Cost: " + cost;
 
-        if (mainSelectedRow != -1 && tableRow != -1) {
-            String selectedId = recordstable.getValueAt(mainSelectedRow, 0).toString();
-            int recordIndex = 0;
+        if (tableRow != -1) {
             for (int i = 0; i < TrimotoSystem.damageReports.size(); i++) {
-                String rec = TrimotoSystem.damageReports.get(i);
-                if (rec.contains("Motorcycle: " + selectedId) || rec.contains(selectedId)) {
-                    if (recordIndex == tableRow) {
-                        TrimotoSystem.damageReports.set(i, formattedRecord);
-                        break;
-                    }
-                    recordIndex++;
+                if (TrimotoSystem.damageReports.get(i).contains("Report ID: " + reportId)) {
+                    TrimotoSystem.damageReports.set(i, formattedRecord);
+                    break;
                 }
             }
         } else {
@@ -1234,160 +1441,13 @@ String motorcycle = jTextField8.getText().trim();
 
         JOptionPane.showMessageDialog(this, "Damage report saved successfully!");
         viewdmg.dispose();
-        if (mainSelectedRow != -1) {
-            btnviewdmgActionPerformed(evt);
-        }
+        btnviewdmgActionPerformed(evt);
     }//GEN-LAST:event_btnsavedmgreportActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
-private void btnviewinspectsaveActionPerformed(java.awt.event.ActionEvent evt) {
-        int mainSelectedRow = recordstable.getSelectedRow();
-        int tableRow = (jTableInspectionView != null) ? jTableInspectionView.getSelectedRow() : -1;
-        if (mainSelectedRow == -1 || tableRow == -1) return;
 
-        String selectedId = recordstable.getValueAt(mainSelectedRow, 0).toString();
-
-        int recordIndex = 0;
-        for (InspectionRecord record : TrimotoSystem.inspections) {
-            if (record.motorcycleId != null && record.motorcycleId.equalsIgnoreCase(selectedId)) {
-                if (recordIndex == tableRow) {
-                    record.date = txtinspectdate.getText().trim();
-                    record.phase = cbinspectionphase.getSelectedItem().toString();
-                    record.odometer = jTextField1.getText().trim();
-                    record.fuel = txtfuel.getText().trim();
-                    record.tires = jComboBox8.getSelectedItem().toString();
-                    record.brakes = jComboBox9.getSelectedItem().toString();
-                    record.headlight = cbheadlight.getSelectedItem().toString();
-                    record.horns = jComboBox10.getSelectedItem().toString();
-                    record.mirrors = jComboBox11.getSelectedItem().toString();
-                    record.body = jComboBox12.getSelectedItem().toString();
-                    record.engine = jComboBox13.getSelectedItem().toString();
-                    record.condition = cbcondition.getSelectedItem().toString();
-                    record.readiness = jComboBox14.getSelectedItem().toString();
-                    record.notes = jTextField2.getText().trim();
-                    break;
-                }
-                recordIndex++;
-            }
-        }
-
-        JOptionPane.showMessageDialog(viewinspect, "Inspection record updated!");
-        viewinspect.dispose();
-        btnviewinspectionrecordActionPerformed(evt);
-    }
-
-   private void btnsavemainteActionPerformed(java.awt.event.ActionEvent evt) {
-        int mainSelectedRow = recordstable.getSelectedRow();
-        int tableRow = (jTableMaintenanceView != null) ? jTableMaintenanceView.getSelectedRow() : -1;
-        if (mainSelectedRow == -1 || tableRow == -1) return;
-
-        String selectedId = recordstable.getValueAt(mainSelectedRow, 0).toString();
-
-        int recordIndex = 0;
-        for (MaintenanceRecord record : TrimotoSystem.maintenanceRecords) {
-            if (record.motorcycleId != null && record.motorcycleId.equalsIgnoreCase(selectedId)) {
-                if (recordIndex == tableRow) {
-                    record.date = txtmaintedate.getText().trim();
-                    record.type = jComboBox4.getSelectedItem().toString();
-                    record.category = jTextField12.getText().trim();
-                    record.workPerformed = jTextField19.getText().trim();
-                    record.partsReplaced = jTextField11.getText().trim();
-                    record.odometer = jTextField13.getText().trim();
-                    try {
-                        record.cost = Double.parseDouble(jTextField15.getText().trim());
-                    } catch (NumberFormatException ignored) {}
-                    record.nextServiceMileage = jTextField14.getText().trim();
-                    record.status = jComboBox2.getSelectedItem().toString();
-                    record.availability = jComboBox3.getSelectedItem().toString();
-                    record.remarks = jTextField16.getText().trim();
-                    break;
-                }
-                recordIndex++;
-            }
-        }
-
-        JOptionPane.showMessageDialog(viewmainte, "Maintenance record updated!");
-        viewmainte.dispose();
-        btnviewmaintenancerecordActionPerformed(evt);
-    }
-    private void deleteSelectedInspection(String selectedMotorId) {
-        int selectedRow = jTableInspectionView.getSelectedRow();
-        if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(screen1viewinspect, "Please select an inspection row to delete.", "Selection Required", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        int confirm = JOptionPane.showConfirmDialog(screen1viewinspect, "Are you sure you want to delete this inspection record?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-        if (confirm != JOptionPane.YES_OPTION) return;
-
-        int recordIndex = 0;
-        for (int i = 0; i < TrimotoSystem.inspections.size(); i++) {
-            InspectionRecord rec = TrimotoSystem.inspections.get(i);
-            if (rec.motorcycleId != null && rec.motorcycleId.equalsIgnoreCase(selectedMotorId)) {
-                if (recordIndex == selectedRow) {
-                    TrimotoSystem.inspections.remove(i);
-                    break;
-                }
-                recordIndex++;
-            }
-        }
-
-        JOptionPane.showMessageDialog(screen1viewinspect, "Inspection record deleted successfully.");
-        btnviewinspectionrecordActionPerformed(null);
-    }
-    
-    private void deleteSelectedMaintenance(String selectedMotorId) {
-        int selectedRow = jTableMaintenanceView.getSelectedRow();
-        if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(screen1viewmainte, "Please select a maintenance row to delete.", "Selection Required", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        int confirm = JOptionPane.showConfirmDialog(screen1viewmainte, "Are you sure you want to delete this maintenance record?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-        if (confirm != JOptionPane.YES_OPTION) return;
-
-        int recordIndex = 0;
-        for (int i = 0; i < TrimotoSystem.maintenanceRecords.size(); i++) {
-            MaintenanceRecord rec = TrimotoSystem.maintenanceRecords.get(i);
-            if (rec.motorcycleId != null && rec.motorcycleId.equalsIgnoreCase(selectedMotorId)) {
-                if (recordIndex == selectedRow) {
-                    TrimotoSystem.maintenanceRecords.remove(i);
-                    break;
-                }
-                recordIndex++;
-            }
-        }
-
-        JOptionPane.showMessageDialog(screen1viewmainte, "Maintenance record deleted successfully.");
-        btnviewmaintenancerecordActionPerformed(null);
-    }
-    private void deleteSelectedDamage(String selectedMotorId) {
-        int selectedRow = jTableDamageView.getSelectedRow();
-        if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(screen1viewdmgreport, "Please select a damage report row to delete.", "Selection Required", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        int confirm = JOptionPane.showConfirmDialog(screen1viewdmgreport, "Are you sure you want to delete this damage report?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-        if (confirm != JOptionPane.YES_OPTION) return;
-
-        int recordIndex = 0;
-        for (int i = 0; i < TrimotoSystem.damageReports.size(); i++) {
-            String rec = TrimotoSystem.damageReports.get(i);
-            if (rec.contains("Motorcycle: " + selectedMotorId) || rec.contains(selectedMotorId)) {
-                if (recordIndex == selectedRow) {
-                    TrimotoSystem.damageReports.remove(i);
-                    break;
-                }
-                recordIndex++;
-            }
-        }
-
-        JOptionPane.showMessageDialog(screen1viewdmgreport, "Damage report deleted successfully.");
-        btnviewdmgActionPerformed(null);
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ID;
     private javax.swing.JButton btndelete;

@@ -51,11 +51,12 @@ class Motorcycle {
 }
 
 class InspectionRecord {
-    String motorcycleId, date, phase, odometer, fuel, tires, brakes, headlight, horns, mirrors, body, engine, condition, readiness, notes;
+    String recordId, motorcycleId, date, phase, odometer, fuel, tires, brakes, headlight, horns, mirrors, body, engine, condition, readiness, notes;
 
-    public InspectionRecord(String motorcycleId, String date, String phase, String odometer, String fuel,
+    public InspectionRecord(String recordId, String motorcycleId, String date, String phase, String odometer, String fuel,
                             String tires, String brakes, String headlight, String horns, String mirrors,
                             String body, String engine, String condition, String readiness, String notes) {
+        this.recordId = recordId;
         this.motorcycleId = motorcycleId;
         this.date = date;
         this.phase = phase;
@@ -74,14 +75,14 @@ class InspectionRecord {
     }
 }
 
-// Replace the existing MaintenanceRecord class with this:
 class MaintenanceRecord {
-    String motorcycleId, date, type, category, workPerformed, partsReplaced, odometer, nextServiceMileage, status, availability, remarks;
+    String recordId, motorcycleId, date, type, category, workPerformed, partsReplaced, odometer, nextServiceMileage, status, availability, remarks;
     double cost;
 
-    public MaintenanceRecord(String motorcycleId, String date, String type, String category, String workPerformed,
+    public MaintenanceRecord(String recordId, String motorcycleId, String date, String type, String category, String workPerformed,
                               String partsReplaced, String odometer, double cost, String nextServiceMileage,
                               String status, String availability, String remarks) {
+        this.recordId = recordId;
         this.motorcycleId = motorcycleId;
         this.date = date;
         this.type = type;

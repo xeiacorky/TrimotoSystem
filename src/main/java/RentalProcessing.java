@@ -58,7 +58,6 @@ public class RentalProcessing extends javax.swing.JPanel {
             returnDate = java.time.LocalDate.now().plusDays(days).toString();
         }
 
-        // Save ALL form fields into RentalTransaction
         TrimotoSystem.rentals.add(new RentalTransaction(
             transId, motorId, renter, address, contactNumber, 
             licenseNumber, days, totalCost, payment, paymentType, 
@@ -67,7 +66,6 @@ public class RentalProcessing extends javax.swing.JPanel {
 
         m.status = "Rented";
 
-        // Broadcast changes to all dashboard counters and panels
         java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
         if (topWindow instanceof MainDashboard) {
             ((MainDashboard) topWindow).refreshAllPanels();

@@ -203,11 +203,11 @@ public class MaintenanceRecording extends javax.swing.JPanel {
         String availability = jComboBox3.getSelectedItem().toString();
         String remarks = jTextField13.getText().trim();
 
+        String mntId = "MNT-" + (TrimotoSystem.maintenanceRecords.size() + 1001);
         TrimotoSystem.maintenanceRecords.add(new MaintenanceRecord(
-            motorId, date, type, category, workPerformed, partsReplaced, 
-            odometer, cost, nextServiceMileage, status, availability, remarks
-        ));
-
+        mntId, motorId, date, type, category, workPerformed, partsReplaced, 
+        odometer, cost, nextServiceMileage, status, availability, remarks
+    ));
        Motorcycle m = TrimotoSystem.findMotorcycleById(motorId);
     if (m != null) {
         m.status = availability;

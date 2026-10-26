@@ -47,9 +47,10 @@ public class MotorcycleInspection extends javax.swing.JPanel {
     String readiness = jComboBox7.getSelectedItem().toString();
     String notes = jTextField2.getText().trim();
 
+    String insId = "INS-" + (TrimotoSystem.inspections.size() + 1001);
     TrimotoSystem.inspections.add(new InspectionRecord(
-        motorId, date, phase, odometer, fuel, tires, brakes, 
-        headlight, horns, mirrors, body, engine, condition, readiness, notes
+    insId, motorId, date, phase, odometer, fuel, tires, brakes, 
+    headlight, horns, mirrors, body, engine, condition, readiness, notes
     ));
 
    Motorcycle m = TrimotoSystem.findMotorcycleById(motorId);

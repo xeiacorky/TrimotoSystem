@@ -27,16 +27,17 @@ private void setupEvents() {
         return;
     }
 
-    // Standardized labeled multiline format compatible with ViewMotorcycleRecords.extractField()
-    String formattedRecord = "Motorcycle: " + motorId + "\n" +
-                             "Date: " + (date.isEmpty() ? java.time.LocalDate.now().toString() : date) + "\n" +
-                             "Location: " + (location.isEmpty() ? "-" : location) + "\n" +
-                             "Type: " + type + "\n" +
-                             "Description: " + (desc.isEmpty() ? "-" : desc) + "\n" +
-                             "Action Required: " + action + "\n" +
-                             "Status: " + status + "\n" +
+    String dmgId = "DMG-" + (TrimotoSystem.damageReports.size() + 1001);
+    String formattedRecord = "Report ID: " + dmgId + "\n" +
+                            "Motorcycle: " + motorId + "\n" +
+                            "Date: " + (date.isEmpty() ? java.time.LocalDate.now().toString() : date) + "\n" +
+                            "Location: " + (location.isEmpty() ? "-" : location) + "\n" +
+                            "Type: " + type + "\n" +
+                            "Description: " + (desc.isEmpty() ? "-" : desc) + "\n" +
+                            "Action Required: " + action + "\n" +
+                            "Status: " + status + "\n" +
                              "Notes: " + (notes.isEmpty() ? "-" : notes) + "\n" +
-                             "Cost: " + (cost.isEmpty() ? "0" : cost);
+                            "Cost: " + (cost.isEmpty() ? "0" : cost);
 
     TrimotoSystem.damageReports.add(formattedRecord);
     JOptionPane.showMessageDialog(this, "Damage Report Saved Successfully!");
