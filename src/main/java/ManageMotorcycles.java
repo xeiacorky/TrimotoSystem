@@ -4,66 +4,10 @@ import javax.swing.UIManager;
 public class ManageMotorcycles extends javax.swing.JPanel {
 
     public ManageMotorcycles() {
-       UIManager.put("Button.focusWidth", 0);
+        UIManager.put("Button.focusWidth", 0);
         initComponents();
-        setupEvents();
-    }
-    private void setupEvents() {
-        btnaddmotorcycle.addActionListener(e -> addMotorcycle());
-        btnclear.addActionListener(e -> clearForm());
     }
 
-    private void addMotorcycle() {
-    String id = txtmotorid.getText().trim();
-    String brand = txtbrand.getText().trim();
-    String model = txtmodel.getText().trim();
-    String yearStr = txtyear.getText().trim();
-    String mileageStr = txtmileage.getText().trim();
-    String rateStr = txtdailyrentalrate.getText().trim();
-
-    if (id.isEmpty() || brand.isEmpty() || model.isEmpty() || yearStr.isEmpty() || mileageStr.isEmpty() || rateStr.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Please fill in all primary fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
-
-    if (TrimotoSystem.findMotorcycleById(id) != null) {
-        JOptionPane.showMessageDialog(this, "Motorcycle ID '" + id + "' already exists!", "Duplicate ID", JOptionPane.WARNING_MESSAGE);
-        return;
-    }
-
-    try {
-        int year = Integer.parseInt(yearStr);
-        int mileage = Integer.parseInt(mileageStr);
-        double rate = Double.parseDouble(rateStr);
-        String type = cmbtypes.getSelectedItem() != null ? cmbtypes.getSelectedItem().toString() : "Scooter";
-
-        TrimotoSystem.motorcycles.add(new Motorcycle(id, brand, model, year, type, mileage, rate));
-
-        java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
-        if (topWindow instanceof MainDashboard) {
-            MainDashboard dashboard = (MainDashboard) topWindow;
-            dashboard.refreshAllPanels();
-        }
-
-        JOptionPane.showMessageDialog(this, "Motorcycle Registered Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-        clearForm();
-
-    } catch (NumberFormatException ex) {
-        JOptionPane.showMessageDialog(this, "Please enter valid numeric values for Year, Mileage, and Daily Rate.", "Invalid Format", JOptionPane.ERROR_MESSAGE);
-        }
-    }
-    private void clearForm() {
-        txtmotorid.setText("");
-        txtbrand.setText("");
-        txtmodel.setText("");
-        txtyear.setText("");
-        txtmileage.setText("");
-        txtdailyrentalrate.setText("");
-        jTextField1.setText("");
-        jTextField2.setText("");
-        jTextField3.setText("");
-        jTextField4.setText("");
-    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -186,8 +130,10 @@ public class ManageMotorcycles extends javax.swing.JPanel {
         jPanel1.add(jTextField4);
 
         btnclear.setText("Clear");
+        btnclear.addActionListener(this::btnclearActionPerformed);
 
         btnaddmotorcycle.setText("Add Motorcycle");
+        btnaddmotorcycle.addActionListener(this::btnaddmotorcycleActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -230,6 +176,84 @@ public class ManageMotorcycles extends javax.swing.JPanel {
     private void txtmotoridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtmotoridActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtmotoridActionPerformed
+
+    private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclearActionPerformed
+       txtmotorid.setText("");
+        txtbrand.setText("");
+        txtmodel.setText("");
+        txtyear.setText("");
+        txtmileage.setText("");
+        txtdailyrentalrate.setText("");
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
+    }//GEN-LAST:event_btnclearActionPerformed
+
+    private void btnaddmotorcycleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddmotorcycleActionPerformed
+        String id = txtmotorid.getText().trim();
+        String brand = txtbrand.getText().trim();
+        String model = txtmodel.getText().trim();
+        String yearStr = txtyear.getText().trim();
+        String mileageStr = txtmileage.getText().trim();
+        String rateStr = txtdailyrentalrate.getText().trim();
+        String transmission = jTextField1.getText().trim();
+        
+        if (transmission.isEmpty()) {
+            transmission = "Manual";
+        }
+
+        if (id.isEmpty() || brand.isEmpty() || model.isEmpty() || yearStr.isEmpty() || mileageStr.isEmpty() || rateStr.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please fill in all primary fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (TrimotoSystem.findMotorcycleById(id) != null) {
+            JOptionPane.showMessageDialog(this, "Motorcycle ID '" + id + "' already exists!", "Duplicate ID", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+       try {
+            int year = Integer.parseInt(yearStr);
+            int mileage = Integer.parseInt(mileageStr);
+            double rate = Double.parseDouble(rateStr);
+            String type = cmbtypes.getSelectedItem() != null ? cmbtypes.getSelectedItem().toString().trim() : "Scooter";
+
+            Motorcycle m;
+            switch (type) {
+                case "Scooter":
+                    m = new Scooter(id, brand, model, year, transmission, mileage, rate, 125, 15.0, 5.5);
+                    break;
+                case "Adventure Bike":
+                    m = new AdventureBike(id, brand, model, year, transmission, mileage, rate, 650, 20.0, 20.0, 220.0);
+                    break;
+                case "Standard Bike":
+                    m = new StandardBike(id, brand, model, year, transmission, mileage, rate, 150, 12.0);
+                    break;
+                case "Sports Bike":
+                    m = new SportsBike(id, brand, model, year, transmission, mileage, rate, 400, 14.0);
+                    break;
+                case "Electric Bike":
+                    m = new ElectricBike(id, brand, model, year, mileage, rate, 3000.0, 60.0, 4.0);
+                    break;
+                default:
+                    m = new Scooter(id, brand, model, year, transmission, mileage, rate, 125, 15.0, 5.5);
+                    break;
+            }
+
+            TrimotoSystem.motorcycles.add(m);
+
+            java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
+            if (topWindow instanceof MainDashboard) {
+                ((MainDashboard) topWindow).refreshAllPanels();
+            }
+
+            JOptionPane.showMessageDialog(this, "Motorcycle Registered Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            btnclearActionPerformed(new java.awt.event.ActionEvent(btnclear, java.awt.event.ActionEvent.ACTION_PERFORMED, null));
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Please enter valid numeric values for Year, Mileage, and Daily Rate.", "Invalid Format", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnaddmotorcycleActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

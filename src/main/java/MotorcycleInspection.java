@@ -7,7 +7,8 @@ public class MotorcycleInspection extends javax.swing.JPanel {
     public MotorcycleInspection() {
         UIManager.put("Button.focusWidth", 0);
         initComponents();
-        setupEvents();
+        txtinspectdate.setText(java.time.LocalDate.now().toString());
+        refreshMotorcycleDropdown();
     }
 
     public void refreshMotorcycleDropdown() {
@@ -18,68 +19,6 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         cmbmotorcycle.setModel(model);
     }
 
-    private void setupEvents() {
-        btnsaveinspect.addActionListener(e -> saveInspection());
-        btnclear.addActionListener(e -> clearForm());
-        txtinspectdate.setText(java.time.LocalDate.now().toString());
-        refreshMotorcycleDropdown();
-    }
-
-    private void saveInspection() {
-        if (cmbmotorcycle.getSelectedItem() == null) {
-            JOptionPane.showMessageDialog(this, "No motorcycle selected.");
-            return;
-        }
-
-        String selectedItem = cmbmotorcycle.getSelectedItem().toString();
-        String motorId = selectedItem.split(" - ")[0];
-        String date = txtinspectdate.getText().trim();
-        String phase = cbinspectionphase.getSelectedItem().toString();
-        String odometer = jTextField1.getText().trim();
-        String fuel = txtfuel.getText().trim();
-        String tires = jComboBox4.getSelectedItem().toString();
-        String brakes = jComboBox2.getSelectedItem().toString();
-        String headlight = cbheadlight.getSelectedItem().toString();
-        String horns = jComboBox6.getSelectedItem().toString();
-        String mirrors = jComboBox5.getSelectedItem().toString();
-        String body = jComboBox3.getSelectedItem().toString();
-        String engine = jComboBox1.getSelectedItem().toString();
-        String condition = cbcondition.getSelectedItem().toString();
-        String readiness = jComboBox7.getSelectedItem().toString();
-        String notes = jTextField2.getText().trim();
-
-        String insId = "INS-" + (TrimotoSystem.inspections.size() + 1001);
-        TrimotoSystem.inspections.add(new InspectionRecord(
-            insId, motorId, date, phase, odometer, fuel, tires, brakes, 
-            headlight, horns, mirrors, body, engine, condition, readiness, notes
-        ));
-
-        Motorcycle m = TrimotoSystem.findMotorcycleById(motorId);
-        if (m != null) {
-            if ("Needs Repair".equals(condition) || "Unsafe".equals(condition)) {
-                m.status = "Under Repair";
-            } else if ("Minor Damage".equals(condition)) {
-                m.status = "For Inspection";
-            } else {
-                m.status = "Available";
-            }
-        }
-
-        java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
-        if (topWindow instanceof MainDashboard) {
-            ((MainDashboard) topWindow).refreshAllPanels();
-        }
-
-        JOptionPane.showMessageDialog(this, "Inspection Saved Successfully!");
-        clearForm();
-    }
-
-    private void clearForm() {
-        txtinspectdate.setText(java.time.LocalDate.now().toString());
-        txtfuel.setText("");
-        jTextField1.setText("");
-        jTextField2.setText("");
-    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -231,8 +170,10 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         btncreatedmgreport.addActionListener(this::btncreatedmgreportActionPerformed);
 
         btnsaveinspect.setText("Save Inspection");
+        btnsaveinspect.addActionListener(this::btnsaveinspectActionPerformed);
 
         btnclear.setText("Clear");
+        btnclear.addActionListener(this::btnclearActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -280,6 +221,61 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         popupDialog.setLocationRelativeTo(this);
         popupDialog.setVisible(true);
     }//GEN-LAST:event_btncreatedmgreportActionPerformed
+
+    private void btnsaveinspectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveinspectActionPerformed
+        if (cmbmotorcycle.getSelectedItem() == null) {
+            JOptionPane.showMessageDialog(this, "No motorcycle selected.");
+            return;
+        }
+
+        String selectedItem = cmbmotorcycle.getSelectedItem().toString();
+        String motorId = selectedItem.split(" - ")[0];
+        String date = txtinspectdate.getText().trim();
+        String phase = cbinspectionphase.getSelectedItem().toString();
+        String odometer = jTextField1.getText().trim();
+        String fuel = txtfuel.getText().trim();
+        String tires = jComboBox4.getSelectedItem().toString();
+        String brakes = jComboBox2.getSelectedItem().toString();
+        String headlight = cbheadlight.getSelectedItem().toString();
+        String horns = jComboBox6.getSelectedItem().toString();
+        String mirrors = jComboBox5.getSelectedItem().toString();
+        String body = jComboBox3.getSelectedItem().toString();
+        String engine = jComboBox1.getSelectedItem().toString();
+        String condition = cbcondition.getSelectedItem().toString();
+        String readiness = jComboBox7.getSelectedItem().toString();
+        String notes = jTextField2.getText().trim();
+
+        String insId = "INS-" + (TrimotoSystem.inspections.size() + 1001);
+        TrimotoSystem.inspections.add(new InspectionRecord(
+            insId, motorId, date, phase, odometer, fuel, tires, brakes, 
+            headlight, horns, mirrors, body, engine, condition, readiness, notes
+        ));
+
+        Motorcycle m = TrimotoSystem.findMotorcycleById(motorId);
+        if (m != null) {
+            if ("Needs Repair".equalsIgnoreCase(condition) || "Unsafe".equalsIgnoreCase(condition)) {
+                m.status = "Under Repair";
+            } else if ("Minor Damage".equalsIgnoreCase(condition)) {
+                m.status = "For Inspection";
+            } else {
+                m.status = "Available";
+            }
+        }
+
+        java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
+        if (topWindow instanceof MainDashboard) {
+            ((MainDashboard) topWindow).refreshAllPanels();
+        }
+
+        JOptionPane.showMessageDialog(this, "Inspection Saved Successfully!");
+        btnclearActionPerformed(new java.awt.event.ActionEvent(btnclear, java.awt.event.ActionEvent.ACTION_PERFORMED, null));
+    }//GEN-LAST:event_btnsaveinspectActionPerformed
+
+    private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclearActionPerformed
+        txtinspectdate.setText(java.time.LocalDate.now().toString());
+        txtfuel.setText("");
+        jTextField1.setText("");
+        jTextField2.setText("");    }//GEN-LAST:event_btnclearActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

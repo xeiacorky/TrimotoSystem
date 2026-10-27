@@ -35,7 +35,7 @@
                   <Group type="102" attributes="0">
                       <Component id="btnclear" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="231" max="-2" attributes="0"/>
-                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                      <Component id="calculateCost" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnprocessrental" min="-2" pref="153" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -59,7 +59,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnclear" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnprocessrental" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="calculateCost" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="56" max="32767" attributes="0"/>
           </Group>
@@ -189,11 +189,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Partial Payment"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbpartialActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JCheckBox" name="cbfull">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Full Payment"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbfullActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -218,6 +224,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Clear"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnclearActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnprocessrental">
       <Properties>
@@ -227,10 +236,13 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnprocessrentalActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="calculateCost">
       <Properties>
         <Property name="text" type="java.lang.String" value="Calculate Cost"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calculateCostActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

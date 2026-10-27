@@ -1,11 +1,10 @@
 import java.awt.CardLayout;
 import javax.swing.UIManager;
 
-
 public class MainDashboard extends javax.swing.JFrame {  
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainDashboard.class.getName());  
     
-   public MainDashboard() {
+    public MainDashboard() {
         try {
             javax.swing.UIManager.setLookAndFeel(javax.swing.UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {
@@ -45,7 +44,7 @@ public class MainDashboard extends javax.swing.JFrame {
         lbltotalvalue4.setText(String.valueOf(repair));
     }
 
-   private void showCard(String name) {
+    private void showCard(String name) {
         CardLayout cl = (CardLayout) pnlswitcher.getLayout();
         cl.show(pnlswitcher, name);
         refreshDashboardCounters();
@@ -62,6 +61,7 @@ public class MainDashboard extends javax.swing.JFrame {
         if (pnlmaintenance != null) pnlmaintenance.refreshMotorcycleDropdown();
         if (pnlprocessing != null) pnlprocessing.refreshMotorcycleDropdown();
         if (pnlviewrecords != null) pnlviewrecords.loadTableData();
+        if (pnlrentaltransaction != null) pnlrentaltransaction.loadTableData();
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

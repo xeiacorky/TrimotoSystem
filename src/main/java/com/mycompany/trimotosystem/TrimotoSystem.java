@@ -8,10 +8,6 @@ public class TrimotoSystem {
     public static final List<RentalTransaction> rentals = new ArrayList<>();
     public static final List<String> damageReports = new ArrayList<>();
 
-    static {
-        // Default sample motorcycles removed. System starts fresh.
-    }
-
     public static Motorcycle findMotorcycleById(String id) {
         if (id == null) return null;
         for (Motorcycle m : motorcycles) {
@@ -23,25 +19,111 @@ public class TrimotoSystem {
     }
 }
 
-class Motorcycle {
-    String id, brand, model, type, status;
-    int year, mileage;
-    double dailyRate;
 
-    public Motorcycle(String id, String brand, String model, int year, String type, int mileage, double dailyRate) {
+abstract class Motorcycle {
+    public String id;
+    public String brand;
+    public String model;
+    public int year;
+    public String type;
+    public String transmissionType;
+    public int mileage;
+    public double dailyRate;
+    public String status;
+
+    public Motorcycle(String id, String brand, String model, int year, String type, String transmissionType, int mileage, double dailyRate) {
         this.id = id;
         this.brand = brand;
         this.model = model;
         this.year = year;
         this.type = type;
+        this.transmissionType = transmissionType;
         this.mileage = mileage;
         this.dailyRate = dailyRate;
-        this.status = "Available"; 
+        this.status = "Available";
     }
+}
 
-    @Override
-    public String toString() {
-        return id + " - " + brand + " " + model;
+// Scooter Subclass
+class Scooter extends Motorcycle {
+    public int engineDisplacement;
+    public double storageCapacity; // Compartment Capacity
+    public double fuelCapacity;
+
+    public Scooter(String id, String brand, String model, int year, String transmissionType, int mileage, double dailyRate, int engineDisplacement, double storageCapacity, double fuelCapacity) {
+        super(id, brand, model, year, "Scooter", transmissionType, mileage, dailyRate);
+        this.engineDisplacement = engineDisplacement;
+        this.storageCapacity = storageCapacity;
+        this.fuelCapacity = fuelCapacity;
+    }
+}
+
+class AdventureBike extends Motorcycle {
+    public int engineDisplacement;
+    public double storageCapacity; // Compartment Capacity
+    public double fuelCapacity;
+    public double groundClearance;
+
+    public AdventureBike(String id, String brand, String model, int year, String transmissionType, int mileage, double dailyRate, int engineDisplacement, double storageCapacity, double fuelCapacity, double groundClearance) {
+        super(id, brand, model, year, "Adventure Bike", transmissionType, mileage, dailyRate);
+        this.engineDisplacement = engineDisplacement;
+        this.storageCapacity = storageCapacity;
+        this.fuelCapacity = fuelCapacity;
+        this.groundClearance = groundClearance;
+    }
+}
+
+// StandardBike Subclass
+class StandardBike extends Motorcycle {
+    public int engineDisplacement;
+    public double fuelCapacity;
+
+    public StandardBike(String id, String brand, String model, int year, String transmissionType, int mileage, double dailyRate, int engineDisplacement, double fuelCapacity) {
+        super(id, brand, model, year, "Standard Bike", transmissionType, mileage, dailyRate);
+        this.engineDisplacement = engineDisplacement;
+        this.fuelCapacity = fuelCapacity;
+    }
+}
+
+// SportsBike Subclass
+class SportsBike extends Motorcycle {
+    public int engineDisplacement;
+    public double fuelCapacity;
+
+    public SportsBike(String id, String brand, String model, int year, String transmissionType, int mileage, double dailyRate, int engineDisplacement, double fuelCapacity) {
+        super(id, brand, model, year, "Sports Bike", transmissionType, mileage, dailyRate);
+        this.engineDisplacement = engineDisplacement;
+        this.fuelCapacity = fuelCapacity;
+    }
+}
+
+// ElectricBike Subclass
+class ElectricBike extends Motorcycle {
+    public double motorPower;
+    public double batteryCapacity;
+    public double chargingTime;
+
+    public ElectricBike(String id, String brand, String model, int year, int mileage, double dailyRate, double motorPower, double batteryCapacity, double chargingTime) {
+        super(id, brand, model, year, "Electric Bike", "Automatic", mileage, dailyRate);
+        this.motorPower = motorPower;
+        this.batteryCapacity = batteryCapacity;
+        this.chargingTime = chargingTime;
+    }
+}
+
+class RenterProfile {
+    public String name;
+    public String address;
+    public String contactNumber;
+    public String licenseNumber;
+    public String age;
+
+    public RenterProfile(String name, String address, String contactNumber, String licenseNumber, String age) {
+        this.name = name;
+        this.address = address;
+        this.contactNumber = contactNumber;
+        this.licenseNumber = licenseNumber;
+        this.age = age;
     }
 }
 
@@ -96,10 +178,7 @@ class MaintenanceRecord {
 class RentalTransaction {
     public String transactionId;
     public String motorcycleId;
-    public String renter;
-    public String address;
-    public String contactNumber;
-    public String licenseNumber;
+    public RenterProfile renterProfile;
     public int days;
     public double totalCost;
     public double initialPayment;
@@ -108,16 +187,12 @@ class RentalTransaction {
     public String returnDate;
     public String status;
 
-    public RentalTransaction(String transactionId, String motorcycleId, String renter, 
-                             String address, String contactNumber, String licenseNumber, 
+    public RentalTransaction(String transactionId, String motorcycleId, RenterProfile renterProfile, 
                              int days, double totalCost, double initialPayment, 
                              String paymentType, String date, String returnDate, String status) {
         this.transactionId = transactionId;
         this.motorcycleId = motorcycleId;
-        this.renter = renter;
-        this.address = address;
-        this.contactNumber = contactNumber;
-        this.licenseNumber = licenseNumber;
+        this.renterProfile = renterProfile;
         this.days = days;
         this.totalCost = totalCost;
         this.initialPayment = initialPayment;
@@ -125,5 +200,21 @@ class RentalTransaction {
         this.date = date;
         this.returnDate = returnDate;
         this.status = status;
+    }
+
+    public String getRenterName() {
+        return renterProfile != null ? renterProfile.name : "";
+    }
+
+    public String getAddress() {
+        return renterProfile != null ? renterProfile.address : "";
+    }
+
+    public String getContactNumber() {
+        return renterProfile != null ? renterProfile.contactNumber : "";
+    }
+
+    public String getLicenseNumber() {
+        return renterProfile != null ? renterProfile.licenseNumber : "";
     }
 }

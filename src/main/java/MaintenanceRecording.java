@@ -7,7 +7,8 @@ public class MaintenanceRecording extends javax.swing.JPanel {
     public MaintenanceRecording() {
         UIManager.put("Button.focusWidth", 0);
         initComponents();
-        setupEvents();
+        txtmaintedate.setText(java.time.LocalDate.now().toString());
+        refreshMotorcycleDropdown();
     }
     
     public void refreshMotorcycleDropdown() {
@@ -16,23 +17,6 @@ public class MaintenanceRecording extends javax.swing.JPanel {
             model.addElement(m.id + " - " + m.brand + " " + m.model);
         }
         jComboBox1.setModel(model);
-    }
-
-    private void setupEvents() {
-        txtmaintedate.setText(java.time.LocalDate.now().toString());
-        refreshMotorcycleDropdown();
-        btnclear.addActionListener(e -> clearForm());
-}
-
-    private void clearForm() {
-        txtmaintedate.setText(java.time.LocalDate.now().toString());
-        jTextField12.setText("");
-        jTextField19.setText("");
-        jTextField9.setText("");
-        jTextField11.setText("");
-        jTextField15.setText("");
-        jTextField6.setText("");
-        jTextField13.setText("");
     }
     
     @SuppressWarnings("unchecked")
@@ -86,6 +70,7 @@ public class MaintenanceRecording extends javax.swing.JPanel {
 
         jComboBox1.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.addActionListener(this::jComboBox1ActionPerformed);
         jPanel1.add(jComboBox1);
 
         lblmaintenancedate.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
@@ -172,6 +157,7 @@ public class MaintenanceRecording extends javax.swing.JPanel {
         btnsavemaintenance.addActionListener(this::btnsavemaintenanceActionPerformed);
 
         btnclear.setText("Clear");
+        btnclear.addActionListener(this::btnclearActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -211,52 +197,65 @@ public class MaintenanceRecording extends javax.swing.JPanel {
 
     private void btnsavemaintenanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsavemaintenanceActionPerformed
       if (jComboBox1.getSelectedItem() == null) {
-        JOptionPane.showMessageDialog(this, "Please select a motorcycle.");
-        return;
-    }
+            JOptionPane.showMessageDialog(this, "Please select a motorcycle.");
+            return;
+        }
 
-    String costText = jTextField15.getText().trim();
-    if (costText.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Please enter the maintenance cost.");
-        return;
-    }
+        String costText = jTextField15.getText().trim();
+        if (costText.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter the maintenance cost.");
+            return;
+        }
 
-    try {
-        String motorId = jComboBox1.getSelectedItem().toString().split(" - ")[0];
-        String date = txtmaintedate.getText().trim();
-        String type = jComboBox4.getSelectedItem().toString();
-        String category = jTextField12.getText().trim();
-        String workPerformed = jTextField19.getText().trim();
-        String partsReplaced = jTextField9.getText().trim();
-        String odometer = jTextField11.getText().trim();
-        double cost = Double.parseDouble(costText);
-        String nextServiceMileage = jTextField6.getText().trim();
-        String status = jComboBox2.getSelectedItem().toString();
-        String availability = jComboBox3.getSelectedItem().toString();
-        String remarks = jTextField13.getText().trim();
+        try {
+            String motorId = jComboBox1.getSelectedItem().toString().split(" - ")[0];
+            String date = txtmaintedate.getText().trim();
+            String type = jComboBox4.getSelectedItem().toString();
+            String category = jTextField12.getText().trim();
+            String workPerformed = jTextField19.getText().trim();
+            String partsReplaced = jTextField9.getText().trim();
+            String odometer = jTextField11.getText().trim();
+            double cost = Double.parseDouble(costText);
+            String nextServiceMileage = jTextField6.getText().trim();
+            String status = jComboBox2.getSelectedItem().toString();
+            String availability = jComboBox3.getSelectedItem().toString();
+            String remarks = jTextField13.getText().trim();
 
-        String mntId = "MNT-" + (TrimotoSystem.maintenanceRecords.size() + 1001);
-        TrimotoSystem.maintenanceRecords.add(new MaintenanceRecord(
-        mntId, motorId, date, type, category, workPerformed, partsReplaced, 
-        odometer, cost, nextServiceMileage, status, availability, remarks
-    ));
-       Motorcycle m = TrimotoSystem.findMotorcycleById(motorId);
-    if (m != null) {
-        m.status = availability;
-    }
+            String mntId = "MNT-" + (TrimotoSystem.maintenanceRecords.size() + 1001);
+            TrimotoSystem.maintenanceRecords.add(new MaintenanceRecord(
+                mntId, motorId, date, type, category, workPerformed, partsReplaced, 
+                odometer, cost, nextServiceMileage, status, availability, remarks
+            ));
 
-    java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
-    if (topWindow instanceof MainDashboard) {
-        ((MainDashboard) topWindow).refreshAllPanels();
-    }
+            Motorcycle m = TrimotoSystem.findMotorcycleById(motorId);
+            if (m != null) {
+                m.status = availability;
+            }
 
-    JOptionPane.showMessageDialog(this, "Maintenance Record Saved!");
-    clearForm();
-    } catch (NumberFormatException ex) {
-        JOptionPane.showMessageDialog(this, "Maintenance cost must be a valid number (e.g., 1500 or 1500.50).");
-    }
+            java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
+            if (topWindow instanceof MainDashboard) {
+                ((MainDashboard) topWindow).refreshAllPanels();
+            }
 
+            JOptionPane.showMessageDialog(this, "Maintenance Record Saved!");
+            btnclearActionPerformed(new java.awt.event.ActionEvent(btnclear, java.awt.event.ActionEvent.ACTION_PERFORMED, null));        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Maintenance cost must be a valid number (e.g., 1500 or 1500.50).");
+        }
     }//GEN-LAST:event_btnsavemaintenanceActionPerformed
+
+    private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclearActionPerformed
+        txtmaintedate.setText("");
+        jTextField12.setText("");
+        jTextField19.setText("");
+        jTextField9.setText("");
+        jTextField11.setText("");
+        jTextField15.setText("");
+        jTextField6.setText("");
+        jTextField13.setText("");    }//GEN-LAST:event_btnclearActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

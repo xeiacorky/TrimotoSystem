@@ -7,89 +7,18 @@ public class RentalProcessing extends javax.swing.JPanel {
     public RentalProcessing() {
         UIManager.put("Button.focusWidth", 0);
         initComponents();
-        setupEvents();
+        txtreturn.setText("");
+        refreshMotorcycleDropdown();
     }
 
     public void refreshMotorcycleDropdown() {
-       DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
-    for (Motorcycle m : TrimotoSystem.motorcycles) {
-        if ("Available".equalsIgnoreCase(m.status)) {
-            model.addElement(m.id + " - " + m.brand + " " + m.model + " (₱" + m.dailyRate + "/day)");
+        DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
+        for (Motorcycle m : TrimotoSystem.motorcycles) {
+            if ("Available".equalsIgnoreCase(m.status)) {
+                model.addElement(m.id + " - " + m.brand + " " + m.model + " (₱" + m.dailyRate + "/day)");
+            }
         }
-    }
-    motor.setModel(model);
-}
-
-    private void setupEvents() {
-        btnprocessrental.addActionListener(e -> processRental());
-        btnclear.addActionListener(e -> clearForm());
-        cbpartial.addActionListener(e -> { if(cbpartial.isSelected()) cbfull.setSelected(false); });
-        cbfull.addActionListener(e -> { if(cbfull.isSelected()) cbpartial.setSelected(false); });
-        refreshMotorcycleDropdown();
-    }
-
-    private void processRental() {
-    if (motor.getSelectedItem() == null) {
-        JOptionPane.showMessageDialog(this, "No available motorcycle selected.");
-        return;
-    }
-
-    try {
-        String motorId = motor.getSelectedItem().toString().split(" - ")[0];
-        String renter = txtname.getText().trim();
-        String age = txtage.getText().trim();
-        String address = txtaddress.getText().trim();
-        String contactNumber = txtcontnumber.getText().trim();
-        int days = Integer.parseInt(lbldura.getText().trim());
-        String licenseNumber = txtdriverslicense.getText().trim();
-        double payment = Double.parseDouble(txtamount.getText().trim());
-        String returnDate = txtreturn.getText().trim();
-
-        String paymentType = cbpartial.isSelected() ? "Partial" : (cbfull.isSelected() ? "Full" : "Standard");
-        
-        Motorcycle m = TrimotoSystem.findMotorcycleById(motorId);
-        if (m == null) return;
-
-        double totalCost = days * m.dailyRate;
-        String transId = "TRX-" + (TrimotoSystem.rentals.size() + 1001);
-        String date = java.time.LocalDate.now().toString();
-
-        if (returnDate.isEmpty()) {
-            returnDate = java.time.LocalDate.now().plusDays(days).toString();
-        }
-
-        TrimotoSystem.rentals.add(new RentalTransaction(
-            transId, motorId, renter, address, contactNumber, 
-            licenseNumber, days, totalCost, payment, paymentType, 
-            date, returnDate, "Active"
-        ));
-
-        m.status = "Rented";
-
-        java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
-        if (topWindow instanceof MainDashboard) {
-            ((MainDashboard) topWindow).refreshAllPanels();
-        }
-
-        JOptionPane.showMessageDialog(this, "Rental Processed Successfully!\nTransaction ID: " + transId + "\nTotal Cost: ₱" + totalCost);
-        clearForm();
-        refreshMotorcycleDropdown();
-    } catch (NumberFormatException ex) {
-        JOptionPane.showMessageDialog(this, "Invalid entry for Duration or Payment Amount.");
-    }
-}
-
-    private void clearForm() {
-        txtname.setText("");
-        txtage.setText("");
-        txtaddress.setText("");
-        txtcontnumber.setText("");
-        lbldura.setText("");
-        txtdriverslicense.setText("");
-        txtamount.setText("");
-        txtreturn.setText("");
-        cbpartial.setSelected(false);
-        cbfull.setSelected(false);
+        motor.setModel(model);
     }
 
     @SuppressWarnings("unchecked")
@@ -123,7 +52,7 @@ public class RentalProcessing extends javax.swing.JPanel {
         txtreturn = new javax.swing.JTextField();
         btnclear = new javax.swing.JButton();
         btnprocessrental = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        calculateCost = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(900, 550));
 
@@ -177,9 +106,11 @@ public class RentalProcessing extends javax.swing.JPanel {
         jPanel3.setLayout(new java.awt.GridLayout(1, 0));
 
         cbpartial.setText("Partial Payment");
+        cbpartial.addActionListener(this::cbpartialActionPerformed);
         jPanel3.add(cbpartial);
 
         cbfull.setText("Full Payment");
+        cbfull.addActionListener(this::cbfullActionPerformed);
         jPanel3.add(cbfull);
 
         jPanel1.add(jPanel3);
@@ -192,11 +123,13 @@ public class RentalProcessing extends javax.swing.JPanel {
         jPanel1.add(txtreturn);
 
         btnclear.setText("Clear");
+        btnclear.addActionListener(this::btnclearActionPerformed);
 
         btnprocessrental.setText("Process Rental");
         btnprocessrental.addActionListener(this::btnprocessrentalActionPerformed);
 
-        jButton2.setText("Calculate Cost");
+        calculateCost.setText("Calculate Cost");
+        calculateCost.addActionListener(this::calculateCostActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -214,7 +147,7 @@ public class RentalProcessing extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnclear)
                         .addGap(231, 231, 231)
-                        .addComponent(jButton2)
+                        .addComponent(calculateCost)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnprocessrental, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -234,26 +167,130 @@ public class RentalProcessing extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnclear)
                     .addComponent(btnprocessrental)
-                    .addComponent(jButton2))
+                    .addComponent(calculateCost))
                 .addContainerGap(56, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnprocessrentalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnprocessrentalActionPerformed
+if (motor.getSelectedItem() == null) {
+            JOptionPane.showMessageDialog(this, "No available motorcycle selected.");
+            return;
+        }
+
+        try {
+            String motorId = motor.getSelectedItem().toString().split(" - ")[0];
+            String renter = txtname.getText().trim();
+            String age = txtage.getText().trim();
+            String address = txtaddress.getText().trim();
+            String contactNumber = txtcontnumber.getText().trim();
+            int days = Integer.parseInt(lbldura.getText().trim());
+            String licenseNumber = txtdriverslicense.getText().trim();
+            double payment = Double.parseDouble(txtamount.getText().trim());
+            String returnDate = txtreturn.getText().trim();
+
+            if (renter.isEmpty() || address.isEmpty() || contactNumber.isEmpty() || licenseNumber.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Please complete all renter personal details.");
+                return;
+            }
+
+            String paymentType = cbpartial.isSelected() ? "Partial" : (cbfull.isSelected() ? "Full" : "Standard");
+            
+            Motorcycle m = TrimotoSystem.findMotorcycleById(motorId);
+            if (m == null) return;
+
+            double totalCost = days * m.dailyRate;
+            String transId = "TRX-" + (TrimotoSystem.rentals.size() + 1001);
+            String date = java.time.LocalDate.now().toString();
+
+            if (returnDate.isEmpty()) {
+                returnDate = java.time.LocalDate.now().plusDays(days).toString();
+            }
+
+            RenterProfile profile = new RenterProfile(renter, address, contactNumber, licenseNumber, age);
+
+            TrimotoSystem.rentals.add(new RentalTransaction(
+                transId, motorId, profile, days, totalCost, payment, 
+                paymentType, date, returnDate, "Active"
+            ));
+
+            m.status = "Rented";
+
+            java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
+            if (topWindow instanceof MainDashboard) {
+                ((MainDashboard) topWindow).refreshAllPanels();
+            }
+
+            JOptionPane.showMessageDialog(this, "Rental Processed Successfully!\nTransaction ID: " + transId + "\nTotal Cost: ₱" + totalCost);
+
+            btnclearActionPerformed(evt);
+            refreshMotorcycleDropdown();
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Invalid entry for Duration or Payment Amount.");
+        }
     }//GEN-LAST:event_btnprocessrentalActionPerformed
 
     private void txtaddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtaddressActionPerformed
+
     }//GEN-LAST:event_txtaddressActionPerformed
+
+    private void calculateCostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateCostActionPerformed
+       if (motor.getSelectedItem() == null) {
+            JOptionPane.showMessageDialog(this, "Please select an available motorcycle.");
+            return;
+        }
+
+        try {
+            String motorId = motor.getSelectedItem().toString().split(" - ")[0];
+            int days = Integer.parseInt(lbldura.getText().trim());
+            Motorcycle m = TrimotoSystem.findMotorcycleById(motorId);
+            if (m != null) {
+                double totalCost = days * m.dailyRate;
+                txtamount.setText(String.valueOf(totalCost));
+                if (txtreturn.getText().trim().isEmpty()) {
+                    txtreturn.setText(java.time.LocalDate.now().plusDays(days).toString());
+                }
+                JOptionPane.showMessageDialog(this, "Calculated Total Cost: ₱" + totalCost);
+            }
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid number of rental days.");
+        }
+    }//GEN-LAST:event_calculateCostActionPerformed
+
+    private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclearActionPerformed
+        txtname.setText("");
+        txtage.setText("");
+        txtaddress.setText("");
+        txtcontnumber.setText("");
+        lbldura.setText("");
+        txtdriverslicense.setText("");
+        txtamount.setText("");
+        txtreturn.setText("");
+        txtreturn.setText("");
+        cbpartial.setSelected(false);
+        cbfull.setSelected(false);    }//GEN-LAST:event_btnclearActionPerformed
+
+    private void cbpartialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbpartialActionPerformed
+        if (cbpartial.isSelected()) {
+            cbfull.setSelected(false);
+        }
+    }//GEN-LAST:event_cbpartialActionPerformed
+
+    private void cbfullActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbfullActionPerformed
+        if (cbfull.isSelected()) {
+            cbpartial.setSelected(false);
+        }
+    }//GEN-LAST:event_cbfullActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnclear;
     private javax.swing.JButton btnprocessrental;
+    private javax.swing.JButton calculateCost;
     private javax.swing.JCheckBox cbfull;
     private javax.swing.JCheckBox cbpartial;
     private javax.swing.JLabel description;
     private javax.swing.JLabel driverlicense;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
