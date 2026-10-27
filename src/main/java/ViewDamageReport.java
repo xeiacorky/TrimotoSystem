@@ -207,7 +207,7 @@ private void setupEvents() {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
-        jPanel1.setLayout(new java.awt.GridLayout(10, 2, 15, 15));
+        jPanel1.setLayout(new java.awt.GridLayout(9, 2, 15, 15));
 
         jLabel10.setText("Motorcycle:");
         jPanel1.add(jLabel10);
@@ -255,11 +255,9 @@ private void setupEvents() {
         jPanel1.add(jTextField1);
 
         btnclear.setText("Clear");
-        jPanel1.add(btnclear);
 
         btndamagereport.setText("Save Damage Report");
         btndamagereport.addActionListener(this::btndamagereportActionPerformed);
-        jPanel1.add(btndamagereport);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -271,7 +269,13 @@ private void setupEvents() {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 882, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 882, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnclear)
+                        .addGap(306, 306, 306)
+                        .addComponent(btndamagereport)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -281,7 +285,11 @@ private void setupEvents() {
                 .addComponent(title)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnclear)
+                    .addComponent(btndamagereport))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

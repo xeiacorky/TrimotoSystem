@@ -80,60 +80,92 @@ public class MaintenanceRecording extends javax.swing.JPanel {
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
         jPanel1.setLayout(new java.awt.GridLayout(12, 2, 15, 15));
 
+        lblmotor.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         lblmotor.setText("Motorcycle:");
         jPanel1.add(lblmotor);
 
+        jComboBox1.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel1.add(jComboBox1);
 
+        lblmaintenancedate.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         lblmaintenancedate.setText("Maintenance Date:");
         jPanel1.add(lblmaintenancedate);
+
+        txtmaintedate.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jPanel1.add(txtmaintedate);
 
+        lblmaintenancetype.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         lblmaintenancetype.setText("Maintenance Type:");
         jPanel1.add(lblmaintenancetype);
 
+        jComboBox4.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Preventive", "Corrective" }));
         jPanel1.add(jComboBox4);
 
+        jLabel12.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jLabel12.setText("Service Category");
         jPanel1.add(jLabel12);
+
+        jTextField12.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jPanel1.add(jTextField12);
 
+        jLabel16.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jLabel16.setText("Work Performed:");
         jPanel1.add(jLabel16);
+
+        jTextField19.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jPanel1.add(jTextField19);
 
+        jLabel7.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jLabel7.setText("Parts Replaced:");
         jPanel1.add(jLabel7);
+
+        jTextField9.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jPanel1.add(jTextField9);
 
+        jLabel17.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jLabel17.setText("Odometer Reading(km):");
         jPanel1.add(jLabel17);
+
+        jTextField11.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jPanel1.add(jTextField11);
 
+        jLabel2.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jLabel2.setText("Maintenance Cost:");
         jPanel1.add(jLabel2);
+
+        jTextField15.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jPanel1.add(jTextField15);
 
+        jLabel3.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jLabel3.setText("Next Service Mileage:");
         jPanel1.add(jLabel3);
+
+        jTextField6.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jPanel1.add(jTextField6);
 
+        jLabel13.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jLabel13.setText("Maintenance Status:");
         jPanel1.add(jLabel13);
 
+        jComboBox2.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pending", "In Progress", "Completed" }));
         jPanel1.add(jComboBox2);
 
+        jLabel21.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jLabel21.setText("Motorcycle Availability:");
         jPanel1.add(jLabel21);
 
+        jComboBox3.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Available", "Under Maintenance" }));
         jPanel1.add(jComboBox3);
 
+        jLabel15.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jLabel15.setText("Remarks");
         jPanel1.add(jLabel15);
+
+        jTextField13.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jPanel1.add(jTextField13);
 
         btnsavemaintenance.setText("Save Maintenance Record");
@@ -154,8 +186,8 @@ public class MaintenanceRecording extends javax.swing.JPanel {
                             .addComponent(title)
                             .addComponent(description)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnclear, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(29, 29, 29)
+                                .addComponent(btnclear)
+                                .addGap(271, 271, 271)
                                 .addComponent(btnsavemaintenance, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -173,7 +205,7 @@ public class MaintenanceRecording extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnsavemaintenance, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnclear, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -118,10 +118,9 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         jComboBox7 = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
-        btnclear = new javax.swing.JButton();
         btncreatedmgreport = new javax.swing.JButton();
         btnsaveinspect = new javax.swing.JButton();
+        btnclear = new javax.swing.JButton();
 
         javax.swing.GroupLayout viewinspectLayout = new javax.swing.GroupLayout(viewinspect.getContentPane());
         viewinspect.getContentPane().setLayout(viewinspectLayout);
@@ -144,7 +143,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
-        jPanel1.setLayout(new java.awt.GridLayout(16, 2, 15, 15));
+        jPanel1.setLayout(new java.awt.GridLayout(15, 2, 15, 15));
 
         lblmotor.setText("Motorcycle:");
         jPanel1.add(lblmotor);
@@ -228,19 +227,12 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         jPanel1.add(jLabel9);
         jPanel1.add(jTextField2);
 
-        jPanel2.setLayout(new java.awt.GridLayout(1, 0, 15, 0));
-
-        btnclear.setText("Clear");
-        jPanel2.add(btnclear);
-
         btncreatedmgreport.setText("Create Damage Report");
         btncreatedmgreport.addActionListener(this::btncreatedmgreportActionPerformed);
-        jPanel2.add(btncreatedmgreport);
-
-        jPanel1.add(jPanel2);
 
         btnsaveinspect.setText("Save Inspection");
-        jPanel1.add(btnsaveinspect);
+
+        btnclear.setText("Clear");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -249,12 +241,19 @@ public class MotorcycleInspection extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1057, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(title)
                             .addComponent(description))
-                        .addGap(0, 548, Short.MAX_VALUE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnclear)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btncreatedmgreport)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnsaveinspect)
+                        .addGap(404, 404, 404)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -265,7 +264,12 @@ public class MotorcycleInspection extends javax.swing.JPanel {
                 .addComponent(description)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btncreatedmgreport, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnsaveinspect, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnclear, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -304,7 +308,6 @@ public class MotorcycleInspection extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel lblInspectionphase;

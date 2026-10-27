@@ -123,6 +123,7 @@ public class RentalProcessing extends javax.swing.JPanel {
         txtreturn = new javax.swing.JTextField();
         btnclear = new javax.swing.JButton();
         btnprocessrental = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(900, 550));
 
@@ -133,7 +134,7 @@ public class RentalProcessing extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
-        jPanel1.setLayout(new java.awt.GridLayout(11, 2, 15, 15));
+        jPanel1.setLayout(new java.awt.GridLayout(10, 2, 15, 15));
 
         lblmotor.setText("Motorcycle:");
         jPanel1.add(lblmotor);
@@ -183,16 +184,19 @@ public class RentalProcessing extends javax.swing.JPanel {
 
         jPanel1.add(jPanel3);
 
+        lblexpectedreturn.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         lblexpectedreturn.setText("Expected Return Date: ");
         jPanel1.add(lblexpectedreturn);
+
+        txtreturn.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jPanel1.add(txtreturn);
 
         btnclear.setText("Clear");
-        jPanel1.add(btnclear);
 
         btnprocessrental.setText("Process Rental");
         btnprocessrental.addActionListener(this::btnprocessrentalActionPerformed);
-        jPanel1.add(btnprocessrental);
+
+        jButton2.setText("Calculate Cost");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -206,7 +210,15 @@ public class RentalProcessing extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnclear)
+                        .addGap(231, 231, 231)
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnprocessrental, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 882, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -218,7 +230,12 @@ public class RentalProcessing extends javax.swing.JPanel {
                 .addComponent(description)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnclear)
+                    .addComponent(btnprocessrental)
+                    .addComponent(jButton2))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -236,6 +253,7 @@ public class RentalProcessing extends javax.swing.JPanel {
     private javax.swing.JCheckBox cbpartial;
     private javax.swing.JLabel description;
     private javax.swing.JLabel driverlicense;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
