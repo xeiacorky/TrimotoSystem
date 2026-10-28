@@ -216,7 +216,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         btnedit = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
-        btnsavemainte.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        btnsavemainte.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnsavemainte.setText("Save");
         btnsavemainte.addActionListener(this::btnsavemainteActionPerformed);
 
@@ -224,93 +224,93 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
         jPanel1.setLayout(new java.awt.GridLayout(12, 2, 15, 15));
 
-        lblmotor2.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        lblmotor2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblmotor2.setText("Motorcycle:");
         jPanel1.add(lblmotor2);
 
-        jComboBox1.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jComboBox1.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox1.addActionListener(this::jComboBox1ActionPerformed);
         jPanel1.add(jComboBox1);
 
-        lblmaintenancedate.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        lblmaintenancedate.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblmaintenancedate.setText("Maintenance Date:");
         jPanel1.add(lblmaintenancedate);
 
-        txtmaintedate.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        txtmaintedate.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel1.add(txtmaintedate);
 
-        lblmaintenancetype.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        lblmaintenancetype.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblmaintenancetype.setText("Maintenance Type:");
         jPanel1.add(lblmaintenancetype);
 
-        jComboBox4.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jComboBox4.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Preventive", "Corrective" }));
         jPanel1.add(jComboBox4);
 
-        jLabel12.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel12.setText("Service Category");
         jPanel1.add(jLabel12);
 
-        jTextField12.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jTextField12.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel1.add(jTextField12);
 
-        jLabel16.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel16.setText("Work Performed:");
         jPanel1.add(jLabel16);
 
-        jTextField19.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jTextField19.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel1.add(jTextField19);
 
-        jLabel13.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel13.setText("Parts Replaced:");
         jPanel1.add(jLabel13);
 
-        jTextField11.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jTextField11.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel1.add(jTextField11);
 
-        jLabel17.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel17.setText("Odometer Reading(km):");
         jPanel1.add(jLabel17);
 
-        jTextField13.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jTextField13.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel1.add(jTextField13);
 
-        jLabel2.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel2.setText("Maintenance Cost:");
         jPanel1.add(jLabel2);
 
-        jTextField15.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jTextField15.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel1.add(jTextField15);
 
-        jLabel3.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel3.setText("Next Service Mileage:");
         jPanel1.add(jLabel3);
 
-        jTextField14.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jTextField14.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel1.add(jTextField14);
 
-        jLabel14.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel14.setText("Maintenance Status:");
         jPanel1.add(jLabel14);
 
-        jComboBox2.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jComboBox2.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pending", "In Progress", "Completed" }));
         jPanel1.add(jComboBox2);
 
-        jLabel21.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel21.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel21.setText("Motorcycle Availability:");
         jPanel1.add(jLabel21);
 
-        jComboBox3.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jComboBox3.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Available", "Under Maintenance" }));
         jPanel1.add(jComboBox3);
 
-        jLabel15.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel15.setText("Remarks");
         jPanel1.add(jLabel15);
 
-        jTextField16.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jTextField16.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel1.add(jTextField16);
 
         javax.swing.GroupLayout viewmainteLayout = new javax.swing.GroupLayout(viewmainte.getContentPane());
@@ -336,7 +336,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnviewinspectsave.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        btnviewinspectsave.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnviewinspectsave.setText("Save");
         btnviewinspectsave.addActionListener(this::btnviewinspectsaveActionPerformed);
 
@@ -344,121 +344,121 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         jPanel5.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
         jPanel5.setLayout(new java.awt.GridLayout(15, 2, 15, 15));
 
-        lblmotor.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        lblmotor.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblmotor.setText("Motorcycle:");
         jPanel5.add(lblmotor);
 
-        cmbmotorcycle.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        cmbmotorcycle.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         cmbmotorcycle.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cmbmotorcycle.addActionListener(this::cmbmotorcycleActionPerformed);
         jPanel5.add(cmbmotorcycle);
 
-        lblinspectiondate.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        lblinspectiondate.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblinspectiondate.setText("Inspection Date:");
         jPanel5.add(lblinspectiondate);
 
-        txtinspectdate.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        txtinspectdate.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel5.add(txtinspectdate);
 
-        lblInspectionphase.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        lblInspectionphase.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblInspectionphase.setText("Inspection Phase:");
         jPanel5.add(lblInspectionphase);
 
-        cbinspectionphase.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        cbinspectionphase.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         cbinspectionphase.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pre-Rental", "Post-Rental" }));
         jPanel5.add(cbinspectionphase);
 
-        jLabel19.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel19.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel19.setText("Odometer Reading:");
         jPanel5.add(jLabel19);
 
-        jTextField1.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jTextField1.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel5.add(jTextField1);
 
-        lblfuel.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        lblfuel.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblfuel.setText("Fuel Level:");
         jPanel5.add(lblfuel);
 
-        txtfuel.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        txtfuel.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel5.add(txtfuel);
 
-        jLabel4.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel4.setText("Tire Condition:");
         jPanel5.add(jLabel4);
 
-        jComboBox8.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jComboBox8.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Scratched", "Dented" }));
         jPanel5.add(jComboBox8);
 
-        jLabel22.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel22.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel22.setText("Brake Condition:");
         jPanel5.add(jLabel22);
 
-        jComboBox9.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jComboBox9.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Worn", "Damaged" }));
         jPanel5.add(jComboBox9);
 
-        lblheadlightandsignal.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        lblheadlightandsignal.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblheadlightandsignal.setText("Headlight and Signal Lights:");
         jPanel5.add(lblheadlightandsignal);
 
-        cbheadlight.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        cbheadlight.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         cbheadlight.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Functional", "Not Functional" }));
         jPanel5.add(cbheadlight);
 
-        jLabel23.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel23.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel23.setText("Horns");
         jPanel5.add(jLabel23);
 
-        jComboBox10.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jComboBox10.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Functional", "Not Functional" }));
         jPanel5.add(jComboBox10);
 
-        jLabel24.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel24.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel24.setText("Mirrors");
         jPanel5.add(jLabel24);
 
-        jComboBox11.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jComboBox11.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Complete", "Missing", "Damaged" }));
         jPanel5.add(jComboBox11);
 
-        jLabel25.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel25.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel25.setText("Motorcycle Body:");
         jPanel5.add(jLabel25);
 
-        jComboBox12.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jComboBox12.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Needs Repair" }));
         jPanel5.add(jComboBox12);
 
-        jLabel1.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel1.setText("Engine Condition:");
         jPanel5.add(jLabel1);
 
-        jComboBox13.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jComboBox13.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Normal", "Unusual Noise", "Other Issue" }));
         jPanel5.add(jComboBox13);
 
-        lbloverallcondi.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        lbloverallcondi.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lbloverallcondi.setText("Overall Condition:");
         jPanel5.add(lbloverallcondi);
 
-        cbcondition.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        cbcondition.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         cbcondition.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Minor Damage", "Needs Repair", "Unsafe" }));
         jPanel5.add(cbcondition);
 
-        jLabel26.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel26.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel26.setText("Readiness Status:");
         jPanel5.add(jLabel26);
 
-        jComboBox14.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jComboBox14.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox14.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ready", "Not Ready" }));
         jPanel5.add(jComboBox14);
 
-        jLabel27.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel27.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel27.setText("Inspection Notes:");
         jPanel5.add(jLabel27);
 
-        jTextField2.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jTextField2.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel5.add(jTextField2);
 
         javax.swing.GroupLayout viewinspectLayout = new javax.swing.GroupLayout(viewinspect.getContentPane());
@@ -478,7 +478,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         viewinspectLayout.setVerticalGroup(
             viewinspectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewinspectLayout.createSequentialGroup()
-                .addContainerGap(570, Short.MAX_VALUE)
+                .addContainerGap(568, Short.MAX_VALUE)
                 .addComponent(btnviewinspectsave)
                 .addGap(16, 16, 16))
             .addGroup(viewinspectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -488,13 +488,14 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                     .addContainerGap(51, Short.MAX_VALUE)))
         );
 
+        maintefilter.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         maintefilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All", "Pending", "In Progress", "Completed" }));
         maintefilter.addActionListener(this::maintefilterActionPerformed);
 
-        jLabel32.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel32.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel32.setText("Filter Status:");
 
-        jTable3.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jTable3.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null},
@@ -508,18 +509,21 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         ));
         jScrollPane8.setViewportView(jTable3);
 
+        btneditinspect2.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btneditinspect2.setText("Edit");
         btneditinspect2.addActionListener(this::btneditinspect2ActionPerformed);
 
+        mainteapplyfilter.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         mainteapplyfilter.setText("Apply Filter");
         mainteapplyfilter.addActionListener(this::mainteapplyfilterActionPerformed);
 
+        jTextField18.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jTextField18.addActionListener(this::jTextField18ActionPerformed);
 
-        jLabel33.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel33.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel33.setText("Search ID/Keyword");
 
-        btndeleteinspect.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        btndeleteinspect.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btndeleteinspect.setText("Delete");
         btndeleteinspect.addActionListener(this::btndeleteinspectActionPerformed);
 
@@ -566,13 +570,14 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                 .addGap(18, 18, 18))
         );
 
+        inspectfilter.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         inspectfilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All", "Good", "Minor Damage", "Needs Repair", "Unsafe" }));
         inspectfilter.addActionListener(this::inspectfilterActionPerformed);
 
-        jLabel30.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel30.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel30.setText("Filter Status:");
 
-        jTable2.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jTable2.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
@@ -586,18 +591,21 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         ));
         jScrollPane7.setViewportView(jTable2);
 
+        btneditinspect1.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btneditinspect1.setText("Edit");
         btneditinspect1.addActionListener(this::btneditinspect1ActionPerformed);
 
+        inspectapplyfilter.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         inspectapplyfilter.setText("Apply Filter");
         inspectapplyfilter.addActionListener(this::inspectapplyfilterActionPerformed);
 
+        jTextField17.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jTextField17.addActionListener(this::jTextField17ActionPerformed);
 
-        jLabel31.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel31.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel31.setText("Search ID/Keyword");
 
-        btninpsectdelete.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        btninpsectdelete.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btninpsectdelete.setText("Delete");
         btninpsectdelete.addActionListener(this::btninpsectdeleteActionPerformed);
 
@@ -644,13 +652,15 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                 .addGap(18, 18, 18))
         );
 
+        damagerepapplyfilter.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         damagerepapplyfilter.setText("Apply Filter");
         damagerepapplyfilter.addActionListener(this::damagerepapplyfilterActionPerformed);
 
+        btneditdamagarep.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btneditdamagarep.setText("Edit");
         btneditdamagarep.addActionListener(this::btneditdamagarepActionPerformed);
 
-        jTable4.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jTable4.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null},
@@ -664,18 +674,20 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         ));
         jScrollPane9.setViewportView(jTable4);
 
-        jLabel34.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel34.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel34.setText("Filter Status:");
 
+        damagrepfilter.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         damagrepfilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All", "Pending", "Under Repair", "Resolved" }));
         damagrepfilter.addActionListener(this::damagrepfilterActionPerformed);
 
-        jLabel35.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel35.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel35.setText("Search ID/Keyword");
 
+        jTextField20.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jTextField20.addActionListener(this::jTextField20ActionPerformed);
 
-        btndamagerepdelete.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        btndamagerepdelete.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btndamagerepdelete.setText("Delete");
         btndamagerepdelete.addActionListener(this::btndamagerepdeleteActionPerformed);
 
@@ -726,75 +738,75 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         jPanel3.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
         jPanel3.setLayout(new java.awt.GridLayout(9, 2, 15, 15));
 
-        jLabel10.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel10.setText("Motorcycle:");
         jPanel3.add(jLabel10);
 
-        jComboBox5.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jComboBox5.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox5.addActionListener(this::jComboBox5ActionPerformed);
         jPanel3.add(jComboBox5);
 
-        jLabel18.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel18.setText("Damage Location: ");
         jPanel3.add(jLabel18);
 
-        jTextField7.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jTextField7.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel3.add(jTextField7);
 
-        jLabel8.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel8.setText("Damage Type:");
         jPanel3.add(jLabel8);
 
-        jComboBox6.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jComboBox6.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Scratch", "Dent", "Crack", "Broken Part" }));
         jPanel3.add(jComboBox6);
 
-        jLabel20.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel20.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel20.setText("Damage Description:");
         jPanel3.add(jLabel20);
 
-        jTextField5.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jTextField5.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel3.add(jTextField5);
 
-        jLabel6.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel6.setText("Date Reported:");
         jPanel3.add(jLabel6);
 
-        jTextField4.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jTextField4.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel3.add(jTextField4);
 
-        jLabel5.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel5.setText("Action Required:");
         jPanel3.add(jLabel5);
 
-        jComboBox7.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jComboBox7.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Repair", "Monitor", "No Action" }));
         jPanel3.add(jComboBox7);
 
-        jLabel7.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel7.setText("Damage Status:");
         jPanel3.add(jLabel7);
 
-        jComboBox15.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jComboBox15.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox15.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pending", "Under Repair", "Resolved" }));
         jPanel3.add(jComboBox15);
 
-        jLabel9.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel9.setText("Additional Notes:");
         jPanel3.add(jLabel9);
 
-        jTextField6.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jTextField6.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel3.add(jTextField6);
 
-        jLabel11.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel11.setText("Estimated Repair Cost:");
         jPanel3.add(jLabel11);
 
-        jTextField8.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jTextField8.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel3.add(jTextField8);
 
-        btndamagereport.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        btndamagereport.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btndamagereport.setText("Save");
         btndamagereport.addActionListener(this::btndamagereportActionPerformed);
 
@@ -815,7 +827,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         viewdmgreportLayout.setVerticalGroup(
             viewdmgreportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewdmgreportLayout.createSequentialGroup()
-                .addContainerGap(415, Short.MAX_VALUE)
+                .addContainerGap(413, Short.MAX_VALUE)
                 .addComponent(btndamagereport)
                 .addGap(42, 42, 42))
             .addGroup(viewdmgreportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -825,6 +837,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                     .addContainerGap(74, Short.MAX_VALUE)))
         );
 
+        btnsaveviewmotorcycle.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnsaveviewmotorcycle.setText("Save");
         btnsaveviewmotorcycle.addActionListener(this::btnsaveviewmotorcycleActionPerformed);
 
@@ -832,81 +845,81 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         jPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
         jPanel2.setLayout(new java.awt.GridLayout(11, 2, 15, 15));
 
-        lblMotorID.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        lblMotorID.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblMotorID.setText("Motorcycle ID/Plate #:");
         jPanel2.add(lblMotorID);
 
-        txtmotorid.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        txtmotorid.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         txtmotorid.addActionListener(this::txtmotoridActionPerformed);
         jPanel2.add(txtmotorid);
 
-        brand.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        brand.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         brand.setText("Brand:");
         jPanel2.add(brand);
 
-        txtbrand.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        txtbrand.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel2.add(txtbrand);
 
-        model.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        model.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         model.setText("Model:");
         jPanel2.add(model);
 
-        txtmodel.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        txtmodel.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel2.add(txtmodel);
 
-        lblyear.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        lblyear.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblyear.setText("Year:");
         jPanel2.add(lblyear);
 
-        txtyear.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        txtyear.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel2.add(txtyear);
 
-        lblmileage.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        lblmileage.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblmileage.setText("Mileage (km):");
         jPanel2.add(lblmileage);
 
-        txtmileage.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        txtmileage.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel2.add(txtmileage);
 
-        lbldailyrentalrate.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        lbldailyrentalrate.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lbldailyrentalrate.setText("Daily Rental Rate:");
         jPanel2.add(lbldailyrentalrate);
 
-        txtdailyrentalrate.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        txtdailyrentalrate.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel2.add(txtdailyrentalrate);
 
-        lblmotortype.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        lblmotortype.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblmotortype.setText("Motorcycle Type");
         jPanel2.add(lblmotortype);
 
-        cmbtypes.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        cmbtypes.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         cmbtypes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Scooter", "Standard Bike", "Sports Bike", "Adventure Bike", "Electic Bike", " " }));
         cmbtypes.addActionListener(this::cmbtypesActionPerformed);
         jPanel2.add(cmbtypes);
 
-        jLabel38.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel38.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel38.setText("Transmission Type:");
         jPanel2.add(jLabel38);
 
-        jTextField23.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jTextField23.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel2.add(jTextField23);
 
-        jLabel39.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel39.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jPanel2.add(jLabel39);
 
-        jTextField24.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jTextField24.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel2.add(jTextField24);
 
-        jLabel40.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel40.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jPanel2.add(jLabel40);
 
-        jTextField25.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jTextField25.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel2.add(jTextField25);
 
-        jLabel41.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jLabel41.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jPanel2.add(jLabel41);
 
-        jTextField26.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jTextField26.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel2.add(jTextField26);
 
         javax.swing.GroupLayout viewmmotorcycleLayout = new javax.swing.GroupLayout(viewmmotorcycle.getContentPane());
@@ -926,7 +939,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         viewmmotorcycleLayout.setVerticalGroup(
             viewmmotorcycleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewmmotorcycleLayout.createSequentialGroup()
-                .addContainerGap(423, Short.MAX_VALUE)
+                .addContainerGap(421, Short.MAX_VALUE)
                 .addComponent(btnsaveviewmotorcycle)
                 .addGap(15, 15, 15))
             .addGroup(viewmmotorcycleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -957,11 +970,13 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        description.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
         description.setText("Browse registered motorcycles and their current status.");
 
         title.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         title.setText("Motorcycle Records");
 
+        recordstable.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         recordstable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -975,37 +990,41 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         ));
         recordsscrollpane.setViewportView(recordstable);
 
+        ID.setFont(new java.awt.Font("Segoe UI Semilight", 0, 12)); // NOI18N
         ID.setText("Search ID:");
 
+        jTextField3.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jTextField3.addActionListener(this::jTextField3ActionPerformed);
 
+        btnsearch.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnsearch.setText("Search");
         btnsearch.addActionListener(this::btnsearchActionPerformed);
 
-        btnviewinspectionrecord.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        btnviewinspectionrecord.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnviewinspectionrecord.setText("View Inspection");
         btnviewinspectionrecord.addActionListener(this::btnviewinspectionrecordActionPerformed);
 
-        btnviewmaintenancerecord.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        btnviewmaintenancerecord.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnviewmaintenancerecord.setText("View Maintenance");
         btnviewmaintenancerecord.addActionListener(this::btnviewmaintenancerecordActionPerformed);
 
-        btnviewdmg.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        btnviewdmg.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnviewdmg.setText("View Damage Report");
         btnviewdmg.addActionListener(this::btnviewdmgActionPerformed);
 
-        btndelete.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        btndelete.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btndelete.setText("Delete");
         btndelete.addActionListener(this::btndeleteActionPerformed);
 
-        btnrefresh.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        btnrefresh.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnrefresh.setText("Refresh");
         btnrefresh.addActionListener(this::btnrefreshActionPerformed);
 
-        btnedit.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        btnedit.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnedit.setText("Edit");
         btnedit.addActionListener(this::btneditActionPerformed);
 
+        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jButton1.setText("View Further Details");
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
@@ -1062,7 +1081,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                     .addComponent(btnviewmaintenancerecord, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnviewdmg, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btndelete, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnrefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)

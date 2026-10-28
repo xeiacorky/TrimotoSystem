@@ -35,7 +35,7 @@
         <Component class="javax.swing.JButton" name="btnsavemainte">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="12" style="0"/>
+              <Font name="Segoe UI" size="13" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Save"/>
           </Properties>
@@ -65,7 +65,7 @@
             <Component class="javax.swing.JLabel" name="lblmotor2">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Motorcycle:"/>
               </Properties>
@@ -73,7 +73,7 @@
             <Component class="javax.swing.JComboBox" name="jComboBox1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
@@ -94,7 +94,7 @@
             <Component class="javax.swing.JLabel" name="lblmaintenancedate">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Maintenance Date:"/>
               </Properties>
@@ -102,14 +102,14 @@
             <Component class="javax.swing.JTextField" name="txtmaintedate">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblmaintenancetype">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Maintenance Type:"/>
               </Properties>
@@ -117,7 +117,7 @@
             <Component class="javax.swing.JComboBox" name="jComboBox4">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="2">
@@ -133,7 +133,7 @@
             <Component class="javax.swing.JLabel" name="jLabel12">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Service Category"/>
               </Properties>
@@ -141,14 +141,14 @@
             <Component class="javax.swing.JTextField" name="jTextField12">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel16">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Work Performed:"/>
               </Properties>
@@ -156,14 +156,14 @@
             <Component class="javax.swing.JTextField" name="jTextField19">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel13">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Parts Replaced:"/>
               </Properties>
@@ -171,14 +171,14 @@
             <Component class="javax.swing.JTextField" name="jTextField11">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel17">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Odometer Reading(km):"/>
               </Properties>
@@ -186,14 +186,14 @@
             <Component class="javax.swing.JTextField" name="jTextField13">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Maintenance Cost:"/>
               </Properties>
@@ -201,14 +201,14 @@
             <Component class="javax.swing.JTextField" name="jTextField15">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Next Service Mileage:"/>
               </Properties>
@@ -216,14 +216,14 @@
             <Component class="javax.swing.JTextField" name="jTextField14">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel14">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Maintenance Status:"/>
               </Properties>
@@ -231,7 +231,7 @@
             <Component class="javax.swing.JComboBox" name="jComboBox2">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="3">
@@ -248,7 +248,7 @@
             <Component class="javax.swing.JLabel" name="jLabel21">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Motorcycle Availability:"/>
               </Properties>
@@ -256,7 +256,7 @@
             <Component class="javax.swing.JComboBox" name="jComboBox3">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="2">
@@ -272,7 +272,7 @@
             <Component class="javax.swing.JLabel" name="jLabel15">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Remarks"/>
               </Properties>
@@ -280,7 +280,7 @@
             <Component class="javax.swing.JTextField" name="jTextField16">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
@@ -310,7 +310,7 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="570" max="32767" attributes="0"/>
+                  <EmptySpace pref="568" max="32767" attributes="0"/>
                   <Component id="btnviewinspectsave" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               </Group>
@@ -328,7 +328,7 @@
         <Component class="javax.swing.JButton" name="btnviewinspectsave">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="12" style="0"/>
+              <Font name="Segoe UI" size="13" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Save"/>
           </Properties>
@@ -358,7 +358,7 @@
             <Component class="javax.swing.JLabel" name="lblmotor">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Motorcycle:"/>
               </Properties>
@@ -366,7 +366,7 @@
             <Component class="javax.swing.JComboBox" name="cmbmotorcycle">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
@@ -387,7 +387,7 @@
             <Component class="javax.swing.JLabel" name="lblinspectiondate">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Inspection Date:"/>
               </Properties>
@@ -395,14 +395,14 @@
             <Component class="javax.swing.JTextField" name="txtinspectdate">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblInspectionphase">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Inspection Phase:"/>
               </Properties>
@@ -410,7 +410,7 @@
             <Component class="javax.swing.JComboBox" name="cbinspectionphase">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="2">
@@ -426,7 +426,7 @@
             <Component class="javax.swing.JLabel" name="jLabel19">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Odometer Reading:"/>
               </Properties>
@@ -434,14 +434,14 @@
             <Component class="javax.swing.JTextField" name="jTextField1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblfuel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Fuel Level:"/>
               </Properties>
@@ -449,14 +449,14 @@
             <Component class="javax.swing.JTextField" name="txtfuel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Tire Condition:"/>
               </Properties>
@@ -464,7 +464,7 @@
             <Component class="javax.swing.JComboBox" name="jComboBox8">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="3">
@@ -481,7 +481,7 @@
             <Component class="javax.swing.JLabel" name="jLabel22">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Brake Condition:"/>
               </Properties>
@@ -489,7 +489,7 @@
             <Component class="javax.swing.JComboBox" name="jComboBox9">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="3">
@@ -506,7 +506,7 @@
             <Component class="javax.swing.JLabel" name="lblheadlightandsignal">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Headlight and Signal Lights:"/>
               </Properties>
@@ -514,7 +514,7 @@
             <Component class="javax.swing.JComboBox" name="cbheadlight">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="2">
@@ -530,7 +530,7 @@
             <Component class="javax.swing.JLabel" name="jLabel23">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Horns"/>
               </Properties>
@@ -538,7 +538,7 @@
             <Component class="javax.swing.JComboBox" name="jComboBox10">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="2">
@@ -554,7 +554,7 @@
             <Component class="javax.swing.JLabel" name="jLabel24">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Mirrors"/>
               </Properties>
@@ -562,7 +562,7 @@
             <Component class="javax.swing.JComboBox" name="jComboBox11">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="3">
@@ -579,7 +579,7 @@
             <Component class="javax.swing.JLabel" name="jLabel25">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Motorcycle Body:"/>
               </Properties>
@@ -587,7 +587,7 @@
             <Component class="javax.swing.JComboBox" name="jComboBox12">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="2">
@@ -603,7 +603,7 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Engine Condition:"/>
               </Properties>
@@ -611,7 +611,7 @@
             <Component class="javax.swing.JComboBox" name="jComboBox13">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="3">
@@ -628,7 +628,7 @@
             <Component class="javax.swing.JLabel" name="lbloverallcondi">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Overall Condition:"/>
               </Properties>
@@ -636,7 +636,7 @@
             <Component class="javax.swing.JComboBox" name="cbcondition">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
@@ -654,7 +654,7 @@
             <Component class="javax.swing.JLabel" name="jLabel26">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Readiness Status:"/>
               </Properties>
@@ -662,7 +662,7 @@
             <Component class="javax.swing.JComboBox" name="jComboBox14">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="2">
@@ -678,7 +678,7 @@
             <Component class="javax.swing.JLabel" name="jLabel27">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Inspection Notes:"/>
               </Properties>
@@ -686,7 +686,7 @@
             <Component class="javax.swing.JTextField" name="jTextField2">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
@@ -750,6 +750,9 @@
       <SubComponents>
         <Component class="javax.swing.JComboBox" name="maintefilter">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Nirmala UI" size="12" style="0"/>
+            </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
                 <StringItem index="0" value="All"/>
@@ -769,7 +772,7 @@
         <Component class="javax.swing.JLabel" name="jLabel32">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="13" style="0"/>
+              <Font name="Segoe UI Semibold" size="12" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Filter Status:"/>
           </Properties>
@@ -781,7 +784,7 @@
             <Component class="javax.swing.JTable" name="jTable3">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="13" rowCount="4">
@@ -806,6 +809,9 @@
         </Container>
         <Component class="javax.swing.JButton" name="btneditinspect2">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="13" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Edit"/>
           </Properties>
           <Events>
@@ -814,6 +820,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="mainteapplyfilter">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="13" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Apply Filter"/>
           </Properties>
           <Events>
@@ -821,6 +830,11 @@
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField18">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Nirmala UI" size="12" style="0"/>
+            </Property>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField18ActionPerformed"/>
           </Events>
@@ -828,7 +842,7 @@
         <Component class="javax.swing.JLabel" name="jLabel33">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="13" style="0"/>
+              <Font name="Segoe UI Semibold" size="12" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Search ID/Keyword"/>
           </Properties>
@@ -836,7 +850,7 @@
         <Component class="javax.swing.JButton" name="btndeleteinspect">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="13" style="0"/>
+              <Font name="Segoe UI" size="13" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Delete"/>
           </Properties>
@@ -902,6 +916,9 @@
       <SubComponents>
         <Component class="javax.swing.JComboBox" name="inspectfilter">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Nirmala UI" size="12" style="0"/>
+            </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="5">
                 <StringItem index="0" value="All"/>
@@ -922,7 +939,7 @@
         <Component class="javax.swing.JLabel" name="jLabel30">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="13" style="0"/>
+              <Font name="Segoe UI Semibold" size="12" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Filter Status:"/>
           </Properties>
@@ -934,7 +951,7 @@
             <Component class="javax.swing.JTable" name="jTable2">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="16" rowCount="4">
@@ -962,6 +979,9 @@
         </Container>
         <Component class="javax.swing.JButton" name="btneditinspect1">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="13" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Edit"/>
           </Properties>
           <Events>
@@ -970,6 +990,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="inspectapplyfilter">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="13" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Apply Filter"/>
           </Properties>
           <Events>
@@ -977,6 +1000,11 @@
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField17">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Nirmala UI" size="12" style="0"/>
+            </Property>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField17ActionPerformed"/>
           </Events>
@@ -984,7 +1012,7 @@
         <Component class="javax.swing.JLabel" name="jLabel31">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="13" style="0"/>
+              <Font name="Segoe UI Semibold" size="12" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Search ID/Keyword"/>
           </Properties>
@@ -992,7 +1020,7 @@
         <Component class="javax.swing.JButton" name="btninpsectdelete">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="13" style="0"/>
+              <Font name="Segoe UI" size="13" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Delete"/>
           </Properties>
@@ -1058,6 +1086,9 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="damagerepapplyfilter">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="13" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Apply Filter"/>
           </Properties>
           <Events>
@@ -1066,6 +1097,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="btneditdamagarep">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="13" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Edit"/>
           </Properties>
           <Events>
@@ -1079,7 +1113,7 @@
             <Component class="javax.swing.JTable" name="jTable4">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="10" rowCount="4">
@@ -1102,13 +1136,16 @@
         <Component class="javax.swing.JLabel" name="jLabel34">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="13" style="0"/>
+              <Font name="Segoe UI Semibold" size="12" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Filter Status:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="damagrepfilter">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Nirmala UI" size="12" style="0"/>
+            </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
                 <StringItem index="0" value="All"/>
@@ -1128,12 +1165,17 @@
         <Component class="javax.swing.JLabel" name="jLabel35">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="13" style="0"/>
+              <Font name="Segoe UI Semibold" size="12" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Search ID/Keyword"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField20">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Nirmala UI" size="12" style="0"/>
+            </Property>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField20ActionPerformed"/>
           </Events>
@@ -1141,7 +1183,7 @@
         <Component class="javax.swing.JButton" name="btndamagerepdelete">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="13" style="0"/>
+              <Font name="Segoe UI" size="13" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Delete"/>
           </Properties>
@@ -1173,7 +1215,7 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="415" max="32767" attributes="0"/>
+                  <EmptySpace pref="413" max="32767" attributes="0"/>
                   <Component id="btndamagereport" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
               </Group>
@@ -1210,7 +1252,7 @@
             <Component class="javax.swing.JLabel" name="jLabel10">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Motorcycle:"/>
               </Properties>
@@ -1218,7 +1260,7 @@
             <Component class="javax.swing.JComboBox" name="jComboBox5">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
@@ -1239,7 +1281,7 @@
             <Component class="javax.swing.JLabel" name="jLabel18">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Damage Location: "/>
               </Properties>
@@ -1247,14 +1289,14 @@
             <Component class="javax.swing.JTextField" name="jTextField7">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel8">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Damage Type:"/>
               </Properties>
@@ -1262,7 +1304,7 @@
             <Component class="javax.swing.JComboBox" name="jComboBox6">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
@@ -1280,7 +1322,7 @@
             <Component class="javax.swing.JLabel" name="jLabel20">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Damage Description:"/>
               </Properties>
@@ -1288,14 +1330,14 @@
             <Component class="javax.swing.JTextField" name="jTextField5">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel6">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Date Reported:"/>
               </Properties>
@@ -1303,14 +1345,14 @@
             <Component class="javax.swing.JTextField" name="jTextField4">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Action Required:"/>
               </Properties>
@@ -1318,7 +1360,7 @@
             <Component class="javax.swing.JComboBox" name="jComboBox7">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="3">
@@ -1335,7 +1377,7 @@
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Damage Status:"/>
               </Properties>
@@ -1343,7 +1385,7 @@
             <Component class="javax.swing.JComboBox" name="jComboBox15">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="3">
@@ -1360,7 +1402,7 @@
             <Component class="javax.swing.JLabel" name="jLabel9">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Additional Notes:"/>
               </Properties>
@@ -1368,14 +1410,14 @@
             <Component class="javax.swing.JTextField" name="jTextField6">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel11">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Estimated Repair Cost:"/>
               </Properties>
@@ -1383,7 +1425,7 @@
             <Component class="javax.swing.JTextField" name="jTextField8">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
@@ -1392,7 +1434,7 @@
         <Component class="javax.swing.JButton" name="btndamagereport">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="12" style="0"/>
+              <Font name="Segoe UI" size="13" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Save"/>
           </Properties>
@@ -1424,7 +1466,7 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="423" max="32767" attributes="0"/>
+                  <EmptySpace pref="421" max="32767" attributes="0"/>
                   <Component id="btnsaveviewmotorcycle" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               </Group>
@@ -1441,6 +1483,9 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="btnsaveviewmotorcycle">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="13" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Save"/>
           </Properties>
           <Events>
@@ -1469,7 +1514,7 @@
             <Component class="javax.swing.JLabel" name="lblMotorID">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Motorcycle ID/Plate #:"/>
               </Properties>
@@ -1477,7 +1522,7 @@
             <Component class="javax.swing.JTextField" name="txtmotorid">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
               <Events>
@@ -1487,7 +1532,7 @@
             <Component class="javax.swing.JLabel" name="brand">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Brand:"/>
               </Properties>
@@ -1495,14 +1540,14 @@
             <Component class="javax.swing.JTextField" name="txtbrand">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="model">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Model:"/>
               </Properties>
@@ -1510,14 +1555,14 @@
             <Component class="javax.swing.JTextField" name="txtmodel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblyear">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Year:"/>
               </Properties>
@@ -1525,14 +1570,14 @@
             <Component class="javax.swing.JTextField" name="txtyear">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblmileage">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Mileage (km):"/>
               </Properties>
@@ -1540,14 +1585,14 @@
             <Component class="javax.swing.JTextField" name="txtmileage">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lbldailyrentalrate">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Daily Rental Rate:"/>
               </Properties>
@@ -1555,14 +1600,14 @@
             <Component class="javax.swing.JTextField" name="txtdailyrentalrate">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblmotortype">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Motorcycle Type"/>
               </Properties>
@@ -1570,7 +1615,7 @@
             <Component class="javax.swing.JComboBox" name="cmbtypes">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="6">
@@ -1593,7 +1638,7 @@
             <Component class="javax.swing.JLabel" name="jLabel38">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Transmission Type:"/>
               </Properties>
@@ -1601,49 +1646,49 @@
             <Component class="javax.swing.JTextField" name="jTextField23">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel39">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField24">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel40">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField25">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel41">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Segoe UI Semibold" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField26">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="13" style="0"/>
+                  <Font name="Nirmala UI" size="12" style="0"/>
                 </Property>
               </Properties>
             </Component>
@@ -1765,7 +1810,7 @@
                   <Component id="btnviewdmg" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="84" max="32767" attributes="0"/>
+              <EmptySpace pref="82" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btndelete" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                   <Component id="btnrefresh" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
@@ -1779,6 +1824,9 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="description">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="12" style="2"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Browse registered motorcycles and their current status."/>
       </Properties>
     </Component>
@@ -1796,6 +1844,9 @@
       <SubComponents>
         <Component class="javax.swing.JTable" name="recordstable">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Nirmala UI" size="12" style="0"/>
+            </Property>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="8" rowCount="4">
                 <Column editable="true" title="ID" type="java.lang.Object"/>
@@ -1814,16 +1865,27 @@
     </Container>
     <Component class="javax.swing.JLabel" name="ID">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI Semilight" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Search ID:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField3">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Nirmala UI" size="12" style="0"/>
+        </Property>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField3ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnsearch">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Search"/>
       </Properties>
       <Events>
@@ -1833,7 +1895,7 @@
     <Component class="javax.swing.JButton" name="btnviewinspectionrecord">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="SansSerif" size="12" style="0"/>
+          <Font name="Segoe UI" size="13" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="View Inspection"/>
       </Properties>
@@ -1844,7 +1906,7 @@
     <Component class="javax.swing.JButton" name="btnviewmaintenancerecord">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="SansSerif" size="12" style="0"/>
+          <Font name="Segoe UI" size="13" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="View Maintenance"/>
       </Properties>
@@ -1855,7 +1917,7 @@
     <Component class="javax.swing.JButton" name="btnviewdmg">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="SansSerif" size="12" style="0"/>
+          <Font name="Segoe UI" size="13" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="View Damage Report"/>
       </Properties>
@@ -1866,7 +1928,7 @@
     <Component class="javax.swing.JButton" name="btndelete">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="SansSerif" size="12" style="0"/>
+          <Font name="Segoe UI" size="13" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Delete"/>
       </Properties>
@@ -1877,7 +1939,7 @@
     <Component class="javax.swing.JButton" name="btnrefresh">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="SansSerif" size="12" style="0"/>
+          <Font name="Segoe UI" size="13" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Refresh"/>
       </Properties>
@@ -1888,7 +1950,7 @@
     <Component class="javax.swing.JButton" name="btnedit">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="SansSerif" size="12" style="0"/>
+          <Font name="Segoe UI" size="13" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Edit"/>
       </Properties>
@@ -1898,6 +1960,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="View Further Details"/>
       </Properties>
       <Events>
