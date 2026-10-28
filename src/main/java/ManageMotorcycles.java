@@ -54,7 +54,7 @@ public class ManageMotorcycles extends javax.swing.JPanel {
         jPanel1.setLayout(new java.awt.GridLayout(11, 2, 15, 15));
 
         lblMotorID.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
-        lblMotorID.setText("Motorcycle ID:");
+        lblMotorID.setText("Motorcycle ID/Plate #:");
         jPanel1.add(lblMotorID);
 
         txtmotorid.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
@@ -165,9 +165,9 @@ public class ManageMotorcycles extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addGap(6, 6, 6)
                 .addComponent(jLabel2)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnclear, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnaddmotorcycle, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))

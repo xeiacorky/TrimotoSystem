@@ -203,7 +203,7 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Transaction ID", "Motorcycle ID", "Renter", "Age", "Address", "Driver's  License #", "Rental Days", "Total Cost", "Initial Payment", "Balance", "Date Rented", "Return Date", "Status"
+                "Transaction ID", "Motorcycle ID/Plate #", "Renter", "Age", "Address", "Driver's  License #", "Rental Days", "Total Cost", "Initial Payment", "Balance", "Date Rented", "Return Date", "Status"
             }
         ));
         jScrollPane3.setViewportView(jTable2);

@@ -503,7 +503,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Maintenance ID", "Motorcycle ID", "Date", "Type", "Service Category", "Work Performed", "Parts Replaced", "Odometer Reading (km)", "Maintenance Cost (₱)", "Next Service Mileage", "Status", "Availability", "Remarks"
+                "Maintenance ID", "Motorcycle ID/Plate #", "Date", "Type", "Service Category", "Work Performed", "Parts Replaced", "Odometer Reading (km)", "Maintenance Cost (₱)", "Next Service Mileage", "Status", "Availability", "Remarks"
             }
         ));
         jScrollPane8.setViewportView(jTable3);
@@ -581,7 +581,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Inspection ID", "Motorcycle ID", "Date", "Phase", "Odometer", "Fuel Level", "Tire Condition", "Brake Condition", "Headlight & Signals", "Horns", "Mirrors", "Body Condition", "Engine Condition", "Overall Condition", "Readiness Status", "Inspection Notes"
+                "Inspection ID", "Motorcycle ID/Plate #", "Date", "Phase", "Odometer", "Fuel Level", "Tire Condition", "Brake Condition", "Headlight & Signals", "Horns", "Mirrors", "Body Condition", "Engine Condition", "Overall Condition", "Readiness Status", "Inspection Notes"
             }
         ));
         jScrollPane7.setViewportView(jTable2);
@@ -659,7 +659,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Report ID", "Motorcycle ID", "Date", "Location", "Type", "Description", "Action Required", "Cost (₱)", "Status", "Notes"
+                "Report ID", "Motorcycle ID/Plate #", "Date", "Location", "Type", "Description", "Action Required", "Cost (₱)", "Status", "Notes"
             }
         ));
         jScrollPane9.setViewportView(jTable4);
@@ -833,7 +833,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         jPanel2.setLayout(new java.awt.GridLayout(11, 2, 15, 15));
 
         lblMotorID.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
-        lblMotorID.setText("Motorcycle ID:");
+        lblMotorID.setText("Motorcycle ID/Plate #:");
         jPanel2.add(lblMotorID);
 
         txtmotorid.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
@@ -1205,6 +1205,8 @@ btnsearchActionPerformed(evt);
                 break;
             }
         }
+        
+        
     }//GEN-LAST:event_btneditinspect1ActionPerformed
 
     private void btneditinspect2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditinspect2ActionPerformed
