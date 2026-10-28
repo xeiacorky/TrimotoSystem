@@ -44,7 +44,7 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel1" alignment="0" pref="888" max="32767" attributes="0"/>
+                  <Component id="jPanel1" alignment="0" pref="894" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="title" min="-2" max="-2" attributes="0"/>
@@ -54,11 +54,11 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="btnclear" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="btncreatedmgreport" min="-2" pref="156" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnsaveinspect" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="404" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>

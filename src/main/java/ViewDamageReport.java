@@ -263,7 +263,7 @@ public class ViewDamageReport extends javax.swing.JPanel {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 882, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnclear)
-                        .addGap(306, 306, 306)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btndamagereport)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
