@@ -319,7 +319,7 @@ public class MainDashboard extends javax.swing.JFrame {
         jPanel8.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.default.pressedBackground"));
         jPanel8.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel10.setFont(new java.awt.Font("SansSerif", 0, 20)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         jLabel10.setText("Quick Actions");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -343,6 +343,8 @@ public class MainDashboard extends javax.swing.JFrame {
         overview.setLayout(new java.awt.GridLayout(1, 0, 15, 0));
 
         pnlTotalcard.setBackground(new java.awt.Color(255, 255, 255));
+        pnlTotalcard.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pnlTotalcard.setForeground(new java.awt.Color(41, 128, 185));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(41, 128, 185));
@@ -361,7 +363,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addGroup(pnlTotalcardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbltotalvalue, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         pnlTotalcardLayout.setVerticalGroup(
             pnlTotalcardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -370,12 +372,14 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbltotalvalue)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
 
         overview.add(pnlTotalcard);
 
         pnlavailable.setBackground(new java.awt.Color(255, 255, 255));
+        pnlavailable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pnlavailable.setForeground(new java.awt.Color(39, 174, 96));
 
         lblAvailabletitle.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         lblAvailabletitle.setForeground(new java.awt.Color(39, 174, 96));
@@ -394,7 +398,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addGroup(pnlavailableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblAvailabletitle)
                     .addComponent(lbltotalvalue2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
         pnlavailableLayout.setVerticalGroup(
             pnlavailableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -403,12 +407,14 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addComponent(lblAvailabletitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbltotalvalue2)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
 
         overview.add(pnlavailable);
 
         pnlrented.setBackground(new java.awt.Color(255, 255, 255));
+        pnlrented.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pnlrented.setForeground(new java.awt.Color(142, 68, 173));
 
         lbltotalvalue1.setFont(new java.awt.Font("SansSerif", 1, 28)); // NOI18N
         lbltotalvalue1.setForeground(new java.awt.Color(142, 68, 173));
@@ -427,7 +433,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addGroup(pnlrentedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblrentedtitle)
                     .addComponent(lbltotalvalue1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
         pnlrentedLayout.setVerticalGroup(
             pnlrentedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -436,12 +442,14 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addComponent(lblrentedtitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbltotalvalue1)
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addContainerGap(126, Short.MAX_VALUE))
         );
 
         overview.add(pnlrented);
 
         pnlformainte.setBackground(new java.awt.Color(255, 255, 255));
+        pnlformainte.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pnlformainte.setForeground(new java.awt.Color(214, 123, 38));
 
         lblformaintenancetitle.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         lblformaintenancetitle.setForeground(new java.awt.Color(214, 123, 38));
@@ -460,7 +468,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addGroup(pnlformainteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblformaintenancetitle)
                     .addComponent(lbltotalvalue3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         pnlformainteLayout.setVerticalGroup(
             pnlformainteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -475,6 +483,8 @@ public class MainDashboard extends javax.swing.JFrame {
         overview.add(pnlformainte);
 
         pnlforinspect1.setBackground(new java.awt.Color(255, 255, 255));
+        pnlforinspect1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pnlforinspect1.setForeground(new java.awt.Color(227, 191, 78));
 
         lblformaintenancetitle2.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         lblformaintenancetitle2.setForeground(new java.awt.Color(227, 191, 78));
@@ -493,7 +503,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addGroup(pnlforinspect1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblformaintenancetitle2)
                     .addComponent(lbltotalvalue5, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         pnlforinspect1Layout.setVerticalGroup(
             pnlforinspect1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -502,12 +512,14 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addComponent(lblformaintenancetitle2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbltotalvalue5)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
 
         overview.add(pnlforinspect1);
 
         pnlforinspect.setBackground(new java.awt.Color(255, 255, 255));
+        pnlforinspect.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pnlforinspect.setForeground(new java.awt.Color(117, 80, 46));
 
         lblformaintenancetitle1.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         lblformaintenancetitle1.setForeground(new java.awt.Color(117, 80, 46));
@@ -526,7 +538,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addGroup(pnlforinspectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblformaintenancetitle1)
                     .addComponent(lbltotalvalue4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         pnlforinspectLayout.setVerticalGroup(
             pnlforinspectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -535,7 +547,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 .addComponent(lblformaintenancetitle1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbltotalvalue4)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
 
         overview.add(pnlforinspect);

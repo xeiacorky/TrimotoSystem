@@ -65,6 +65,7 @@ public class ViewDamageReport extends javax.swing.JPanel {
         jTextField1 = new javax.swing.JTextField();
         btnclear = new javax.swing.JButton();
         btndamagereport = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
 
         title1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         title1.setText("Damage Report");
@@ -249,14 +250,13 @@ public class ViewDamageReport extends javax.swing.JPanel {
         btndamagereport.setText("Save Damage Report");
         btndamagereport.addActionListener(this::btndamagereportActionPerformed);
 
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        jLabel15.setText("Record damage report records and notes");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(title)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,6 +267,14 @@ public class ViewDamageReport extends javax.swing.JPanel {
                         .addComponent(btndamagereport)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel15))
+                    .addComponent(title))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -274,12 +282,14 @@ public class ViewDamageReport extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(title)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnclear)
                     .addComponent(btndamagereport))
-                .addContainerGap(106, Short.MAX_VALUE))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -380,6 +390,7 @@ if (jComboBox1.getSelectedItem() == null) {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;

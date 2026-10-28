@@ -78,13 +78,12 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
         title = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jPanel1 = new javax.swing.JPanel();
-        btnviewtransac = new javax.swing.JButton();
-        btnreturnedmark = new javax.swing.JButton();
-        btnrefresh = new javax.swing.JButton();
         ID = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         btnsearch = new javax.swing.JButton();
+        btnrefresh = new javax.swing.JButton();
+        btnreturnedmark = new javax.swing.JButton();
+        btnviewtransac = new javax.swing.JButton();
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
@@ -307,23 +306,6 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.setLayout(new java.awt.GridLayout(1, 3, 15, 0));
-
-        btnviewtransac.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btnviewtransac.setText("View Transaction Details");
-        btnviewtransac.addActionListener(this::btnviewtransacActionPerformed);
-        jPanel1.add(btnviewtransac);
-
-        btnreturnedmark.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btnreturnedmark.setText("Mark Motorcycle Returned");
-        btnreturnedmark.addActionListener(this::btnreturnedmarkActionPerformed);
-        jPanel1.add(btnreturnedmark);
-
-        btnrefresh.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btnrefresh.setText("Refresh");
-        btnrefresh.addActionListener(this::btnrefreshActionPerformed);
-        jPanel1.add(btnrefresh);
-
         ID.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         ID.setText("Search ID:");
 
@@ -333,6 +315,18 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
         btnsearch.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnsearch.setText("Search");
         btnsearch.addActionListener(this::btnsearchActionPerformed);
+
+        btnrefresh.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnrefresh.setText("Refresh");
+        btnrefresh.addActionListener(this::btnrefreshActionPerformed);
+
+        btnreturnedmark.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnreturnedmark.setText("Mark Motorcycle Returned");
+        btnreturnedmark.addActionListener(this::btnreturnedmarkActionPerformed);
+
+        btnviewtransac.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnviewtransac.setText("View Transaction Details");
+        btnviewtransac.addActionListener(this::btnviewtransacActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -350,17 +344,20 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(description)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 329, Short.MAX_VALUE)
                         .addComponent(ID)
                         .addGap(18, 18, 18)
                         .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnsearch)
-                        .addGap(16, 16, 16))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(320, Short.MAX_VALUE))
+                        .addGap(16, 16, 16))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnviewtransac)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnreturnedmark)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnrefresh)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -374,11 +371,18 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
                         .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnsearch))
                     .addComponent(description))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(83, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnreturnedmark)
+                            .addComponent(btnviewtransac)
+                            .addComponent(btnrefresh))
+                        .addContainerGap())))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -606,7 +610,6 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;

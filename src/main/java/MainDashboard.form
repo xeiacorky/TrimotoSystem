@@ -512,7 +512,7 @@
                     <Component class="javax.swing.JLabel" name="jLabel10">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="SansSerif" size="20" style="0"/>
+                          <Font name="SansSerif" size="18" style="1"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Quick Actions"/>
                       </Properties>
@@ -537,6 +537,14 @@
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                            <BevelBorder/>
+                          </Border>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="b9" green="80" red="29" type="rgb"/>
+                        </Property>
                       </Properties>
 
                       <Layout>
@@ -548,7 +556,7 @@
                                       <Component id="lbltotalvalue" min="-2" pref="41" max="-2" attributes="0"/>
                                       <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="33" max="32767" attributes="0"/>
+                                  <EmptySpace pref="29" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -559,7 +567,7 @@
                                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="lbltotalvalue" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="131" max="32767" attributes="0"/>
+                                  <EmptySpace pref="127" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -594,6 +602,14 @@
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                            <BevelBorder/>
+                          </Border>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="60" green="ae" red="27" type="rgb"/>
+                        </Property>
                       </Properties>
 
                       <Layout>
@@ -605,7 +621,7 @@
                                       <Component id="lblAvailabletitle" min="-2" max="-2" attributes="0"/>
                                       <Component id="lbltotalvalue2" alignment="0" min="-2" pref="41" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="84" max="32767" attributes="0"/>
+                                  <EmptySpace pref="80" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -616,7 +632,7 @@
                                   <Component id="lblAvailabletitle" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="lbltotalvalue2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="131" max="32767" attributes="0"/>
+                                  <EmptySpace pref="127" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -651,6 +667,14 @@
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                            <BevelBorder/>
+                          </Border>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ad" green="44" red="8e" type="rgb"/>
+                        </Property>
                       </Properties>
 
                       <Layout>
@@ -662,7 +686,7 @@
                                       <Component id="lblrentedtitle" min="-2" max="-2" attributes="0"/>
                                       <Component id="lbltotalvalue1" alignment="0" min="-2" pref="41" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="99" max="32767" attributes="0"/>
+                                  <EmptySpace pref="95" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -673,7 +697,7 @@
                                   <Component id="lblrentedtitle" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="lbltotalvalue1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="130" max="32767" attributes="0"/>
+                                  <EmptySpace pref="126" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -708,6 +732,14 @@
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                            <BevelBorder/>
+                          </Border>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="26" green="7b" red="d6" type="rgb"/>
+                        </Property>
                       </Properties>
 
                       <Layout>
@@ -719,7 +751,7 @@
                                       <Component id="lblformaintenancetitle" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="lbltotalvalue3" alignment="0" min="-2" pref="41" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="21" max="32767" attributes="0"/>
+                                  <EmptySpace pref="17" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -765,6 +797,14 @@
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                            <BevelBorder/>
+                          </Border>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="4e" green="bf" red="e3" type="rgb"/>
+                        </Property>
                       </Properties>
 
                       <Layout>
@@ -776,7 +816,7 @@
                                       <Component id="lblformaintenancetitle2" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="lbltotalvalue5" alignment="0" min="-2" pref="41" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="56" max="32767" attributes="0"/>
+                                  <EmptySpace pref="52" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -787,7 +827,7 @@
                                   <Component id="lblformaintenancetitle2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="lbltotalvalue5" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="131" max="32767" attributes="0"/>
+                                  <EmptySpace pref="127" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -822,6 +862,14 @@
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                            <BevelBorder/>
+                          </Border>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="2e" green="50" red="75" type="rgb"/>
+                        </Property>
                       </Properties>
 
                       <Layout>
@@ -833,7 +881,7 @@
                                       <Component id="lblformaintenancetitle1" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="lbltotalvalue4" alignment="0" min="-2" pref="41" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="62" max="32767" attributes="0"/>
+                                  <EmptySpace pref="58" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -844,7 +892,7 @@
                                   <Component id="lblformaintenancetitle1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="lbltotalvalue4" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="131" max="32767" attributes="0"/>
+                                  <EmptySpace pref="127" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>

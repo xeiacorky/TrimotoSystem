@@ -55,7 +55,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="btnclear" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btncreatedmgreport" min="-2" max="-2" attributes="0"/>
+                      <Component id="btncreatedmgreport" min="-2" pref="156" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnsaveinspect" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="404" max="-2" attributes="0"/>
@@ -75,11 +75,10 @@
               <Component id="jPanel1" min="-2" pref="559" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btncreatedmgreport" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
-                  <Component id="btnsaveinspect" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
-                  <Component id="btnclear" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
+                  <Component id="btncreatedmgreport" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnsaveinspect" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnclear" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
