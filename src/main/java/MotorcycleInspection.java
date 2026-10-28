@@ -12,9 +12,9 @@ public class MotorcycleInspection extends javax.swing.JPanel {
     }
 
     public void refreshMotorcycleDropdown() {
-        DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
+      DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
         for (Motorcycle m : TrimotoSystem.motorcycles) {
-            model.addElement(m.id + " - " + m.brand + " " + m.model);
+            model.addElement(m.getId() + " - " + m.getBrand() + " " + m.getModel());
         }
         cmbmotorcycle.setModel(model);
     }
@@ -254,11 +254,11 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         Motorcycle m = TrimotoSystem.findMotorcycleById(motorId);
         if (m != null) {
             if ("Needs Repair".equalsIgnoreCase(condition) || "Unsafe".equalsIgnoreCase(condition)) {
-                m.status = "Under Repair";
+                m.setStatus("Under Repair");
             } else if ("Minor Damage".equalsIgnoreCase(condition)) {
-                m.status = "For Inspection";
+                m.setStatus("For Inspection");
             } else {
-                m.status = "Available";
+                m.setStatus("Available");
             }
         }
 

@@ -390,21 +390,24 @@ viewtransactapplyfilterActionPerformed(evt);
     }//GEN-LAST:event_txtaddressActionPerformed
 
     private void saveRentalEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveRentalEditActionPerformed
-int selectedRow = jTable1.getSelectedRow();
+        int selectedRow = jTable2.getRowCount() > 0 && jTable2.getSelectedRow() != -1 ? jTable2.getSelectedRow() : jTable1.getSelectedRow();
+        
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(this, "No rental transaction selected to edit.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
-        String transId = jTable1.getValueAt(selectedRow, 0).toString();
+        javax.swing.JTable targetTable = (jTable2.getRowCount() > 0 && jTable2.getSelectedRow() != -1) ? jTable2 : jTable1;
+        String transId = targetTable.getValueAt(selectedRow, 0).toString();
+
         for (RentalTransaction r : TrimotoSystem.rentals) {
             if (r.transactionId.equalsIgnoreCase(transId)) {
                 try {
                     if (r.renterProfile != null) {
-                        r.renterProfile.name = txtname.getText().trim();
-                        r.renterProfile.address = txtaddress.getText().trim();
-                        r.renterProfile.contactNumber = txtcontnumber.getText().trim();
-                        r.renterProfile.licenseNumber = txtdriverslicense.getText().trim();
+                        r.renterProfile.setName(txtname.getText().trim());
+                        r.renterProfile.setAddress(txtaddress.getText().trim());
+                        r.renterProfile.setContactNumber(txtcontnumber.getText().trim());
+                        r.renterProfile.setLicenseNumber(txtdriverslicense.getText().trim());
                     }
                     r.days = Integer.parseInt(lbldura.getText().trim());
                     r.totalCost = Double.parseDouble(jTextField1.getText().trim());
@@ -413,8 +416,10 @@ int selectedRow = jTable1.getSelectedRow();
                     r.paymentType = cbpartial.isSelected() ? "Partial" : "Full";
                     r.status = jComboBox1.getSelectedItem().toString();
 
-                    loadTableData();
+                    loadTableData(); // Refresh primary table
+                    viewtransactapplyfilterActionPerformed(evt); // Refresh dialog table
                     editviewtransac.dispose();
+                    
                     JOptionPane.showMessageDialog(this, "Rental transaction updated successfully!");
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(this, "Please check numeric fields for valid numbers.", "Format Error", JOptionPane.ERROR_MESSAGE);
@@ -422,6 +427,7 @@ int selectedRow = jTable1.getSelectedRow();
                 break;
             }
         }
+    
     }//GEN-LAST:event_saveRentalEditActionPerformed
 
     private void viewtransacteditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewtransacteditActionPerformed
@@ -435,10 +441,10 @@ int selectedRow = jTable1.getSelectedRow();
         for (RentalTransaction r : TrimotoSystem.rentals) {
             if (r.transactionId.equalsIgnoreCase(transId)) {
                 if (r.renterProfile != null) {
-                    txtname.setText(r.renterProfile.name);
-                    txtaddress.setText(r.renterProfile.address);
-                    txtcontnumber.setText(r.renterProfile.contactNumber);
-                    txtdriverslicense.setText(r.renterProfile.licenseNumber);
+                    txtname.setText(r.renterProfile.getName());
+                    txtaddress.setText(r.renterProfile.getAddress());
+                    txtcontnumber.setText(r.renterProfile.getContactNumber());
+                    txtdriverslicense.setText(r.renterProfile.getLicenseNumber());
                 }
                 lbldura.setText(String.valueOf(r.days));
                 jTextField1.setText(String.valueOf(r.totalCost));
@@ -545,7 +551,7 @@ String filterStatus = viewtranasactfilter.getSelectedItem() != null ? viewtranas
                 r.status = "Completed";
                 Motorcycle m = TrimotoSystem.findMotorcycleById(r.motorcycleId);
                 if (m != null) {
-                    m.status = "Available";
+                    m.setStatus("Available");
                 }
                 break;
             }
@@ -557,6 +563,7 @@ String filterStatus = viewtranasactfilter.getSelectedItem() != null ? viewtranas
             ((MainDashboard) topWindow).refreshAllPanels();
         }
 
+        
         JOptionPane.showMessageDialog(this, "Motorcycle marked as Returned & Available!");    }//GEN-LAST:event_btnreturnedmarkActionPerformed
 
     private void btnrefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrefreshActionPerformed

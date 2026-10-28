@@ -214,11 +214,14 @@
                 <StringItem index="1" value="Standard Bike"/>
                 <StringItem index="2" value="Sports Bike"/>
                 <StringItem index="3" value="Adventure Bike"/>
-                <StringItem index="4" value="Electic Bike"/>
-                <StringItem index="5" value=" "/>
+                <StringItem index="4" value="Electric Bike"/>
+                <StringItem index="5" value=""/>
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmbtypesActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -237,6 +240,9 @@
               <Font name="SansSerif" size="13" style="0"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>

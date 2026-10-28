@@ -9,9 +9,9 @@ public class ViewDamageReport extends javax.swing.JPanel {
     }
 
     public void refreshMotorcycleDropdown() {
-        DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
+      DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
         for (Motorcycle m : TrimotoSystem.motorcycles) {
-            model.addElement(m.id + " - " + m.brand + " " + m.model);
+            model.addElement(m.getId() + " - " + m.getBrand() + " " + m.getModel());
         }
         jComboBox1.setModel(model);
     }

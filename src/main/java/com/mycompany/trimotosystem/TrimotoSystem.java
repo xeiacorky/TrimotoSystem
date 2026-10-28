@@ -11,7 +11,7 @@ public class TrimotoSystem {
     public static Motorcycle findMotorcycleById(String id) {
         if (id == null) return null;
         for (Motorcycle m : motorcycles) {
-            if (m.id.equalsIgnoreCase(id.trim())) {
+            if (m.getId().equalsIgnoreCase(id.trim())) {
                 return m;
             }
         }
@@ -19,17 +19,40 @@ public class TrimotoSystem {
     }
 }
 
+class MotorcycleFactory {
+    public static Motorcycle createMotorcycle(String type, String id, String brand, String model, int year, 
+                                              String transmission, int mileage, double dailyRate, 
+                                              double spec1, double spec2, double spec3) {
+        switch (type.trim()) {
+            case "Scooter":
+                return new Scooter(id, brand, model, year, transmission, mileage, dailyRate, (int) spec1, spec2, spec3);
+            case "Adventure Bike":
+                return new AdventureBike(id, brand, model, year, transmission, mileage, rateToDouble(dailyRate), (int) spec1, spec2, spec3, 220.0);
+            case "Standard Bike":
+                return new StandardBike(id, brand, model, year, transmission, mileage, dailyRate, (int) spec1, spec2);
+            case "Sports Bike":
+                return new SportsBike(id, brand, model, year, transmission, mileage, dailyRate, (int) spec1, spec2, spec3);
+            case "Electric Bike":
+                return new ElectricBike(id, brand, model, year, mileage, dailyRate, spec1, spec2, spec3);
+            default:
+                return new Scooter(id, brand, model, year, transmission, mileage, dailyRate, 125, 15.0, 5.5);
+        }
+    }
 
+    private static double rateToDouble(double rate) { return rate; }
+}
+
+// Encapsulated Base Class
 abstract class Motorcycle {
-    public String id;
-    public String brand;
-    public String model;
-    public int year;
-    public String type;
-    public String transmissionType;
-    public int mileage;
-    public double dailyRate;
-    public String status;
+    private String id;
+    private String brand;
+    private String model;
+    private int year;
+    private String type;
+    private String transmissionType;
+    private int mileage;
+    private double dailyRate;
+    private String status;
 
     public Motorcycle(String id, String brand, String model, int year, String type, String transmissionType, int mileage, double dailyRate) {
         this.id = id;
@@ -42,13 +65,37 @@ abstract class Motorcycle {
         this.dailyRate = dailyRate;
         this.status = "Available";
     }
+
+    // Getters and Setters (Encapsulation)
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
+    public String getBrand() { return brand; }
+    public void setBrand(String brand) { this.brand = brand; }
+    public String getModel() { return model; }
+    public void setModel(String model) { this.model = model; }
+    public int getYear() { return year; }
+    public void setYear(int year) { this.year = year; }
+    public String getType() { return type; }
+    public void setType(String type) { this.type = type; }
+    public String getTransmissionType() { return transmissionType; }
+    public void setTransmissionType(String transmissionType) { this.transmissionType = transmissionType; }
+    public int getMileage() { return mileage; }
+    public void setMileage(int mileage) { this.mileage = mileage; }
+    public double getDailyRate() { return dailyRate; }
+    public void setDailyRate(double dailyRate) { this.dailyRate = dailyRate; }
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
+
+    // Abstract Polymorphic Methods
+    public abstract String displayMotorcycleInfo();
+    public abstract double calculateRentalCost(int days);
 }
 
-// Scooter Subclass
+// Subclasses with Polymorphism (@Override)
 class Scooter extends Motorcycle {
-    public int engineDisplacement;
-    public double storageCapacity; // Compartment Capacity
-    public double fuelCapacity;
+    private int engineDisplacement;
+    private double storageCapacity;
+    private double fuelCapacity;
 
     public Scooter(String id, String brand, String model, int year, String transmissionType, int mileage, double dailyRate, int engineDisplacement, double storageCapacity, double fuelCapacity) {
         super(id, brand, model, year, "Scooter", transmissionType, mileage, dailyRate);
@@ -56,13 +103,25 @@ class Scooter extends Motorcycle {
         this.storageCapacity = storageCapacity;
         this.fuelCapacity = fuelCapacity;
     }
+
+    @Override
+    public String displayMotorcycleInfo() {
+        return "Engine Displacement: " + engineDisplacement + " cc\n" +
+               "Compartment Capacity: " + storageCapacity + " L\n" +
+               "Fuel Capacity: " + fuelCapacity + " L\n";
+    }
+
+    @Override
+    public double calculateRentalCost(int days) {
+        return days * getDailyRate();
+    }
 }
 
 class AdventureBike extends Motorcycle {
-    public int engineDisplacement;
-    public double storageCapacity; // Compartment Capacity
-    public double fuelCapacity;
-    public double groundClearance;
+    private int engineDisplacement;
+    private double storageCapacity;
+    private double fuelCapacity;
+    private double groundClearance;
 
     public AdventureBike(String id, String brand, String model, int year, String transmissionType, int mileage, double dailyRate, int engineDisplacement, double storageCapacity, double fuelCapacity, double groundClearance) {
         super(id, brand, model, year, "Adventure Bike", transmissionType, mileage, dailyRate);
@@ -71,37 +130,72 @@ class AdventureBike extends Motorcycle {
         this.fuelCapacity = fuelCapacity;
         this.groundClearance = groundClearance;
     }
+
+    @Override
+    public String displayMotorcycleInfo() {
+        return "Engine Displacement: " + engineDisplacement + " cc\n" +
+               "Compartment Capacity: " + storageCapacity + " L\n" +
+               "Fuel Capacity: " + fuelCapacity + " L\n" +
+               "Ground Clearance: " + groundClearance + " mm\n";
+    }
+
+    @Override
+    public double calculateRentalCost(int days) {
+        return (days * getDailyRate()) + 200; // Includes adventure gear/trail insurance fee
+    }
 }
 
-// StandardBike Subclass
 class StandardBike extends Motorcycle {
-    public int engineDisplacement;
-    public double fuelCapacity;
+    private int engineDisplacement;
+    private double fuelCapacity;
 
     public StandardBike(String id, String brand, String model, int year, String transmissionType, int mileage, double dailyRate, int engineDisplacement, double fuelCapacity) {
         super(id, brand, model, year, "Standard Bike", transmissionType, mileage, dailyRate);
         this.engineDisplacement = engineDisplacement;
         this.fuelCapacity = fuelCapacity;
     }
-}
 
-// SportsBike Subclass
-class SportsBike extends Motorcycle {
-    public int engineDisplacement;
-    public double fuelCapacity;
+    @Override
+    public String displayMotorcycleInfo() {
+        return "Engine Displacement: " + engineDisplacement + " cc\n" +
+               "Fuel Capacity: " + fuelCapacity + " L\n";
+    }
 
-    public SportsBike(String id, String brand, String model, int year, String transmissionType, int mileage, double dailyRate, int engineDisplacement, double fuelCapacity) {
-        super(id, brand, model, year, "Sports Bike", transmissionType, mileage, dailyRate);
-        this.engineDisplacement = engineDisplacement;
-        this.fuelCapacity = fuelCapacity;
+    @Override
+    public double calculateRentalCost(int days) {
+        return days * getDailyRate();
     }
 }
 
-// ElectricBike Subclass
+class SportsBike extends Motorcycle {
+    private int engineDisplacement;
+    private double fuelCapacity;
+    private double powerOutput;
+
+    public SportsBike(String id, String brand, String model, int year, String transmissionType, int mileage, double dailyRate, int engineDisplacement, double fuelCapacity, double powerOutput) {
+        super(id, brand, model, year, "Sports Bike", transmissionType, mileage, dailyRate);
+        this.engineDisplacement = engineDisplacement;
+        this.fuelCapacity = fuelCapacity;
+        this.powerOutput = powerOutput;
+    }
+
+    @Override
+    public String displayMotorcycleInfo() {
+        return "Engine Displacement: " + engineDisplacement + " cc\n" +
+               "Fuel Capacity: " + fuelCapacity + " L\n" +
+               "Power Output: " + powerOutput + " HP\n";
+    }
+
+    @Override
+    public double calculateRentalCost(int days) {
+        return (days * getDailyRate()) + 300; // Includes high-performance insurance premium
+    }
+}
+
 class ElectricBike extends Motorcycle {
-    public double motorPower;
-    public double batteryCapacity;
-    public double chargingTime;
+    private double motorPower;
+    private double batteryCapacity;
+    private double chargingTime;
 
     public ElectricBike(String id, String brand, String model, int year, int mileage, double dailyRate, double motorPower, double batteryCapacity, double chargingTime) {
         super(id, brand, model, year, "Electric Bike", "Automatic", mileage, dailyRate);
@@ -109,14 +203,26 @@ class ElectricBike extends Motorcycle {
         this.batteryCapacity = batteryCapacity;
         this.chargingTime = chargingTime;
     }
+
+    @Override
+    public String displayMotorcycleInfo() {
+        return "Motor Power: " + motorPower + " W\n" +
+               "Battery Capacity: " + batteryCapacity + " Ah\n" +
+               "Charging Time: " + chargingTime + " hrs\n";
+    }
+
+    @Override
+    public double calculateRentalCost(int days) {
+        return (days * getDailyRate()) * 0.95; // 5% eco-friendly discount
+    }
 }
 
 class RenterProfile {
-    public String name;
-    public String address;
-    public String contactNumber;
-    public String licenseNumber;
-    public String age;
+    private String name;
+    private String address;
+    private String contactNumber;
+    private String licenseNumber;
+    private String age;
 
     public RenterProfile(String name, String address, String contactNumber, String licenseNumber, String age) {
         this.name = name;
@@ -125,6 +231,17 @@ class RenterProfile {
         this.licenseNumber = licenseNumber;
         this.age = age;
     }
+
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+    public String getAddress() { return address; }
+    public void setAddress(String address) { this.address = address; }
+    public String getContactNumber() { return contactNumber; }
+    public void setContactNumber(String contactNumber) { this.contactNumber = contactNumber; }
+    public String getLicenseNumber() { return licenseNumber; }
+    public void setLicenseNumber(String licenseNumber) { this.licenseNumber = licenseNumber; }
+    public String getAge() { return age; }
+    public void setAge(String age) { this.age = age; }
 }
 
 class InspectionRecord {
@@ -203,18 +320,6 @@ class RentalTransaction {
     }
 
     public String getRenterName() {
-        return renterProfile != null ? renterProfile.name : "";
-    }
-
-    public String getAddress() {
-        return renterProfile != null ? renterProfile.address : "";
-    }
-
-    public String getContactNumber() {
-        return renterProfile != null ? renterProfile.contactNumber : "";
-    }
-
-    public String getLicenseNumber() {
-        return renterProfile != null ? renterProfile.licenseNumber : "";
+        return renterProfile != null ? renterProfile.getName() : "";
     }
 }

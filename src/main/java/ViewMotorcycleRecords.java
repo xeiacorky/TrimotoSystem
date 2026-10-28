@@ -32,7 +32,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
 
         for (Motorcycle m : TrimotoSystem.motorcycles) {
             model.addRow(new Object[]{
-                m.id, m.brand, m.model, m.year, m.type, m.mileage, m.dailyRate, m.status
+                m.getId(), m.getBrand(), m.getModel(), m.getYear(), m.getType(), m.getMileage(), m.getDailyRate(), m.getStatus()
             });
         }
     }
@@ -1082,7 +1082,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         model.setRowCount(0);
 
         for (InspectionRecord record : TrimotoSystem.inspections) {
-            if (record.motorcycleId.equalsIgnoreCase(selectedMotorId)) {
+            if (record.motorcycleId.trim().equalsIgnoreCase(selectedMotorId.trim())) {
                 model.addRow(new Object[]{
                     record.recordId, record.motorcycleId, record.date, record.phase,
                     record.odometer, record.fuel, record.tires, record.brakes,
@@ -1162,49 +1162,49 @@ btnsearchActionPerformed(evt);
     }//GEN-LAST:event_jTextField3ActionPerformed
 
     private void btneditinspect1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditinspect1ActionPerformed
-    int selectedRow = jTable2.getSelectedRow();
-    if (selectedRow == -1) {
-        JOptionPane.showMessageDialog(viewinspectdialog, "Please select an inspection record to edit.");
-        return;
-    }
-    
-    DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
-    for (Motorcycle m : TrimotoSystem.motorcycles) {
-        model.addElement(m.id + " - " + m.brand + " " + m.model);
-    }
-    cmbmotorcycle.setModel(model);
-
-    String recId = jTable2.getValueAt(selectedRow, 0).toString();
-    for (InspectionRecord record : TrimotoSystem.inspections) {
-        if (recId.equalsIgnoreCase(record.recordId)) {
-            
-            for (int i = 0; i < cmbmotorcycle.getItemCount(); i++) {
-                if (cmbmotorcycle.getItemAt(i).startsWith(record.motorcycleId)) {
-                    cmbmotorcycle.setSelectedIndex(i);
-                    break;
-                }
-            }
-            txtinspectdate.setText(record.date);
-            cbinspectionphase.setSelectedItem(record.phase);
-            jTextField1.setText(record.odometer);
-            txtfuel.setText(record.fuel);
-            jComboBox8.setSelectedItem(record.tires);
-            jComboBox9.setSelectedItem(record.brakes);
-            cbheadlight.setSelectedItem(record.headlight);
-            jComboBox10.setSelectedItem(record.horns);
-            jComboBox11.setSelectedItem(record.mirrors);
-            jComboBox12.setSelectedItem(record.body);
-            jComboBox13.setSelectedItem(record.engine);
-            cbcondition.setSelectedItem(record.condition);
-            jComboBox14.setSelectedItem(record.readiness);
-            jTextField2.setText(record.notes);
-
-            viewinspect.setSize(720, 620);
-            viewinspect.setLocationRelativeTo(this);
-            viewinspect.setVisible(true);
-            break;
+ int selectedRow = jTable2.getSelectedRow();
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(viewinspectdialog, "Please select an inspection record to edit.");
+            return;
         }
-    }
+
+        DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
+        for (Motorcycle m : TrimotoSystem.motorcycles) {
+            model.addElement(m.getId() + " - " + m.getBrand() + " " + m.getModel());
+        }
+        cmbmotorcycle.setModel(model);
+
+        String recId = jTable2.getValueAt(selectedRow, 0).toString();
+        for (InspectionRecord record : TrimotoSystem.inspections) {
+            if (recId.equalsIgnoreCase(record.recordId)) {
+
+                for (int i = 0; i < cmbmotorcycle.getItemCount(); i++) {
+                    if (cmbmotorcycle.getItemAt(i).startsWith(record.motorcycleId)) {
+                        cmbmotorcycle.setSelectedIndex(i);
+                        break;
+                    }
+                }
+                txtinspectdate.setText(record.date);
+                cbinspectionphase.setSelectedItem(record.phase);
+                jTextField1.setText(record.odometer);
+                txtfuel.setText(record.fuel);
+                jComboBox8.setSelectedItem(record.tires);
+                jComboBox9.setSelectedItem(record.brakes);
+                cbheadlight.setSelectedItem(record.headlight);
+                jComboBox10.setSelectedItem(record.horns);
+                jComboBox11.setSelectedItem(record.mirrors);
+                jComboBox12.setSelectedItem(record.body);
+                jComboBox13.setSelectedItem(record.engine);
+                cbcondition.setSelectedItem(record.condition);
+                jComboBox14.setSelectedItem(record.readiness);
+                jTextField2.setText(record.notes);
+
+                viewinspect.setSize(720, 620);
+                viewinspect.setLocationRelativeTo(this);
+                viewinspect.setVisible(true);
+                break;
+            }
+        }
     }//GEN-LAST:event_btneditinspect1ActionPerformed
 
     private void btneditinspect2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditinspect2ActionPerformed
@@ -1213,10 +1213,10 @@ btnsearchActionPerformed(evt);
             JOptionPane.showMessageDialog(viewmaintedialog, "Please select a maintenance record to edit.");
             return;
         }
-        
+
         DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
         for (Motorcycle m : TrimotoSystem.motorcycles) {
-            model.addElement(m.id + " - " + m.brand + " " + m.model);
+            model.addElement(m.getId() + " - " + m.getBrand() + " " + m.getModel());
         }
         jComboBox1.setModel(model);
 
@@ -1251,12 +1251,28 @@ btnsearchActionPerformed(evt);
     }//GEN-LAST:event_btneditinspect2ActionPerformed
 
     private void btneditdamagarepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditdamagarepActionPerformed
-int selectedRow = jTable4.getSelectedRow();
+        int selectedRow = jTable4.getSelectedRow();
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(viewdamagereportdialog, "Please select a damage report to edit.");
             return;
         }
+
+        DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
+        for (Motorcycle m : TrimotoSystem.motorcycles) {
+            model.addElement(m.getId() + " - " + m.getBrand() + " " + m.getModel());
+        }
+        jComboBox5.setModel(model);
+
         String reportId = jTable4.getValueAt(selectedRow, 0).toString();
+        String selectedMotorId = jTable4.getValueAt(selectedRow, 1).toString();
+
+        for (int i = 0; i < jComboBox5.getItemCount(); i++) {
+            if (jComboBox5.getItemAt(i).startsWith(selectedMotorId)) {
+                jComboBox5.setSelectedIndex(i);
+                break;
+            }
+        }
+
         for (String report : TrimotoSystem.damageReports) {
             if (report.contains("Report ID: " + reportId)) {
                 jTextField7.setText(extractField(report, "Location"));
@@ -1319,7 +1335,7 @@ int selectedRow = jTable4.getSelectedRow();
     }//GEN-LAST:event_txtmotoridActionPerformed
 
     private void btneditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditActionPerformed
-       int selectedRow = recordstable.getSelectedRow();
+      int selectedRow = recordstable.getSelectedRow();
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(this, "Please select a motorcycle from the table to edit.", "Selection Required", JOptionPane.WARNING_MESSAGE);
             return;
@@ -1329,15 +1345,17 @@ int selectedRow = jTable4.getSelectedRow();
         Motorcycle m = TrimotoSystem.findMotorcycleById(id);
 
         if (m != null) {
-            txtmotorid.setText(m.id);
-            txtbrand.setText(m.brand);
-            txtmodel.setText(m.model);
-            txtyear.setText(String.valueOf(m.year));
-            txtmileage.setText(String.valueOf(m.mileage));
-            txtdailyrentalrate.setText(String.valueOf(m.dailyRate));
-            cmbtypes.setSelectedItem(m.type);
-
-            jTextField26.setText(""); 
+            txtmotorid.setText(m.getId());
+            txtmotorid.setEditable(false); 
+            txtbrand.setText(m.getBrand());
+            txtmodel.setText(m.getModel());
+            txtyear.setText(String.valueOf(m.getYear()));
+            txtmileage.setText(String.valueOf(m.getMileage()));
+            txtdailyrentalrate.setText(String.valueOf(m.getDailyRate()));
+            
+            cmbtypes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Scooter", "Standard Bike", "Sports Bike", "Adventure Bike", "Electric Bike" }));
+            cmbtypes.setSelectedItem(m.getType());
+            jTextField23.setText(m.getTransmissionType()); // Transmission Field
 
             viewmmotorcycle.setSize(950, 520);
             viewmmotorcycle.setLocationRelativeTo(this);
@@ -1350,7 +1368,7 @@ int selectedRow = jTable4.getSelectedRow();
     }//GEN-LAST:event_btnrefreshActionPerformed
 
     private void btndeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndeleteActionPerformed
-    int selectedRow = recordstable.getSelectedRow();
+   int selectedRow = recordstable.getSelectedRow();
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(this, "Please select a motorcycle row to delete.", "Selection Required", JOptionPane.WARNING_MESSAGE);
             return;
@@ -1366,7 +1384,7 @@ int selectedRow = jTable4.getSelectedRow();
         );
 
         if (confirm == JOptionPane.YES_OPTION) {
-            TrimotoSystem.motorcycles.removeIf(m -> m.id.equals(id));
+            TrimotoSystem.motorcycles.removeIf(m -> m.getId().equals(id));
             loadTableData();
             notifyDashboardRefresh();
             JOptionPane.showMessageDialog(this, "Motorcycle " + id + " deleted successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
@@ -1518,24 +1536,25 @@ int selectedRow = jTable4.getSelectedRow();
     }//GEN-LAST:event_jTextField20ActionPerformed
 
     private void btnsaveviewmotorcycleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveviewmotorcycleActionPerformed
-        int selectedRow = recordstable.getSelectedRow();
+      int selectedRow = recordstable.getSelectedRow();
         if (selectedRow == -1) {
             viewmmotorcycle.dispose();
             return;
         }
 
-        String id = recordstable.getValueAt(selectedRow, 0).toString();
-        Motorcycle m = TrimotoSystem.findMotorcycleById(id);
+        String targetId = txtmotorid.getText().trim();
+        Motorcycle m = TrimotoSystem.findMotorcycleById(targetId);
 
         if (m != null) {
             try {
-                m.brand = txtbrand.getText().trim();
-                m.model = txtmodel.getText().trim();
-                m.year = Integer.parseInt(txtyear.getText().trim());
-                m.mileage = Integer.parseInt(txtmileage.getText().trim());
-                m.dailyRate = Double.parseDouble(txtdailyrentalrate.getText().trim());
+                m.setBrand(txtbrand.getText().trim());
+                m.setModel(txtmodel.getText().trim());
+                m.setYear(Integer.parseInt(txtyear.getText().trim()));
+                m.setMileage(Integer.parseInt(txtmileage.getText().trim()));
+                m.setDailyRate(Double.parseDouble(txtdailyrentalrate.getText().trim()));
+                m.setTransmissionType(jTextField23.getText().trim());
                 if (cmbtypes.getSelectedItem() != null) {
-                    m.type = cmbtypes.getSelectedItem().toString();
+                    m.setType(cmbtypes.getSelectedItem().toString());
                 }
 
                 loadTableData();
@@ -1543,7 +1562,7 @@ int selectedRow = jTable4.getSelectedRow();
                 JOptionPane.showMessageDialog(viewmmotorcycle, "Motorcycle record updated successfully!");
                 viewmmotorcycle.dispose();
             } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(viewmmotorcycle, "Please enter valid numeric values for Year, Mileage, and Daily Rate.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(viewmmotorcycle, "Please enter valid numeric values.", "Input Error", JOptionPane.ERROR_MESSAGE);
             }
         }
     }//GEN-LAST:event_btnsaveviewmotorcycleActionPerformed
@@ -1631,7 +1650,7 @@ int selectedRow = jTable4.getSelectedRow();
     }//GEN-LAST:event_damagerepapplyfilterActionPerformed
 
     private void btnsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsearchActionPerformed
-        String searchId = jTextField3.getText().trim();
+      String searchId = jTextField3.getText().trim();
         if (searchId.isEmpty()) {
             loadTableData();
             return;
@@ -1641,9 +1660,9 @@ int selectedRow = jTable4.getSelectedRow();
         model.setRowCount(0);
 
         for (Motorcycle m : TrimotoSystem.motorcycles) {
-            if (m.id.equalsIgnoreCase(searchId)) {
+            if (m.getId().equalsIgnoreCase(searchId)) {
                 model.addRow(new Object[]{
-                    m.id, m.brand, m.model, m.year, m.type, m.mileage, m.dailyRate, m.status
+                    m.getId(), m.getBrand(), m.getModel(), m.getYear(), m.getType(), m.getMileage(), m.getDailyRate(), m.getStatus()
                 });
             }
         }
@@ -1663,41 +1682,16 @@ int selectedRow = jTable4.getSelectedRow();
             showMotorcycleDetails(m);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-   private void showMotorcycleDetails(Motorcycle m) {
-        StringBuilder sb = new StringBuilder();
-
-        if (m instanceof Scooter) {
-            Scooter s = (Scooter) m;
-            sb.append("Engine Displacement: ").append(s.engineDisplacement).append(" cc\n");
-            sb.append("Compartment Capacity: ").append(s.storageCapacity).append(" L\n");
-            sb.append("Fuel Capacity: ").append(s.fuelCapacity).append(" L\n");
-        } else if (m instanceof AdventureBike) {
-            AdventureBike ab = (AdventureBike) m;
-            sb.append("Engine Displacement: ").append(ab.engineDisplacement).append(" cc\n");
-            sb.append("Compartment Capacity: ").append(ab.storageCapacity).append(" L\n");
-            sb.append("Fuel Capacity: ").append(ab.fuelCapacity).append(" L\n");
-            sb.append("Ground Clearance: ").append(ab.groundClearance).append(" mm\n");
-        } else if (m instanceof StandardBike) {
-            StandardBike sbike = (StandardBike) m;
-            sb.append("Engine Displacement: ").append(sbike.engineDisplacement).append(" cc\n");
-            sb.append("Fuel Capacity: ").append(sbike.fuelCapacity).append(" L\n");
-        } else if (m instanceof SportsBike) {
-            SportsBike sp = (SportsBike) m;
-            sb.append("Engine Displacement: ").append(sp.engineDisplacement).append(" cc\n");
-            sb.append("Fuel Capacity: ").append(sp.fuelCapacity).append(" L\n");
-        } else if (m instanceof ElectricBike) {
-            ElectricBike eb = (ElectricBike) m;
-            sb.append("Motor Power: ").append(eb.motorPower).append(" W\n");
-            sb.append("Battery Capacity: ").append(eb.batteryCapacity).append(" Ah\n");
-            sb.append("Charging Time: ").append(eb.chargingTime).append(" hrs\n");
-        }
+  
+    private void showMotorcycleDetails(Motorcycle m) {
+        String details = m.displayMotorcycleInfo();
 
         jTextArea1.setFont(new java.awt.Font("SansSerif", java.awt.Font.PLAIN, 13));
-        jTextArea1.setText(sb.toString());
+        jTextArea1.setText(details);
         jTextArea1.setEditable(false);
         jTextArea1.setCaretPosition(0);
 
-        viewfurtherdetails.setTitle("Further Details - " + m.id);
+        viewfurtherdetails.setTitle("Further Details - " + m.getId());
         viewfurtherdetails.setSize(380, 220);
         viewfurtherdetails.setLocationRelativeTo(this);
         viewfurtherdetails.setVisible(true);

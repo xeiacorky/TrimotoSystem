@@ -101,7 +101,8 @@ public class ManageMotorcycles extends javax.swing.JPanel {
         jPanel1.add(lblmotortype);
 
         cmbtypes.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
-        cmbtypes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Scooter", "Standard Bike", "Sports Bike", "Adventure Bike", "Electic Bike", " " }));
+        cmbtypes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Scooter", "Standard Bike", "Sports Bike", "Adventure Bike", "Electric Bike", "" }));
+        cmbtypes.addActionListener(this::cmbtypesActionPerformed);
         jPanel1.add(cmbtypes);
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
@@ -109,6 +110,7 @@ public class ManageMotorcycles extends javax.swing.JPanel {
         jPanel1.add(jLabel3);
 
         jTextField1.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        jTextField1.addActionListener(this::jTextField1ActionPerformed);
         jPanel1.add(jTextField1);
 
         jLabel4.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
@@ -191,17 +193,13 @@ public class ManageMotorcycles extends javax.swing.JPanel {
     }//GEN-LAST:event_btnclearActionPerformed
 
     private void btnaddmotorcycleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddmotorcycleActionPerformed
-        String id = txtmotorid.getText().trim();
+       String id = txtmotorid.getText().trim();
         String brand = txtbrand.getText().trim();
         String model = txtmodel.getText().trim();
         String yearStr = txtyear.getText().trim();
         String mileageStr = txtmileage.getText().trim();
         String rateStr = txtdailyrentalrate.getText().trim();
-        String transmission = jTextField1.getText().trim();
-        
-        if (transmission.isEmpty()) {
-            transmission = "Manual";
-        }
+        String transmission = jTextField1.getText().trim().isEmpty() ? "Manual" : jTextField1.getText().trim();
 
         if (id.isEmpty() || brand.isEmpty() || model.isEmpty() || yearStr.isEmpty() || mileageStr.isEmpty() || rateStr.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please fill in all primary fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
@@ -213,33 +211,17 @@ public class ManageMotorcycles extends javax.swing.JPanel {
             return;
         }
 
-       try {
+        try {
             int year = Integer.parseInt(yearStr);
             int mileage = Integer.parseInt(mileageStr);
             double rate = Double.parseDouble(rateStr);
             String type = cmbtypes.getSelectedItem() != null ? cmbtypes.getSelectedItem().toString().trim() : "Scooter";
 
-            Motorcycle m;
-            switch (type) {
-                case "Scooter":
-                    m = new Scooter(id, brand, model, year, transmission, mileage, rate, 125, 15.0, 5.5);
-                    break;
-                case "Adventure Bike":
-                    m = new AdventureBike(id, brand, model, year, transmission, mileage, rate, 650, 20.0, 20.0, 220.0);
-                    break;
-                case "Standard Bike":
-                    m = new StandardBike(id, brand, model, year, transmission, mileage, rate, 150, 12.0);
-                    break;
-                case "Sports Bike":
-                    m = new SportsBike(id, brand, model, year, transmission, mileage, rate, 400, 14.0);
-                    break;
-                case "Electric Bike":
-                    m = new ElectricBike(id, brand, model, year, mileage, rate, 3000.0, 60.0, 4.0);
-                    break;
-                default:
-                    m = new Scooter(id, brand, model, year, transmission, mileage, rate, 125, 15.0, 5.5);
-                    break;
-            }
+            double spec1 = jTextField2.getText().trim().isEmpty() ? 125 : Double.parseDouble(jTextField2.getText().trim());
+            double spec2 = jTextField3.getText().trim().isEmpty() ? 15.0 : Double.parseDouble(jTextField3.getText().trim());
+            double spec3 = jTextField4.getText().trim().isEmpty() ? 5.5 : Double.parseDouble(jTextField4.getText().trim());
+
+            Motorcycle m = MotorcycleFactory.createMotorcycle(type, id, brand, model, year, transmission, mileage, rate, spec1, spec2, spec3);
 
             TrimotoSystem.motorcycles.add(m);
 
@@ -251,9 +233,72 @@ public class ManageMotorcycles extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Motorcycle Registered Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
             btnclearActionPerformed(new java.awt.event.ActionEvent(btnclear, java.awt.event.ActionEvent.ACTION_PERFORMED, null));
         } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Please enter valid numeric values for Year, Mileage, and Daily Rate.", "Invalid Format", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Please enter valid numeric values for Year, Mileage, Daily Rate, and subclass specifications.", "Invalid Format", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnaddmotorcycleActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void cmbtypesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbtypesActionPerformed
+        String selectedType = cmbtypes.getSelectedItem() != null ? cmbtypes.getSelectedItem().toString().trim() : "Scooter";
+
+        switch (selectedType) {
+            case "Scooter":
+                jLabel4.setText("Engine Displacement (cc):");
+                jLabel5.setText("Compartment Capacity (L):");
+                jLabel6.setText("Fuel Capacity (L):");
+                jTextField2.setVisible(true);
+                jTextField3.setVisible(true);
+                jTextField4.setVisible(true);
+                break;
+
+            case "Adventure Bike":
+                jLabel4.setText("Engine Displacement (cc):");
+                jLabel5.setText("Compartment Capacity (L):");
+                jLabel6.setText("Fuel Capacity (L):");
+                jTextField2.setVisible(true);
+                jTextField3.setVisible(true);
+                jTextField4.setVisible(true);
+                break;
+
+            case "Standard Bike":
+                jLabel4.setText("Engine Displacement (cc):");
+                jLabel5.setText("Fuel Capacity (L):");
+                jLabel6.setText("");
+                jTextField2.setVisible(true);
+                jTextField3.setVisible(true);
+                jTextField4.setVisible(false);
+                break;
+
+            case "Sports Bike":
+                jLabel4.setText("Engine Displacement (cc):");
+                jLabel5.setText("Fuel Capacity (L):");
+                jLabel6.setText("Power Output (HP):");
+                jTextField2.setVisible(true);
+                jTextField3.setVisible(true);
+                jTextField4.setVisible(true);
+                break;
+
+            case "Electric Bike":
+                jLabel4.setText("Motor Power (W):");
+                jLabel5.setText("Battery Capacity (Ah):");
+                jLabel6.setText("Charging Time (hrs):");
+                jTextField2.setVisible(true);
+                jTextField3.setVisible(true);
+                jTextField4.setVisible(true);
+                break;
+
+            default:
+                jLabel4.setText(" ");
+                jLabel5.setText(" ");
+                jLabel6.setText(" ");
+                break;
+        }
+    }//GEN-LAST:event_cmbtypesActionPerformed
+    
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -14,8 +14,8 @@ public class RentalProcessing extends javax.swing.JPanel {
     public void refreshMotorcycleDropdown() {
         DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
         for (Motorcycle m : TrimotoSystem.motorcycles) {
-            if ("Available".equalsIgnoreCase(m.status)) {
-                model.addElement(m.id + " - " + m.brand + " " + m.model + " (₱" + m.dailyRate + "/day)");
+            if ("Available".equalsIgnoreCase(m.getStatus())) {
+                model.addElement(m.getId() + " - " + m.getBrand() + " " + m.getModel() + " (₱" + m.getDailyRate() + "/day)");
             }
         }
         motor.setModel(model);
@@ -50,9 +50,9 @@ public class RentalProcessing extends javax.swing.JPanel {
         cbfull = new javax.swing.JCheckBox();
         lblexpectedreturn = new javax.swing.JLabel();
         txtreturn = new javax.swing.JTextField();
-        btnclear = new javax.swing.JButton();
         btnprocessrental = new javax.swing.JButton();
         calculateCost = new javax.swing.JButton();
+        btnclear = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(900, 550));
 
@@ -122,14 +122,14 @@ public class RentalProcessing extends javax.swing.JPanel {
         txtreturn.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jPanel1.add(txtreturn);
 
-        btnclear.setText("Clear");
-        btnclear.addActionListener(this::btnclearActionPerformed);
-
         btnprocessrental.setText("Process Rental");
         btnprocessrental.addActionListener(this::btnprocessrentalActionPerformed);
 
         calculateCost.setText("Calculate Cost");
         calculateCost.addActionListener(this::calculateCostActionPerformed);
+
+        btnclear.setText("Clear");
+        btnclear.addActionListener(this::btnclearActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -146,7 +146,7 @@ public class RentalProcessing extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnclear)
-                        .addGap(231, 231, 231)
+                        .addGap(228, 228, 228)
                         .addComponent(calculateCost)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnprocessrental, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -165,15 +165,15 @@ public class RentalProcessing extends javax.swing.JPanel {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnclear)
                     .addComponent(btnprocessrental)
-                    .addComponent(calculateCost))
+                    .addComponent(calculateCost)
+                    .addComponent(btnclear))
                 .addContainerGap(56, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnprocessrentalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnprocessrentalActionPerformed
-if (motor.getSelectedItem() == null) {
+        if (motor.getSelectedItem() == null) {
             JOptionPane.showMessageDialog(this, "No available motorcycle selected.");
             return;
         }
@@ -199,7 +199,8 @@ if (motor.getSelectedItem() == null) {
             Motorcycle m = TrimotoSystem.findMotorcycleById(motorId);
             if (m == null) return;
 
-            double totalCost = days * m.dailyRate;
+            // Polymorphic calculation
+            double totalCost = m.calculateRentalCost(days);
             String transId = "TRX-" + (TrimotoSystem.rentals.size() + 1001);
             String date = java.time.LocalDate.now().toString();
 
@@ -214,7 +215,7 @@ if (motor.getSelectedItem() == null) {
                 paymentType, date, returnDate, "Active"
             ));
 
-            m.status = "Rented";
+            m.setStatus("Rented");
 
             java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
             if (topWindow instanceof MainDashboard) {
@@ -236,39 +237,35 @@ if (motor.getSelectedItem() == null) {
 
     private void calculateCostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateCostActionPerformed
        if (motor.getSelectedItem() == null) {
-            JOptionPane.showMessageDialog(this, "Please select an available motorcycle.");
+            JOptionPane.showMessageDialog(this, "Please select a motorcycle.");
             return;
         }
 
         try {
-            String motorId = motor.getSelectedItem().toString().split(" - ")[0];
+            String selected = motor.getSelectedItem().toString();
+            String motorId = selected.split(" - ")[0].trim();
             int days = Integer.parseInt(lbldura.getText().trim());
+
             Motorcycle m = TrimotoSystem.findMotorcycleById(motorId);
             if (m != null) {
-                double totalCost = days * m.dailyRate;
-                txtamount.setText(String.valueOf(totalCost));
+                if (!"Available".equalsIgnoreCase(m.getStatus())) {
+                    JOptionPane.showMessageDialog(this, "Note: Selected motorcycle is currently '" + m.getStatus() + "'.", "Availability Warning", JOptionPane.WARNING_MESSAGE);
+                }
+                
+                // Dynamic polymorphic cost calculation
+                double totalCost = m.calculateRentalCost(days);
+                
                 if (txtreturn.getText().trim().isEmpty()) {
                     txtreturn.setText(java.time.LocalDate.now().plusDays(days).toString());
                 }
-                JOptionPane.showMessageDialog(this, "Calculated Total Cost: ₱" + totalCost);
+                
+                // Show total cost in dialog; user enters payment amount manually in Enter Amount field
+                JOptionPane.showMessageDialog(this, "Calculated Total Rental Cost: ₱" + totalCost + "\n\nPlease enter the payment amount received in the 'Enter Amount' field.", "Rental Cost Calculation", JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Please enter a valid number of rental days.");
+            JOptionPane.showMessageDialog(this, "Please enter a valid number of rental days.", "Input Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_calculateCostActionPerformed
-
-    private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclearActionPerformed
-        txtname.setText("");
-        txtage.setText("");
-        txtaddress.setText("");
-        txtcontnumber.setText("");
-        lbldura.setText("");
-        txtdriverslicense.setText("");
-        txtamount.setText("");
-        txtreturn.setText("");
-        txtreturn.setText("");
-        cbpartial.setSelected(false);
-        cbfull.setSelected(false);    }//GEN-LAST:event_btnclearActionPerformed
 
     private void cbpartialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbpartialActionPerformed
         if (cbpartial.isSelected()) {
@@ -281,6 +278,19 @@ if (motor.getSelectedItem() == null) {
             cbpartial.setSelected(false);
         }
     }//GEN-LAST:event_cbfullActionPerformed
+
+    private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclearActionPerformed
+    txtname.setText("");
+        txtage.setText("");
+        txtaddress.setText("");
+        txtcontnumber.setText("");
+        lbldura.setText("");
+        txtdriverslicense.setText("");
+        txtamount.setText("");
+        txtreturn.setText("");
+        txtreturn.setText("");
+        cbpartial.setSelected(false);
+        cbfull.setSelected(false);     }//GEN-LAST:event_btnclearActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

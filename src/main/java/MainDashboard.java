@@ -24,17 +24,17 @@ public class MainDashboard extends javax.swing.JFrame {
     }
    
     public void refreshDashboardCounters() {
-        long total = TrimotoSystem.motorcycles.size();
+       long total = TrimotoSystem.motorcycles.size();
         long available = TrimotoSystem.motorcycles.stream()
-            .filter(m -> "Available".equalsIgnoreCase(m.status)).count();
+            .filter(m -> "Available".equalsIgnoreCase(m.getStatus())).count();
         long rented = TrimotoSystem.motorcycles.stream()
-            .filter(m -> "Rented".equalsIgnoreCase(m.status)).count();
+            .filter(m -> "Rented".equalsIgnoreCase(m.getStatus())).count();
         long maintenance = TrimotoSystem.motorcycles.stream()
-            .filter(m -> "Under Maintenance".equalsIgnoreCase(m.status)).count();
-        long inspection = TrimotoSystem.motorcycles.stream()
-            .filter(m -> "For Inspection".equalsIgnoreCase(m.status)).count();
+            .filter(m -> "Under Maintenance".equalsIgnoreCase(m.getStatus()) || "Maintenance".equalsIgnoreCase(m.getStatus()) || "In Progress".equalsIgnoreCase(m.getStatus())).count();
+                long inspection = TrimotoSystem.motorcycles.stream()
+            .filter(m -> "For Inspection".equalsIgnoreCase(m.getStatus()) || "Minor Damage".equalsIgnoreCase(m.getStatus())).count();
         long repair = TrimotoSystem.motorcycles.stream()
-            .filter(m -> "Under Repair".equalsIgnoreCase(m.status)).count();
+            .filter(m -> "Under Repair".equalsIgnoreCase(m.getStatus()) || "Needs Repair".equalsIgnoreCase(m.getStatus()) || "Unsafe".equalsIgnoreCase(m.getStatus())).count();
 
         lbltotalvalue.setText(String.valueOf(total));
         lbltotalvalue2.setText(String.valueOf(available));

@@ -14,7 +14,7 @@ public class MaintenanceRecording extends javax.swing.JPanel {
     public void refreshMotorcycleDropdown() {
         DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
         for (Motorcycle m : TrimotoSystem.motorcycles) {
-            model.addElement(m.id + " - " + m.brand + " " + m.model);
+            model.addElement(m.getId() + " - " + m.getBrand() + " " + m.getModel());
         }
         jComboBox1.setModel(model);
     }
@@ -229,7 +229,7 @@ public class MaintenanceRecording extends javax.swing.JPanel {
 
             Motorcycle m = TrimotoSystem.findMotorcycleById(motorId);
             if (m != null) {
-                m.status = availability;
+                m.setStatus(availability);
             }
 
             java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
@@ -238,7 +238,8 @@ public class MaintenanceRecording extends javax.swing.JPanel {
             }
 
             JOptionPane.showMessageDialog(this, "Maintenance Record Saved!");
-            btnclearActionPerformed(new java.awt.event.ActionEvent(btnclear, java.awt.event.ActionEvent.ACTION_PERFORMED, null));        } catch (NumberFormatException ex) {
+            btnclearActionPerformed(new java.awt.event.ActionEvent(btnclear, java.awt.event.ActionEvent.ACTION_PERFORMED, null));
+        } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "Maintenance cost must be a valid number (e.g., 1500 or 1500.50).");
         }
     }//GEN-LAST:event_btnsavemaintenanceActionPerformed
