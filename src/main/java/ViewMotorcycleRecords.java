@@ -881,6 +881,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
 
         cmbtypes.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         cmbtypes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Scooter", "Standard Bike", "Sports Bike", "Adventure Bike", "Electic Bike", " " }));
+        cmbtypes.addActionListener(this::cmbtypesActionPerformed);
         jPanel2.add(cmbtypes);
 
         jLabel38.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
@@ -1299,7 +1300,7 @@ btnsearchActionPerformed(evt);
     }//GEN-LAST:event_jComboBox5ActionPerformed
 
     private void btndamagereportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndamagereportActionPerformed
-int selectedRow = jTable4.getSelectedRow();
+    int selectedRow = jTable4.getSelectedRow();
     if (selectedRow == -1) {
         JOptionPane.showMessageDialog(viewdmgreport, "Please select a damage report row to save.", "Error", JOptionPane.ERROR_MESSAGE);
         return;
@@ -1337,7 +1338,7 @@ int selectedRow = jTable4.getSelectedRow();
     }//GEN-LAST:event_txtmotoridActionPerformed
 
     private void btneditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditActionPerformed
-        int selectedRow = recordstable.getSelectedRow();
+       int selectedRow = recordstable.getSelectedRow();
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(this, "Please select a motorcycle from the table to edit.", "Selection Required", JOptionPane.WARNING_MESSAGE);
             return;
@@ -1355,11 +1356,21 @@ int selectedRow = jTable4.getSelectedRow();
             txtmileage.setText(String.valueOf(m.getMileage()));
             txtdailyrentalrate.setText(String.valueOf(m.getDailyRate()));
             
-            cmbtypes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Scooter", "Standard Bike", "Sports Bike", "Adventure Bike", "Electric Bike" }));
+            for (java.awt.event.ActionListener al : cmbtypes.getActionListeners()) {
+                cmbtypes.removeActionListener(al);
+            }
+
+            cmbtypes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { 
+                "Scooter", "Standard Bike", "Sports Bike", "Adventure Bike", "Electric Bike" 
+            }));
             cmbtypes.setSelectedItem(m.getType());
             jTextField23.setText(m.getTransmissionType());
 
-            viewmmotorcycle.setSize(950, 520);
+            populateSubclassFieldsFromInfo(m);
+
+            cmbtypes.addActionListener(this::cmbtypesActionPerformed);
+
+            viewmmotorcycle.setSize(950, 560);
             viewmmotorcycle.setLocationRelativeTo(this);
             viewmmotorcycle.setVisible(true);
         }
@@ -1538,7 +1549,7 @@ int selectedRow = jTable4.getSelectedRow();
     }//GEN-LAST:event_jTextField20ActionPerformed
 
     private void btnsaveviewmotorcycleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveviewmotorcycleActionPerformed
-      int selectedRow = recordstable.getSelectedRow();
+        int selectedRow = recordstable.getSelectedRow();
         if (selectedRow == -1) {
             viewmmotorcycle.dispose();
             return;
@@ -1549,14 +1560,26 @@ int selectedRow = jTable4.getSelectedRow();
 
         if (m != null) {
             try {
-                m.setBrand(txtbrand.getText().trim());
-                m.setModel(txtmodel.getText().trim());
-                m.setYear(Integer.parseInt(txtyear.getText().trim()));
-                m.setMileage(Integer.parseInt(txtmileage.getText().trim()));
-                m.setDailyRate(Double.parseDouble(txtdailyrentalrate.getText().trim()));
-                m.setTransmissionType(jTextField23.getText().trim());
-                if (cmbtypes.getSelectedItem() != null) {
-                    m.setType(cmbtypes.getSelectedItem().toString());
+                String brand = txtbrand.getText().trim();
+                String model = txtmodel.getText().trim();
+                int year = Integer.parseInt(txtyear.getText().trim());
+                int mileage = Integer.parseInt(txtmileage.getText().trim());
+                double rate = Double.parseDouble(txtdailyrentalrate.getText().trim());
+                String trans = jTextField23.getText().trim();
+                String type = cmbtypes.getSelectedItem() != null ? cmbtypes.getSelectedItem().toString() : m.getType();
+
+                double spec1 = jTextField24.getText().trim().isEmpty() ? 0 : Double.parseDouble(jTextField24.getText().trim());
+                double spec2 = jTextField25.getText().trim().isEmpty() ? 0 : Double.parseDouble(jTextField25.getText().trim());
+                double spec3 = jTextField26.getText().trim().isEmpty() ? 0 : Double.parseDouble(jTextField26.getText().trim());
+
+                Motorcycle updatedMotorcycle = MotorcycleFactory.createMotorcycle(
+                    type, targetId, brand, model, year, trans, mileage, rate, spec1, spec2, spec3
+                );
+                updatedMotorcycle.setStatus(m.getStatus());
+
+                int index = TrimotoSystem.motorcycles.indexOf(m);
+                if (index != -1) {
+                    TrimotoSystem.motorcycles.set(index, updatedMotorcycle);
                 }
 
                 loadTableData();
@@ -1564,7 +1587,7 @@ int selectedRow = jTable4.getSelectedRow();
                 JOptionPane.showMessageDialog(viewmmotorcycle, "Motorcycle record updated successfully!");
                 viewmmotorcycle.dispose();
             } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(viewmmotorcycle, "Please enter valid numeric values.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(viewmmotorcycle, "Please enter valid numbers for specs, year, mileage, and rates.", "Input Error", JOptionPane.ERROR_MESSAGE);
             }
         }
     }//GEN-LAST:event_btnsaveviewmotorcycleActionPerformed
@@ -1684,6 +1707,78 @@ int selectedRow = jTable4.getSelectedRow();
             showMotorcycleDetails(m);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void cmbtypesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbtypesActionPerformed
+        String selectedType = cmbtypes.getSelectedItem() != null ? cmbtypes.getSelectedItem().toString().trim() : "Scooter";
+
+        switch (selectedType) {
+            case "Scooter":
+                jLabel39.setText("Engine Displacement (cc):");
+                jLabel40.setText("Compartment Capacity (L):");
+                jLabel41.setText("Fuel Capacity (L):");
+                
+                jTextField24.setVisible(true);
+                jTextField25.setVisible(true);
+                jLabel41.setVisible(true);
+                jTextField26.setVisible(true);
+                jTextField26.setEditable(true);
+                break;
+
+            case "Adventure Bike":
+                jLabel39.setText("Engine Displacement (cc):");
+                jLabel40.setText("Compartment Capacity (L):");
+                jLabel41.setText("Fuel Capacity (L):");
+                
+                jTextField24.setVisible(true);
+                jTextField25.setVisible(true);
+                jLabel41.setVisible(true);
+                jTextField26.setVisible(true);
+                jTextField26.setEditable(true);
+                break;
+
+            case "Standard Bike":
+                jLabel39.setText("Engine Displacement (cc):");
+                jLabel40.setText("Fuel Capacity (L):");
+                jLabel41.setText("");
+                
+                jTextField24.setVisible(true);
+                jTextField25.setVisible(true);
+                jLabel41.setVisible(false);
+                jTextField26.setVisible(false);
+                jTextField26.setEditable(false);
+                break;
+
+            case "Sports Bike":
+                jLabel39.setText("Engine Displacement (cc):");
+                jLabel40.setText("Fuel Capacity (L):");
+                jLabel41.setText("Power Output (HP):");
+                
+                jTextField24.setVisible(true);
+                jTextField25.setVisible(true);
+                jLabel41.setVisible(true);
+                jTextField26.setVisible(true);
+                jTextField26.setEditable(true);
+                break;
+
+            case "Electric Bike":
+                jLabel39.setText("Motor Power (W):");
+                jLabel40.setText("Battery Capacity (Ah):");
+                jLabel41.setText("Charging Time (hrs):");
+                
+                jTextField24.setVisible(true);
+                jTextField25.setVisible(true);
+                jLabel41.setVisible(true);
+                jTextField26.setVisible(true);
+                jTextField26.setEditable(true);
+                break;
+
+            default:
+                jLabel39.setText(" ");
+                jLabel40.setText(" ");
+                jLabel41.setText(" ");
+                break;
+        }
+    }//GEN-LAST:event_cmbtypesActionPerformed
   
     private void showMotorcycleDetails(Motorcycle m) {
         String details = m.displayMotorcycleInfo();
@@ -1698,7 +1793,60 @@ int selectedRow = jTable4.getSelectedRow();
         viewfurtherdetails.setLocationRelativeTo(this);
         viewfurtherdetails.setVisible(true);
     }
+    private void populateSubclassFieldsFromInfo(Motorcycle m) {
+        String info = m.displayMotorcycleInfo();
+        if (info == null || info.trim().isEmpty()) {
+            jLabel39.setText(""); jTextField24.setText("");
+            jLabel40.setText(""); jTextField25.setText("");
+            jLabel41.setText(""); jTextField26.setText("");
+            return;
+        }
+
+        // Split formatted output line-by-line
+        String[] lines = info.split("\n");
+
+        // Line 1 -> Label & Text Field 1
+        if (lines.length > 0 && lines[0].contains(":")) {
+            String[] parts = lines[0].split(":", 2);
+            jLabel39.setText(parts[0].trim() + ":");
+            jTextField24.setText(cleanUnits(parts[1]));
+        } else {
+            jLabel39.setText(""); jTextField24.setText("");
+        }
+
+        // Line 2 -> Label & Text Field 2
+        if (lines.length > 1 && lines[1].contains(":")) {
+            String[] parts = lines[1].split(":", 2);
+            jLabel40.setText(parts[0].trim() + ":");
+            jTextField25.setText(cleanUnits(parts[1]));
+        } else {
+            jLabel40.setText(""); jTextField25.setText("");
+        }
+
+        // Line 3 -> Label & Text Field 3 (If available)
+        if (lines.length > 2 && lines[2].contains(":")) {
+            String[] parts = lines[2].split(":", 2);
+            jLabel41.setText(parts[0].trim() + ":");
+            jTextField26.setText(cleanUnits(parts[1]));
+            jLabel41.setVisible(true);
+            jTextField26.setVisible(true);
+            jTextField26.setEditable(true);
+        } else {
+            jLabel41.setText("");
+            jTextField26.setText("");
+            jLabel41.setVisible(false);
+            jTextField26.setVisible(false);
+            jTextField26.setEditable(false);
+        }
+    }
+
+    // Helper to extract raw numbers by stripping trailing units like "cc", "L", "W", "HP", "hrs", "Ah"
+    private String cleanUnits(String valueWithUnit) {
+        if (valueWithUnit == null) return "";
+        return valueWithUnit.replaceAll("[^0-9.]", "").trim();
+    }
    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ID;
     private javax.swing.JLabel brand;
