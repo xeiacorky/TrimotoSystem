@@ -1337,7 +1337,7 @@ int selectedRow = jTable4.getSelectedRow();
     }//GEN-LAST:event_txtmotoridActionPerformed
 
     private void btneditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditActionPerformed
-      int selectedRow = recordstable.getSelectedRow();
+        int selectedRow = recordstable.getSelectedRow();
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(this, "Please select a motorcycle from the table to edit.", "Selection Required", JOptionPane.WARNING_MESSAGE);
             return;
@@ -1357,7 +1357,7 @@ int selectedRow = jTable4.getSelectedRow();
             
             cmbtypes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Scooter", "Standard Bike", "Sports Bike", "Adventure Bike", "Electric Bike" }));
             cmbtypes.setSelectedItem(m.getType());
-            jTextField23.setText(m.getTransmissionType()); // Transmission Field
+            jTextField23.setText(m.getTransmissionType());
 
             viewmmotorcycle.setSize(950, 520);
             viewmmotorcycle.setLocationRelativeTo(this);

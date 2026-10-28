@@ -20,7 +20,6 @@ public class RentalProcessing extends javax.swing.JPanel {
         }
         motor.setModel(model);
     }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -195,11 +194,11 @@ public class RentalProcessing extends javax.swing.JPanel {
             }
 
             String paymentType = cbpartial.isSelected() ? "Partial" : (cbfull.isSelected() ? "Full" : "Standard");
-            
+
             Motorcycle m = TrimotoSystem.findMotorcycleById(motorId);
             if (m == null) return;
 
-            // Polymorphic calculation
+            // Dynamic polymorphic calculation
             double totalCost = m.calculateRentalCost(days);
             String transId = "TRX-" + (TrimotoSystem.rentals.size() + 1001);
             String date = java.time.LocalDate.now().toString();
@@ -211,7 +210,7 @@ public class RentalProcessing extends javax.swing.JPanel {
             RenterProfile profile = new RenterProfile(renter, address, contactNumber, licenseNumber, age);
 
             TrimotoSystem.rentals.add(new RentalTransaction(
-                transId, motorId, profile, days, totalCost, payment, 
+                transId, motorId, profile, days, totalCost, payment,
                 paymentType, date, returnDate, "Active"
             ));
 
@@ -236,7 +235,7 @@ public class RentalProcessing extends javax.swing.JPanel {
     }//GEN-LAST:event_txtaddressActionPerformed
 
     private void calculateCostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateCostActionPerformed
-       if (motor.getSelectedItem() == null) {
+      if (motor.getSelectedItem() == null) {
             JOptionPane.showMessageDialog(this, "Please select a motorcycle.");
             return;
         }
@@ -251,15 +250,14 @@ public class RentalProcessing extends javax.swing.JPanel {
                 if (!"Available".equalsIgnoreCase(m.getStatus())) {
                     JOptionPane.showMessageDialog(this, "Note: Selected motorcycle is currently '" + m.getStatus() + "'.", "Availability Warning", JOptionPane.WARNING_MESSAGE);
                 }
-                
-                // Dynamic polymorphic cost calculation
+
+                // Polymorphic Cost Calculation
                 double totalCost = m.calculateRentalCost(days);
-                
+
                 if (txtreturn.getText().trim().isEmpty()) {
                     txtreturn.setText(java.time.LocalDate.now().plusDays(days).toString());
                 }
-                
-                // Show total cost in dialog; user enters payment amount manually in Enter Amount field
+
                 JOptionPane.showMessageDialog(this, "Calculated Total Rental Cost: ₱" + totalCost + "\n\nPlease enter the payment amount received in the 'Enter Amount' field.", "Rental Cost Calculation", JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (NumberFormatException ex) {
@@ -290,7 +288,8 @@ public class RentalProcessing extends javax.swing.JPanel {
         txtreturn.setText("");
         txtreturn.setText("");
         cbpartial.setSelected(false);
-        cbfull.setSelected(false);     }//GEN-LAST:event_btnclearActionPerformed
+        cbfull.setSelected(false);
+     }//GEN-LAST:event_btnclearActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

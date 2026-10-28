@@ -23,15 +23,15 @@ public class MainDashboard extends javax.swing.JFrame {
         refreshDashboardCounters();
     }
    
-    public void refreshDashboardCounters() {
-       long total = TrimotoSystem.motorcycles.size();
+   public void refreshDashboardCounters() {
+        long total = TrimotoSystem.motorcycles.size();
         long available = TrimotoSystem.motorcycles.stream()
             .filter(m -> "Available".equalsIgnoreCase(m.getStatus())).count();
         long rented = TrimotoSystem.motorcycles.stream()
             .filter(m -> "Rented".equalsIgnoreCase(m.getStatus())).count();
         long maintenance = TrimotoSystem.motorcycles.stream()
             .filter(m -> "Under Maintenance".equalsIgnoreCase(m.getStatus()) || "Maintenance".equalsIgnoreCase(m.getStatus()) || "In Progress".equalsIgnoreCase(m.getStatus())).count();
-                long inspection = TrimotoSystem.motorcycles.stream()
+        long inspection = TrimotoSystem.motorcycles.stream()
             .filter(m -> "For Inspection".equalsIgnoreCase(m.getStatus()) || "Minor Damage".equalsIgnoreCase(m.getStatus())).count();
         long repair = TrimotoSystem.motorcycles.stream()
             .filter(m -> "Under Repair".equalsIgnoreCase(m.getStatus()) || "Needs Repair".equalsIgnoreCase(m.getStatus()) || "Unsafe".equalsIgnoreCase(m.getStatus())).count();
@@ -47,12 +47,7 @@ public class MainDashboard extends javax.swing.JFrame {
     private void showCard(String name) {
         CardLayout cl = (CardLayout) pnlswitcher.getLayout();
         cl.show(pnlswitcher, name);
-        refreshDashboardCounters();
-        if (pnlInspection != null) pnlInspection.refreshMotorcycleDropdown();
-        if (pnlmaintenance != null) pnlmaintenance.refreshMotorcycleDropdown();
-        if (pnlprocessing != null) pnlprocessing.refreshMotorcycleDropdown();
-        if (pnlviewrecords != null) pnlviewrecords.loadTableData();
-        if (pnlrentaltransaction != null) pnlrentaltransaction.loadTableData();
+        refreshAllPanels();
     }
 
     public void refreshAllPanels() {
