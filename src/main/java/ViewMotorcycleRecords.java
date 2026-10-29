@@ -1112,7 +1112,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
             }
         }
 
-        viewinspectdialog.setSize(1000, 500);
+        viewinspectdialog.setSize(1520, 520);
         viewinspectdialog.setLocationRelativeTo(this);
         viewinspectdialog.setVisible(true);
     }//GEN-LAST:event_btnviewinspectionrecordActionPerformed
@@ -1139,7 +1139,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
             }
         }
 
-        viewmaintedialog.setSize(1000, 500);
+        viewmaintedialog.setSize(1520, 520);
         viewmaintedialog.setLocationRelativeTo(this);
         viewmaintedialog.setVisible(true);
     }//GEN-LAST:event_btnviewmaintenancerecordActionPerformed
@@ -1172,7 +1172,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
             }
         }
 
-        viewdamagereportdialog.setSize(1000, 500);
+        viewdamagereportdialog.setSize(1520, 520);
         viewdamagereportdialog.setLocationRelativeTo(this);
         viewdamagereportdialog.setVisible(true);
     }//GEN-LAST:event_btnviewdmgActionPerformed

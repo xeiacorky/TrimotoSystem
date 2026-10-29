@@ -399,7 +399,7 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
 
     private void btnviewtransacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewtransacActionPerformed
         viewtransactapplyfilterActionPerformed(evt);
-        viewtransacdialog.setSize(900, 480);
+        viewtransacdialog.setSize(1520, 520);
         viewtransacdialog.setLocationRelativeTo(this);
         viewtransacdialog.setVisible(true);
        
@@ -515,7 +515,7 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
                 jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Active", "Completed" }));
                 jComboBox1.setSelectedItem(r.status);
 
-                editviewtransac.setSize(720, 520);
+                editviewtransac.setSize(750, 540);
                 editviewtransac.setLocationRelativeTo(this);
                 editviewtransac.setVisible(true);
                 break;
