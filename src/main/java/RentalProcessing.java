@@ -151,14 +151,17 @@ public class RentalProcessing extends javax.swing.JPanel {
 
         btnprocessrental.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnprocessrental.setText("Process Rental");
+        btnprocessrental.setFocusPainted(false);
         btnprocessrental.addActionListener(this::btnprocessrentalActionPerformed);
 
         calculateCost.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         calculateCost.setText("Calculate Cost");
+        calculateCost.setFocusPainted(false);
         calculateCost.addActionListener(this::calculateCostActionPerformed);
 
         btnclear.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnclear.setText("Clear");
+        btnclear.setFocusPainted(false);
         btnclear.addActionListener(this::btnclearActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

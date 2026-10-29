@@ -325,18 +325,22 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
 
         btnsearch.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnsearch.setText("Search");
+        btnsearch.setFocusPainted(false);
         btnsearch.addActionListener(this::btnsearchActionPerformed);
 
         btnrefresh.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnrefresh.setText("Refresh");
+        btnrefresh.setFocusPainted(false);
         btnrefresh.addActionListener(this::btnrefreshActionPerformed);
 
         btnreturnedmark.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnreturnedmark.setText("Mark Motorcycle Returned");
+        btnreturnedmark.setFocusPainted(false);
         btnreturnedmark.addActionListener(this::btnreturnedmarkActionPerformed);
 
         btnviewtransac.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnviewtransac.setText("View Transaction Details");
+        btnviewtransac.setFocusPainted(false);
         btnviewtransac.addActionListener(this::btnviewtransacActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

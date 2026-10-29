@@ -218,6 +218,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
 
         btnsavemainte.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnsavemainte.setText("Save");
+        btnsavemainte.setFocusPainted(false);
         btnsavemainte.addActionListener(this::btnsavemainteActionPerformed);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -338,6 +339,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
 
         btnviewinspectsave.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnviewinspectsave.setText("Save");
+        btnviewinspectsave.setFocusPainted(false);
         btnviewinspectsave.addActionListener(this::btnviewinspectsaveActionPerformed);
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
@@ -511,10 +513,12 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
 
         btneditinspect2.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btneditinspect2.setText("Edit");
+        btneditinspect2.setFocusPainted(false);
         btneditinspect2.addActionListener(this::btneditinspect2ActionPerformed);
 
         mainteapplyfilter.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         mainteapplyfilter.setText("Apply Filter");
+        mainteapplyfilter.setFocusPainted(false);
         mainteapplyfilter.addActionListener(this::mainteapplyfilterActionPerformed);
 
         jTextField18.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
@@ -525,6 +529,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
 
         btndeleteinspect.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btndeleteinspect.setText("Delete");
+        btndeleteinspect.setFocusPainted(false);
         btndeleteinspect.addActionListener(this::btndeleteinspectActionPerformed);
 
         javax.swing.GroupLayout viewmaintedialogLayout = new javax.swing.GroupLayout(viewmaintedialog.getContentPane());
@@ -593,10 +598,12 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
 
         btneditinspect1.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btneditinspect1.setText("Edit");
+        btneditinspect1.setFocusPainted(false);
         btneditinspect1.addActionListener(this::btneditinspect1ActionPerformed);
 
         inspectapplyfilter.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         inspectapplyfilter.setText("Apply Filter");
+        inspectapplyfilter.setFocusPainted(false);
         inspectapplyfilter.addActionListener(this::inspectapplyfilterActionPerformed);
 
         jTextField17.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
@@ -607,6 +614,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
 
         btninpsectdelete.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btninpsectdelete.setText("Delete");
+        btninpsectdelete.setFocusPainted(false);
         btninpsectdelete.addActionListener(this::btninpsectdeleteActionPerformed);
 
         javax.swing.GroupLayout viewinspectdialogLayout = new javax.swing.GroupLayout(viewinspectdialog.getContentPane());
@@ -654,10 +662,12 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
 
         damagerepapplyfilter.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         damagerepapplyfilter.setText("Apply Filter");
+        damagerepapplyfilter.setFocusPainted(false);
         damagerepapplyfilter.addActionListener(this::damagerepapplyfilterActionPerformed);
 
         btneditdamagarep.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btneditdamagarep.setText("Edit");
+        btneditdamagarep.setFocusPainted(false);
         btneditdamagarep.addActionListener(this::btneditdamagarepActionPerformed);
 
         jTable4.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
@@ -689,6 +699,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
 
         btndamagerepdelete.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btndamagerepdelete.setText("Delete");
+        btndamagerepdelete.setFocusPainted(false);
         btndamagerepdelete.addActionListener(this::btndamagerepdeleteActionPerformed);
 
         javax.swing.GroupLayout viewdamagereportdialogLayout = new javax.swing.GroupLayout(viewdamagereportdialog.getContentPane());
@@ -808,6 +819,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
 
         btndamagereport.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btndamagereport.setText("Save");
+        btndamagereport.setFocusPainted(false);
         btndamagereport.addActionListener(this::btndamagereportActionPerformed);
 
         javax.swing.GroupLayout viewdmgreportLayout = new javax.swing.GroupLayout(viewdmgreport.getContentPane());
@@ -839,6 +851,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
 
         btnsaveviewmotorcycle.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnsaveviewmotorcycle.setText("Save");
+        btnsaveviewmotorcycle.setFocusPainted(false);
         btnsaveviewmotorcycle.addActionListener(this::btnsaveviewmotorcycleActionPerformed);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -998,34 +1011,42 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
 
         btnsearch.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnsearch.setText("Search");
+        btnsearch.setFocusPainted(false);
         btnsearch.addActionListener(this::btnsearchActionPerformed);
 
         btnviewinspectionrecord.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnviewinspectionrecord.setText("View Inspection");
+        btnviewinspectionrecord.setFocusPainted(false);
         btnviewinspectionrecord.addActionListener(this::btnviewinspectionrecordActionPerformed);
 
         btnviewmaintenancerecord.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnviewmaintenancerecord.setText("View Maintenance");
+        btnviewmaintenancerecord.setFocusPainted(false);
         btnviewmaintenancerecord.addActionListener(this::btnviewmaintenancerecordActionPerformed);
 
         btnviewdmg.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnviewdmg.setText("View Damage Report");
+        btnviewdmg.setFocusPainted(false);
         btnviewdmg.addActionListener(this::btnviewdmgActionPerformed);
 
         btndelete.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btndelete.setText("Delete");
+        btndelete.setFocusPainted(false);
         btndelete.addActionListener(this::btndeleteActionPerformed);
 
         btnrefresh.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnrefresh.setText("Refresh");
+        btnrefresh.setFocusPainted(false);
         btnrefresh.addActionListener(this::btnrefreshActionPerformed);
 
         btnedit.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnedit.setText("Edit");
+        btnedit.setFocusPainted(false);
         btnedit.addActionListener(this::btneditActionPerformed);
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jButton1.setText("View Further Details");
+        jButton1.setFocusPainted(false);
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -1049,8 +1070,8 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnviewinspectionrecord, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnviewmaintenancerecord, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnviewmaintenancerecord, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnviewdmg, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1))

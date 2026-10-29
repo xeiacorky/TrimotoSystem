@@ -156,10 +156,12 @@ public class MaintenanceRecording extends javax.swing.JPanel {
 
         btnsavemaintenance.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnsavemaintenance.setText("Save Maintenance Record");
+        btnsavemaintenance.setFocusPainted(false);
         btnsavemaintenance.addActionListener(this::btnsavemaintenanceActionPerformed);
 
         btnclear.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnclear.setText("Clear");
+        btnclear.setFocusPainted(false);
         btnclear.addActionListener(this::btnclearActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

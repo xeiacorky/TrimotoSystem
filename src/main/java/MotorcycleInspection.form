@@ -49,15 +49,15 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="title" min="-2" max="-2" attributes="0"/>
                           <Component id="description" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="btnclear" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btncreatedmgreport" min="-2" pref="162" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnsaveinspect" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="btnclear" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btncreatedmgreport" min="-2" pref="156" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnsaveinspect" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -458,6 +458,7 @@
           <Font name="Segoe UI" size="13" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Create Damage Report"/>
+        <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btncreatedmgreportActionPerformed"/>
@@ -469,6 +470,7 @@
           <Font name="Segoe UI" size="13" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Save Inspection"/>
+        <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnsaveinspectActionPerformed"/>
@@ -480,6 +482,7 @@
           <Font name="Segoe UI" size="13" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Clear"/>
+        <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnclearActionPerformed"/>

@@ -135,10 +135,12 @@ public class ManageMotorcycles extends javax.swing.JPanel {
 
         btnclear.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnclear.setText("Clear");
+        btnclear.setFocusPainted(false);
         btnclear.addActionListener(this::btnclearActionPerformed);
 
         btnaddmotorcycle.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnaddmotorcycle.setText("Add Motorcycle");
+        btnaddmotorcycle.setFocusPainted(false);
         btnaddmotorcycle.addActionListener(this::btnaddmotorcycleActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

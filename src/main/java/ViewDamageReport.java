@@ -244,10 +244,12 @@ public class ViewDamageReport extends javax.swing.JPanel {
 
         btnclear.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnclear.setText("Clear");
+        btnclear.setFocusPainted(false);
         btnclear.addActionListener(this::btnclearActionPerformed);
 
         btndamagereport.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btndamagereport.setText("Save Damage Report");
+        btndamagereport.setFocusPainted(false);
         btndamagereport.addActionListener(this::btndamagereportActionPerformed);
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N

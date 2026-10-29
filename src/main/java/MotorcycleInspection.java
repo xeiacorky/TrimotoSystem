@@ -203,14 +203,17 @@ public class MotorcycleInspection extends javax.swing.JPanel {
 
         btncreatedmgreport.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btncreatedmgreport.setText("Create Damage Report");
+        btncreatedmgreport.setFocusPainted(false);
         btncreatedmgreport.addActionListener(this::btncreatedmgreportActionPerformed);
 
         btnsaveinspect.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnsaveinspect.setText("Save Inspection");
+        btnsaveinspect.setFocusPainted(false);
         btnsaveinspect.addActionListener(this::btnsaveinspectActionPerformed);
 
         btnclear.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnclear.setText("Clear");
+        btnclear.setFocusPainted(false);
         btnclear.addActionListener(this::btnclearActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -224,14 +227,14 @@ public class MotorcycleInspection extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(title)
-                            .addComponent(description))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnclear)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btncreatedmgreport, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnsaveinspect)))
+                            .addComponent(description)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnclear)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btncreatedmgreport, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnsaveinspect)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(

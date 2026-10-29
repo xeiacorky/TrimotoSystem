@@ -410,6 +410,7 @@
                           <Font name="Segoe UI" size="13" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;div style=&apos;width:220px;padding:5px&apos;&gt;&lt;b&gt;Manage Motorcycles&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;span style=&apos;color:#667788&apos;&gt;Register and update motorcycle details&lt;/span&gt;&lt;/div&gt;&lt;/html&gt;"/>
+                        <Property name="focusPainted" type="boolean" value="false"/>
                         <Property name="horizontalAlignment" type="int" value="2"/>
                       </Properties>
                       <Events>
@@ -422,6 +423,7 @@
                           <Font name="Segoe UI" size="13" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;div style=&apos;width:220px;padding:5px&apos;&gt;&lt;b&gt;Motorcycle Inspection&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;span style=&apos;color:#667788&apos;&gt;Record condition and damage reports&lt;/span&gt;&lt;/div&gt;&lt;/html&gt;"/>
+                        <Property name="focusPainted" type="boolean" value="false"/>
                         <Property name="horizontalAlignment" type="int" value="2"/>
                       </Properties>
                       <Events>
@@ -434,6 +436,7 @@
                           <Font name="Segoe UI" size="13" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;div style=&apos;width:220px;padding:5px&apos;&gt;&lt;b&gt;Maintenance Recording&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;span style=&apos;color:#667788&apos;&gt;Record service history and expenses&lt;/span&gt;&lt;/div&gt;&lt;/html&gt;"/>
+                        <Property name="focusPainted" type="boolean" value="false"/>
                         <Property name="horizontalAlignment" type="int" value="2"/>
                       </Properties>
                       <Events>
@@ -446,6 +449,7 @@
                           <Font name="Segoe UI" size="13" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;div style=&apos;width:220px;padding:5px&apos;&gt;&lt;b&gt;Rental Processing&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;span style=&apos;color:#667788&apos;&gt;Create a new rental transaction&lt;/span&gt;&lt;/div&gt;&lt;/html&gt;"/>
+                        <Property name="focusPainted" type="boolean" value="false"/>
                         <Property name="horizontalAlignment" type="int" value="2"/>
                       </Properties>
                       <Events>
@@ -458,6 +462,7 @@
                           <Font name="Segoe UI" size="13" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;div style=&apos;width:220px;padding:5px&apos;&gt;&lt;b&gt;View Motorcycle Records&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;span style=&apos;color:#667788&apos;&gt;View details, inspections, and maintenance&lt;/span&gt;&lt;/div&gt;&lt;/html&gt;"/>
+                        <Property name="focusPainted" type="boolean" value="false"/>
                         <Property name="horizontalAlignment" type="int" value="2"/>
                       </Properties>
                       <Events>
@@ -470,6 +475,7 @@
                           <Font name="Segoe UI" size="13" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;div style=&apos;width:220px;padding:5px&apos;&gt;&lt;b&gt;View Rental Transactions&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;span style=&apos;color:#667788&apos;&gt;Review recorded rental transactions&lt;/span&gt;&lt;/div&gt;&lt;/html&gt;"/>
+                        <Property name="focusPainted" type="boolean" value="false"/>
                         <Property name="horizontalAlignment" type="int" value="2"/>
                       </Properties>
                       <Events>

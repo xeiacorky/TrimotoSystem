@@ -293,36 +293,42 @@ public class MainDashboard extends javax.swing.JFrame {
 
         ManageMotorcycle.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         ManageMotorcycle.setText("<html><div style='width:220px;padding:5px'><b>Manage Motorcycles</b><br><br><span style='color:#667788'>Register and update motorcycle details</span></div></html>");
+        ManageMotorcycle.setFocusPainted(false);
         ManageMotorcycle.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         ManageMotorcycle.addActionListener(this::ManageMotorcycleActionPerformed);
         quickactions.add(ManageMotorcycle);
 
         MotorcycleInspection.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         MotorcycleInspection.setText("<html><div style='width:220px;padding:5px'><b>Motorcycle Inspection</b><br><br><span style='color:#667788'>Record condition and damage reports</span></div></html>");
+        MotorcycleInspection.setFocusPainted(false);
         MotorcycleInspection.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         MotorcycleInspection.addActionListener(this::MotorcycleInspectionActionPerformed);
         quickactions.add(MotorcycleInspection);
 
         MaintenanceRecording.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         MaintenanceRecording.setText("<html><div style='width:220px;padding:5px'><b>Maintenance Recording</b><br><br><span style='color:#667788'>Record service history and expenses</span></div></html>");
+        MaintenanceRecording.setFocusPainted(false);
         MaintenanceRecording.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         MaintenanceRecording.addActionListener(this::MaintenanceRecordingActionPerformed);
         quickactions.add(MaintenanceRecording);
 
         RentalProcessing.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         RentalProcessing.setText("<html><div style='width:220px;padding:5px'><b>Rental Processing</b><br><br><span style='color:#667788'>Create a new rental transaction</span></div></html>");
+        RentalProcessing.setFocusPainted(false);
         RentalProcessing.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         RentalProcessing.addActionListener(this::RentalProcessingActionPerformed);
         quickactions.add(RentalProcessing);
 
         ViewMotorcycleRecords.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         ViewMotorcycleRecords.setText("<html><div style='width:220px;padding:5px'><b>View Motorcycle Records</b><br><br><span style='color:#667788'>View details, inspections, and maintenance</span></div></html>");
+        ViewMotorcycleRecords.setFocusPainted(false);
         ViewMotorcycleRecords.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         ViewMotorcycleRecords.addActionListener(this::ViewMotorcycleRecordsActionPerformed);
         quickactions.add(ViewMotorcycleRecords);
 
         ViewRentalTransactions.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         ViewRentalTransactions.setText("<html><div style='width:220px;padding:5px'><b>View Rental Transactions</b><br><br><span style='color:#667788'>Review recorded rental transactions</span></div></html>");
+        ViewRentalTransactions.setFocusPainted(false);
         ViewRentalTransactions.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         ViewRentalTransactions.addActionListener(this::ViewRentalTransactionsActionPerformed);
         quickactions.add(ViewRentalTransactions);
