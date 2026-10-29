@@ -203,25 +203,29 @@ public class RentalProcessing extends javax.swing.JPanel {
 
     private void btnprocessrentalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnprocessrentalActionPerformed
         if (motor.getSelectedItem() == null) {
-            JOptionPane.showMessageDialog(this, "No available motorcycle selected.");
+            JOptionPane.showMessageDialog(this, "No available motorcycle selected.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        String renter = txtname.getText().trim();
+        String age = txtage.getText().trim();
+        String address = txtaddress.getText().trim();
+        String contactNumber = txtcontnumber.getText().trim();
+        String daysStr = lbldura.getText().trim();
+        String licenseNumber = txtdriverslicense.getText().trim();
+        String amountStr = txtamount.getText().trim();
+        String returnDate = txtreturn.getText().trim();
+
+        if (renter.isEmpty() || age.isEmpty() || address.isEmpty() || contactNumber.isEmpty() || 
+            daysStr.isEmpty() || licenseNumber.isEmpty() || amountStr.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please complete all renter personal details, rental duration, and payment amount before processing.", "Input Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
         try {
+            int days = Integer.parseInt(daysStr);
+            double payment = Double.parseDouble(amountStr);
             String motorId = motor.getSelectedItem().toString().split(" - ")[0];
-            String renter = txtname.getText().trim();
-            String age = txtage.getText().trim();
-            String address = txtaddress.getText().trim();
-            String contactNumber = txtcontnumber.getText().trim();
-            int days = Integer.parseInt(lbldura.getText().trim());
-            String licenseNumber = txtdriverslicense.getText().trim();
-            double payment = Double.parseDouble(txtamount.getText().trim());
-            String returnDate = txtreturn.getText().trim();
-
-            if (renter.isEmpty() || address.isEmpty() || contactNumber.isEmpty() || licenseNumber.isEmpty()) {
-                JOptionPane.showMessageDialog(this, "Please complete all renter personal details.");
-                return;
-            }
 
             String paymentType = cbpartial.isSelected() ? "Partial" : (cbfull.isSelected() ? "Full" : "Standard");
 
@@ -251,12 +255,12 @@ public class RentalProcessing extends javax.swing.JPanel {
                 ((MainDashboard) topWindow).refreshAllPanels();
             }
 
-            JOptionPane.showMessageDialog(this, "Rental Processed Successfully!\nTransaction ID: " + transId + "\nTotal Cost: ₱" + totalCost);
+            JOptionPane.showMessageDialog(this, "Rental Processed Successfully!\nTransaction ID: " + transId + "\nTotal Cost: ₱" + totalCost, "Success", JOptionPane.INFORMATION_MESSAGE);
 
             btnclearActionPerformed(evt);
             refreshMotorcycleDropdown();
         } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Invalid entry for Duration or Payment Amount.");
+            JOptionPane.showMessageDialog(this, "Please enter valid numbers for Age, Rental Duration, and Payment Amount.", "Format Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnprocessrentalActionPerformed
 

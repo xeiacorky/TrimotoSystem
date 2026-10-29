@@ -1319,9 +1319,20 @@ btnsearchActionPerformed(evt);
     }//GEN-LAST:event_jComboBox5ActionPerformed
 
     private void btndamagereportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndamagereportActionPerformed
-    int selectedRow = jTable4.getSelectedRow();
+        int selectedRow = jTable4.getSelectedRow();
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(viewdmgreport, "Please select a damage report row to save.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        String date = jTextField4.getText().trim();
+        String location = jTextField7.getText().trim();
+        String desc = jTextField5.getText().trim();
+        String cost = jTextField8.getText().trim();
+        String notes = jTextField6.getText().trim();
+
+        if (date.isEmpty() || location.isEmpty() || desc.isEmpty() || cost.isEmpty() || notes.isEmpty()) {
+            JOptionPane.showMessageDialog(viewdmgreport, "All fields are required to update a damage report. Please complete all fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
@@ -1332,20 +1343,19 @@ btnsearchActionPerformed(evt);
         StringBuilder newReport = new StringBuilder();
         newReport.append("Report ID: ").append(reportId).append("\n");
         newReport.append("Motorcycle: ").append(motorId).append("\n");
-        newReport.append("Date: ").append(jTextField4.getText().trim()).append("\n");
-        newReport.append("Location: ").append(jTextField7.getText().trim()).append("\n");
+        newReport.append("Date: ").append(date).append("\n");
+        newReport.append("Location: ").append(location).append("\n");
         newReport.append("Type: ").append(jComboBox6.getSelectedItem().toString()).append("\n");
-        newReport.append("Description: ").append(jTextField5.getText().trim()).append("\n");
+        newReport.append("Description: ").append(desc).append("\n");
         newReport.append("Action Required: ").append(jComboBox7.getSelectedItem().toString()).append("\n");
-        newReport.append("Cost: ").append(jTextField8.getText().trim()).append("\n");
+        newReport.append("Cost: ").append(cost).append("\n");
         newReport.append("Status: ").append(status).append("\n");
-        newReport.append("Notes: ").append(jTextField6.getText().trim());
+        newReport.append("Notes: ").append(notes);
 
         for (int i = 0; i < TrimotoSystem.damageReports.size(); i++) {
             if (TrimotoSystem.damageReports.get(i).contains("Report ID: " + reportId)) {
                 TrimotoSystem.damageReports.set(i, newReport.toString());
                 
-                // Update physical motorcycle status to sync with dashboard counters
                 Motorcycle m = TrimotoSystem.findMotorcycleById(motorId);
                 if (m != null) {
                     m.setStatus(status);
@@ -1355,7 +1365,7 @@ btnsearchActionPerformed(evt);
         }
 
         damagerepapplyfilterActionPerformed(evt); 
-        notifyDashboardRefresh(); // Refresh Main Dashboard Counters
+        notifyDashboardRefresh(); 
         JOptionPane.showMessageDialog(viewdmgreport, "Damage report updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
         viewdmgreport.dispose();
     }//GEN-LAST:event_btndamagereportActionPerformed
@@ -1432,40 +1442,68 @@ btnsearchActionPerformed(evt);
     }//GEN-LAST:event_btndeleteActionPerformed
 
     private void btnsavemainteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsavemainteActionPerformed
-    int tableRow = jTable3.getSelectedRow();
-    if (tableRow == -1) return;
+   int tableRow = jTable3.getSelectedRow();
+        if (tableRow == -1) return;
 
-    String targetRecId = jTable3.getValueAt(tableRow, 0).toString();
-    for (MaintenanceRecord record : TrimotoSystem.maintenanceRecords) {
-        if (targetRecId.equalsIgnoreCase(record.recordId)) {
-            if (jComboBox1.getSelectedItem() != null) {
-                record.motorcycleId = jComboBox1.getSelectedItem().toString();
-            }
-            record.date = txtmaintedate.getText().trim();
-            record.type = jComboBox4.getSelectedItem().toString();
-            record.category = jTextField12.getText().trim();
-            record.workPerformed = jTextField19.getText().trim();
-            record.partsReplaced = jTextField11.getText().trim();
-            record.odometer = jTextField13.getText().trim();
-            try {
-                record.cost = Double.parseDouble(jTextField15.getText().trim());
-            } catch (NumberFormatException ignored) {}
-            record.nextServiceMileage = jTextField14.getText().trim();
-            record.status = jComboBox2.getSelectedItem().toString();
-            record.availability = jComboBox3.getSelectedItem().toString();
-            record.remarks = jTextField16.getText().trim();
-            break;
+        String date = txtmaintedate.getText().trim();
+        String category = jTextField12.getText().trim();
+        String workPerformed = jTextField19.getText().trim();
+        String partsReplaced = jTextField11.getText().trim();
+        String odometer = jTextField13.getText().trim();
+        String costStr = jTextField15.getText().trim();
+        String nextMileage = jTextField14.getText().trim();
+        String remarks = jTextField16.getText().trim(); // Optional
+
+        if (date.isEmpty() || category.isEmpty() || workPerformed.isEmpty() || 
+            partsReplaced.isEmpty() || odometer.isEmpty() || costStr.isEmpty() || nextMileage.isEmpty()) {
+            JOptionPane.showMessageDialog(viewmainte, "Please fill in all maintenance fields. Only Remarks can be left blank.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
         }
-    }
 
-    mainteapplyfilterActionPerformed(evt); 
-    JOptionPane.showMessageDialog(viewmainte, "Maintenance record updated successfully!");
-    viewmainte.dispose();
+        try {
+            double cost = Double.parseDouble(costStr);
+            String targetRecId = jTable3.getValueAt(tableRow, 0).toString();
+
+            for (MaintenanceRecord record : TrimotoSystem.maintenanceRecords) {
+                if (targetRecId.equalsIgnoreCase(record.recordId)) {
+                    if (jComboBox1.getSelectedItem() != null) {
+                        record.motorcycleId = jComboBox1.getSelectedItem().toString();
+                    }
+                    record.date = date;
+                    record.type = jComboBox4.getSelectedItem().toString();
+                    record.category = category;
+                    record.workPerformed = workPerformed;
+                    record.partsReplaced = partsReplaced;
+                    record.odometer = odometer;
+                    record.cost = cost;
+                    record.nextServiceMileage = nextMileage;
+                    record.status = jComboBox2.getSelectedItem().toString();
+                    record.availability = jComboBox3.getSelectedItem().toString();
+                    record.remarks = remarks;
+                    break;
+                }
+            }
+
+            mainteapplyfilterActionPerformed(evt); 
+            JOptionPane.showMessageDialog(viewmainte, "Maintenance record updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            viewmainte.dispose();
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(viewmainte, "Please enter a valid numeric value for Maintenance Cost.", "Format Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnsavemainteActionPerformed
 
     private void btnviewinspectsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewinspectsaveActionPerformed
-        int tableRow = jTable2.getSelectedRow();
+       int tableRow = jTable2.getSelectedRow();
         if (tableRow == -1) return;
+
+        String date = txtinspectdate.getText().trim();
+        String odometer = jTextField1.getText().trim();
+        String fuel = txtfuel.getText().trim();
+
+        if (date.isEmpty() || odometer.isEmpty() || fuel.isEmpty()) {
+            JOptionPane.showMessageDialog(viewinspect, "Please fill in all required inspection fields (Date, Odometer, Fuel). Only Notes can be left blank.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
         String targetRecId = jTable2.getValueAt(tableRow, 0).toString();
         for (InspectionRecord record : TrimotoSystem.inspections) {
@@ -1473,10 +1511,10 @@ btnsearchActionPerformed(evt);
                 if (cmbmotorcycle.getSelectedItem() != null) {
                     record.motorcycleId = cmbmotorcycle.getSelectedItem().toString();
                 }
-                record.date = txtinspectdate.getText().trim();
+                record.date = date;
                 record.phase = cbinspectionphase.getSelectedItem().toString();
-                record.odometer = jTextField1.getText().trim();
-                record.fuel = txtfuel.getText().trim();
+                record.odometer = odometer;
+                record.fuel = fuel;
                 record.tires = jComboBox8.getSelectedItem().toString();
                 record.brakes = jComboBox9.getSelectedItem().toString();
                 record.headlight = cbheadlight.getSelectedItem().toString();
@@ -1486,7 +1524,7 @@ btnsearchActionPerformed(evt);
                 record.engine = jComboBox13.getSelectedItem().toString();
                 record.condition = cbcondition.getSelectedItem().toString();
                 record.readiness = jComboBox14.getSelectedItem().toString();
-                record.notes = jTextField2.getText().trim();
+                record.notes = jTextField2.getText().trim(); // Optional
 
                 // Update physical motorcycle status to sync with dashboard counters
                 String cleanId = record.motorcycleId.split(" - ")[0].trim();
@@ -1500,7 +1538,7 @@ btnsearchActionPerformed(evt);
 
         inspectapplyfilterActionPerformed(evt); 
         notifyDashboardRefresh(); 
-        JOptionPane.showMessageDialog(viewinspect, "Inspection record updated successfully!");
+        JOptionPane.showMessageDialog(viewinspect, "Inspection record updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
         viewinspect.dispose();
     }//GEN-LAST:event_btnviewinspectsaveActionPerformed
 
@@ -1590,17 +1628,26 @@ btnsearchActionPerformed(evt);
             return;
         }
 
+        String brand = txtbrand.getText().trim();
+        String model = txtmodel.getText().trim();
+        String yearStr = txtyear.getText().trim();
+        String mileageStr = txtmileage.getText().trim();
+        String rateStr = txtdailyrentalrate.getText().trim();
+
+        if (brand.isEmpty() || model.isEmpty() || yearStr.isEmpty() || mileageStr.isEmpty() || rateStr.isEmpty()) {
+            JOptionPane.showMessageDialog(viewmmotorcycle, "Please fill in all primary motorcycle details (Brand, Model, Year, Mileage, Daily Rate).", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
         String targetId = txtmotorid.getText().trim();
         Motorcycle m = TrimotoSystem.findMotorcycleById(targetId);
 
         if (m != null) {
             try {
-                String brand = txtbrand.getText().trim();
-                String model = txtmodel.getText().trim();
-                int year = Integer.parseInt(txtyear.getText().trim());
-                int mileage = Integer.parseInt(txtmileage.getText().trim());
-                double rate = Double.parseDouble(txtdailyrentalrate.getText().trim());
-                String trans = jTextField23.getText().trim();
+                int year = Integer.parseInt(yearStr);
+                int mileage = Integer.parseInt(mileageStr);
+                double rate = Double.parseDouble(rateStr);
+                String trans = jTextField23.getText().trim().isEmpty() ? "Manual" : jTextField23.getText().trim();
                 String type = cmbtypes.getSelectedItem() != null ? cmbtypes.getSelectedItem().toString() : m.getType();
 
                 double spec1 = jTextField24.getText().trim().isEmpty() ? 0 : Double.parseDouble(jTextField24.getText().trim());
@@ -1619,10 +1666,10 @@ btnsearchActionPerformed(evt);
 
                 loadTableData();
                 notifyDashboardRefresh();
-                JOptionPane.showMessageDialog(viewmmotorcycle, "Motorcycle record updated successfully!");
+                JOptionPane.showMessageDialog(viewmmotorcycle, "Motorcycle record updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
                 viewmmotorcycle.dispose();
             } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(viewmmotorcycle, "Please enter valid numbers for specs, year, mileage, and rates.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(viewmmotorcycle, "Please enter valid numeric values for Year, Mileage, Daily Rate, and Specifications.", "Input Error", JOptionPane.ERROR_MESSAGE);
             }
         }
     }//GEN-LAST:event_btnsaveviewmotorcycleActionPerformed

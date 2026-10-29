@@ -69,7 +69,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         );
         viewinspectLayout.setVerticalGroup(
             viewinspectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 330, Short.MAX_VALUE)
         );
 
         setBackground(javax.swing.UIManager.getDefaults().getColor("Button.default.pressedBackground"));
@@ -220,7 +220,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 894, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 888, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(title)
@@ -231,8 +231,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btncreatedmgreport, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnsaveinspect)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(btnsaveinspect)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -261,16 +260,23 @@ public class MotorcycleInspection extends javax.swing.JPanel {
 
     private void btnsaveinspectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveinspectActionPerformed
         if (cmbmotorcycle.getSelectedItem() == null) {
-            JOptionPane.showMessageDialog(this, "No motorcycle selected.");
+            JOptionPane.showMessageDialog(this, "Please select a motorcycle.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        String date = txtinspectdate.getText().trim();
+        String odometer = jTextField1.getText().trim();
+        String fuel = txtfuel.getText().trim();
+
+        // Ensure all required fields have input (Inspection Notes can be blank)
+        if (date.isEmpty() || odometer.isEmpty() || fuel.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please fill in all required inspection fields (Inspection Date, Odometer, Fuel Level). Only Inspection Notes can be left blank.", "Input Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
         String selectedItem = cmbmotorcycle.getSelectedItem().toString();
         String motorId = selectedItem.split(" - ")[0];
-        String date = txtinspectdate.getText().trim();
         String phase = cbinspectionphase.getSelectedItem().toString();
-        String odometer = jTextField1.getText().trim();
-        String fuel = txtfuel.getText().trim();
         String tires = jComboBox4.getSelectedItem().toString();
         String brakes = jComboBox2.getSelectedItem().toString();
         String headlight = cbheadlight.getSelectedItem().toString();
@@ -280,7 +286,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         String engine = jComboBox1.getSelectedItem().toString();
         String condition = cbcondition.getSelectedItem().toString();
         String readiness = jComboBox7.getSelectedItem().toString();
-        String notes = jTextField2.getText().trim();
+        String notes = jTextField2.getText().trim(); // Optional
 
         String insId = "INS-" + (TrimotoSystem.inspections.size() + 1001);
         TrimotoSystem.inspections.add(new InspectionRecord(
@@ -304,8 +310,9 @@ public class MotorcycleInspection extends javax.swing.JPanel {
             ((MainDashboard) topWindow).refreshAllPanels();
         }
 
-        JOptionPane.showMessageDialog(this, "Inspection Saved Successfully!");
+        JOptionPane.showMessageDialog(this, "Inspection Saved Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
         btnclearActionPerformed(new java.awt.event.ActionEvent(btnclear, java.awt.event.ActionEvent.ACTION_PERFORMED, null));
+    
     }//GEN-LAST:event_btnsaveinspectActionPerformed
 
     private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclearActionPerformed

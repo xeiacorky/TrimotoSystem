@@ -328,35 +328,41 @@ if (jComboBox1.getSelectedItem() == null) {
 
     private void btndamagereportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndamagereportActionPerformed
     if (jComboBox1.getSelectedItem() == null) {
-        JOptionPane.showMessageDialog(this, "Please select a motorcycle.", "Input Error", JOptionPane.WARNING_MESSAGE);
-        return;
-    }
+            JOptionPane.showMessageDialog(this, "Please select a motorcycle.", "Input Error", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
 
-    String selected = jComboBox1.getSelectedItem().toString();
-    String motorId = selected.split(" - ")[0];
-    String location = jTextField7.getText().trim();
-    String type = jComboBox5.getSelectedItem().toString();
-    String desc = jTextField5.getText().trim();
-    String date = jTextField4.getText().trim();
-    String action = jComboBox6.getSelectedItem().toString();
-    String status = jComboBox7.getSelectedItem().toString();
-    String notes = jTextField2.getText().trim();
-    String cost = jTextField1.getText().trim();
+        String location = jTextField7.getText().trim();
+        String desc = jTextField5.getText().trim();
+        String date = jTextField4.getText().trim();
+        String notes = jTextField2.getText().trim();
+        String cost = jTextField1.getText().trim();
 
-    String dmgId = "DMG-" + (TrimotoSystem.damageReports.size() + 1001);
-    String formattedRecord = "Report ID: " + dmgId + "\n" +
-                            "Motorcycle: " + motorId + "\n" +
-                            "Date: " + (date.isEmpty() ? java.time.LocalDate.now().toString() : date) + "\n" +
-                            "Location: " + (location.isEmpty() ? "-" : location) + "\n" +
-                            "Type: " + type + "\n" +
-                            "Description: " + (desc.isEmpty() ? "-" : desc) + "\n" +
-                            "Action Required: " + action + "\n" +
-                            "Status: " + status + "\n" +
-                            "Notes: " + (notes.isEmpty() ? "-" : notes) + "\n" +
-                            "Cost: " + (cost.isEmpty() ? "0" : cost);
+        if (location.isEmpty() || desc.isEmpty() || date.isEmpty() || notes.isEmpty() || cost.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "All fields are required to create a damage report. Please complete all fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
-    TrimotoSystem.damageReports.add(formattedRecord);
-    JOptionPane.showMessageDialog(this, "Damage Report Saved Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+        String selected = jComboBox1.getSelectedItem().toString();
+        String motorId = selected.split(" - ")[0];
+        String type = jComboBox5.getSelectedItem().toString();
+        String action = jComboBox6.getSelectedItem().toString();
+        String status = jComboBox7.getSelectedItem().toString();
+
+        String dmgId = "DMG-" + (TrimotoSystem.damageReports.size() + 1001);
+        String formattedRecord = "Report ID: " + dmgId + "\n" +
+                                "Motorcycle: " + motorId + "\n" +
+                                "Date: " + date + "\n" +
+                                "Location: " + location + "\n" +
+                                "Type: " + type + "\n" +
+                                "Description: " + desc + "\n" +
+                                "Action Required: " + action + "\n" +
+                                "Status: " + status + "\n" +
+                                "Notes: " + notes + "\n" +
+                                "Cost: " + cost;
+
+        TrimotoSystem.damageReports.add(formattedRecord);
+        JOptionPane.showMessageDialog(this, "Damage Report Saved Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
     btnclearActionPerformed(evt);    }//GEN-LAST:event_btndamagereportActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed

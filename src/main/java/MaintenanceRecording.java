@@ -200,29 +200,31 @@ public class MaintenanceRecording extends javax.swing.JPanel {
 
     private void btnsavemaintenanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsavemaintenanceActionPerformed
       if (jComboBox1.getSelectedItem() == null) {
-            JOptionPane.showMessageDialog(this, "Please select a motorcycle.");
+            JOptionPane.showMessageDialog(this, "Please select a motorcycle.", "Input Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
+        String date = txtmaintedate.getText().trim();
+        String category = jTextField12.getText().trim();
+        String workPerformed = jTextField19.getText().trim();
+        String partsReplaced = jTextField9.getText().trim();
+        String odometer = jTextField11.getText().trim();
         String costText = jTextField15.getText().trim();
-        if (costText.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Please enter the maintenance cost.");
+        String nextServiceMileage = jTextField6.getText().trim();
+        String remarks = jTextField13.getText().trim(); // Optional
+
+        if (date.isEmpty() || category.isEmpty() || workPerformed.isEmpty() || 
+            partsReplaced.isEmpty() || odometer.isEmpty() || costText.isEmpty() || nextServiceMileage.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please fill in all maintenance fields. Only Remarks can be left blank.", "Input Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
         try {
-            String motorId = jComboBox1.getSelectedItem().toString().split(" - ")[0];
-            String date = txtmaintedate.getText().trim();
-            String type = jComboBox4.getSelectedItem().toString();
-            String category = jTextField12.getText().trim();
-            String workPerformed = jTextField19.getText().trim();
-            String partsReplaced = jTextField9.getText().trim();
-            String odometer = jTextField11.getText().trim();
             double cost = Double.parseDouble(costText);
-            String nextServiceMileage = jTextField6.getText().trim();
+            String motorId = jComboBox1.getSelectedItem().toString().split(" - ")[0];
+            String type = jComboBox4.getSelectedItem().toString();
             String status = jComboBox2.getSelectedItem().toString();
             String availability = jComboBox3.getSelectedItem().toString();
-            String remarks = jTextField13.getText().trim();
 
             String mntId = "MNT-" + (TrimotoSystem.maintenanceRecords.size() + 1001);
             TrimotoSystem.maintenanceRecords.add(new MaintenanceRecord(
@@ -240,10 +242,10 @@ public class MaintenanceRecording extends javax.swing.JPanel {
                 ((MainDashboard) topWindow).refreshAllPanels();
             }
 
-            JOptionPane.showMessageDialog(this, "Maintenance Record Saved!");
+            JOptionPane.showMessageDialog(this, "Maintenance Record Saved!", "Success", JOptionPane.INFORMATION_MESSAGE);
             btnclearActionPerformed(new java.awt.event.ActionEvent(btnclear, java.awt.event.ActionEvent.ACTION_PERFORMED, null));
         } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Maintenance cost must be a valid number (e.g., 1500 or 1500.50).");
+            JOptionPane.showMessageDialog(this, "Maintenance cost must be a valid number (e.g., 1500 or 1500.50).", "Invalid Format", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnsavemaintenanceActionPerformed
 

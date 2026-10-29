@@ -418,21 +418,41 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
             return;
         }
 
+        String renterName = txtname.getText().trim();
+        String address = txtaddress.getText().trim();
+        String contactNumber = txtcontnumber.getText().trim();
+        String licenseNumber = txtdriverslicense.getText().trim();
+        String duraStr = lbldura.getText().trim();
+        String costStr = jTextField1.getText().trim();
+        String paymentStr = jTextField2.getText().trim();
+        String returnDate = txtreturn.getText().trim();
+
+        if (renterName.isEmpty() || address.isEmpty() || contactNumber.isEmpty() || 
+            licenseNumber.isEmpty() || duraStr.isEmpty() || costStr.isEmpty() || 
+            paymentStr.isEmpty() || returnDate.isEmpty()) {
+            JOptionPane.showMessageDialog(editviewtransac, "All renter personal details, duration, amounts, and return date are required before saving.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
         String transId = targetTable.getValueAt(selectedRow, 0).toString();
 
         for (RentalTransaction r : TrimotoSystem.rentals) {
             if (r.transactionId.equalsIgnoreCase(transId)) {
                 try {
+                    int days = Integer.parseInt(duraStr);
+                    double cost = Double.parseDouble(costStr);
+                    double payment = Double.parseDouble(paymentStr);
+
                     if (r.renterProfile != null) {
-                        r.renterProfile.setName(txtname.getText().trim());
-                        r.renterProfile.setAddress(txtaddress.getText().trim());
-                        r.renterProfile.setContactNumber(txtcontnumber.getText().trim());
-                        r.renterProfile.setLicenseNumber(txtdriverslicense.getText().trim());
+                        r.renterProfile.setName(renterName);
+                        r.renterProfile.setAddress(address);
+                        r.renterProfile.setContactNumber(contactNumber);
+                        r.renterProfile.setLicenseNumber(licenseNumber);
                     }
-                    r.days = Integer.parseInt(lbldura.getText().trim());
-                    r.totalCost = Double.parseDouble(jTextField1.getText().trim());
-                    r.initialPayment = Double.parseDouble(jTextField2.getText().trim());
-                    r.returnDate = txtreturn.getText().trim();
+                    r.days = days;
+                    r.totalCost = cost;
+                    r.initialPayment = payment;
+                    r.returnDate = returnDate;
                     r.paymentType = cbpartial.isSelected() ? "Partial" : "Full";
                     if (jComboBox1.getSelectedItem() != null) {
                         r.status = jComboBox1.getSelectedItem().toString();
@@ -442,9 +462,9 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
                     viewtransactapplyfilterActionPerformed(evt);
                     editviewtransac.dispose();
                     
-                    JOptionPane.showMessageDialog(this, "Rental transaction updated successfully!");
+                    JOptionPane.showMessageDialog(this, "Rental transaction updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
                 } catch (NumberFormatException ex) {
-                    JOptionPane.showMessageDialog(this, "Please check numeric fields for valid numbers.", "Format Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(editviewtransac, "Please enter valid numeric values for Duration, Total Cost, and Initial Payment.", "Format Error", JOptionPane.ERROR_MESSAGE);
                 }
                 break;
             }
