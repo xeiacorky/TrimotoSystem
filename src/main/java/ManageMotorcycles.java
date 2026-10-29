@@ -6,6 +6,7 @@ public class ManageMotorcycles extends javax.swing.JPanel {
     public ManageMotorcycles() {
         UIManager.put("Button.focusWidth", 0);
         initComponents();
+        cmbtypesActionPerformed(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -195,7 +196,7 @@ public class ManageMotorcycles extends javax.swing.JPanel {
     }//GEN-LAST:event_btnclearActionPerformed
 
     private void btnaddmotorcycleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddmotorcycleActionPerformed
-       String id = txtmotorid.getText().trim();
+        String id = txtmotorid.getText().trim();
         String brand = txtbrand.getText().trim();
         String model = txtmodel.getText().trim();
         String yearStr = txtyear.getText().trim();
@@ -219,9 +220,9 @@ public class ManageMotorcycles extends javax.swing.JPanel {
             double rate = Double.parseDouble(rateStr);
             String type = cmbtypes.getSelectedItem() != null ? cmbtypes.getSelectedItem().toString().trim() : "Scooter";
 
-            double spec1 = jTextField2.getText().trim().isEmpty() ? 125 : Double.parseDouble(jTextField2.getText().trim());
-            double spec2 = jTextField3.getText().trim().isEmpty() ? 15.0 : Double.parseDouble(jTextField3.getText().trim());
-            double spec3 = jTextField4.getText().trim().isEmpty() ? 5.5 : Double.parseDouble(jTextField4.getText().trim());
+            double spec1 = jTextField2.getText().trim().isEmpty() ? 0 : Double.parseDouble(jTextField2.getText().trim());
+            double spec2 = jTextField3.getText().trim().isEmpty() ? 0 : Double.parseDouble(jTextField3.getText().trim());
+            double spec3 = jTextField4.getText().trim().isEmpty() ? 0 : Double.parseDouble(jTextField4.getText().trim());
 
             Motorcycle m = MotorcycleFactory.createMotorcycle(type, id, brand, model, year, transmission, mileage, rate, spec1, spec2, spec3);
 
@@ -235,7 +236,7 @@ public class ManageMotorcycles extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Motorcycle Registered Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
             btnclearActionPerformed(new java.awt.event.ActionEvent(btnclear, java.awt.event.ActionEvent.ACTION_PERFORMED, null));
         } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Please enter valid numeric values for Year, Mileage, Daily Rate, and subclass specifications.", "Invalid Format", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Please enter valid numeric values for Year, Mileage, and Daily Rate.", "Invalid Format", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnaddmotorcycleActionPerformed
 

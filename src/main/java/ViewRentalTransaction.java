@@ -12,27 +12,31 @@ import javax.swing.table.DefaultTableModel;
 
 public class ViewRentalTransaction extends javax.swing.JPanel {
 
-    public ViewRentalTransaction() {
+   public ViewRentalTransaction() {
         UIManager.put("Button.focusWidth", 0);
         initComponents();
         loadTableData();
     }
 
     public void loadTableData() {
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+       DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0);
 
         for (RentalTransaction r : TrimotoSystem.rentals) {
             double balance = r.totalCost - r.initialPayment;
             String renterName = r.getRenterName();
-            String age = r.renterProfile != null ? r.renterProfile.getAge() : "-";
-            String address = r.renterProfile != null ? r.renterProfile.getAddress() : "-";
-            String license = r.renterProfile != null ? r.renterProfile.getLicenseNumber() : "-";
 
             model.addRow(new Object[]{
-                r.transactionId, r.motorcycleId, renterName, age, address, license,
-                r.days, r.totalCost, r.initialPayment, balance, r.date,
-                r.returnDate, r.status
+                r.transactionId, 
+                r.motorcycleId, 
+                renterName, 
+                r.days, 
+                r.totalCost, 
+                r.initialPayment, 
+                balance, 
+                r.date, 
+                r.returnDate, 
+                r.status
             });
         }
     }
@@ -536,7 +540,7 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
     }//GEN-LAST:event_viewtransactapplyfilterActionPerformed
 
     private void btnsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsearchActionPerformed
-   String searchId = jTextField3.getText().trim();
+        String searchId = jTextField3.getText().trim();
         if (searchId.isEmpty()) {
             loadTableData();
             return;
@@ -549,14 +553,19 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
             if (r.transactionId.equalsIgnoreCase(searchId) || r.motorcycleId.equalsIgnoreCase(searchId)) {
                 double balance = r.totalCost - r.initialPayment;
                 String renterName = r.getRenterName();
-                String age = r.renterProfile != null ? r.renterProfile.getAge() : "-";
-                String address = r.renterProfile != null ? r.renterProfile.getAddress() : "-";
-                String license = r.renterProfile != null ? r.renterProfile.getLicenseNumber() : "-";
 
+                // 10 Summary Columns for jTable1
                 model.addRow(new Object[]{
-                    r.transactionId, r.motorcycleId, renterName, age, address, license,
-                    r.days, r.totalCost, r.initialPayment, balance, r.date,
-                    r.returnDate, r.status
+                    r.transactionId, 
+                    r.motorcycleId, 
+                    renterName, 
+                    r.days, 
+                    r.totalCost, 
+                    r.initialPayment, 
+                    balance, 
+                    r.date, 
+                    r.returnDate, 
+                    r.status
                 });
             }
         }

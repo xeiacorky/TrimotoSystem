@@ -1320,36 +1320,44 @@ btnsearchActionPerformed(evt);
 
     private void btndamagereportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndamagereportActionPerformed
     int selectedRow = jTable4.getSelectedRow();
-    if (selectedRow == -1) {
-        JOptionPane.showMessageDialog(viewdmgreport, "Please select a damage report row to save.", "Error", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
-
-    String reportId = jTable4.getValueAt(selectedRow, 0).toString();
-    String motorId = jTable4.getValueAt(selectedRow, 1).toString();
-
-    StringBuilder newReport = new StringBuilder();
-    newReport.append("Report ID: ").append(reportId).append("\n");
-    newReport.append("Motorcycle: ").append(motorId).append("\n");
-    newReport.append("Date: ").append(jTextField4.getText().trim()).append("\n");
-    newReport.append("Location: ").append(jTextField7.getText().trim()).append("\n");
-    newReport.append("Type: ").append(jComboBox6.getSelectedItem().toString()).append("\n");
-    newReport.append("Description: ").append(jTextField5.getText().trim()).append("\n");
-    newReport.append("Action Required: ").append(jComboBox7.getSelectedItem().toString()).append("\n");
-    newReport.append("Cost: ").append(jTextField8.getText().trim()).append("\n");
-    newReport.append("Status: ").append(jComboBox15.getSelectedItem().toString()).append("\n");
-    newReport.append("Notes: ").append(jTextField6.getText().trim());
-
-    for (int i = 0; i < TrimotoSystem.damageReports.size(); i++) {
-        if (TrimotoSystem.damageReports.get(i).contains("Report ID: " + reportId)) {
-            TrimotoSystem.damageReports.set(i, newReport.toString());
-            break;
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(viewdmgreport, "Please select a damage report row to save.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
         }
-    }
 
-    damagerepapplyfilterActionPerformed(evt); 
-    JOptionPane.showMessageDialog(viewdmgreport, "Damage report updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-    viewdmgreport.dispose();
+        String reportId = jTable4.getValueAt(selectedRow, 0).toString();
+        String motorId = jTable4.getValueAt(selectedRow, 1).toString();
+        String status = jComboBox15.getSelectedItem().toString();
+
+        StringBuilder newReport = new StringBuilder();
+        newReport.append("Report ID: ").append(reportId).append("\n");
+        newReport.append("Motorcycle: ").append(motorId).append("\n");
+        newReport.append("Date: ").append(jTextField4.getText().trim()).append("\n");
+        newReport.append("Location: ").append(jTextField7.getText().trim()).append("\n");
+        newReport.append("Type: ").append(jComboBox6.getSelectedItem().toString()).append("\n");
+        newReport.append("Description: ").append(jTextField5.getText().trim()).append("\n");
+        newReport.append("Action Required: ").append(jComboBox7.getSelectedItem().toString()).append("\n");
+        newReport.append("Cost: ").append(jTextField8.getText().trim()).append("\n");
+        newReport.append("Status: ").append(status).append("\n");
+        newReport.append("Notes: ").append(jTextField6.getText().trim());
+
+        for (int i = 0; i < TrimotoSystem.damageReports.size(); i++) {
+            if (TrimotoSystem.damageReports.get(i).contains("Report ID: " + reportId)) {
+                TrimotoSystem.damageReports.set(i, newReport.toString());
+                
+                // Update physical motorcycle status to sync with dashboard counters
+                Motorcycle m = TrimotoSystem.findMotorcycleById(motorId);
+                if (m != null) {
+                    m.setStatus(status);
+                }
+                break;
+            }
+        }
+
+        damagerepapplyfilterActionPerformed(evt); 
+        notifyDashboardRefresh(); // Refresh Main Dashboard Counters
+        JOptionPane.showMessageDialog(viewdmgreport, "Damage report updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+        viewdmgreport.dispose();
     }//GEN-LAST:event_btndamagereportActionPerformed
 
     private void txtmotoridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtmotoridActionPerformed
@@ -1457,35 +1465,43 @@ btnsearchActionPerformed(evt);
 
     private void btnviewinspectsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewinspectsaveActionPerformed
         int tableRow = jTable2.getSelectedRow();
-    if (tableRow == -1) return;
+        if (tableRow == -1) return;
 
-    String targetRecId = jTable2.getValueAt(tableRow, 0).toString();
-    for (InspectionRecord record : TrimotoSystem.inspections) {
-        if (targetRecId.equalsIgnoreCase(record.recordId)) {
-            if (cmbmotorcycle.getSelectedItem() != null) {
-                record.motorcycleId = cmbmotorcycle.getSelectedItem().toString();
+        String targetRecId = jTable2.getValueAt(tableRow, 0).toString();
+        for (InspectionRecord record : TrimotoSystem.inspections) {
+            if (targetRecId.equalsIgnoreCase(record.recordId)) {
+                if (cmbmotorcycle.getSelectedItem() != null) {
+                    record.motorcycleId = cmbmotorcycle.getSelectedItem().toString();
+                }
+                record.date = txtinspectdate.getText().trim();
+                record.phase = cbinspectionphase.getSelectedItem().toString();
+                record.odometer = jTextField1.getText().trim();
+                record.fuel = txtfuel.getText().trim();
+                record.tires = jComboBox8.getSelectedItem().toString();
+                record.brakes = jComboBox9.getSelectedItem().toString();
+                record.headlight = cbheadlight.getSelectedItem().toString();
+                record.horns = jComboBox10.getSelectedItem().toString();
+                record.mirrors = jComboBox11.getSelectedItem().toString();
+                record.body = jComboBox12.getSelectedItem().toString();
+                record.engine = jComboBox13.getSelectedItem().toString();
+                record.condition = cbcondition.getSelectedItem().toString();
+                record.readiness = jComboBox14.getSelectedItem().toString();
+                record.notes = jTextField2.getText().trim();
+
+                // Update physical motorcycle status to sync with dashboard counters
+                String cleanId = record.motorcycleId.split(" - ")[0].trim();
+                Motorcycle m = TrimotoSystem.findMotorcycleById(cleanId);
+                if (m != null) {
+                    m.setStatus(record.condition); 
+                }
+                break;
             }
-            record.date = txtinspectdate.getText().trim();
-            record.phase = cbinspectionphase.getSelectedItem().toString();
-            record.odometer = jTextField1.getText().trim();
-            record.fuel = txtfuel.getText().trim();
-            record.tires = jComboBox8.getSelectedItem().toString();
-            record.brakes = jComboBox9.getSelectedItem().toString();
-            record.headlight = cbheadlight.getSelectedItem().toString();
-            record.horns = jComboBox10.getSelectedItem().toString();
-            record.mirrors = jComboBox11.getSelectedItem().toString();
-            record.body = jComboBox12.getSelectedItem().toString();
-            record.engine = jComboBox13.getSelectedItem().toString();
-            record.condition = cbcondition.getSelectedItem().toString();
-            record.readiness = jComboBox14.getSelectedItem().toString();
-            record.notes = jTextField2.getText().trim();
-            break;
         }
-    }
 
-    inspectapplyfilterActionPerformed(evt); 
-    JOptionPane.showMessageDialog(viewinspect, "Inspection record updated successfully!");
-    viewinspect.dispose();
+        inspectapplyfilterActionPerformed(evt); 
+        notifyDashboardRefresh(); 
+        JOptionPane.showMessageDialog(viewinspect, "Inspection record updated successfully!");
+        viewinspect.dispose();
     }//GEN-LAST:event_btnviewinspectsaveActionPerformed
 
     private void btndeleteinspectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndeleteinspectActionPerformed
