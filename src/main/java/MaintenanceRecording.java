@@ -6,6 +6,7 @@ public class MaintenanceRecording extends javax.swing.JPanel {
 
     public MaintenanceRecording() {
         UIManager.put("Button.focusWidth", 0);
+        UIManager.put("ComboBox.drawFocusBackground", Boolean.FALSE);
         initComponents();
         txtmaintedate.setText(java.time.LocalDate.now().toString());
         refreshMotorcycleDropdown();
@@ -71,6 +72,7 @@ public class MaintenanceRecording extends javax.swing.JPanel {
 
         jComboBox1.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setFocusable(false);
         jComboBox1.addActionListener(this::jComboBox1ActionPerformed);
         jPanel1.add(jComboBox1);
 
@@ -87,6 +89,7 @@ public class MaintenanceRecording extends javax.swing.JPanel {
 
         jComboBox4.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Preventive", "Corrective" }));
+        jComboBox4.setFocusable(false);
         jPanel1.add(jComboBox4);
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
@@ -137,6 +140,7 @@ public class MaintenanceRecording extends javax.swing.JPanel {
 
         jComboBox2.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pending", "In Progress", "Completed" }));
+        jComboBox2.setFocusable(false);
         jPanel1.add(jComboBox2);
 
         jLabel21.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
@@ -145,6 +149,7 @@ public class MaintenanceRecording extends javax.swing.JPanel {
 
         jComboBox3.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Available", "Under Maintenance" }));
+        jComboBox3.setFocusable(false);
         jPanel1.add(jComboBox3);
 
         jLabel15.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
@@ -157,11 +162,13 @@ public class MaintenanceRecording extends javax.swing.JPanel {
         btnsavemaintenance.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnsavemaintenance.setText("Save Maintenance Record");
         btnsavemaintenance.setFocusPainted(false);
+        btnsavemaintenance.setFocusable(false);
         btnsavemaintenance.addActionListener(this::btnsavemaintenanceActionPerformed);
 
         btnclear.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnclear.setText("Clear");
         btnclear.setFocusPainted(false);
+        btnclear.setFocusable(false);
         btnclear.addActionListener(this::btnclearActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

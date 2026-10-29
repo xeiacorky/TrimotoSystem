@@ -14,6 +14,7 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
 
    public ViewRentalTransaction() {
         UIManager.put("Button.focusWidth", 0);
+        UIManager.put("ComboBox.drawFocusBackground", Boolean.FALSE);
         initComponents();
         loadTableData();
     }
@@ -178,10 +179,13 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
 
         jComboBox1.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setFocusable(false);
         jPanel2.add(jComboBox1);
 
         saveRentalEdit.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         saveRentalEdit.setText("Save");
+        saveRentalEdit.setFocusPainted(false);
+        saveRentalEdit.setFocusable(false);
         saveRentalEdit.addActionListener(this::saveRentalEditActionPerformed);
 
         javax.swing.GroupLayout editviewtransacLayout = new javax.swing.GroupLayout(editviewtransac.getContentPane());
@@ -223,13 +227,18 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
         jScrollPane3.setViewportView(jTable2);
 
         viewtransactedit.setText("Edit");
+        viewtransactedit.setFocusPainted(false);
+        viewtransactedit.setFocusable(false);
         viewtransactedit.addActionListener(this::viewtransacteditActionPerformed);
 
         viewtransactdelete.setText("Delete");
+        viewtransactdelete.setFocusPainted(false);
+        viewtransactdelete.setFocusable(false);
         viewtransactdelete.addActionListener(this::viewtransactdeleteActionPerformed);
 
         viewtranasactfilter.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         viewtranasactfilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All", "Active", "Completed" }));
+        viewtranasactfilter.setFocusable(false);
         viewtranasactfilter.addActionListener(this::viewtranasactfilterActionPerformed);
 
         jLabel32.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
@@ -237,6 +246,8 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
 
         viewtransactapplyfilter.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         viewtransactapplyfilter.setText("Apply Filter");
+        viewtransactapplyfilter.setFocusPainted(false);
+        viewtransactapplyfilter.setFocusable(false);
         viewtransactapplyfilter.addActionListener(this::viewtransactapplyfilterActionPerformed);
 
         jTextField18.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
@@ -326,21 +337,25 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
         btnsearch.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnsearch.setText("Search");
         btnsearch.setFocusPainted(false);
+        btnsearch.setFocusable(false);
         btnsearch.addActionListener(this::btnsearchActionPerformed);
 
         btnrefresh.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnrefresh.setText("Refresh");
         btnrefresh.setFocusPainted(false);
+        btnrefresh.setFocusable(false);
         btnrefresh.addActionListener(this::btnrefreshActionPerformed);
 
         btnreturnedmark.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnreturnedmark.setText("Mark Motorcycle Returned");
         btnreturnedmark.setFocusPainted(false);
+        btnreturnedmark.setFocusable(false);
         btnreturnedmark.addActionListener(this::btnreturnedmarkActionPerformed);
 
         btnviewtransac.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnviewtransac.setText("View Transaction Details");
         btnviewtransac.setFocusPainted(false);
+        btnviewtransac.setFocusable(false);
         btnviewtransac.addActionListener(this::btnviewtransacActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

@@ -6,6 +6,7 @@ public class RentalProcessing extends javax.swing.JPanel {
 
     public RentalProcessing() {
         UIManager.put("Button.focusWidth", 0);
+        UIManager.put("ComboBox.drawFocusBackground", Boolean.FALSE);
         initComponents();
         txtreturn.setText("");
         refreshMotorcycleDropdown();
@@ -71,6 +72,7 @@ public class RentalProcessing extends javax.swing.JPanel {
 
         motor.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         motor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        motor.setFocusable(false);
         motor.addActionListener(this::motorActionPerformed);
         jPanel1.add(motor);
 
@@ -152,16 +154,19 @@ public class RentalProcessing extends javax.swing.JPanel {
         btnprocessrental.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnprocessrental.setText("Process Rental");
         btnprocessrental.setFocusPainted(false);
+        btnprocessrental.setFocusable(false);
         btnprocessrental.addActionListener(this::btnprocessrentalActionPerformed);
 
         calculateCost.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         calculateCost.setText("Calculate Cost");
         calculateCost.setFocusPainted(false);
+        calculateCost.setFocusable(false);
         calculateCost.addActionListener(this::calculateCostActionPerformed);
 
         btnclear.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnclear.setText("Clear");
         btnclear.setFocusPainted(false);
+        btnclear.setFocusable(false);
         btnclear.addActionListener(this::btnclearActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

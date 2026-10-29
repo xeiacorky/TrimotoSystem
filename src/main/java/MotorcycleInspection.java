@@ -6,6 +6,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
 
     public MotorcycleInspection() {
         UIManager.put("Button.focusWidth", 0);
+        UIManager.put("ComboBox.drawFocusBackground", Boolean.FALSE);
         initComponents();
         txtinspectdate.setText(java.time.LocalDate.now().toString());
         refreshMotorcycleDropdown();
@@ -91,6 +92,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
 
         cmbmotorcycle.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         cmbmotorcycle.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbmotorcycle.setFocusable(false);
         jPanel1.add(cmbmotorcycle);
 
         lblinspectiondate.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
@@ -106,6 +108,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
 
         cbinspectionphase.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         cbinspectionphase.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pre-Rental", "Post-Rental" }));
+        cbinspectionphase.setFocusable(false);
         jPanel1.add(cbinspectionphase);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
@@ -128,6 +131,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
 
         jComboBox4.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Scratched", "Dented" }));
+        jComboBox4.setFocusable(false);
         jPanel1.add(jComboBox4);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
@@ -136,6 +140,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
 
         jComboBox2.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Worn", "Damaged" }));
+        jComboBox2.setFocusable(false);
         jPanel1.add(jComboBox2);
 
         lblheadlightandsignal.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
@@ -144,6 +149,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
 
         cbheadlight.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         cbheadlight.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Functional", "Not Functional" }));
+        cbheadlight.setFocusable(false);
         jPanel1.add(cbheadlight);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
@@ -152,6 +158,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
 
         jComboBox6.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Functional", "Not Functional" }));
+        jComboBox6.setFocusable(false);
         jPanel1.add(jComboBox6);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
@@ -160,6 +167,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
 
         jComboBox5.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Complete", "Missing", "Damaged" }));
+        jComboBox5.setFocusable(false);
         jPanel1.add(jComboBox5);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
@@ -168,6 +176,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
 
         jComboBox3.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Needs Repair" }));
+        jComboBox3.setFocusable(false);
         jPanel1.add(jComboBox3);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
@@ -176,6 +185,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
 
         jComboBox1.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Normal", "Unusual Noise", "Other Issue" }));
+        jComboBox1.setFocusable(false);
         jPanel1.add(jComboBox1);
 
         lbloverallcondi.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
@@ -184,6 +194,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
 
         cbcondition.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         cbcondition.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Minor Damage", "Needs Repair", "Unsafe" }));
+        cbcondition.setFocusable(false);
         jPanel1.add(cbcondition);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
@@ -192,6 +203,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
 
         jComboBox7.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ready", "Not Ready" }));
+        jComboBox7.setFocusable(false);
         jPanel1.add(jComboBox7);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
@@ -204,16 +216,19 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         btncreatedmgreport.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btncreatedmgreport.setText("Create Damage Report");
         btncreatedmgreport.setFocusPainted(false);
+        btncreatedmgreport.setFocusable(false);
         btncreatedmgreport.addActionListener(this::btncreatedmgreportActionPerformed);
 
         btnsaveinspect.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnsaveinspect.setText("Save Inspection");
         btnsaveinspect.setFocusPainted(false);
+        btnsaveinspect.setFocusable(false);
         btnsaveinspect.addActionListener(this::btnsaveinspectActionPerformed);
 
         btnclear.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnclear.setText("Clear");
         btnclear.setFocusPainted(false);
+        btnclear.setFocusable(false);
         btnclear.addActionListener(this::btnclearActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

@@ -5,6 +5,7 @@ public class ManageMotorcycles extends javax.swing.JPanel {
 
     public ManageMotorcycles() {
         UIManager.put("Button.focusWidth", 0);
+        UIManager.put("ComboBox.drawFocusBackground", Boolean.FALSE);
         initComponents();
         cmbtypesActionPerformed(null);
     }
@@ -104,6 +105,7 @@ public class ManageMotorcycles extends javax.swing.JPanel {
 
         cmbtypes.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         cmbtypes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Scooter", "Standard Bike", "Sports Bike", "Adventure Bike", "Electric Bike", "" }));
+        cmbtypes.setFocusable(false);
         cmbtypes.addActionListener(this::cmbtypesActionPerformed);
         jPanel1.add(cmbtypes);
 
@@ -136,11 +138,13 @@ public class ManageMotorcycles extends javax.swing.JPanel {
         btnclear.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnclear.setText("Clear");
         btnclear.setFocusPainted(false);
+        btnclear.setFocusable(false);
         btnclear.addActionListener(this::btnclearActionPerformed);
 
         btnaddmotorcycle.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnaddmotorcycle.setText("Add Motorcycle");
         btnaddmotorcycle.setFocusPainted(false);
+        btnaddmotorcycle.setFocusable(false);
         btnaddmotorcycle.addActionListener(this::btnaddmotorcycleActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
