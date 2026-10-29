@@ -1365,6 +1365,7 @@ btnsearchActionPerformed(evt);
         }
 
         damagerepapplyfilterActionPerformed(evt); 
+        loadTableData();
         notifyDashboardRefresh(); 
         JOptionPane.showMessageDialog(viewdmgreport, "Damage report updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
         viewdmgreport.dispose();
@@ -1485,6 +1486,8 @@ btnsearchActionPerformed(evt);
             }
 
             mainteapplyfilterActionPerformed(evt); 
+            loadTableData();
+            notifyDashboardRefresh();
             JOptionPane.showMessageDialog(viewmainte, "Maintenance record updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
             viewmainte.dispose();
         } catch (NumberFormatException ex) {
@@ -1537,6 +1540,7 @@ btnsearchActionPerformed(evt);
         }
 
         inspectapplyfilterActionPerformed(evt); 
+        loadTableData();
         notifyDashboardRefresh(); 
         JOptionPane.showMessageDialog(viewinspect, "Inspection record updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
         viewinspect.dispose();

@@ -71,6 +71,7 @@ public class RentalProcessing extends javax.swing.JPanel {
 
         motor.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         motor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        motor.addActionListener(this::motorActionPerformed);
         jPanel1.add(motor);
 
         lblrenter.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
@@ -324,6 +325,10 @@ public class RentalProcessing extends javax.swing.JPanel {
         cbpartial.setSelected(false);
         cbfull.setSelected(false);
      }//GEN-LAST:event_btnclearActionPerformed
+
+    private void motorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_motorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_motorActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -40,6 +40,13 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
             });
         }
     }
+    
+    private void notifyDashboardRefresh() {
+        java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
+        if (topWindow instanceof MainDashboard) {
+            ((MainDashboard) topWindow).refreshAllPanels();
+        }
+    }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -458,8 +465,19 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
                         r.status = jComboBox1.getSelectedItem().toString();
                     }
 
+                    // Sync motorcycle status when rental status changes
+                    Motorcycle m = TrimotoSystem.findMotorcycleById(r.motorcycleId);
+                    if (m != null) {
+                        if ("Completed".equalsIgnoreCase(r.status) || "Returned".equalsIgnoreCase(r.status) || "Cancelled".equalsIgnoreCase(r.status)) {
+                            m.setStatus("Available");
+                        } else if ("Active".equalsIgnoreCase(r.status)) {
+                            m.setStatus("Rented");
+                        }
+                    }
+
                     loadTableData();
                     viewtransactapplyfilterActionPerformed(evt);
+                    notifyDashboardRefresh();
                     editviewtransac.dispose();
                     
                     JOptionPane.showMessageDialog(this, "Rental transaction updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
