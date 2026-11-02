@@ -241,7 +241,6 @@ public class RentalProcessing extends javax.swing.JPanel {
             Motorcycle m = TrimotoSystem.findMotorcycleById(motorId);
             if (m == null) return;
 
-            // Dynamic polymorphic calculation
             double totalCost = m.calculateRentalCost(days);
             String transId = "TRX-" + (TrimotoSystem.rentals.size() + 1001);
             String date = java.time.LocalDate.now().toString();

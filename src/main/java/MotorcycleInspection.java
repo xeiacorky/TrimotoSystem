@@ -286,7 +286,6 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         String odometer = jTextField1.getText().trim();
         String fuel = txtfuel.getText().trim();
 
-        // Ensure all required fields have input (Inspection Notes can be blank)
         if (date.isEmpty() || odometer.isEmpty() || fuel.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please fill in all required inspection fields (Inspection Date, Odometer, Fuel Level). Only Inspection Notes can be left blank.", "Input Error", JOptionPane.ERROR_MESSAGE);
             return;

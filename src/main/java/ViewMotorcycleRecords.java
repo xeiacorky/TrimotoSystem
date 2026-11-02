@@ -1521,7 +1521,7 @@ btnsearchActionPerformed(evt);
     String odometer = jTextField13.getText().trim();
     String costStr = jTextField15.getText().trim();
     String nextMileage = jTextField14.getText().trim();
-    String remarks = jTextField16.getText().trim(); // Optional
+    String remarks = jTextField16.getText().trim();
 
     if (date.isEmpty() || category.isEmpty() || workPerformed.isEmpty() || 
         partsReplaced.isEmpty() || odometer.isEmpty() || costStr.isEmpty() || nextMileage.isEmpty()) {
@@ -1581,7 +1581,6 @@ btnsearchActionPerformed(evt);
     for (InspectionRecord record : TrimotoSystem.inspections) {
         if (targetRecId.equalsIgnoreCase(record.recordId)) {
             if (cmbmotorcycle.getSelectedItem() != null) {
-                // FIX: Extract ONLY the motorcycle ID[cite: 1]
                 String selectedCombo = cmbmotorcycle.getSelectedItem().toString();
                 record.motorcycleId = selectedCombo.split(" - ")[0].trim();
             }
@@ -1957,10 +1956,8 @@ btnsearchActionPerformed(evt);
             return;
         }
 
-        // Split formatted output line-by-line
         String[] lines = info.split("\n");
 
-        // Line 1 -> Label & Text Field 1
         if (lines.length > 0 && lines[0].contains(":")) {
             String[] parts = lines[0].split(":", 2);
             jLabel39.setText(parts[0].trim() + ":");
@@ -1969,7 +1966,6 @@ btnsearchActionPerformed(evt);
             jLabel39.setText(""); jTextField24.setText("");
         }
 
-        // Line 2 -> Label & Text Field 2
         if (lines.length > 1 && lines[1].contains(":")) {
             String[] parts = lines[1].split(":", 2);
             jLabel40.setText(parts[0].trim() + ":");
@@ -1978,7 +1974,6 @@ btnsearchActionPerformed(evt);
             jLabel40.setText(""); jTextField25.setText("");
         }
 
-        // Line 3 -> Label & Text Field 3 (If available)
         if (lines.length > 2 && lines[2].contains(":")) {
             String[] parts = lines[2].split(":", 2);
             jLabel41.setText(parts[0].trim() + ":");
@@ -1995,7 +1990,6 @@ btnsearchActionPerformed(evt);
         }
     }
 
-    // Helper to extract raw numbers by stripping trailing units like "cc", "L", "W", "HP", "hrs", "Ah"
     private String cleanUnits(String valueWithUnit) {
         if (valueWithUnit == null) return "";
         return valueWithUnit.replaceAll("[^0-9.]", "").trim();
