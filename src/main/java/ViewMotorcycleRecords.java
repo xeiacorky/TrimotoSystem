@@ -1511,107 +1511,108 @@ btnsearchActionPerformed(evt);
     }//GEN-LAST:event_btndeleteActionPerformed
 
     private void btnsavemainteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsavemainteActionPerformed
-   int tableRow = jTable3.getSelectedRow();
-        if (tableRow == -1) return;
+    int tableRow = jTable3.getSelectedRow();
+    if (tableRow == -1) return;
 
-        String date = txtmaintedate.getText().trim();
-        String category = jTextField12.getText().trim();
-        String workPerformed = jTextField19.getText().trim();
-        String partsReplaced = jTextField11.getText().trim();
-        String odometer = jTextField13.getText().trim();
-        String costStr = jTextField15.getText().trim();
-        String nextMileage = jTextField14.getText().trim();
-        String remarks = jTextField16.getText().trim(); // Optional
+    String date = txtmaintedate.getText().trim();
+    String category = jTextField12.getText().trim();
+    String workPerformed = jTextField19.getText().trim();
+    String partsReplaced = jTextField11.getText().trim();
+    String odometer = jTextField13.getText().trim();
+    String costStr = jTextField15.getText().trim();
+    String nextMileage = jTextField14.getText().trim();
+    String remarks = jTextField16.getText().trim(); // Optional
 
-        if (date.isEmpty() || category.isEmpty() || workPerformed.isEmpty() || 
-            partsReplaced.isEmpty() || odometer.isEmpty() || costStr.isEmpty() || nextMileage.isEmpty()) {
-            JOptionPane.showMessageDialog(viewmainte, "Please fill in all maintenance fields. Only Remarks can be left blank.", "Input Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+    if (date.isEmpty() || category.isEmpty() || workPerformed.isEmpty() || 
+        partsReplaced.isEmpty() || odometer.isEmpty() || costStr.isEmpty() || nextMileage.isEmpty()) {
+        JOptionPane.showMessageDialog(viewmainte, "Please fill in all maintenance fields. Only Remarks can be left blank.", "Input Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
 
-        try {
-            double cost = Double.parseDouble(costStr);
-            String targetRecId = jTable3.getValueAt(tableRow, 0).toString();
+    try {
+        double cost = Double.parseDouble(costStr);
+        String targetRecId = jTable3.getValueAt(tableRow, 0).toString();
 
-            for (MaintenanceRecord record : TrimotoSystem.maintenanceRecords) {
-                if (targetRecId.equalsIgnoreCase(record.recordId)) {
-                    if (jComboBox1.getSelectedItem() != null) {
-                        record.motorcycleId = jComboBox1.getSelectedItem().toString();
-                    }
-                    record.date = date;
-                    record.type = jComboBox4.getSelectedItem().toString();
-                    record.category = category;
-                    record.workPerformed = workPerformed;
-                    record.partsReplaced = partsReplaced;
-                    record.odometer = odometer;
-                    record.cost = cost;
-                    record.nextServiceMileage = nextMileage;
-                    record.status = jComboBox2.getSelectedItem().toString();
-                    record.availability = jComboBox3.getSelectedItem().toString();
-                    record.remarks = remarks;
-                    break;
-                }
-            }
-
-            mainteapplyfilterActionPerformed(evt); 
-            loadTableData();
-            notifyDashboardRefresh();
-            JOptionPane.showMessageDialog(viewmainte, "Maintenance record updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-            viewmainte.dispose();
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(viewmainte, "Please enter a valid numeric value for Maintenance Cost.", "Format Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_btnsavemainteActionPerformed
-
-    private void btnviewinspectsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewinspectsaveActionPerformed
-       int tableRow = jTable2.getSelectedRow();
-        if (tableRow == -1) return;
-
-        String date = txtinspectdate.getText().trim();
-        String odometer = jTextField1.getText().trim();
-        String fuel = txtfuel.getText().trim();
-
-        if (date.isEmpty() || odometer.isEmpty() || fuel.isEmpty()) {
-            JOptionPane.showMessageDialog(viewinspect, "Please fill in all required inspection fields (Date, Odometer, Fuel). Only Notes can be left blank.", "Input Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        String targetRecId = jTable2.getValueAt(tableRow, 0).toString();
-        for (InspectionRecord record : TrimotoSystem.inspections) {
+        for (MaintenanceRecord record : TrimotoSystem.maintenanceRecords) {
             if (targetRecId.equalsIgnoreCase(record.recordId)) {
-                if (cmbmotorcycle.getSelectedItem() != null) {
-                    record.motorcycleId = cmbmotorcycle.getSelectedItem().toString();
+                if (jComboBox1.getSelectedItem() != null) {
+                    String selectedCombo = jComboBox1.getSelectedItem().toString();
+                    record.motorcycleId = selectedCombo.split(" - ")[0].trim();
                 }
                 record.date = date;
-                record.phase = cbinspectionphase.getSelectedItem().toString();
+                record.type = jComboBox4.getSelectedItem().toString();
+                record.category = category;
+                record.workPerformed = workPerformed;
+                record.partsReplaced = partsReplaced;
                 record.odometer = odometer;
-                record.fuel = fuel;
-                record.tires = jComboBox8.getSelectedItem().toString();
-                record.brakes = jComboBox9.getSelectedItem().toString();
-                record.headlight = cbheadlight.getSelectedItem().toString();
-                record.horns = jComboBox10.getSelectedItem().toString();
-                record.mirrors = jComboBox11.getSelectedItem().toString();
-                record.body = jComboBox12.getSelectedItem().toString();
-                record.engine = jComboBox13.getSelectedItem().toString();
-                record.condition = cbcondition.getSelectedItem().toString();
-                record.readiness = jComboBox14.getSelectedItem().toString();
-                record.notes = jTextField2.getText().trim(); // Optional
-
-                // Update physical motorcycle status to sync with dashboard counters
-                String cleanId = record.motorcycleId.split(" - ")[0].trim();
-                Motorcycle m = TrimotoSystem.findMotorcycleById(cleanId);
-                if (m != null) {
-                    m.setStatus(record.condition); 
-                }
+                record.cost = cost;
+                record.nextServiceMileage = nextMileage;
+                record.status = jComboBox2.getSelectedItem().toString();
+                record.availability = jComboBox3.getSelectedItem().toString();
+                record.remarks = remarks;
                 break;
             }
         }
 
-        inspectapplyfilterActionPerformed(evt); 
+        mainteapplyfilterActionPerformed(evt); 
         loadTableData();
-        notifyDashboardRefresh(); 
-        JOptionPane.showMessageDialog(viewinspect, "Inspection record updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-        viewinspect.dispose();
+        notifyDashboardRefresh();
+        JOptionPane.showMessageDialog(viewmainte, "Maintenance record updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+        viewmainte.dispose();
+    } catch (NumberFormatException ex) {
+        JOptionPane.showMessageDialog(viewmainte, "Please enter a valid numeric value for Maintenance Cost.", "Format Error", JOptionPane.ERROR_MESSAGE);
+    }
+    }//GEN-LAST:event_btnsavemainteActionPerformed
+
+    private void btnviewinspectsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewinspectsaveActionPerformed
+    int tableRow = jTable2.getSelectedRow();
+    if (tableRow == -1) return;
+
+    String date = txtinspectdate.getText().trim();
+    String odometer = jTextField1.getText().trim();
+    String fuel = txtfuel.getText().trim();
+
+    if (date.isEmpty() || odometer.isEmpty() || fuel.isEmpty()) {
+        JOptionPane.showMessageDialog(viewinspect, "Please fill in all required inspection fields (Date, Odometer, Fuel). Only Notes can be left blank.", "Input Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    String targetRecId = jTable2.getValueAt(tableRow, 0).toString();
+    for (InspectionRecord record : TrimotoSystem.inspections) {
+        if (targetRecId.equalsIgnoreCase(record.recordId)) {
+            if (cmbmotorcycle.getSelectedItem() != null) {
+                // FIX: Extract ONLY the motorcycle ID[cite: 1]
+                String selectedCombo = cmbmotorcycle.getSelectedItem().toString();
+                record.motorcycleId = selectedCombo.split(" - ")[0].trim();
+            }
+            record.date = date;
+            record.phase = cbinspectionphase.getSelectedItem().toString();
+            record.odometer = odometer;
+            record.fuel = fuel;
+            record.tires = jComboBox8.getSelectedItem().toString();
+            record.brakes = jComboBox9.getSelectedItem().toString();
+            record.headlight = cbheadlight.getSelectedItem().toString();
+            record.horns = jComboBox10.getSelectedItem().toString();
+            record.mirrors = jComboBox11.getSelectedItem().toString();
+            record.body = jComboBox12.getSelectedItem().toString();
+            record.engine = jComboBox13.getSelectedItem().toString();
+            record.condition = cbcondition.getSelectedItem().toString();
+            record.readiness = jComboBox14.getSelectedItem().toString();
+            record.notes = jTextField2.getText().trim();
+
+            Motorcycle m = TrimotoSystem.findMotorcycleById(record.motorcycleId);
+            if (m != null) {
+                m.setStatus(record.condition); 
+            }
+            break;
+        }
+    }
+
+    inspectapplyfilterActionPerformed(evt); 
+    loadTableData();
+    notifyDashboardRefresh(); 
+    JOptionPane.showMessageDialog(viewinspect, "Inspection record updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+    viewinspect.dispose();
     }//GEN-LAST:event_btnviewinspectsaveActionPerformed
 
     private void btndeleteinspectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndeleteinspectActionPerformed

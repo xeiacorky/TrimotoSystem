@@ -294,7 +294,6 @@ public class RentalProcessing extends javax.swing.JPanel {
                     JOptionPane.showMessageDialog(this, "Note: Selected motorcycle is currently '" + m.getStatus() + "'.", "Availability Warning", JOptionPane.WARNING_MESSAGE);
                 }
 
-                // Polymorphic Cost Calculation
                 double totalCost = m.calculateRentalCost(days);
 
                 if (txtreturn.getText().trim().isEmpty()) {

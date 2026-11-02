@@ -18,7 +18,6 @@ public class TrimotoSystem {
         return null;
     }
 }
-
 class MotorcycleFactory {
     public static Motorcycle createMotorcycle(String type, String id, String brand, String model, int year, 
                                               String transmission, int mileage, double dailyRate, 
@@ -42,7 +41,6 @@ class MotorcycleFactory {
     private static double rateToDouble(double rate) { return rate; }
 }
 
-// Encapsulated Base Class
 abstract class Motorcycle {
     private String id;
     private String brand;
@@ -66,7 +64,6 @@ abstract class Motorcycle {
         this.status = "Available";
     }
 
-    // Getters and Setters (Encapsulation)
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
     public String getBrand() { return brand; }
@@ -86,12 +83,10 @@ abstract class Motorcycle {
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
 
-    // Abstract Polymorphic Methods
     public abstract String displayMotorcycleInfo();
     public abstract double calculateRentalCost(int days);
 }
 
-// Subclasses with Polymorphism (@Override)
 class Scooter extends Motorcycle {
     private int engineDisplacement;
     private double storageCapacity;
@@ -141,7 +136,7 @@ class AdventureBike extends Motorcycle {
 
     @Override
     public double calculateRentalCost(int days) {
-        return (days * getDailyRate()) + 200; // Includes adventure gear/trail insurance fee
+        return (days * getDailyRate()); 
     }
 }
 
@@ -188,7 +183,7 @@ class SportsBike extends Motorcycle {
 
     @Override
     public double calculateRentalCost(int days) {
-        return (days * getDailyRate()) + 300; // Includes high-performance insurance premium
+        return (days * getDailyRate()) ; 
     }
 }
 
@@ -213,7 +208,7 @@ class ElectricBike extends Motorcycle {
 
     @Override
     public double calculateRentalCost(int days) {
-        return (days * getDailyRate()) * 0.95; // 5% eco-friendly discount
+        return (days * getDailyRate()); 
     }
 }
 
@@ -231,6 +226,7 @@ class RenterProfile {
         this.licenseNumber = licenseNumber;
         this.age = age;
     }
+    
 
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
