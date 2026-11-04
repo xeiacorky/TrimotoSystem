@@ -191,54 +191,70 @@ public class FileManager {
         return list;
     }
 
-    // ==========================================
-    // 3. MAINTENANCE FILE HANDLING
-    // ==========================================
 
     public static void saveAllMaintenanceRecords(List<MaintenanceRecord> records) {
-        ensureDataDirExists();
-        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(MAINTENANCE_FILE))) {
-            for (MaintenanceRecord r : records) {
-                String line = String.join(",",
-                        escapeCsv(r.recordId), escapeCsv(r.motorcycleId), escapeCsv(r.date),
-                        escapeCsv(r.type), escapeCsv(r.category), escapeCsv(r.workPerformed),
-                        escapeCsv(r.partsReplaced), escapeCsv(r.odometer), String.valueOf(r.cost),
-                        escapeCsv(r.nextServiceMileage), escapeCsv(r.status),
-                        escapeCsv(r.availability), escapeCsv(r.remarks)
-                );
-                writer.write(line);
-                writer.newLine();
-            }
-        } catch (IOException e) {
-            System.err.println("Error saving maintenance records: " + e.getMessage());
+    ensureDataDirExists();
+    try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(MAINTENANCE_FILE))) {
+        for (MaintenanceRecord r : records) {
+            String line = String.join(",",
+                    escapeCsv(r.recordId), 
+                    escapeCsv(r.motorcycleId), 
+                    escapeCsv(r.date),
+                    escapeCsv(r.type), 
+                    escapeCsv(r.category), 
+                    escapeCsv(r.workPerformed),
+                    escapeCsv(r.partsReplaced), 
+                    escapeCsv(r.odometer), 
+                    String.valueOf(r.cost),
+                    escapeCsv(r.nextServiceMileage), 
+                    escapeCsv(r.remarks)
+            );
+            writer.write(line);
+            writer.newLine();
         }
+    } catch (IOException e) {
+        System.err.println("Error saving maintenance records: " + e.getMessage());
     }
+}
 
-    public static ArrayList<MaintenanceRecord> loadMaintenanceRecords() {
-        ArrayList<MaintenanceRecord> list = new ArrayList<>();
-        Path path = Paths.get(MAINTENANCE_FILE);
-        if (!Files.exists(path)) return list;
+public static ArrayList<MaintenanceRecord> loadMaintenanceRecords() {
+    ArrayList<MaintenanceRecord> list = new ArrayList<>();
+    Path path = Paths.get(MAINTENANCE_FILE);
+    if (!Files.exists(path)) return list;
 
-        try (BufferedReader reader = Files.newBufferedReader(path)) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                if (line.trim().isEmpty()) continue;
-                String[] d = line.split(",", -1);
-                if (d.length >= 13) {
-                    double cost = d[8].isEmpty() ? 0.0 : Double.parseDouble(d[8]);
-                    list.add(new MaintenanceRecord(
-                            unescapeCsv(d[0]), unescapeCsv(d[1]), unescapeCsv(d[2]), unescapeCsv(d[3]),
-                            unescapeCsv(d[4]), unescapeCsv(d[5]), unescapeCsv(d[6]), unescapeCsv(d[7]),
-                            cost, unescapeCsv(d[9]), unescapeCsv(d[10]), unescapeCsv(d[11]), unescapeCsv(d[12])
-                    ));
-                }
+    try (BufferedReader reader = Files.newBufferedReader(path)) {
+        String line;
+        while ((line = reader.readLine()) != null) {
+            if (line.trim().isEmpty()) continue;
+            
+            String[] d = line.split(",", -1);
+            if (d.length >= 11) {
+                double cost = 0.0;
+                try {
+                    String unescapedCost = unescapeCsv(d[8]);
+                    cost = (unescapedCost == null || unescapedCost.isEmpty()) ? 0.0 : Double.parseDouble(unescapedCost);
+                } catch (NumberFormatException ignored) {}
+
+                list.add(new MaintenanceRecord(
+                        unescapeCsv(d[0]),  
+                        unescapeCsv(d[1]),  
+                        unescapeCsv(d[2]),  
+                        unescapeCsv(d[3]),  
+                        unescapeCsv(d[4]),  
+                        unescapeCsv(d[5]),  
+                        unescapeCsv(d[6]), 
+                        unescapeCsv(d[7]),  
+                        cost,               
+                        unescapeCsv(d[9]),  
+                        unescapeCsv(d[10])  
+                ));
             }
-        } catch (IOException | NumberFormatException e) {
-            System.err.println("Error loading maintenance records: " + e.getMessage());
         }
-        return list;
+    } catch (IOException e) {
+        System.err.println("Error loading maintenance records: " + e.getMessage());
     }
-
+    return list;
+}
     // ==========================================
     // 4. RENTAL TRANSACTIONS FILE HANDLING
     // ==========================================

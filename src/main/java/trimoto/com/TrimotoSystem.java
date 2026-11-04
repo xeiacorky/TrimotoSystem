@@ -344,12 +344,22 @@ class InspectionRecord {
 }
 
 class MaintenanceRecord {
-    String recordId, motorcycleId, date, type, category, workPerformed, partsReplaced, odometer, nextServiceMileage, status, availability, remarks;
-    double cost;
+    public String recordId;
+    public String motorcycleId;
+    public String date;
+    public String type;
+    public String category;
+    public String workPerformed;
+    public String partsReplaced;
+    public String odometer;
+    public double cost;
+    public String nextServiceMileage;
+    public String remarks;
 
-    public MaintenanceRecord(String recordId, String motorcycleId, String date, String type, String category, String workPerformed,
-                              String partsReplaced, String odometer, double cost, String nextServiceMileage,
-                              String status, String availability, String remarks) {
+    public MaintenanceRecord(String recordId, String motorcycleId, String date, 
+                             String type, String category, String workPerformed, 
+                             String partsReplaced, String odometer, double cost, 
+                             String nextServiceMileage, String remarks) {
         this.recordId = recordId;
         this.motorcycleId = motorcycleId;
         this.date = date;
@@ -360,8 +370,6 @@ class MaintenanceRecord {
         this.odometer = odometer;
         this.cost = cost;
         this.nextServiceMileage = nextServiceMileage;
-        this.status = status;
-        this.availability = availability;
         this.remarks = remarks;
     }
 }

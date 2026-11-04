@@ -13,11 +13,18 @@ public class MotorcycleInspection extends javax.swing.JPanel {
     }
 
     public void refreshMotorcycleDropdown() {
-      DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
+        DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
         for (Motorcycle m : TrimotoSystem.motorcycles) {
             model.addElement(m.getId() + " - " + m.getBrand() + " " + m.getModel());
         }
         cmbMotorcycle.setModel(model);
+    }
+
+    private void notifyDashboardRefresh() {
+        java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
+        if (topWindow instanceof MainDashboard) {
+            ((MainDashboard) topWindow).refreshAllPanels();
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -119,7 +126,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         jPanel1.add(txtOdometer);
 
         lblfuel.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        lblfuel.setText("Fuel Level:");
+        lblfuel.setText("Fuel Level / Battery Level:");
         jPanel1.add(lblfuel);
 
         txtFuel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -202,7 +209,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         jPanel1.add(jLabel7);
 
         cbReadiness.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        cbReadiness.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ready", "Not Ready" }));
+        cbReadiness.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Available", "Under Repair", "Under Maintenance" }));
         cbReadiness.setFocusable(false);
         jPanel1.add(cbReadiness);
 
@@ -246,7 +253,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnClear)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnCreateDmgReport, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnCreateDmgReport)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnSaveInspect)))
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -264,7 +271,8 @@ public class MotorcycleInspection extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCreateDmgReport)
                     .addComponent(btnSaveInspect)
-                    .addComponent(btnClear)))
+                    .addComponent(btnClear))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -277,20 +285,22 @@ public class MotorcycleInspection extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCreateDmgReportActionPerformed
 
     private void btnSaveInspectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveInspectActionPerformed
-        if (cmbMotorcycle.getSelectedItem() == null) {
-            JOptionPane.showMessageDialog(this, "Please select a motorcycle.", "Input Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+      if (cmbMotorcycle.getSelectedItem() == null) {
+        JOptionPane.showMessageDialog(this, "Please select a motorcycle.", "Input Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
 
-        String date = txtInspectDate.getText().trim();
-        String odometer = txtOdometer.getText().trim();
-        String fuel = txtFuel.getText().trim();
+    String date = txtInspectDate.getText().trim();
+    String odometerStr = txtOdometer.getText().trim();
+    String fuel = txtFuel.getText().trim();
 
-        if (date.isEmpty() || odometer.isEmpty() || fuel.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Please fill in all required inspection fields (Inspection Date, Odometer, Fuel Level). Only Inspection Notes can be left blank.", "Input Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+    if (date.isEmpty() || odometerStr.isEmpty() || fuel.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Please fill in all required inspection fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
 
+    try {
+        int newMileage = Integer.parseInt(odometerStr);
         String selectedItem = cmbMotorcycle.getSelectedItem().toString();
         String motorId = selectedItem.split(" - ")[0];
         String phase = cbInspectionPhase.getSelectedItem().toString();
@@ -303,35 +313,40 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         String engine = cbEngineCondition.getSelectedItem().toString();
         String condition = cbOverallCondition.getSelectedItem().toString();
         String readiness = cbReadiness.getSelectedItem().toString();
-        String notes = txtInspectionNotes.getText().trim(); // Optional
+        String notes = txtInspectionNotes.getText().trim();
 
         String insId = "INS-" + (TrimotoSystem.inspections.size() + 1001);
         TrimotoSystem.inspections.add(new InspectionRecord(
-            insId, motorId, date, phase, odometer, fuel, tires, brakes, 
+            insId, motorId, date, phase, odometerStr, fuel, tires, brakes, 
             headlight, horns, mirrors, body, engine, condition, readiness, notes
         ));
-        
-        TrimotoSystem.saveAllData();
-        
+
         Motorcycle m = TrimotoSystem.findMotorcycleById(motorId);
         if (m != null) {
-            if ("Needs Repair".equalsIgnoreCase(condition) || "Unsafe".equalsIgnoreCase(condition)) {
+            m.setMileage(newMileage);
+
+            // Sync Motorcycle status with selected readiness/condition
+            if ("Under Repair".equalsIgnoreCase(readiness) || "Unsafe".equalsIgnoreCase(condition) || "Needs Repair".equalsIgnoreCase(condition)) {
                 m.setStatus("Under Repair");
-            } else if ("Minor Damage".equalsIgnoreCase(condition)) {
-                m.setStatus("For Inspection");
+            } else if ("Under Maintenance".equalsIgnoreCase(readiness)) {
+                m.setStatus("Under Maintenance");
             } else {
                 m.setStatus("Available");
             }
         }
+        
+        TrimotoSystem.saveAllData();
 
         java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
         if (topWindow instanceof MainDashboard) {
             ((MainDashboard) topWindow).refreshAllPanels();
         }
 
-        JOptionPane.showMessageDialog(this, "Inspection Saved Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Inspection Saved Successfully! Motorcycle mileage updated to " + newMileage + " km.", "Success", JOptionPane.INFORMATION_MESSAGE);
         btnClearActionPerformed(new java.awt.event.ActionEvent(btnClear, java.awt.event.ActionEvent.ACTION_PERFORMED, null));
-    
+    } catch (NumberFormatException ex) {
+        JOptionPane.showMessageDialog(this, "Odometer Reading must be a valid numeric integer.", "Input Error", JOptionPane.ERROR_MESSAGE);
+    }
     }//GEN-LAST:event_btnSaveInspectActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed

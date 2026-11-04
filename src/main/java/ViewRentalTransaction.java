@@ -1,3 +1,4 @@
+
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import javax.swing.JButton;
@@ -10,6 +11,7 @@ import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 
+
 public class ViewRentalTransaction extends javax.swing.JPanel {
 
    public ViewRentalTransaction() {
@@ -20,28 +22,27 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
     }
 
     public void loadTableData() {
-       DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.setRowCount(0);
+    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+    model.setRowCount(0);
 
-        for (RentalTransaction r : TrimotoSystem.rentals) {
-            double balance = r.totalCost - r.initialPayment;
-            String renterName = r.getRenterName();
+    for (RentalTransaction r : TrimotoSystem.rentals) {
+        double balance = r.totalCost - r.initialPayment;
+        String renterName = r.getRenterName();
 
-            model.addRow(new Object[]{
-                r.transactionId, 
-                r.motorcycleId, 
-                renterName, 
-                r.days, 
-                r.totalCost, 
-                r.initialPayment, 
-                balance, 
-                r.date, 
-                r.returnDate, 
-                r.status
-            });
-        }
-        viewtransactapplyfilterActionPerformed(null);
+        model.addRow(new Object[]{
+            r.motorcycleId, 
+            renterName, 
+            r.days, 
+            r.totalCost, 
+            r.initialPayment, 
+            balance, 
+            r.date, 
+            r.returnDate, 
+            r.status   
+        });
     }
+    viewtransactapplyfilterActionPerformed(null);
+}
     
     private void notifyDashboardRefresh() {
         java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
@@ -216,13 +217,13 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Transaction ID", "Motorcycle ID/Plate #", "Renter", "Age", "Address", "Driver's  License #", "Rental Days", "Total Cost", "Initial Payment", "Balance", "Date Rented", "Return Date", "Status"
+                "Motorcycle ID/Plate #", "Renter", "Age", "Address", "Driver's  License #", "Rental Days", "Total Cost", "Initial Payment", "Balance", "Date Rented", "Return Date", "Status"
             }
         ));
         jScrollPane3.setViewportView(jTable2);
@@ -254,8 +255,8 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
         txtSearchTransaction.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         txtSearchTransaction.addActionListener(this::txtSearchTransactionActionPerformed);
 
-        lblSearchId.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
-        lblSearchId.setText("Search ID/Keyword");
+        lblSearchId.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        lblSearchId.setText("Search Keyword:");
 
         javax.swing.GroupLayout viewtransacdialogLayout = new javax.swing.GroupLayout(viewtransacdialog.getContentPane());
         viewtransacdialog.getContentPane().setLayout(viewtransacdialogLayout);
@@ -267,18 +268,19 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
                     .addGroup(viewtransacdialogLayout.createSequentialGroup()
                         .addComponent(viewtransactedit)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(viewtransactdelete))
+                        .addComponent(viewtransactdelete)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(viewtransacdialogLayout.createSequentialGroup()
                         .addComponent(lblFilterStat)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(viewtranasactfilter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblSearchId, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtSearchTransaction, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 429, Short.MAX_VALUE)
+                        .addComponent(lblSearchId)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtSearchTransaction, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(viewtransactapplyfilter)))
-                .addContainerGap(391, Short.MAX_VALUE))
+                .addContainerGap())
             .addGroup(viewtransacdialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(viewtransacdialogLayout.createSequentialGroup()
                     .addContainerGap()
@@ -303,8 +305,8 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
             .addGroup(viewtransacdialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(viewtransacdialogLayout.createSequentialGroup()
                     .addGap(36, 36, 36)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(42, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(36, Short.MAX_VALUE)))
         );
 
         description.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
@@ -318,19 +320,19 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
         jTable1.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Transaction ID", "Motorcycle ID", "Renter", "Rental Days", "Total Cost", "Initial Payment", "Balance", "Date Rented", "Return Date", "Status"
+                "Motorcycle ID", "Renter", "Rental Days", "Total Cost", "Initial Payment", "Balance", "Date Rented", "Return Date", "Status"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        ID.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        ID.setText("Search ID:");
+        ID.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        ID.setText("Search Keyword:");
 
         txtSearch.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         txtSearch.addActionListener(this::txtSearchActionPerformed);
@@ -368,27 +370,27 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 896, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(title)
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(description)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 329, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(ID)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnSearch)
                         .addGap(16, 16, 16))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnRefresh)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnViewTransac)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnReturnedMark)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnRefresh)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -402,24 +404,20 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
                         .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnSearch))
                     .addComponent(description))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(83, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnReturnedMark)
-                            .addComponent(btnViewTransac)
-                            .addComponent(btnRefresh))
-                        .addContainerGap())))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 446, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRefresh)
+                    .addComponent(btnReturnedMark)
+                    .addComponent(btnViewTransac))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewTransacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewTransacActionPerformed
         viewtransactapplyfilterActionPerformed(evt);
-        viewtransacdialog.setSize(1520, 520);
+        viewtransacdialog.setSize(1500, 450);
         viewtransacdialog.setLocationRelativeTo(this);
         viewtransacdialog.setVisible(true);
        
@@ -437,110 +435,111 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
     }//GEN-LAST:event_txtaddressActionPerformed
 
     private void saveRentalEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveRentalEditActionPerformed
-        javax.swing.JTable targetTable = (jTable2.getRowCount() > 0 && jTable2.getSelectedRow() != -1) ? jTable2 : jTable1;
-        int selectedRow = targetTable.getSelectedRow();
-        
-        if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(this, "No rental transaction selected to edit.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+       JTable targetTable = (jTable2.getRowCount() > 0 && jTable2.getSelectedRow() != -1) ? jTable2 : jTable1;
+    int selectedRow = targetTable.getSelectedRow();
+    
+    if (selectedRow == -1) {
+        JOptionPane.showMessageDialog(this, "No rental transaction selected to edit.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
 
-        String renterName = txtname.getText().trim();
-        String address = txtaddress.getText().trim();
-        String contactNumber = txtcontnumber.getText().trim();
-        String licenseNumber = txtdriverslicense.getText().trim();
-        String duraStr = lbldura.getText().trim();
-        String costStr = jTextField1.getText().trim();
-        String paymentStr = jTextField2.getText().trim();
-        String returnDate = txtreturn.getText().trim();
+    String renterName = txtname.getText().trim();
+    String address = txtaddress.getText().trim();
+    String contactNumber = txtcontnumber.getText().trim();
+    String licenseNumber = txtdriverslicense.getText().trim();
+    String duraStr = lbldura.getText().trim();
+    String costStr = jTextField1.getText().trim();
+    String paymentStr = jTextField2.getText().trim();
+    String returnDate = txtreturn.getText().trim();
 
-        if (renterName.isEmpty() || address.isEmpty() || contactNumber.isEmpty() || 
-            licenseNumber.isEmpty() || duraStr.isEmpty() || costStr.isEmpty() || 
-            paymentStr.isEmpty() || returnDate.isEmpty()) {
-            JOptionPane.showMessageDialog(editviewtransac, "All renter personal details, duration, amounts, and return date are required before saving.", "Input Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+    if (renterName.isEmpty() || address.isEmpty() || contactNumber.isEmpty() || 
+        licenseNumber.isEmpty() || duraStr.isEmpty() || costStr.isEmpty() || 
+        paymentStr.isEmpty() || returnDate.isEmpty()) {
+        JOptionPane.showMessageDialog(editviewtransac, "All renter personal details, duration, amounts, and return date are required before saving.", "Input Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
 
-        String transId = targetTable.getValueAt(selectedRow, 0).toString();
+    String motorId = targetTable.getValueAt(selectedRow, 0).toString().trim();
 
-        for (RentalTransaction r : TrimotoSystem.rentals) {
-            if (r.transactionId.equalsIgnoreCase(transId)) {
-                try {
-                    int days = Integer.parseInt(duraStr);
-                    double cost = Double.parseDouble(costStr);
-                    double payment = Double.parseDouble(paymentStr);
+    for (RentalTransaction r : TrimotoSystem.rentals) {
+        if (r.motorcycleId.equalsIgnoreCase(motorId)) {
+            try {
+                int days = Integer.parseInt(duraStr);
+                double cost = Double.parseDouble(costStr);
+                double payment = Double.parseDouble(paymentStr);
 
-                    if (r.renterProfile != null) {
-                        r.renterProfile.setName(renterName);
-                        r.renterProfile.setAddress(address);
-                        r.renterProfile.setContactNumber(contactNumber);
-                        r.renterProfile.setLicenseNumber(licenseNumber);
-                    }
-                    r.days = days;
-                    r.totalCost = cost;
-                    r.initialPayment = payment;
-                    r.returnDate = returnDate;
-                    r.paymentType = cbpartial.isSelected() ? "Partial" : "Full";
-                    if (jComboBox1.getSelectedItem() != null) {
-                        r.status = jComboBox1.getSelectedItem().toString();
-                    }
-
-                    Motorcycle m = TrimotoSystem.findMotorcycleById(r.motorcycleId);
-                    if (m != null) {
-                        if ("Completed".equalsIgnoreCase(r.status) || "Returned".equalsIgnoreCase(r.status) || "Cancelled".equalsIgnoreCase(r.status)) {
-                            m.setStatus("Available");
-                        } else if ("Active".equalsIgnoreCase(r.status)) {
-                            m.setStatus("Rented");
-                        }
-                    }
-
-                    TrimotoSystem.saveAllData();
-                    loadTableData();                           
-                    viewtransactapplyfilterActionPerformed(evt); 
-                    notifyDashboardRefresh();
-                    editviewtransac.dispose();
-                    
-                    JOptionPane.showMessageDialog(this, "Rental transaction updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-                } catch (NumberFormatException ex) {
-                    JOptionPane.showMessageDialog(editviewtransac, "Please enter valid numeric values for Duration, Total Cost, and Initial Payment.", "Format Error", JOptionPane.ERROR_MESSAGE);
+                if (r.renterProfile != null) {
+                    r.renterProfile.setName(renterName);
+                    r.renterProfile.setAddress(address);
+                    r.renterProfile.setContactNumber(contactNumber);
+                    r.renterProfile.setLicenseNumber(licenseNumber);
                 }
-                break;
+                r.days = days;
+                r.totalCost = cost;
+                r.initialPayment = payment;
+                r.returnDate = returnDate;
+                r.paymentType = cbpartial.isSelected() ? "Partial" : "Full";
+                if (jComboBox1.getSelectedItem() != null) {
+                    r.status = jComboBox1.getSelectedItem().toString();
+                }
+
+                Motorcycle m = TrimotoSystem.findMotorcycleById(r.motorcycleId);
+                if (m != null) {
+                    if ("Completed".equalsIgnoreCase(r.status) || "Returned".equalsIgnoreCase(r.status) || "Cancelled".equalsIgnoreCase(r.status)) {
+                        m.setStatus("Available");
+                    } else if ("Active".equalsIgnoreCase(r.status)) {
+                        m.setStatus("Rented");
+                    }
+                }
+
+                TrimotoSystem.saveAllData();
+                loadTableData();                           
+                viewtransactapplyfilterActionPerformed(evt); 
+                notifyDashboardRefresh();
+                editviewtransac.dispose();
+                
+                JOptionPane.showMessageDialog(this, "Rental transaction updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(editviewtransac, "Please enter valid numeric values for Duration, Total Cost, and Initial Payment.", "Format Error", JOptionPane.ERROR_MESSAGE);
             }
+            break;
+         }
         }
     }//GEN-LAST:event_saveRentalEditActionPerformed
 
     private void viewtransacteditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewtransacteditActionPerformed
-       int selectedRow = jTable2.getSelectedRow();
-        if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(viewtransacdialog, "Please select a row from the table to edit.", "Selection Required", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
+    int selectedRow = jTable2.getSelectedRow();
+    if (selectedRow == -1) {
+        JOptionPane.showMessageDialog(viewtransacdialog, "Please select a row from the table to edit.", "Selection Required", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
 
-        String transId = jTable2.getValueAt(selectedRow, 0).toString();
-        for (RentalTransaction r : TrimotoSystem.rentals) {
-            if (r.transactionId.equalsIgnoreCase(transId)) {
-                if (r.renterProfile != null) {
-                    txtname.setText(r.renterProfile.getName());
-                    txtaddress.setText(r.renterProfile.getAddress());
-                    txtcontnumber.setText(r.renterProfile.getContactNumber());
-                    txtdriverslicense.setText(r.renterProfile.getLicenseNumber());
-                }
-                lbldura.setText(String.valueOf(r.days));
-                jTextField1.setText(String.valueOf(r.totalCost));
-                jTextField2.setText(String.valueOf(r.initialPayment));
-                txtreturn.setText(r.returnDate);
-                cbpartial.setSelected("Partial".equalsIgnoreCase(r.paymentType));
-                cbfull.setSelected("Full".equalsIgnoreCase(r.paymentType));
-
-                jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Active", "Completed" }));
-                jComboBox1.setSelectedItem(r.status);
-
-                editviewtransac.setSize(750, 540);
-                editviewtransac.setLocationRelativeTo(this);
-                editviewtransac.setVisible(true);
-                break;
+    String motorId = jTable2.getValueAt(selectedRow, 0).toString().trim();
+    
+    for (RentalTransaction r : TrimotoSystem.rentals) {
+        if (r.motorcycleId.equalsIgnoreCase(motorId)) {
+            if (r.renterProfile != null) {
+                txtname.setText(r.renterProfile.getName());
+                txtaddress.setText(r.renterProfile.getAddress());
+                txtcontnumber.setText(r.renterProfile.getContactNumber());
+                txtdriverslicense.setText(r.renterProfile.getLicenseNumber());
             }
+            lbldura.setText(String.valueOf(r.days));
+            jTextField1.setText(String.valueOf(r.totalCost));
+            jTextField2.setText(String.valueOf(r.initialPayment));
+            cbpartial.setSelected("Partial".equalsIgnoreCase(r.paymentType));
+            cbfull.setSelected("Full".equalsIgnoreCase(r.paymentType));
+            txtreturn.setText(r.returnDate);
+
+            jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Active", "Completed" }));
+            jComboBox1.setSelectedItem(r.status);
+
+            editviewtransac.setSize(750, 540);
+            editviewtransac.setLocationRelativeTo(this);
+            editviewtransac.setVisible(true);
+            break;
         }
+    }
     }//GEN-LAST:event_viewtransacteditActionPerformed
 
     private void viewtranasactfilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewtranasactfilterActionPerformed
@@ -550,109 +549,129 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
         viewtransactapplyfilterActionPerformed(evt);    }//GEN-LAST:event_txtSearchTransactionActionPerformed
 
     private void viewtransactdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewtransactdeleteActionPerformed
-       int selectedRow = jTable2.getSelectedRow();
-        if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(viewtransacdialog, "Please select a transaction to delete.", "Selection Required", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
+    int selectedRow = jTable2.getSelectedRow();
+    if (selectedRow == -1) {
+        JOptionPane.showMessageDialog(viewtransacdialog, "Please select a transaction row to delete.", "Selection Required", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
 
-        String transId = jTable2.getValueAt(selectedRow, 0).toString();
-        int confirm = JOptionPane.showConfirmDialog(viewtransacdialog, "Are you sure you want to delete transaction " + transId + "?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+    String motorId = jTable2.getValueAt(selectedRow, 0).toString().trim();
+    String renterName = jTable2.getValueAt(selectedRow, 1).toString().trim();
 
-        if (confirm == JOptionPane.YES_OPTION) {
-            TrimotoSystem.rentals.removeIf(r -> r.transactionId.equalsIgnoreCase(transId));
+    int confirm = JOptionPane.showConfirmDialog(
+        viewtransacdialog, 
+        "Are you sure you want to delete the selected rental record for " + renterName + " (" + motorId + ")?", 
+        "Confirm Delete", 
+        JOptionPane.YES_NO_OPTION,
+        JOptionPane.WARNING_MESSAGE
+    );
+
+    if (confirm == JOptionPane.YES_OPTION) {
+        if (selectedRow < jTable2.getRowCount()) {
+            for (int i = 0; i < TrimotoSystem.rentals.size(); i++) {
+                RentalTransaction r = TrimotoSystem.rentals.get(i);
+                if (r.motorcycleId.equalsIgnoreCase(motorId) && r.getRenterName().equalsIgnoreCase(renterName)) {
+                    TrimotoSystem.rentals.remove(i);
+                    break; 
+                }
+            }
+
             TrimotoSystem.saveAllData();
             loadTableData();
             viewtransactapplyfilterActionPerformed(evt);
-            JOptionPane.showMessageDialog(viewtransacdialog, "Transaction deleted successfully.");
+            notifyDashboardRefresh();
+            
+            JOptionPane.showMessageDialog(viewtransacdialog, "Selected rental transaction deleted successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
         }
+    }
     }//GEN-LAST:event_viewtransactdeleteActionPerformed
 
     private void viewtransactapplyfilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewtransactapplyfilterActionPerformed
         String filterStatus = viewtranasactfilter.getSelectedItem() != null ? viewtranasactfilter.getSelectedItem().toString() : "All";
-        String keyword = txtSearchTransaction.getText().trim().toLowerCase();
+    String keyword = txtSearchTransaction.getText().trim().toLowerCase();
 
-        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
-        model.setRowCount(0);
+    DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+    model.setRowCount(0);
 
-        for (RentalTransaction r : TrimotoSystem.rentals) {
-            boolean matchesStatus = "All".equalsIgnoreCase(filterStatus) || r.status.equalsIgnoreCase(filterStatus);
-            String renterName = r.getRenterName();
-            boolean matchesKeyword = keyword.isEmpty() || 
-                                     r.transactionId.toLowerCase().contains(keyword) || 
-                                     r.motorcycleId.toLowerCase().contains(keyword) || 
-                                     renterName.toLowerCase().contains(keyword);
+    for (RentalTransaction r : TrimotoSystem.rentals) {
+        boolean matchesStatus = "All".equalsIgnoreCase(filterStatus) || r.status.equalsIgnoreCase(filterStatus);
+        String renterName = r.getRenterName();
+        boolean matchesKeyword = keyword.isEmpty() || 
+                                 r.motorcycleId.toLowerCase().contains(keyword) || 
+                                 renterName.toLowerCase().contains(keyword);
 
-            if (matchesStatus && matchesKeyword) {
-                double balance = r.totalCost - r.initialPayment;
-                String age = r.renterProfile != null ? r.renterProfile.getAge() : "-";
-                String address = r.renterProfile != null ? r.renterProfile.getAddress() : "-";
-                String license = r.renterProfile != null ? r.renterProfile.getLicenseNumber() : "-";
+        if (matchesStatus && matchesKeyword) {
+            double balance = r.totalCost - r.initialPayment;
+            String age = r.renterProfile != null ? r.renterProfile.getAge() : "-";
+            String address = r.renterProfile != null ? r.renterProfile.getAddress() : "-";
+            String license = r.renterProfile != null ? r.renterProfile.getLicenseNumber() : "-";
 
-                model.addRow(new Object[]{
-                    r.transactionId, r.motorcycleId, renterName, age, address, license,
-                    r.days, r.totalCost, r.initialPayment, balance, r.date,
-                    r.returnDate, r.status
-                });
-            }
+            model.addRow(new Object[]{
+                r.motorcycleId, renterName, age, address, license,
+                r.days, r.totalCost, r.initialPayment, balance, r.date,
+                r.returnDate, r.status
+            });
         }
+    }
     }//GEN-LAST:event_viewtransactapplyfilterActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         String searchId = txtSearch.getText().trim();
-        if (searchId.isEmpty()) {
-            loadTableData();
-            return;
+    if (searchId.isEmpty()) {
+        loadTableData();
+        return;
+    }
+
+    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+    model.setRowCount(0);
+
+    for (RentalTransaction r : TrimotoSystem.rentals) {
+        if (r.transactionId.equalsIgnoreCase(searchId) || r.motorcycleId.equalsIgnoreCase(searchId)) {
+            double balance = r.totalCost - r.initialPayment;
+            String renterName = r.getRenterName();
+
+            // Column 0 MUST be motorcycleId to match table schema & return action logic
+            model.addRow(new Object[]{
+                r.motorcycleId, 
+                renterName, 
+                r.days, 
+                r.totalCost, 
+                r.initialPayment, 
+                balance, 
+                r.date, 
+                r.returnDate, 
+                r.status
+            });
         }
-
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.setRowCount(0);
-
-        for (RentalTransaction r : TrimotoSystem.rentals) {
-            if (r.transactionId.equalsIgnoreCase(searchId) || r.motorcycleId.equalsIgnoreCase(searchId)) {
-                double balance = r.totalCost - r.initialPayment;
-                String renterName = r.getRenterName();
-
-                model.addRow(new Object[]{
-                    r.transactionId, 
-                    r.motorcycleId, 
-                    renterName, 
-                    r.days, 
-                    r.totalCost, 
-                    r.initialPayment, 
-                    balance, 
-                    r.date, 
-                    r.returnDate, 
-                    r.status
-                });
-            }
-        }
+    }
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnReturnedMarkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnedMarkActionPerformed
-       int selectedRow = jTable1.getSelectedRow();
-        if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(this, "Please select a transaction row first.", "Selection Required", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
+     int selectedRow = jTable1.getSelectedRow();
+    if (selectedRow == -1) {
+        JOptionPane.showMessageDialog(this, "Please select a transaction row first.", "Selection Required", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
 
-        String transId = jTable1.getValueAt(selectedRow, 0).toString();
-        for (RentalTransaction r : TrimotoSystem.rentals) {
-            if (r.transactionId.equalsIgnoreCase(transId)) {
-                r.status = "Completed";
-                Motorcycle m = TrimotoSystem.findMotorcycleById(r.motorcycleId);
-                if (m != null) {
-                    m.setStatus("Available");
-                }
-                break;
+    // Column 0 is motorcycleId
+    String motorId = jTable1.getValueAt(selectedRow, 0).toString().trim();
+
+    for (RentalTransaction r : TrimotoSystem.rentals) {
+        if (r.motorcycleId.equalsIgnoreCase(motorId) && "Active".equalsIgnoreCase(r.status)) {
+            r.status = "Completed";
+            
+            // Set returned motorcycle status to For Inspection (Post-rental check required)
+            Motorcycle m = TrimotoSystem.findMotorcycleById(r.motorcycleId);
+            if (m != null) {
+                m.setStatus("For Inspection");
             }
+            break;
         }
-        TrimotoSystem.saveAllData();
-        loadTableData();
-        java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
-        if (topWindow instanceof MainDashboard) {
-            ((MainDashboard) topWindow).refreshAllPanels();
-        }
+    }
+
+    TrimotoSystem.saveAllData();
+    loadTableData();
+    notifyDashboardRefresh();
         JOptionPane.showMessageDialog(this, "Motorcycle marked as Returned & Available!");    }//GEN-LAST:event_btnReturnedMarkActionPerformed
 
     private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed

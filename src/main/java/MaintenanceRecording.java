@@ -45,10 +45,6 @@ public class MaintenanceRecording extends javax.swing.JPanel {
         txtMainteCost = new javax.swing.JTextField();
         lblNextServiceMileage = new javax.swing.JLabel();
         txtServiceMile = new javax.swing.JTextField();
-        lblMaintenanceStatus = new javax.swing.JLabel();
-        cbMainteStat = new javax.swing.JComboBox<>();
-        lblMotorcycleAvailability = new javax.swing.JLabel();
-        cbMotorAvail = new javax.swing.JComboBox<>();
         lblRemarks = new javax.swing.JLabel();
         txtRemarks = new javax.swing.JTextField();
         btnsavemaintenance = new javax.swing.JButton();
@@ -64,7 +60,7 @@ public class MaintenanceRecording extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
-        jPanel1.setLayout(new java.awt.GridLayout(12, 2, 15, 15));
+        jPanel1.setLayout(new java.awt.GridLayout(10, 2, 15, 15));
 
         lblmotor.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblmotor.setText("Motorcycle:");
@@ -134,24 +130,6 @@ public class MaintenanceRecording extends javax.swing.JPanel {
         txtServiceMile.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtServiceMile);
 
-        lblMaintenanceStatus.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        lblMaintenanceStatus.setText("Maintenance Status:");
-        jPanel1.add(lblMaintenanceStatus);
-
-        cbMainteStat.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        cbMainteStat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pending", "In Progress", "Completed" }));
-        cbMainteStat.setFocusable(false);
-        jPanel1.add(cbMainteStat);
-
-        lblMotorcycleAvailability.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        lblMotorcycleAvailability.setText("Motorcycle Availability:");
-        jPanel1.add(lblMotorcycleAvailability);
-
-        cbMotorAvail.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        cbMotorAvail.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Available", "Under Maintenance" }));
-        cbMotorAvail.setFocusable(false);
-        jPanel1.add(cbMotorAvail);
-
         lblRemarks.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblRemarks.setText("Remarks");
         jPanel1.add(lblRemarks);
@@ -208,56 +186,56 @@ public class MaintenanceRecording extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnsavemaintenanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsavemaintenanceActionPerformed
-      if (cbMotorcycle.getSelectedItem() == null) {
-            JOptionPane.showMessageDialog(this, "Please select a motorcycle.", "Input Error", JOptionPane.ERROR_MESSAGE);
-            return;
+     if (cbMotorcycle.getSelectedItem() == null) {
+        JOptionPane.showMessageDialog(this, "Please select a motorcycle.", "Input Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    String date = txtMaintedate.getText().trim();
+    String category = txtServiceCat.getText().trim();
+    String workPerformed = txtWorkPerfo.getText().trim();
+    String partsReplaced = txtPartsRepla.getText().trim();
+    String odometer = txtOdometer.getText().trim();
+    String costText = txtMainteCost.getText().trim();
+    String nextServiceMileage = txtServiceMile.getText().trim();
+    String remarks = txtRemarks.getText().trim(); 
+
+    if (date.isEmpty() || category.isEmpty() || workPerformed.isEmpty() || 
+        partsReplaced.isEmpty() || odometer.isEmpty() || costText.isEmpty() || nextServiceMileage.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Please fill in all maintenance fields. Only Remarks can be left blank.", "Input Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    try {
+        double cost = Double.parseDouble(costText);
+        String motorId = cbMotorcycle.getSelectedItem().toString().split(" - ")[0];
+        String type = cbMainteType.getSelectedItem().toString();
+
+        String mntId = "MNT-" + (TrimotoSystem.maintenanceRecords.size() + 1001);
+        
+        // Pass exactly 11 arguments (status and availability removed)
+        TrimotoSystem.maintenanceRecords.add(new MaintenanceRecord(
+            mntId, motorId, date, type, category, workPerformed, partsReplaced, 
+            odometer, cost, nextServiceMileage, remarks
+        ));
+
+        Motorcycle m = TrimotoSystem.findMotorcycleById(motorId);
+        if (m != null) {
+            m.setStatus("Available");
+        }
+        
+        TrimotoSystem.saveAllData();
+
+        java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
+        if (topWindow instanceof MainDashboard) {
+            ((MainDashboard) topWindow).refreshAllPanels();
         }
 
-        String date = txtMaintedate.getText().trim();
-        String category = txtServiceCat.getText().trim();
-        String workPerformed = txtWorkPerfo.getText().trim();
-        String partsReplaced = txtPartsRepla.getText().trim();
-        String odometer = txtOdometer.getText().trim();
-        String costText = txtMainteCost.getText().trim();
-        String nextServiceMileage = txtServiceMile.getText().trim();
-        String remarks = txtRemarks.getText().trim(); 
-
-        if (date.isEmpty() || category.isEmpty() || workPerformed.isEmpty() || 
-            partsReplaced.isEmpty() || odometer.isEmpty() || costText.isEmpty() || nextServiceMileage.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Please fill in all maintenance fields. Only Remarks can be left blank.", "Input Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        try {
-            double cost = Double.parseDouble(costText);
-            String motorId = cbMotorcycle.getSelectedItem().toString().split(" - ")[0];
-            String type = cbMainteType.getSelectedItem().toString();
-            String status = cbMainteStat.getSelectedItem().toString();
-            String availability = cbMotorAvail.getSelectedItem().toString();
-
-            String mntId = "MNT-" + (TrimotoSystem.maintenanceRecords.size() + 1001);
-            TrimotoSystem.maintenanceRecords.add(new MaintenanceRecord(
-                mntId, motorId, date, type, category, workPerformed, partsReplaced, 
-                odometer, cost, nextServiceMileage, status, availability, remarks
-            ));
-
-            Motorcycle m = TrimotoSystem.findMotorcycleById(motorId);
-            if (m != null) {
-                m.setStatus(availability);
-            }
-            
-            TrimotoSystem.saveAllData();
-
-            java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
-            if (topWindow instanceof MainDashboard) {
-                ((MainDashboard) topWindow).refreshAllPanels();
-            }
-
-            JOptionPane.showMessageDialog(this, "Maintenance Record Saved!", "Success", JOptionPane.INFORMATION_MESSAGE);
-            btnclearActionPerformed(new java.awt.event.ActionEvent(btnclear, java.awt.event.ActionEvent.ACTION_PERFORMED, null));
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Maintenance cost must be a valid number (e.g., 1500 or 1500.50).", "Invalid Format", JOptionPane.ERROR_MESSAGE);
-        }
+        JOptionPane.showMessageDialog(this, "Maintenance Record Saved!", "Success", JOptionPane.INFORMATION_MESSAGE);
+        btnclearActionPerformed(new java.awt.event.ActionEvent(btnclear, java.awt.event.ActionEvent.ACTION_PERFORMED, null));
+    } catch (NumberFormatException ex) {
+        JOptionPane.showMessageDialog(this, "Maintenance cost must be a valid number.", "Invalid Format", JOptionPane.ERROR_MESSAGE);
+    }
     }//GEN-LAST:event_btnsavemaintenanceActionPerformed
 
     private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclearActionPerformed
@@ -278,15 +256,11 @@ public class MaintenanceRecording extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnclear;
     private javax.swing.JButton btnsavemaintenance;
-    private javax.swing.JComboBox<String> cbMainteStat;
     private javax.swing.JComboBox<String> cbMainteType;
-    private javax.swing.JComboBox<String> cbMotorAvail;
     private javax.swing.JComboBox<String> cbMotorcycle;
     private javax.swing.JLabel description;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblMaintenanceCost;
-    private javax.swing.JLabel lblMaintenanceStatus;
-    private javax.swing.JLabel lblMotorcycleAvailability;
     private javax.swing.JLabel lblNextServiceMileage;
     private javax.swing.JLabel lblOdometer;
     private javax.swing.JLabel lblPartsReplaced;
