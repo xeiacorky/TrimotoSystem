@@ -78,44 +78,59 @@ public class ViewDamageReport extends javax.swing.JPanel {
 
         jLabel11.setText("Motorcycle:");
         jPanel3.add(jLabel11);
+
+        jTextField9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel3.add(jTextField9);
 
         jLabel19.setText("Damage Location: ");
         jPanel3.add(jLabel19);
+
+        jTextField10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel3.add(jTextField10);
 
         jLabel9.setText("Damage Type:");
         jPanel3.add(jLabel9);
 
+        jComboBox8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Scratch", "Dent", "Crack", "Broken Part" }));
         jPanel3.add(jComboBox8);
 
         jLabel21.setText("Damage Description:");
         jPanel3.add(jLabel21);
+
+        jTextField6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel3.add(jTextField6);
 
         jLabel7.setText("Date Reported:");
         jPanel3.add(jLabel7);
+
+        jTextField11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel3.add(jTextField11);
 
         jLabel12.setText("Action Required:");
         jPanel3.add(jLabel12);
 
+        jComboBox9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Repair", "Monitor", "No Action" }));
         jPanel3.add(jComboBox9);
 
         jLabel13.setText("Damage Status:");
         jPanel3.add(jLabel13);
 
+        jComboBox10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jComboBox10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pending", "Under Repair", "Resolved" }));
         jPanel3.add(jComboBox10);
 
         jLabel3.setText("Additional Notes:");
         jPanel3.add(jLabel3);
+
+        jTextField3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel3.add(jTextField3);
 
         jLabel14.setText("Estimated Repair Cost:");
         jPanel3.add(jLabel14);
+
+        jTextField12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel3.add(jTextField12);
 
         btnclear1.setText("Clear");
@@ -180,7 +195,7 @@ public class ViewDamageReport extends javax.swing.JPanel {
         lblMotorcycle.setText("Motorcycle:");
         jPanel1.add(lblMotorcycle);
 
-        cbMotorId.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbMotorId.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cbMotorId.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbMotorId.setFocusable(false);
         cbMotorId.addActionListener(this::cbMotorIdActionPerformed);
@@ -190,14 +205,14 @@ public class ViewDamageReport extends javax.swing.JPanel {
         lblDamageLocation.setText("Damage Location: ");
         jPanel1.add(lblDamageLocation);
 
-        txtDamageLocation.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtDamageLocation.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtDamageLocation);
 
         lblDamageType.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblDamageType.setText("Damage Type:");
         jPanel1.add(lblDamageType);
 
-        cbDamageType.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbDamageType.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cbDamageType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Scratch", "Dent", "Crack", "Broken Part" }));
         cbDamageType.setFocusable(false);
         jPanel1.add(cbDamageType);
@@ -206,21 +221,21 @@ public class ViewDamageReport extends javax.swing.JPanel {
         lblDamageDescription.setText("Damage Description:");
         jPanel1.add(lblDamageDescription);
 
-        txtDamageDescrip.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtDamageDescrip.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtDamageDescrip);
 
         lblDamageReported.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblDamageReported.setText("Date Reported:");
         jPanel1.add(lblDamageReported);
 
-        txtDateReported.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtDateReported.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtDateReported);
 
         lblActionRequired.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblActionRequired.setText("Action Required:");
         jPanel1.add(lblActionRequired);
 
-        cbActionReq.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbActionReq.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cbActionReq.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Repair", "Monitor", "No Action" }));
         cbActionReq.setFocusable(false);
         jPanel1.add(cbActionReq);
@@ -229,7 +244,7 @@ public class ViewDamageReport extends javax.swing.JPanel {
         lblDamageStatus.setText("Damage Status:");
         jPanel1.add(lblDamageStatus);
 
-        cbDamageStat.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbDamageStat.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cbDamageStat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pending", "Under Repair", "Resolved" }));
         cbDamageStat.setFocusable(false);
         jPanel1.add(cbDamageStat);
@@ -238,14 +253,14 @@ public class ViewDamageReport extends javax.swing.JPanel {
         lblAddNotes.setText("Additional Notes:");
         jPanel1.add(lblAddNotes);
 
-        txtAddNotes.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtAddNotes.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtAddNotes);
 
         lblEstimatedRepairCost.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblEstimatedRepairCost.setText("Estimated Repair Cost:");
         jPanel1.add(lblEstimatedRepairCost);
 
-        txtEstimatedRepairCost.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtEstimatedRepairCost.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtEstimatedRepairCost);
 
         btnclear.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N

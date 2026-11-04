@@ -113,7 +113,7 @@
         <Component class="javax.swing.JTextField" name="txtMotorId">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nirmala UI" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
           </Properties>
           <Events>
@@ -131,7 +131,7 @@
         <Component class="javax.swing.JTextField" name="txtBrand">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nirmala UI" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
           </Properties>
         </Component>
@@ -146,7 +146,7 @@
         <Component class="javax.swing.JTextField" name="txtModel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nirmala UI" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
           </Properties>
         </Component>
@@ -161,7 +161,7 @@
         <Component class="javax.swing.JTextField" name="txtYear">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nirmala UI" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
           </Properties>
         </Component>
@@ -176,7 +176,7 @@
         <Component class="javax.swing.JTextField" name="txtMileage">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nirmala UI" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
           </Properties>
         </Component>
@@ -191,7 +191,7 @@
         <Component class="javax.swing.JTextField" name="txtDailyRentalRate">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nirmala UI" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
           </Properties>
         </Component>
@@ -206,7 +206,7 @@
         <Component class="javax.swing.JComboBox" name="cbMotorcycleTypes">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nirmala UI" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="6">
@@ -238,7 +238,7 @@
         <Component class="javax.swing.JTextField" name="txtTransmissionType">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nirmala UI" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
           </Properties>
           <Events>
@@ -255,7 +255,7 @@
         <Component class="javax.swing.JTextField" name="txtSpec1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nirmala UI" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
           </Properties>
         </Component>
@@ -269,7 +269,7 @@
         <Component class="javax.swing.JTextField" name="txtSpec2">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nirmala UI" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
           </Properties>
         </Component>
@@ -283,7 +283,7 @@
         <Component class="javax.swing.JTextField" name="txtSpec3">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nirmala UI" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
           </Properties>
         </Component>

@@ -70,7 +70,7 @@ public class MaintenanceRecording extends javax.swing.JPanel {
         lblmotor.setText("Motorcycle:");
         jPanel1.add(lblmotor);
 
-        cbMotorcycle.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbMotorcycle.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cbMotorcycle.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbMotorcycle.setFocusable(false);
         cbMotorcycle.addActionListener(this::cbMotorcycleActionPerformed);
@@ -80,14 +80,14 @@ public class MaintenanceRecording extends javax.swing.JPanel {
         lblmaintenancedate.setText("Maintenance Date:");
         jPanel1.add(lblmaintenancedate);
 
-        txtMaintedate.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtMaintedate.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtMaintedate);
 
         lblmaintenancetype.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblmaintenancetype.setText("Maintenance Type:");
         jPanel1.add(lblmaintenancetype);
 
-        cbMainteType.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbMainteType.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cbMainteType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Preventive", "Corrective" }));
         cbMainteType.setFocusable(false);
         jPanel1.add(cbMainteType);
@@ -96,49 +96,49 @@ public class MaintenanceRecording extends javax.swing.JPanel {
         lblServiceCategory.setText("Service Category");
         jPanel1.add(lblServiceCategory);
 
-        txtServiceCat.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtServiceCat.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtServiceCat);
 
         lblWorkPerformed.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblWorkPerformed.setText("Work Performed:");
         jPanel1.add(lblWorkPerformed);
 
-        txtWorkPerfo.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtWorkPerfo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtWorkPerfo);
 
         lblPartsReplaced.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblPartsReplaced.setText("Parts Replaced:");
         jPanel1.add(lblPartsReplaced);
 
-        txtPartsRepla.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtPartsRepla.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtPartsRepla);
 
         lblOdometer.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblOdometer.setText("Odometer Reading(km):");
         jPanel1.add(lblOdometer);
 
-        txtOdometer.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtOdometer.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtOdometer);
 
         lblMaintenanceCost.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblMaintenanceCost.setText("Maintenance Cost:");
         jPanel1.add(lblMaintenanceCost);
 
-        txtMainteCost.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtMainteCost.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtMainteCost);
 
         lblNextServiceMileage.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblNextServiceMileage.setText("Next Service Mileage:");
         jPanel1.add(lblNextServiceMileage);
 
-        txtServiceMile.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtServiceMile.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtServiceMile);
 
         lblMaintenanceStatus.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblMaintenanceStatus.setText("Maintenance Status:");
         jPanel1.add(lblMaintenanceStatus);
 
-        cbMainteStat.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbMainteStat.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cbMainteStat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pending", "In Progress", "Completed" }));
         cbMainteStat.setFocusable(false);
         jPanel1.add(cbMainteStat);
@@ -147,7 +147,7 @@ public class MaintenanceRecording extends javax.swing.JPanel {
         lblMotorcycleAvailability.setText("Motorcycle Availability:");
         jPanel1.add(lblMotorcycleAvailability);
 
-        cbMotorAvail.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbMotorAvail.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cbMotorAvail.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Available", "Under Maintenance" }));
         cbMotorAvail.setFocusable(false);
         jPanel1.add(cbMotorAvail);
@@ -156,7 +156,7 @@ public class MaintenanceRecording extends javax.swing.JPanel {
         lblRemarks.setText("Remarks");
         jPanel1.add(lblRemarks);
 
-        txtRemarks.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtRemarks.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtRemarks);
 
         btnsavemaintenance.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N

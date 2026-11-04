@@ -108,7 +108,7 @@
         <Component class="javax.swing.JComboBox" name="cbMotorcycle">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nirmala UI" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -138,7 +138,7 @@
         <Component class="javax.swing.JTextField" name="txtMaintedate">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nirmala UI" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
           </Properties>
         </Component>
@@ -153,7 +153,7 @@
         <Component class="javax.swing.JComboBox" name="cbMainteType">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nirmala UI" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="2">
@@ -178,7 +178,7 @@
         <Component class="javax.swing.JTextField" name="txtServiceCat">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nirmala UI" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
           </Properties>
         </Component>
@@ -193,7 +193,7 @@
         <Component class="javax.swing.JTextField" name="txtWorkPerfo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nirmala UI" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
           </Properties>
         </Component>
@@ -208,7 +208,7 @@
         <Component class="javax.swing.JTextField" name="txtPartsRepla">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nirmala UI" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
           </Properties>
         </Component>
@@ -223,7 +223,7 @@
         <Component class="javax.swing.JTextField" name="txtOdometer">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nirmala UI" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
           </Properties>
         </Component>
@@ -238,7 +238,7 @@
         <Component class="javax.swing.JTextField" name="txtMainteCost">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nirmala UI" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
           </Properties>
         </Component>
@@ -253,7 +253,7 @@
         <Component class="javax.swing.JTextField" name="txtServiceMile">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nirmala UI" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
           </Properties>
         </Component>
@@ -268,7 +268,7 @@
         <Component class="javax.swing.JComboBox" name="cbMainteStat">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nirmala UI" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="3">
@@ -294,7 +294,7 @@
         <Component class="javax.swing.JComboBox" name="cbMotorAvail">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nirmala UI" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="2">
@@ -319,7 +319,7 @@
         <Component class="javax.swing.JTextField" name="txtRemarks">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nirmala UI" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
           </Properties>
         </Component>

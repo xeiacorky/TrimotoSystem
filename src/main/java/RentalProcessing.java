@@ -70,7 +70,7 @@ public class RentalProcessing extends javax.swing.JPanel {
         lblMotor.setText("Motorcycle:");
         jPanel1.add(lblMotor);
 
-        cbMotor.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbMotor.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cbMotor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbMotor.setFocusable(false);
         cbMotor.addActionListener(this::cbMotorActionPerformed);
@@ -80,21 +80,21 @@ public class RentalProcessing extends javax.swing.JPanel {
         lblRenter.setText("Renter Name:");
         jPanel1.add(lblRenter);
 
-        txtName.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtName.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtName);
 
         lblAge.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblAge.setText("Age:");
         jPanel1.add(lblAge);
 
-        txtAge.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtAge.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtAge);
 
         lblAddress.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblAddress.setText("Address:");
         jPanel1.add(lblAddress);
 
-        txtAddress.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtAddress.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtAddress.addActionListener(this::txtAddressActionPerformed);
         jPanel1.add(txtAddress);
 
@@ -102,28 +102,28 @@ public class RentalProcessing extends javax.swing.JPanel {
         lblnumber.setText("Contact Number:");
         jPanel1.add(lblnumber);
 
-        txtContNumber.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtContNumber.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtContNumber);
 
         lblduration.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblduration.setText("Rental Duration (Days):");
         jPanel1.add(lblduration);
 
-        txtRentalDays.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtRentalDays.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtRentalDays);
 
         driverlicense.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         driverlicense.setText("Driver's License #:");
         jPanel1.add(driverlicense);
 
-        txtDriversLicense.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtDriversLicense.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtDriversLicense);
 
         lblamount.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblamount.setText("Enter Amount:");
         jPanel1.add(lblamount);
 
-        txtAmount.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtAmount.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtAmount);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
@@ -132,12 +132,12 @@ public class RentalProcessing extends javax.swing.JPanel {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new java.awt.GridLayout(1, 0));
 
-        cbpartial.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbpartial.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cbpartial.setText("Partial Payment");
         cbpartial.addActionListener(this::cbpartialActionPerformed);
         jPanel3.add(cbpartial);
 
-        cbfull.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbfull.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cbfull.setText("Full Payment");
         cbfull.addActionListener(this::cbfullActionPerformed);
         jPanel3.add(cbfull);
@@ -148,7 +148,7 @@ public class RentalProcessing extends javax.swing.JPanel {
         lblExpectedReturn.setText("Expected Return Date: ");
         jPanel1.add(lblExpectedReturn);
 
-        txtReturnDate.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtReturnDate.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtReturnDate);
 
         btnProcessRental.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
@@ -206,7 +206,7 @@ public class RentalProcessing extends javax.swing.JPanel {
                     .addComponent(btnProcessRental)
                     .addComponent(btnCalculateCost)
                     .addComponent(btnClear))
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

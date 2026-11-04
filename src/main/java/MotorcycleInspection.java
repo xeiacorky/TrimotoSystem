@@ -90,7 +90,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         lblmotor.setText("Motorcycle:");
         jPanel1.add(lblmotor);
 
-        cmbMotorcycle.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cmbMotorcycle.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cmbMotorcycle.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cmbMotorcycle.setFocusable(false);
         jPanel1.add(cmbMotorcycle);
@@ -99,14 +99,14 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         lblinspectiondate.setText("Inspection Date:");
         jPanel1.add(lblinspectiondate);
 
-        txtInspectDate.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtInspectDate.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtInspectDate);
 
         lblInspectionphase.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblInspectionphase.setText("Inspection Phase:");
         jPanel1.add(lblInspectionphase);
 
-        cbInspectionPhase.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbInspectionPhase.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cbInspectionPhase.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pre-Rental", "Post-Rental" }));
         cbInspectionPhase.setFocusable(false);
         jPanel1.add(cbInspectionPhase);
@@ -115,21 +115,21 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         jLabel5.setText("Odometer Reading:");
         jPanel1.add(jLabel5);
 
-        txtOdometer.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtOdometer.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtOdometer);
 
         lblfuel.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblfuel.setText("Fuel Level:");
         jPanel1.add(lblfuel);
 
-        txtFuel.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtFuel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtFuel);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel2.setText("Tire Condition:");
         jPanel1.add(jLabel2);
 
-        cbTire.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbTire.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cbTire.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Scratched", "Dented" }));
         cbTire.setFocusable(false);
         jPanel1.add(cbTire);
@@ -138,7 +138,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         jLabel3.setText("Brake Condition:");
         jPanel1.add(jLabel3);
 
-        cbBrake.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbBrake.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cbBrake.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Worn", "Damaged" }));
         cbBrake.setFocusable(false);
         jPanel1.add(cbBrake);
@@ -147,7 +147,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         lblheadlightandsignal.setText("Headlight and Signal Lights:");
         jPanel1.add(lblheadlightandsignal);
 
-        cbHeadlight.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbHeadlight.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cbHeadlight.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Functional", "Not Functional" }));
         cbHeadlight.setFocusable(false);
         jPanel1.add(cbHeadlight);
@@ -156,7 +156,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         jLabel6.setText("Horns");
         jPanel1.add(jLabel6);
 
-        cbHorn.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbHorn.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cbHorn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Functional", "Not Functional" }));
         cbHorn.setFocusable(false);
         jPanel1.add(cbHorn);
@@ -165,7 +165,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         jLabel8.setText("Mirrors");
         jPanel1.add(jLabel8);
 
-        cbMirrors.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbMirrors.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cbMirrors.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Complete", "Missing", "Damaged" }));
         cbMirrors.setFocusable(false);
         jPanel1.add(cbMirrors);
@@ -174,7 +174,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         jLabel4.setText("Motorcycle Body:");
         jPanel1.add(jLabel4);
 
-        cbMotoBody.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbMotoBody.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cbMotoBody.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Needs Repair" }));
         cbMotoBody.setFocusable(false);
         jPanel1.add(cbMotoBody);
@@ -183,7 +183,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         jLabel1.setText("Engine Condition:");
         jPanel1.add(jLabel1);
 
-        cbEngineCondition.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbEngineCondition.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cbEngineCondition.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Normal", "Unusual Noise", "Other Issue" }));
         cbEngineCondition.setFocusable(false);
         jPanel1.add(cbEngineCondition);
@@ -192,7 +192,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         lbloverallcondi.setText("Overall Condition:");
         jPanel1.add(lbloverallcondi);
 
-        cbOverallCondition.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbOverallCondition.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cbOverallCondition.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Minor Damage", "Needs Repair", "Unsafe" }));
         cbOverallCondition.setFocusable(false);
         jPanel1.add(cbOverallCondition);
@@ -201,7 +201,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         jLabel7.setText("Readiness Status:");
         jPanel1.add(jLabel7);
 
-        cbReadiness.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbReadiness.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cbReadiness.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ready", "Not Ready" }));
         cbReadiness.setFocusable(false);
         jPanel1.add(cbReadiness);
@@ -210,7 +210,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         jLabel9.setText("Inspection Notes:");
         jPanel1.add(jLabel9);
 
-        txtInspectionNotes.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtInspectionNotes.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtInspectionNotes);
 
         btnCreateDmgReport.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N

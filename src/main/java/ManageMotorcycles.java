@@ -60,7 +60,7 @@ public class ManageMotorcycles extends javax.swing.JPanel {
         lblMotorID.setText("Motorcycle ID/Plate #:");
         jPanel1.add(lblMotorID);
 
-        txtMotorId.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtMotorId.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtMotorId.addActionListener(this::txtMotorIdActionPerformed);
         jPanel1.add(txtMotorId);
 
@@ -68,42 +68,42 @@ public class ManageMotorcycles extends javax.swing.JPanel {
         brand.setText("Brand:");
         jPanel1.add(brand);
 
-        txtBrand.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtBrand.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtBrand);
 
         model.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         model.setText("Model:");
         jPanel1.add(model);
 
-        txtModel.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtModel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtModel);
 
         lblyear.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblyear.setText("Year:");
         jPanel1.add(lblyear);
 
-        txtYear.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtYear.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtYear);
 
         lblmileage.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblmileage.setText("Mileage (km):");
         jPanel1.add(lblmileage);
 
-        txtMileage.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtMileage.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtMileage);
 
         lbldailyrentalrate.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lbldailyrentalrate.setText("Daily Rental Rate:");
         jPanel1.add(lbldailyrentalrate);
 
-        txtDailyRentalRate.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtDailyRentalRate.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtDailyRentalRate);
 
         lblmotortype.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblmotortype.setText("Motorcycle Type");
         jPanel1.add(lblmotortype);
 
-        cbMotorcycleTypes.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbMotorcycleTypes.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cbMotorcycleTypes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Scooter", "Standard Bike", "Sports Bike", "Adventure Bike", "Electric Bike", "" }));
         cbMotorcycleTypes.setFocusable(false);
         cbMotorcycleTypes.addActionListener(this::cbMotorcycleTypesActionPerformed);
@@ -113,26 +113,26 @@ public class ManageMotorcycles extends javax.swing.JPanel {
         lblTransmissionType.setText("Transmission Type:");
         jPanel1.add(lblTransmissionType);
 
-        txtTransmissionType.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtTransmissionType.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtTransmissionType.addActionListener(this::txtTransmissionTypeActionPerformed);
         jPanel1.add(txtTransmissionType);
 
         lblSpec1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jPanel1.add(lblSpec1);
 
-        txtSpec1.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtSpec1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtSpec1);
 
         lblSpec2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jPanel1.add(lblSpec2);
 
-        txtSpec2.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtSpec2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtSpec2);
 
         lblSpec3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jPanel1.add(lblSpec3);
 
-        txtSpec3.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtSpec3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtSpec3);
 
         btnClear.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
