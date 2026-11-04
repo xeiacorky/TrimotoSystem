@@ -15,7 +15,7 @@ public class ViewDamageReport extends javax.swing.JPanel {
         for (Motorcycle m : TrimotoSystem.motorcycles) {
             model.addElement(m.getId() + " - " + m.getBrand() + " " + m.getModel());
         }
-        jComboBox1.setModel(model);
+        cbMotorId.setModel(model);
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -47,26 +47,26 @@ public class ViewDamageReport extends javax.swing.JPanel {
         btnsavemaintenance1 = new javax.swing.JButton();
         title = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel18 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jComboBox5 = new javax.swing.JComboBox<>();
-        jLabel20 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jComboBox6 = new javax.swing.JComboBox<>();
-        jLabel4 = new javax.swing.JLabel();
-        jComboBox7 = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        lblMotorcycle = new javax.swing.JLabel();
+        cbMotorId = new javax.swing.JComboBox<>();
+        lblDamageLocation = new javax.swing.JLabel();
+        txtDamageLocation = new javax.swing.JTextField();
+        lblDamageType = new javax.swing.JLabel();
+        cbDamageType = new javax.swing.JComboBox<>();
+        lblDamageDescription = new javax.swing.JLabel();
+        txtDamageDescrip = new javax.swing.JTextField();
+        lblDamageReported = new javax.swing.JLabel();
+        txtDateReported = new javax.swing.JTextField();
+        lblActionRequired = new javax.swing.JLabel();
+        cbActionReq = new javax.swing.JComboBox<>();
+        lblDamageStatus = new javax.swing.JLabel();
+        cbDamageStat = new javax.swing.JComboBox<>();
+        lblAddNotes = new javax.swing.JLabel();
+        txtAddNotes = new javax.swing.JTextField();
+        lblEstimatedRepairCost = new javax.swing.JLabel();
+        txtEstimatedRepairCost = new javax.swing.JTextField();
         btnclear = new javax.swing.JButton();
-        btndamagereport = new javax.swing.JButton();
+        btnDamageReport = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
 
         title1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
@@ -176,77 +176,77 @@ public class ViewDamageReport extends javax.swing.JPanel {
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
         jPanel1.setLayout(new java.awt.GridLayout(9, 2, 15, 15));
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel10.setText("Motorcycle:");
-        jPanel1.add(jLabel10);
+        lblMotorcycle.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblMotorcycle.setText("Motorcycle:");
+        jPanel1.add(lblMotorcycle);
 
-        jComboBox1.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.setFocusable(false);
-        jComboBox1.addActionListener(this::jComboBox1ActionPerformed);
-        jPanel1.add(jComboBox1);
+        cbMotorId.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbMotorId.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbMotorId.setFocusable(false);
+        cbMotorId.addActionListener(this::cbMotorIdActionPerformed);
+        jPanel1.add(cbMotorId);
 
-        jLabel18.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel18.setText("Damage Location: ");
-        jPanel1.add(jLabel18);
+        lblDamageLocation.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblDamageLocation.setText("Damage Location: ");
+        jPanel1.add(lblDamageLocation);
 
-        jTextField7.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jPanel1.add(jTextField7);
+        txtDamageLocation.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        jPanel1.add(txtDamageLocation);
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel8.setText("Damage Type:");
-        jPanel1.add(jLabel8);
+        lblDamageType.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblDamageType.setText("Damage Type:");
+        jPanel1.add(lblDamageType);
 
-        jComboBox5.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Scratch", "Dent", "Crack", "Broken Part" }));
-        jComboBox5.setFocusable(false);
-        jPanel1.add(jComboBox5);
+        cbDamageType.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbDamageType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Scratch", "Dent", "Crack", "Broken Part" }));
+        cbDamageType.setFocusable(false);
+        jPanel1.add(cbDamageType);
 
-        jLabel20.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel20.setText("Damage Description:");
-        jPanel1.add(jLabel20);
+        lblDamageDescription.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblDamageDescription.setText("Damage Description:");
+        jPanel1.add(lblDamageDescription);
 
-        jTextField5.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jPanel1.add(jTextField5);
+        txtDamageDescrip.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        jPanel1.add(txtDamageDescrip);
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel6.setText("Date Reported:");
-        jPanel1.add(jLabel6);
+        lblDamageReported.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblDamageReported.setText("Date Reported:");
+        jPanel1.add(lblDamageReported);
 
-        jTextField4.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jPanel1.add(jTextField4);
+        txtDateReported.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        jPanel1.add(txtDateReported);
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel5.setText("Action Required:");
-        jPanel1.add(jLabel5);
+        lblActionRequired.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblActionRequired.setText("Action Required:");
+        jPanel1.add(lblActionRequired);
 
-        jComboBox6.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Repair", "Monitor", "No Action" }));
-        jComboBox6.setFocusable(false);
-        jPanel1.add(jComboBox6);
+        cbActionReq.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbActionReq.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Repair", "Monitor", "No Action" }));
+        cbActionReq.setFocusable(false);
+        jPanel1.add(cbActionReq);
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel4.setText("Damage Status:");
-        jPanel1.add(jLabel4);
+        lblDamageStatus.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblDamageStatus.setText("Damage Status:");
+        jPanel1.add(lblDamageStatus);
 
-        jComboBox7.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pending", "Under Repair", "Resolved" }));
-        jComboBox7.setFocusable(false);
-        jPanel1.add(jComboBox7);
+        cbDamageStat.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbDamageStat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pending", "Under Repair", "Resolved" }));
+        cbDamageStat.setFocusable(false);
+        jPanel1.add(cbDamageStat);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel1.setText("Additional Notes:");
-        jPanel1.add(jLabel1);
+        lblAddNotes.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblAddNotes.setText("Additional Notes:");
+        jPanel1.add(lblAddNotes);
 
-        jTextField2.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jPanel1.add(jTextField2);
+        txtAddNotes.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        jPanel1.add(txtAddNotes);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel2.setText("Estimated Repair Cost:");
-        jPanel1.add(jLabel2);
+        lblEstimatedRepairCost.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblEstimatedRepairCost.setText("Estimated Repair Cost:");
+        jPanel1.add(lblEstimatedRepairCost);
 
-        jTextField1.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jPanel1.add(jTextField1);
+        txtEstimatedRepairCost.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        jPanel1.add(txtEstimatedRepairCost);
 
         btnclear.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnclear.setText("Clear");
@@ -254,11 +254,11 @@ public class ViewDamageReport extends javax.swing.JPanel {
         btnclear.setFocusable(false);
         btnclear.addActionListener(this::btnclearActionPerformed);
 
-        btndamagereport.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btndamagereport.setText("Save Damage Report");
-        btndamagereport.setFocusPainted(false);
-        btndamagereport.setFocusable(false);
-        btndamagereport.addActionListener(this::btndamagereportActionPerformed);
+        btnDamageReport.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnDamageReport.setText("Save Damage Report");
+        btnDamageReport.setFocusPainted(false);
+        btnDamageReport.setFocusable(false);
+        btnDamageReport.addActionListener(this::btnDamageReportActionPerformed);
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jLabel15.setText("Record damage report records and notes");
@@ -274,7 +274,7 @@ public class ViewDamageReport extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnclear)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btndamagereport)
+                        .addComponent(btnDamageReport)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
@@ -298,27 +298,27 @@ public class ViewDamageReport extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnclear)
-                    .addComponent(btndamagereport))
+                    .addComponent(btnDamageReport))
                 .addContainerGap(84, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnsavemaintenance1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsavemaintenance1ActionPerformed
-if (jComboBox1.getSelectedItem() == null) {
+if (cbMotorId.getSelectedItem() == null) {
             JOptionPane.showMessageDialog(this, "Motorcycle ID required.", "Input Error", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
-        String selected = jComboBox1.getSelectedItem().toString();
+        String selected = cbMotorId.getSelectedItem().toString();
         String motorId = selected.split(" - ")[0];
-        String location = jTextField7.getText().trim();
-        String type = jComboBox5.getSelectedItem().toString();
-        String desc = jTextField5.getText().trim();
-        String date = jTextField4.getText().trim();
-        String action = jComboBox6.getSelectedItem().toString();
-        String status = jComboBox7.getSelectedItem().toString();
-        String notes = jTextField2.getText().trim();
-        String cost = jTextField1.getText().trim();
+        String location = txtDamageLocation.getText().trim();
+        String type = cbDamageType.getSelectedItem().toString();
+        String desc = txtDamageDescrip.getText().trim();
+        String date = txtDateReported.getText().trim();
+        String action = cbActionReq.getSelectedItem().toString();
+        String status = cbDamageStat.getSelectedItem().toString();
+        String notes = txtAddNotes.getText().trim();
+        String cost = txtEstimatedRepairCost.getText().trim();
 
         String dmgId = "DMG-" + (TrimotoSystem.damageReports.size() + 1001);
         String formattedRecord = "Report ID: " + dmgId + "\n" +
@@ -336,28 +336,28 @@ if (jComboBox1.getSelectedItem() == null) {
         JOptionPane.showMessageDialog(this, "Damage Report Saved Successfully!");
         btnclearActionPerformed(new java.awt.event.ActionEvent(btnclear, java.awt.event.ActionEvent.ACTION_PERFORMED, null));    }//GEN-LAST:event_btnsavemaintenance1ActionPerformed
 
-    private void btndamagereportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndamagereportActionPerformed
-    if (jComboBox1.getSelectedItem() == null) {
+    private void btnDamageReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDamageReportActionPerformed
+    if (cbMotorId.getSelectedItem() == null) {
             JOptionPane.showMessageDialog(this, "Please select a motorcycle.", "Input Error", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
-        String location = jTextField7.getText().trim();
-        String desc = jTextField5.getText().trim();
-        String date = jTextField4.getText().trim();
-        String notes = jTextField2.getText().trim();
-        String cost = jTextField1.getText().trim();
+        String location = txtDamageLocation.getText().trim();
+        String desc = txtDamageDescrip.getText().trim();
+        String date = txtDateReported.getText().trim();
+        String notes = txtAddNotes.getText().trim();
+        String cost = txtEstimatedRepairCost.getText().trim();
 
         if (location.isEmpty() || desc.isEmpty() || date.isEmpty() || notes.isEmpty() || cost.isEmpty()) {
             JOptionPane.showMessageDialog(this, "All fields are required to create a damage report. Please complete all fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
-        String selected = jComboBox1.getSelectedItem().toString();
+        String selected = cbMotorId.getSelectedItem().toString();
         String motorId = selected.split(" - ")[0];
-        String type = jComboBox5.getSelectedItem().toString();
-        String action = jComboBox6.getSelectedItem().toString();
-        String status = jComboBox7.getSelectedItem().toString();
+        String type = cbDamageType.getSelectedItem().toString();
+        String action = cbActionReq.getSelectedItem().toString();
+        String status = cbDamageStat.getSelectedItem().toString();
 
         String dmgId = "DMG-" + (TrimotoSystem.damageReports.size() + 1001);
         String formattedRecord = "Report ID: " + dmgId + "\n" +
@@ -373,67 +373,67 @@ if (jComboBox1.getSelectedItem() == null) {
 
         TrimotoSystem.damageReports.add(formattedRecord);
         JOptionPane.showMessageDialog(this, "Damage Report Saved Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-    btnclearActionPerformed(evt);    }//GEN-LAST:event_btndamagereportActionPerformed
+    btnclearActionPerformed(evt);    }//GEN-LAST:event_btnDamageReportActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void cbMotorIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbMotorIdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_cbMotorIdActionPerformed
 
     private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclearActionPerformed
-        jTextField7.setText("");
-        jTextField5.setText("");
-        jTextField4.setText("");
-        jTextField2.setText("");
-        jTextField1.setText("");    }//GEN-LAST:event_btnclearActionPerformed
+        txtDamageLocation.setText("");
+        txtDamageDescrip.setText("");
+        txtDateReported.setText("");
+        txtAddNotes.setText("");
+        txtEstimatedRepairCost.setText("");    }//GEN-LAST:event_btnclearActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDamageReport;
     private javax.swing.JButton btnclear;
     private javax.swing.JButton btnclear1;
-    private javax.swing.JButton btndamagereport;
     private javax.swing.JButton btnsavemaintenance1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> cbActionReq;
+    private javax.swing.JComboBox<String> cbDamageStat;
+    private javax.swing.JComboBox<String> cbDamageType;
+    private javax.swing.JComboBox<String> cbMotorId;
     private javax.swing.JComboBox<String> jComboBox10;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JComboBox<String> jComboBox8;
     private javax.swing.JComboBox<String> jComboBox9;
     private javax.swing.JDialog jDialog1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JLabel lblActionRequired;
+    private javax.swing.JLabel lblAddNotes;
+    private javax.swing.JLabel lblDamageDescription;
+    private javax.swing.JLabel lblDamageLocation;
+    private javax.swing.JLabel lblDamageReported;
+    private javax.swing.JLabel lblDamageStatus;
+    private javax.swing.JLabel lblDamageType;
+    private javax.swing.JLabel lblEstimatedRepairCost;
+    private javax.swing.JLabel lblMotorcycle;
     private javax.swing.JLabel title;
     private javax.swing.JLabel title1;
+    private javax.swing.JTextField txtAddNotes;
+    private javax.swing.JTextField txtDamageDescrip;
+    private javax.swing.JTextField txtDamageLocation;
+    private javax.swing.JTextField txtDateReported;
+    private javax.swing.JTextField txtEstimatedRepairCost;
     // End of variables declaration//GEN-END:variables
 }

@@ -7,6 +7,10 @@ public class TrimotoSystem {
     public static final List<MaintenanceRecord> maintenanceRecords = new ArrayList<>();
     public static final List<RentalTransaction> rentals = new ArrayList<>();
     public static final List<String> damageReports = new ArrayList<>();
+    
+     static {
+        motorcycles.addAll(FileManager.loadMotorcycles());
+    }
 
     public static Motorcycle findMotorcycleById(String id) {
         if (id == null) return null;
@@ -33,9 +37,9 @@ class MotorcycleFactory {
                 return new SportsBike(id, brand, model, year, transmission, mileage, dailyRate, (int) spec1, spec2, spec3);
             case "Electric Bike":
                 return new ElectricBike(id, brand, model, year, mileage, dailyRate, spec1, spec2, spec3);
-            default:
-                return new Scooter(id, brand, model, year, transmission, mileage, dailyRate, 125, 15.0, 5.5);
+       
         }
+        return null;
     }
 
     private static double rateToDouble(double rate) { return rate; }
@@ -98,6 +102,20 @@ class Scooter extends Motorcycle {
         this.storageCapacity = storageCapacity;
         this.fuelCapacity = fuelCapacity;
     }
+    
+    
+public int getEngineDisplacement() {
+    return engineDisplacement;
+}
+
+public double getStorageCapacity() {
+    return storageCapacity;
+}
+
+public double getFuelCapacity() {
+    return fuelCapacity;
+}
+
 
     @Override
     public String displayMotorcycleInfo() {
@@ -125,6 +143,22 @@ class AdventureBike extends Motorcycle {
         this.fuelCapacity = fuelCapacity;
         this.groundClearance = groundClearance;
     }
+    
+    public int getEngineDisplacement() {
+    return engineDisplacement;
+}
+
+public double getStorageCapacity() {
+    return storageCapacity;
+}
+
+public double getFuelCapacity() {
+    return fuelCapacity;
+}
+
+public double getGroundClearance() {
+    return groundClearance;
+}
 
     @Override
     public String displayMotorcycleInfo() {
@@ -150,6 +184,14 @@ class StandardBike extends Motorcycle {
         this.fuelCapacity = fuelCapacity;
     }
 
+    public int getEngineDisplacement() {
+    return engineDisplacement;
+}
+
+public double getFuelCapacity() {
+    return fuelCapacity;
+}
+    
     @Override
     public String displayMotorcycleInfo() {
         return "Engine Displacement: " + engineDisplacement + " cc\n" +
@@ -174,6 +216,18 @@ class SportsBike extends Motorcycle {
         this.powerOutput = powerOutput;
     }
 
+    public int getEngineDisplacement() {
+    return engineDisplacement;
+}
+
+public double getFuelCapacity() {
+    return fuelCapacity;
+}
+
+public double getPowerOutput() {
+    return powerOutput;
+}
+    
     @Override
     public String displayMotorcycleInfo() {
         return "Engine Displacement: " + engineDisplacement + " cc\n" +
@@ -199,6 +253,18 @@ class ElectricBike extends Motorcycle {
         this.chargingTime = chargingTime;
     }
 
+    public double getMotorPower() {
+    return motorPower;
+}
+
+public double getBatteryCapacity() {
+    return batteryCapacity;
+}
+
+public double getChargingTime() {
+    return chargingTime;
+}
+    
     @Override
     public String displayMotorcycleInfo() {
         return "Motor Power: " + motorPower + " W\n" +

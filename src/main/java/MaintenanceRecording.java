@@ -8,7 +8,7 @@ public class MaintenanceRecording extends javax.swing.JPanel {
         UIManager.put("Button.focusWidth", 0);
         UIManager.put("ComboBox.drawFocusBackground", Boolean.FALSE);
         initComponents();
-        txtmaintedate.setText(java.time.LocalDate.now().toString());
+        txtMaintedate.setText(java.time.LocalDate.now().toString());
         refreshMotorcycleDropdown();
     }
     
@@ -17,7 +17,7 @@ public class MaintenanceRecording extends javax.swing.JPanel {
         for (Motorcycle m : TrimotoSystem.motorcycles) {
             model.addElement(m.getId() + " - " + m.getBrand() + " " + m.getModel());
         }
-        jComboBox1.setModel(model);
+        cbMotorcycle.setModel(model);
     }
     
     @SuppressWarnings("unchecked")
@@ -28,29 +28,29 @@ public class MaintenanceRecording extends javax.swing.JPanel {
         description = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         lblmotor = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbMotorcycle = new javax.swing.JComboBox<>();
         lblmaintenancedate = new javax.swing.JLabel();
-        txtmaintedate = new javax.swing.JTextField();
+        txtMaintedate = new javax.swing.JTextField();
         lblmaintenancetype = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jLabel12 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
-        jTextField19 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
-        jLabel17 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField15 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jLabel21 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jLabel15 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
+        cbMainteType = new javax.swing.JComboBox<>();
+        lblServiceCategory = new javax.swing.JLabel();
+        txtServiceCat = new javax.swing.JTextField();
+        lblWorkPerformed = new javax.swing.JLabel();
+        txtWorkPerfo = new javax.swing.JTextField();
+        lblPartsReplaced = new javax.swing.JLabel();
+        txtPartsRepla = new javax.swing.JTextField();
+        lblOdometer = new javax.swing.JLabel();
+        txtOdometer = new javax.swing.JTextField();
+        lblMaintenanceCost = new javax.swing.JLabel();
+        txtMainteCost = new javax.swing.JTextField();
+        lblNextServiceMileage = new javax.swing.JLabel();
+        txtServiceMile = new javax.swing.JTextField();
+        lblMaintenanceStatus = new javax.swing.JLabel();
+        cbMainteStat = new javax.swing.JComboBox<>();
+        lblMotorcycleAvailability = new javax.swing.JLabel();
+        cbMotorAvail = new javax.swing.JComboBox<>();
+        lblRemarks = new javax.swing.JLabel();
+        txtRemarks = new javax.swing.JTextField();
         btnsavemaintenance = new javax.swing.JButton();
         btnclear = new javax.swing.JButton();
 
@@ -70,94 +70,94 @@ public class MaintenanceRecording extends javax.swing.JPanel {
         lblmotor.setText("Motorcycle:");
         jPanel1.add(lblmotor);
 
-        jComboBox1.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.setFocusable(false);
-        jComboBox1.addActionListener(this::jComboBox1ActionPerformed);
-        jPanel1.add(jComboBox1);
+        cbMotorcycle.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbMotorcycle.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbMotorcycle.setFocusable(false);
+        cbMotorcycle.addActionListener(this::cbMotorcycleActionPerformed);
+        jPanel1.add(cbMotorcycle);
 
         lblmaintenancedate.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblmaintenancedate.setText("Maintenance Date:");
         jPanel1.add(lblmaintenancedate);
 
-        txtmaintedate.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jPanel1.add(txtmaintedate);
+        txtMaintedate.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        jPanel1.add(txtMaintedate);
 
         lblmaintenancetype.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblmaintenancetype.setText("Maintenance Type:");
         jPanel1.add(lblmaintenancetype);
 
-        jComboBox4.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Preventive", "Corrective" }));
-        jComboBox4.setFocusable(false);
-        jPanel1.add(jComboBox4);
+        cbMainteType.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbMainteType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Preventive", "Corrective" }));
+        cbMainteType.setFocusable(false);
+        jPanel1.add(cbMainteType);
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel12.setText("Service Category");
-        jPanel1.add(jLabel12);
+        lblServiceCategory.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblServiceCategory.setText("Service Category");
+        jPanel1.add(lblServiceCategory);
 
-        jTextField12.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jPanel1.add(jTextField12);
+        txtServiceCat.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        jPanel1.add(txtServiceCat);
 
-        jLabel16.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel16.setText("Work Performed:");
-        jPanel1.add(jLabel16);
+        lblWorkPerformed.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblWorkPerformed.setText("Work Performed:");
+        jPanel1.add(lblWorkPerformed);
 
-        jTextField19.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jPanel1.add(jTextField19);
+        txtWorkPerfo.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        jPanel1.add(txtWorkPerfo);
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel7.setText("Parts Replaced:");
-        jPanel1.add(jLabel7);
+        lblPartsReplaced.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblPartsReplaced.setText("Parts Replaced:");
+        jPanel1.add(lblPartsReplaced);
 
-        jTextField9.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jPanel1.add(jTextField9);
+        txtPartsRepla.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        jPanel1.add(txtPartsRepla);
 
-        jLabel17.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel17.setText("Odometer Reading(km):");
-        jPanel1.add(jLabel17);
+        lblOdometer.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblOdometer.setText("Odometer Reading(km):");
+        jPanel1.add(lblOdometer);
 
-        jTextField11.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jPanel1.add(jTextField11);
+        txtOdometer.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        jPanel1.add(txtOdometer);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel2.setText("Maintenance Cost:");
-        jPanel1.add(jLabel2);
+        lblMaintenanceCost.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblMaintenanceCost.setText("Maintenance Cost:");
+        jPanel1.add(lblMaintenanceCost);
 
-        jTextField15.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jPanel1.add(jTextField15);
+        txtMainteCost.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        jPanel1.add(txtMainteCost);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel3.setText("Next Service Mileage:");
-        jPanel1.add(jLabel3);
+        lblNextServiceMileage.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblNextServiceMileage.setText("Next Service Mileage:");
+        jPanel1.add(lblNextServiceMileage);
 
-        jTextField6.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jPanel1.add(jTextField6);
+        txtServiceMile.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        jPanel1.add(txtServiceMile);
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel13.setText("Maintenance Status:");
-        jPanel1.add(jLabel13);
+        lblMaintenanceStatus.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblMaintenanceStatus.setText("Maintenance Status:");
+        jPanel1.add(lblMaintenanceStatus);
 
-        jComboBox2.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pending", "In Progress", "Completed" }));
-        jComboBox2.setFocusable(false);
-        jPanel1.add(jComboBox2);
+        cbMainteStat.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbMainteStat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pending", "In Progress", "Completed" }));
+        cbMainteStat.setFocusable(false);
+        jPanel1.add(cbMainteStat);
 
-        jLabel21.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel21.setText("Motorcycle Availability:");
-        jPanel1.add(jLabel21);
+        lblMotorcycleAvailability.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblMotorcycleAvailability.setText("Motorcycle Availability:");
+        jPanel1.add(lblMotorcycleAvailability);
 
-        jComboBox3.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Available", "Under Maintenance" }));
-        jComboBox3.setFocusable(false);
-        jPanel1.add(jComboBox3);
+        cbMotorAvail.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbMotorAvail.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Available", "Under Maintenance" }));
+        cbMotorAvail.setFocusable(false);
+        jPanel1.add(cbMotorAvail);
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel15.setText("Remarks");
-        jPanel1.add(jLabel15);
+        lblRemarks.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblRemarks.setText("Remarks");
+        jPanel1.add(lblRemarks);
 
-        jTextField13.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jPanel1.add(jTextField13);
+        txtRemarks.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        jPanel1.add(txtRemarks);
 
         btnsavemaintenance.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnsavemaintenance.setText("Save Maintenance Record");
@@ -208,19 +208,19 @@ public class MaintenanceRecording extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnsavemaintenanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsavemaintenanceActionPerformed
-      if (jComboBox1.getSelectedItem() == null) {
+      if (cbMotorcycle.getSelectedItem() == null) {
             JOptionPane.showMessageDialog(this, "Please select a motorcycle.", "Input Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
-        String date = txtmaintedate.getText().trim();
-        String category = jTextField12.getText().trim();
-        String workPerformed = jTextField19.getText().trim();
-        String partsReplaced = jTextField9.getText().trim();
-        String odometer = jTextField11.getText().trim();
-        String costText = jTextField15.getText().trim();
-        String nextServiceMileage = jTextField6.getText().trim();
-        String remarks = jTextField13.getText().trim(); // Optional
+        String date = txtMaintedate.getText().trim();
+        String category = txtServiceCat.getText().trim();
+        String workPerformed = txtWorkPerfo.getText().trim();
+        String partsReplaced = txtPartsRepla.getText().trim();
+        String odometer = txtOdometer.getText().trim();
+        String costText = txtMainteCost.getText().trim();
+        String nextServiceMileage = txtServiceMile.getText().trim();
+        String remarks = txtRemarks.getText().trim(); 
 
         if (date.isEmpty() || category.isEmpty() || workPerformed.isEmpty() || 
             partsReplaced.isEmpty() || odometer.isEmpty() || costText.isEmpty() || nextServiceMileage.isEmpty()) {
@@ -230,10 +230,10 @@ public class MaintenanceRecording extends javax.swing.JPanel {
 
         try {
             double cost = Double.parseDouble(costText);
-            String motorId = jComboBox1.getSelectedItem().toString().split(" - ")[0];
-            String type = jComboBox4.getSelectedItem().toString();
-            String status = jComboBox2.getSelectedItem().toString();
-            String availability = jComboBox3.getSelectedItem().toString();
+            String motorId = cbMotorcycle.getSelectedItem().toString().split(" - ")[0];
+            String type = cbMainteType.getSelectedItem().toString();
+            String status = cbMainteStat.getSelectedItem().toString();
+            String availability = cbMotorAvail.getSelectedItem().toString();
 
             String mntId = "MNT-" + (TrimotoSystem.maintenanceRecords.size() + 1001);
             TrimotoSystem.maintenanceRecords.add(new MaintenanceRecord(
@@ -259,49 +259,49 @@ public class MaintenanceRecording extends javax.swing.JPanel {
     }//GEN-LAST:event_btnsavemaintenanceActionPerformed
 
     private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclearActionPerformed
-        txtmaintedate.setText("");
-        jTextField12.setText("");
-        jTextField19.setText("");
-        jTextField9.setText("");
-        jTextField11.setText("");
-        jTextField15.setText("");
-        jTextField6.setText("");
-        jTextField13.setText("");    }//GEN-LAST:event_btnclearActionPerformed
+        txtMaintedate.setText("");
+        txtServiceCat.setText("");
+        txtWorkPerfo.setText("");
+        txtPartsRepla.setText("");
+        txtOdometer.setText("");
+        txtMainteCost.setText("");
+        txtServiceMile.setText("");
+        txtRemarks.setText("");    }//GEN-LAST:event_btnclearActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void cbMotorcycleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbMotorcycleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_cbMotorcycleActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnclear;
     private javax.swing.JButton btnsavemaintenance;
+    private javax.swing.JComboBox<String> cbMainteStat;
+    private javax.swing.JComboBox<String> cbMainteType;
+    private javax.swing.JComboBox<String> cbMotorAvail;
+    private javax.swing.JComboBox<String> cbMotorcycle;
     private javax.swing.JLabel description;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JLabel lblMaintenanceCost;
+    private javax.swing.JLabel lblMaintenanceStatus;
+    private javax.swing.JLabel lblMotorcycleAvailability;
+    private javax.swing.JLabel lblNextServiceMileage;
+    private javax.swing.JLabel lblOdometer;
+    private javax.swing.JLabel lblPartsReplaced;
+    private javax.swing.JLabel lblRemarks;
+    private javax.swing.JLabel lblServiceCategory;
+    private javax.swing.JLabel lblWorkPerformed;
     private javax.swing.JLabel lblmaintenancedate;
     private javax.swing.JLabel lblmaintenancetype;
     private javax.swing.JLabel lblmotor;
     private javax.swing.JLabel title;
-    private javax.swing.JTextField txtmaintedate;
+    private javax.swing.JTextField txtMainteCost;
+    private javax.swing.JTextField txtMaintedate;
+    private javax.swing.JTextField txtOdometer;
+    private javax.swing.JTextField txtPartsRepla;
+    private javax.swing.JTextField txtRemarks;
+    private javax.swing.JTextField txtServiceCat;
+    private javax.swing.JTextField txtServiceMile;
+    private javax.swing.JTextField txtWorkPerfo;
     // End of variables declaration//GEN-END:variables
 }

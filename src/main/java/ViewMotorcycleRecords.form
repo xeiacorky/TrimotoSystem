@@ -9,7 +9,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="308" max="-2" attributes="0"/>
-                  <Component id="btnsavemainte" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnSaveMainte" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="320" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
@@ -25,14 +25,14 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel1" min="-2" pref="451" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnsavemainte" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnSaveMainte" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="btnsavemainte">
+        <Component class="javax.swing.JButton" name="btnSaveMainte">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="13" style="0"/>
@@ -42,7 +42,7 @@
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnsavemainteActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaveMainteActionPerformed"/>
           </Events>
         </Component>
         <Container class="javax.swing.JPanel" name="jPanel1">
@@ -301,7 +301,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="312" max="-2" attributes="0"/>
-                  <Component id="btnviewinspectsave" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnViewInspectSave" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="316" max="32767" attributes="0"/>
               </Group>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -317,7 +317,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="568" max="32767" attributes="0"/>
-                  <Component id="btnviewinspectsave" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnViewInspectSave" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               </Group>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -331,7 +331,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="btnviewinspectsave">
+        <Component class="javax.swing.JButton" name="btnViewInspectSave">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="13" style="0"/>
@@ -341,7 +341,7 @@
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnviewinspectsaveActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewInspectSaveActionPerformed"/>
           </Events>
         </Component>
         <Container class="javax.swing.JPanel" name="jPanel5">
@@ -728,13 +728,13 @@
                           <Component id="btndeleteinspect" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblFilterStat" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="maintefilter" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jLabel33" min="-2" pref="112" max="-2" attributes="0"/>
+                          <Component id="lblSearchId" min="-2" pref="112" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jTextField18" min="-2" pref="71" max="-2" attributes="0"/>
+                          <Component id="txtSearchMaintenance" min="-2" pref="71" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="mainteapplyfilter" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -748,10 +748,10 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblFilterStat" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="maintefilter" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField18" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblSearchId" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtSearchMaintenance" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="mainteapplyfilter" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -789,7 +789,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel32">
+        <Component class="javax.swing.JLabel" name="lblFilterStat">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semibold" size="12" style="0"/>
@@ -853,17 +853,17 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mainteapplyfilterActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField18">
+        <Component class="javax.swing.JTextField" name="txtSearchMaintenance">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nirmala UI" size="12" style="0"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField18ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSearchMaintenanceActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel33">
+        <Component class="javax.swing.JLabel" name="lblSearchId">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semibold" size="12" style="0"/>
@@ -896,20 +896,20 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jScrollPane7" alignment="0" min="-2" pref="1481" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="btneditinspect1" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEditInspect" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btninpsectdelete" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnInpsectDelete" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblFilterStat1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="inspectfilter" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jLabel31" min="-2" pref="112" max="-2" attributes="0"/>
+                          <Component id="lblSearchId1" min="-2" pref="112" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jTextField17" min="-2" pref="71" max="-2" attributes="0"/>
+                          <Component id="txtSearchInspect" min="-2" pref="71" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="inspectapplyfilter" min="-2" max="-2" attributes="0"/>
+                          <Component id="InspectApplyFilter" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -921,18 +921,18 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblFilterStat1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="inspectfilter" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel31" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField17" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="inspectapplyfilter" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblSearchId1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtSearchInspect" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="InspectApplyFilter" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jScrollPane7" min="-2" pref="359" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btneditinspect1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btninpsectdelete" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnEditInspect" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnInpsectDelete" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               </Group>
@@ -963,7 +963,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel30">
+        <Component class="javax.swing.JLabel" name="lblFilterStat1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semibold" size="12" style="0"/>
@@ -1004,7 +1004,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="btneditinspect1">
+        <Component class="javax.swing.JButton" name="btnEditInspect">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="13" style="0"/>
@@ -1014,10 +1014,10 @@
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btneditinspect1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditInspectActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="inspectapplyfilter">
+        <Component class="javax.swing.JButton" name="InspectApplyFilter">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="13" style="0"/>
@@ -1027,20 +1027,20 @@
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inspectapplyfilterActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="InspectApplyFilterActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField17">
+        <Component class="javax.swing.JTextField" name="txtSearchInspect">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nirmala UI" size="12" style="0"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField17ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSearchInspectActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel31">
+        <Component class="javax.swing.JLabel" name="lblSearchId1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semibold" size="12" style="0"/>
@@ -1048,7 +1048,7 @@
             <Property name="text" type="java.lang.String" value="Search ID/Keyword"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btninpsectdelete">
+        <Component class="javax.swing.JButton" name="btnInpsectDelete">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="13" style="0"/>
@@ -1058,7 +1058,7 @@
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btninpsectdeleteActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInpsectDeleteActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -1073,20 +1073,20 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jScrollPane9" alignment="0" min="-2" pref="1481" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="btneditdamagarep" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEditDamageReport" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btndamagerepdelete" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnDamageReportDelete" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblFilterStat2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="damagrepfilter" min="-2" max="-2" attributes="0"/>
+                          <Component id="DamagReportFilter" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jLabel35" min="-2" pref="112" max="-2" attributes="0"/>
+                          <Component id="lblSearchId2" min="-2" pref="112" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jTextField20" min="-2" pref="71" max="-2" attributes="0"/>
+                          <Component id="txtSearchDamageReport" min="-2" pref="71" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="damagerepapplyfilter" min="-2" max="-2" attributes="0"/>
+                          <Component id="DamageRepApplyFilter" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -1098,18 +1098,18 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="damagrepfilter" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField20" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="damagerepapplyfilter" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblFilterStat2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="DamagReportFilter" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblSearchId2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtSearchDamageReport" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="DamageRepApplyFilter" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jScrollPane9" min="-2" pref="359" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btneditdamagarep" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btndamagerepdelete" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnEditDamageReport" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnDamageReportDelete" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               </Group>
@@ -1117,7 +1117,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="damagerepapplyfilter">
+        <Component class="javax.swing.JButton" name="DamageRepApplyFilter">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="13" style="0"/>
@@ -1127,10 +1127,10 @@
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="damagerepapplyfilterActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DamageRepApplyFilterActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btneditdamagarep">
+        <Component class="javax.swing.JButton" name="btnEditDamageReport">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="13" style="0"/>
@@ -1140,7 +1140,7 @@
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btneditdamagarepActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditDamageReportActionPerformed"/>
           </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane9">
@@ -1170,7 +1170,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="jLabel34">
+        <Component class="javax.swing.JLabel" name="lblFilterStat2">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semibold" size="12" style="0"/>
@@ -1178,7 +1178,7 @@
             <Property name="text" type="java.lang.String" value="Filter Status:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="damagrepfilter">
+        <Component class="javax.swing.JComboBox" name="DamagReportFilter">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nirmala UI" size="12" style="0"/>
@@ -1194,13 +1194,13 @@
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="damagrepfilterActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DamagReportFilterActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel35">
+        <Component class="javax.swing.JLabel" name="lblSearchId2">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semibold" size="12" style="0"/>
@@ -1208,17 +1208,17 @@
             <Property name="text" type="java.lang.String" value="Search ID/Keyword"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField20">
+        <Component class="javax.swing.JTextField" name="txtSearchDamageReport">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nirmala UI" size="12" style="0"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField20ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSearchDamageReportActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btndamagerepdelete">
+        <Component class="javax.swing.JButton" name="btnDamageReportDelete">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="13" style="0"/>
@@ -1228,7 +1228,7 @@
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btndamagerepdeleteActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDamageReportDeleteActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -1240,7 +1240,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="318" max="32767" attributes="0"/>
-                  <Component id="btndamagereport" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnDamageReport" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="311" max="-2" attributes="0"/>
               </Group>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -1256,7 +1256,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="413" max="32767" attributes="0"/>
-                  <Component id="btndamagereport" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnDamageReport" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
               </Group>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -1475,7 +1475,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="btndamagereport">
+        <Component class="javax.swing.JButton" name="btnDamageReport">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="13" style="0"/>
@@ -1485,7 +1485,7 @@
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btndamagereportActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDamageReportActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -1497,7 +1497,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="439" max="32767" attributes="0"/>
-                  <Component id="btnsaveviewmotorcycle" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnSaveViewMotorcycle" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="427" max="-2" attributes="0"/>
               </Group>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -1513,7 +1513,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="421" max="32767" attributes="0"/>
-                  <Component id="btnsaveviewmotorcycle" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnSaveViewMotorcycle" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               </Group>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -1527,7 +1527,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="btnsaveviewmotorcycle">
+        <Component class="javax.swing.JButton" name="btnSaveViewMotorcycle">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="13" style="0"/>
@@ -1537,7 +1537,7 @@
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnsaveviewmotorcycleActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaveViewMotorcycleActionPerformed"/>
           </Events>
         </Component>
         <Container class="javax.swing.JPanel" name="jPanel2">
@@ -1811,30 +1811,30 @@
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="ID" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jTextField3" min="-2" pref="156" max="-2" attributes="0"/>
+                          <Component id="txtSearch" min="-2" pref="156" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnsearch" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSearch" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="recordsscrollpane" min="-2" pref="898" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="btnviewinspectionrecord" max="32767" attributes="0"/>
+                          <Component id="btnViewInspectionRecord" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="btndelete" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnDelete" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnrefresh" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnRefresh" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnedit" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEdit" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="btnviewmaintenancerecord" min="-2" pref="154" max="-2" attributes="0"/>
+                              <Component id="btnViewMaintenanceRecord" min="-2" pref="154" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnviewdmg" min="-2" pref="156" max="-2" attributes="0"/>
+                              <Component id="btnViewDmg" min="-2" pref="156" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" pref="151" max="-2" attributes="0"/>
+                              <Component id="btnViewFurtherDetails" min="-2" pref="151" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -1852,23 +1852,23 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="description" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="ID" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnsearch" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtSearch" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnSearch" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="recordsscrollpane" min="-2" pref="400" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnviewinspectionrecord" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnviewmaintenancerecord" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnviewdmg" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnViewInspectionRecord" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnViewMaintenanceRecord" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnViewDmg" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnViewFurtherDetails" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="85" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btndelete" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnrefresh" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnedit" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnDelete" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnRefresh" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnEdit" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -1925,17 +1925,17 @@
         <Property name="text" type="java.lang.String" value="Search ID:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField3">
+    <Component class="javax.swing.JTextField" name="txtSearch">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Nirmala UI" size="12" style="0"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSearchActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnsearch">
+    <Component class="javax.swing.JButton" name="btnSearch">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="13" style="0"/>
@@ -1945,10 +1945,10 @@
         <Property name="focusable" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnsearchActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnviewinspectionrecord">
+    <Component class="javax.swing.JButton" name="btnViewInspectionRecord">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="13" style="0"/>
@@ -1958,10 +1958,10 @@
         <Property name="focusable" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnviewinspectionrecordActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewInspectionRecordActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnviewmaintenancerecord">
+    <Component class="javax.swing.JButton" name="btnViewMaintenanceRecord">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="13" style="0"/>
@@ -1971,10 +1971,10 @@
         <Property name="focusable" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnviewmaintenancerecordActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewMaintenanceRecordActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnviewdmg">
+    <Component class="javax.swing.JButton" name="btnViewDmg">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="13" style="0"/>
@@ -1984,10 +1984,10 @@
         <Property name="focusable" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnviewdmgActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewDmgActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btndelete">
+    <Component class="javax.swing.JButton" name="btnDelete">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="13" style="0"/>
@@ -1997,10 +1997,10 @@
         <Property name="focusable" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btndeleteActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnrefresh">
+    <Component class="javax.swing.JButton" name="btnRefresh">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="13" style="0"/>
@@ -2010,10 +2010,10 @@
         <Property name="focusable" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnrefreshActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRefreshActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnedit">
+    <Component class="javax.swing.JButton" name="btnEdit">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="13" style="0"/>
@@ -2023,10 +2023,10 @@
         <Property name="focusable" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btneditActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btnViewFurtherDetails">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="13" style="0"/>
@@ -2036,7 +2036,7 @@
         <Property name="focusable" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewFurtherDetailsActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

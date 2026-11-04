@@ -68,7 +68,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
     private void initComponents() {
 
         viewmainte = new javax.swing.JDialog();
-        btnsavemainte = new javax.swing.JButton();
+        btnSaveMainte = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         lblmotor2 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -95,7 +95,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         jLabel15 = new javax.swing.JLabel();
         jTextField16 = new javax.swing.JTextField();
         viewinspect = new javax.swing.JDialog();
-        btnviewinspectsave = new javax.swing.JButton();
+        btnViewInspectSave = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         lblmotor = new javax.swing.JLabel();
         cmbmotorcycle = new javax.swing.JComboBox<>();
@@ -129,34 +129,34 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         jTextField2 = new javax.swing.JTextField();
         viewmaintedialog = new javax.swing.JDialog();
         maintefilter = new javax.swing.JComboBox<>();
-        jLabel32 = new javax.swing.JLabel();
+        lblFilterStat = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
         btneditinspect2 = new javax.swing.JButton();
         mainteapplyfilter = new javax.swing.JButton();
-        jTextField18 = new javax.swing.JTextField();
-        jLabel33 = new javax.swing.JLabel();
+        txtSearchMaintenance = new javax.swing.JTextField();
+        lblSearchId = new javax.swing.JLabel();
         btndeleteinspect = new javax.swing.JButton();
         viewinspectdialog = new javax.swing.JDialog();
         inspectfilter = new javax.swing.JComboBox<>();
-        jLabel30 = new javax.swing.JLabel();
+        lblFilterStat1 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        btneditinspect1 = new javax.swing.JButton();
-        inspectapplyfilter = new javax.swing.JButton();
-        jTextField17 = new javax.swing.JTextField();
-        jLabel31 = new javax.swing.JLabel();
-        btninpsectdelete = new javax.swing.JButton();
+        btnEditInspect = new javax.swing.JButton();
+        InspectApplyFilter = new javax.swing.JButton();
+        txtSearchInspect = new javax.swing.JTextField();
+        lblSearchId1 = new javax.swing.JLabel();
+        btnInpsectDelete = new javax.swing.JButton();
         viewdamagereportdialog = new javax.swing.JDialog();
-        damagerepapplyfilter = new javax.swing.JButton();
-        btneditdamagarep = new javax.swing.JButton();
+        DamageRepApplyFilter = new javax.swing.JButton();
+        btnEditDamageReport = new javax.swing.JButton();
         jScrollPane9 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
-        jLabel34 = new javax.swing.JLabel();
-        damagrepfilter = new javax.swing.JComboBox<>();
-        jLabel35 = new javax.swing.JLabel();
-        jTextField20 = new javax.swing.JTextField();
-        btndamagerepdelete = new javax.swing.JButton();
+        lblFilterStat2 = new javax.swing.JLabel();
+        DamagReportFilter = new javax.swing.JComboBox<>();
+        lblSearchId2 = new javax.swing.JLabel();
+        txtSearchDamageReport = new javax.swing.JTextField();
+        btnDamageReportDelete = new javax.swing.JButton();
         viewdmgreport = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
@@ -177,9 +177,9 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         jTextField6 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jTextField8 = new javax.swing.JTextField();
-        btndamagereport = new javax.swing.JButton();
+        btnDamageReport = new javax.swing.JButton();
         viewmmotorcycle = new javax.swing.JDialog();
-        btnsaveviewmotorcycle = new javax.swing.JButton();
+        btnSaveViewMotorcycle = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         lblMotorID = new javax.swing.JLabel();
         txtmotorid = new javax.swing.JTextField();
@@ -211,21 +211,21 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         recordsscrollpane = new javax.swing.JScrollPane();
         recordstable = new javax.swing.JTable();
         ID = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        btnsearch = new javax.swing.JButton();
-        btnviewinspectionrecord = new javax.swing.JButton();
-        btnviewmaintenancerecord = new javax.swing.JButton();
-        btnviewdmg = new javax.swing.JButton();
-        btndelete = new javax.swing.JButton();
-        btnrefresh = new javax.swing.JButton();
-        btnedit = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        txtSearch = new javax.swing.JTextField();
+        btnSearch = new javax.swing.JButton();
+        btnViewInspectionRecord = new javax.swing.JButton();
+        btnViewMaintenanceRecord = new javax.swing.JButton();
+        btnViewDmg = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        btnRefresh = new javax.swing.JButton();
+        btnEdit = new javax.swing.JButton();
+        btnViewFurtherDetails = new javax.swing.JButton();
 
-        btnsavemainte.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btnsavemainte.setText("Save");
-        btnsavemainte.setFocusPainted(false);
-        btnsavemainte.setFocusable(false);
-        btnsavemainte.addActionListener(this::btnsavemainteActionPerformed);
+        btnSaveMainte.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnSaveMainte.setText("Save");
+        btnSaveMainte.setFocusPainted(false);
+        btnSaveMainte.setFocusable(false);
+        btnSaveMainte.addActionListener(this::btnSaveMainteActionPerformed);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
@@ -330,7 +330,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
             viewmainteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(viewmainteLayout.createSequentialGroup()
                 .addGap(308, 308, 308)
-                .addComponent(btnsavemainte)
+                .addComponent(btnSaveMainte)
                 .addContainerGap(320, Short.MAX_VALUE))
             .addGroup(viewmainteLayout.createSequentialGroup()
                 .addContainerGap()
@@ -343,15 +343,15 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnsavemainte)
+                .addComponent(btnSaveMainte)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnviewinspectsave.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btnviewinspectsave.setText("Save");
-        btnviewinspectsave.setFocusPainted(false);
-        btnviewinspectsave.setFocusable(false);
-        btnviewinspectsave.addActionListener(this::btnviewinspectsaveActionPerformed);
+        btnViewInspectSave.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnViewInspectSave.setText("Save");
+        btnViewInspectSave.setFocusPainted(false);
+        btnViewInspectSave.setFocusable(false);
+        btnViewInspectSave.addActionListener(this::btnViewInspectSaveActionPerformed);
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
@@ -491,7 +491,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
             viewinspectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(viewinspectLayout.createSequentialGroup()
                 .addGap(312, 312, 312)
-                .addComponent(btnviewinspectsave)
+                .addComponent(btnViewInspectSave)
                 .addContainerGap(316, Short.MAX_VALUE))
             .addGroup(viewinspectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(viewinspectLayout.createSequentialGroup()
@@ -503,7 +503,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
             viewinspectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewinspectLayout.createSequentialGroup()
                 .addContainerGap(568, Short.MAX_VALUE)
-                .addComponent(btnviewinspectsave)
+                .addComponent(btnViewInspectSave)
                 .addGap(16, 16, 16))
             .addGroup(viewinspectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(viewinspectLayout.createSequentialGroup()
@@ -517,8 +517,8 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         maintefilter.setFocusable(false);
         maintefilter.addActionListener(this::maintefilterActionPerformed);
 
-        jLabel32.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel32.setText("Filter Status:");
+        lblFilterStat.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblFilterStat.setText("Filter Status:");
 
         jTable3.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
@@ -546,11 +546,11 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         mainteapplyfilter.setFocusable(false);
         mainteapplyfilter.addActionListener(this::mainteapplyfilterActionPerformed);
 
-        jTextField18.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jTextField18.addActionListener(this::jTextField18ActionPerformed);
+        txtSearchMaintenance.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtSearchMaintenance.addActionListener(this::txtSearchMaintenanceActionPerformed);
 
-        jLabel33.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel33.setText("Search ID/Keyword");
+        lblSearchId.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblSearchId.setText("Search ID/Keyword");
 
         btndeleteinspect.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btndeleteinspect.setText("Delete");
@@ -571,13 +571,13 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btndeleteinspect))
                     .addGroup(viewmaintedialogLayout.createSequentialGroup()
-                        .addComponent(jLabel32)
+                        .addComponent(lblFilterStat)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(maintefilter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblSearchId, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtSearchMaintenance, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(mainteapplyfilter)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -587,10 +587,10 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewmaintedialogLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(viewmaintedialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel32)
+                    .addComponent(lblFilterStat)
                     .addComponent(maintefilter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel33)
-                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblSearchId)
+                    .addComponent(txtSearchMaintenance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(mainteapplyfilter))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -606,8 +606,8 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         inspectfilter.setFocusable(false);
         inspectfilter.addActionListener(this::inspectfilterActionPerformed);
 
-        jLabel30.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel30.setText("Filter Status:");
+        lblFilterStat1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblFilterStat1.setText("Filter Status:");
 
         jTable2.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
@@ -623,29 +623,29 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         ));
         jScrollPane7.setViewportView(jTable2);
 
-        btneditinspect1.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btneditinspect1.setText("Edit");
-        btneditinspect1.setFocusPainted(false);
-        btneditinspect1.setFocusable(false);
-        btneditinspect1.addActionListener(this::btneditinspect1ActionPerformed);
+        btnEditInspect.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnEditInspect.setText("Edit");
+        btnEditInspect.setFocusPainted(false);
+        btnEditInspect.setFocusable(false);
+        btnEditInspect.addActionListener(this::btnEditInspectActionPerformed);
 
-        inspectapplyfilter.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        inspectapplyfilter.setText("Apply Filter");
-        inspectapplyfilter.setFocusPainted(false);
-        inspectapplyfilter.setFocusable(false);
-        inspectapplyfilter.addActionListener(this::inspectapplyfilterActionPerformed);
+        InspectApplyFilter.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        InspectApplyFilter.setText("Apply Filter");
+        InspectApplyFilter.setFocusPainted(false);
+        InspectApplyFilter.setFocusable(false);
+        InspectApplyFilter.addActionListener(this::InspectApplyFilterActionPerformed);
 
-        jTextField17.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jTextField17.addActionListener(this::jTextField17ActionPerformed);
+        txtSearchInspect.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtSearchInspect.addActionListener(this::txtSearchInspectActionPerformed);
 
-        jLabel31.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel31.setText("Search ID/Keyword");
+        lblSearchId1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblSearchId1.setText("Search ID/Keyword");
 
-        btninpsectdelete.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btninpsectdelete.setText("Delete");
-        btninpsectdelete.setFocusPainted(false);
-        btninpsectdelete.setFocusable(false);
-        btninpsectdelete.addActionListener(this::btninpsectdeleteActionPerformed);
+        btnInpsectDelete.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnInpsectDelete.setText("Delete");
+        btnInpsectDelete.setFocusPainted(false);
+        btnInpsectDelete.setFocusable(false);
+        btnInpsectDelete.addActionListener(this::btnInpsectDeleteActionPerformed);
 
         javax.swing.GroupLayout viewinspectdialogLayout = new javax.swing.GroupLayout(viewinspectdialog.getContentPane());
         viewinspectdialog.getContentPane().setLayout(viewinspectdialogLayout);
@@ -656,19 +656,19 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                 .addGroup(viewinspectdialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 1481, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(viewinspectdialogLayout.createSequentialGroup()
-                        .addComponent(btneditinspect1)
+                        .addComponent(btnEditInspect)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btninpsectdelete))
+                        .addComponent(btnInpsectDelete))
                     .addGroup(viewinspectdialogLayout.createSequentialGroup()
-                        .addComponent(jLabel30)
+                        .addComponent(lblFilterStat1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(inspectfilter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblSearchId1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtSearchInspect, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(inspectapplyfilter)))
+                        .addComponent(InspectApplyFilter)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         viewinspectdialogLayout.setVerticalGroup(
@@ -676,31 +676,31 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewinspectdialogLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(viewinspectdialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel30)
+                    .addComponent(lblFilterStat1)
                     .addComponent(inspectfilter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel31)
-                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inspectapplyfilter))
+                    .addComponent(lblSearchId1)
+                    .addComponent(txtSearchInspect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(InspectApplyFilter))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(viewinspectdialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btneditinspect1)
-                    .addComponent(btninpsectdelete))
+                    .addComponent(btnEditInspect)
+                    .addComponent(btnInpsectDelete))
                 .addGap(18, 18, 18))
         );
 
-        damagerepapplyfilter.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        damagerepapplyfilter.setText("Apply Filter");
-        damagerepapplyfilter.setFocusPainted(false);
-        damagerepapplyfilter.setFocusable(false);
-        damagerepapplyfilter.addActionListener(this::damagerepapplyfilterActionPerformed);
+        DamageRepApplyFilter.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        DamageRepApplyFilter.setText("Apply Filter");
+        DamageRepApplyFilter.setFocusPainted(false);
+        DamageRepApplyFilter.setFocusable(false);
+        DamageRepApplyFilter.addActionListener(this::DamageRepApplyFilterActionPerformed);
 
-        btneditdamagarep.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btneditdamagarep.setText("Edit");
-        btneditdamagarep.setFocusPainted(false);
-        btneditdamagarep.setFocusable(false);
-        btneditdamagarep.addActionListener(this::btneditdamagarepActionPerformed);
+        btnEditDamageReport.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnEditDamageReport.setText("Edit");
+        btnEditDamageReport.setFocusPainted(false);
+        btnEditDamageReport.setFocusable(false);
+        btnEditDamageReport.addActionListener(this::btnEditDamageReportActionPerformed);
 
         jTable4.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
@@ -716,25 +716,25 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         ));
         jScrollPane9.setViewportView(jTable4);
 
-        jLabel34.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel34.setText("Filter Status:");
+        lblFilterStat2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblFilterStat2.setText("Filter Status:");
 
-        damagrepfilter.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        damagrepfilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All", "Pending", "Under Repair", "Resolved" }));
-        damagrepfilter.setFocusable(false);
-        damagrepfilter.addActionListener(this::damagrepfilterActionPerformed);
+        DamagReportFilter.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        DamagReportFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All", "Pending", "Under Repair", "Resolved" }));
+        DamagReportFilter.setFocusable(false);
+        DamagReportFilter.addActionListener(this::DamagReportFilterActionPerformed);
 
-        jLabel35.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel35.setText("Search ID/Keyword");
+        lblSearchId2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblSearchId2.setText("Search ID/Keyword");
 
-        jTextField20.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jTextField20.addActionListener(this::jTextField20ActionPerformed);
+        txtSearchDamageReport.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtSearchDamageReport.addActionListener(this::txtSearchDamageReportActionPerformed);
 
-        btndamagerepdelete.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btndamagerepdelete.setText("Delete");
-        btndamagerepdelete.setFocusPainted(false);
-        btndamagerepdelete.setFocusable(false);
-        btndamagerepdelete.addActionListener(this::btndamagerepdeleteActionPerformed);
+        btnDamageReportDelete.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnDamageReportDelete.setText("Delete");
+        btnDamageReportDelete.setFocusPainted(false);
+        btnDamageReportDelete.setFocusable(false);
+        btnDamageReportDelete.addActionListener(this::btnDamageReportDeleteActionPerformed);
 
         javax.swing.GroupLayout viewdamagereportdialogLayout = new javax.swing.GroupLayout(viewdamagereportdialog.getContentPane());
         viewdamagereportdialog.getContentPane().setLayout(viewdamagereportdialogLayout);
@@ -745,19 +745,19 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                 .addGroup(viewdamagereportdialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 1481, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(viewdamagereportdialogLayout.createSequentialGroup()
-                        .addComponent(btneditdamagarep)
+                        .addComponent(btnEditDamageReport)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btndamagerepdelete))
+                        .addComponent(btnDamageReportDelete))
                     .addGroup(viewdamagereportdialogLayout.createSequentialGroup()
-                        .addComponent(jLabel34)
+                        .addComponent(lblFilterStat2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(damagrepfilter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(DamagReportFilter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblSearchId2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtSearchDamageReport, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(damagerepapplyfilter)))
+                        .addComponent(DamageRepApplyFilter)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         viewdamagereportdialogLayout.setVerticalGroup(
@@ -765,17 +765,17 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewdamagereportdialogLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(viewdamagereportdialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel34)
-                    .addComponent(damagrepfilter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel35)
-                    .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(damagerepapplyfilter))
+                    .addComponent(lblFilterStat2)
+                    .addComponent(DamagReportFilter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblSearchId2)
+                    .addComponent(txtSearchDamageReport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DamageRepApplyFilter))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(viewdamagereportdialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btneditdamagarep)
-                    .addComponent(btndamagerepdelete))
+                    .addComponent(btnEditDamageReport)
+                    .addComponent(btnDamageReportDelete))
                 .addGap(18, 18, 18))
         );
 
@@ -855,11 +855,11 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         jTextField8.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         jPanel3.add(jTextField8);
 
-        btndamagereport.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btndamagereport.setText("Save");
-        btndamagereport.setFocusPainted(false);
-        btndamagereport.setFocusable(false);
-        btndamagereport.addActionListener(this::btndamagereportActionPerformed);
+        btnDamageReport.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnDamageReport.setText("Save");
+        btnDamageReport.setFocusPainted(false);
+        btnDamageReport.setFocusable(false);
+        btnDamageReport.addActionListener(this::btnDamageReportActionPerformed);
 
         javax.swing.GroupLayout viewdmgreportLayout = new javax.swing.GroupLayout(viewdmgreport.getContentPane());
         viewdmgreport.getContentPane().setLayout(viewdmgreportLayout);
@@ -867,7 +867,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
             viewdmgreportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewdmgreportLayout.createSequentialGroup()
                 .addContainerGap(318, Short.MAX_VALUE)
-                .addComponent(btndamagereport)
+                .addComponent(btnDamageReport)
                 .addGap(311, 311, 311))
             .addGroup(viewdmgreportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(viewdmgreportLayout.createSequentialGroup()
@@ -879,7 +879,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
             viewdmgreportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewdmgreportLayout.createSequentialGroup()
                 .addContainerGap(413, Short.MAX_VALUE)
-                .addComponent(btndamagereport)
+                .addComponent(btnDamageReport)
                 .addGap(42, 42, 42))
             .addGroup(viewdmgreportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(viewdmgreportLayout.createSequentialGroup()
@@ -888,11 +888,11 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                     .addContainerGap(74, Short.MAX_VALUE)))
         );
 
-        btnsaveviewmotorcycle.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btnsaveviewmotorcycle.setText("Save");
-        btnsaveviewmotorcycle.setFocusPainted(false);
-        btnsaveviewmotorcycle.setFocusable(false);
-        btnsaveviewmotorcycle.addActionListener(this::btnsaveviewmotorcycleActionPerformed);
+        btnSaveViewMotorcycle.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnSaveViewMotorcycle.setText("Save");
+        btnSaveViewMotorcycle.setFocusPainted(false);
+        btnSaveViewMotorcycle.setFocusable(false);
+        btnSaveViewMotorcycle.addActionListener(this::btnSaveViewMotorcycleActionPerformed);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
@@ -982,7 +982,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
             viewmmotorcycleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewmmotorcycleLayout.createSequentialGroup()
                 .addContainerGap(439, Short.MAX_VALUE)
-                .addComponent(btnsaveviewmotorcycle)
+                .addComponent(btnSaveViewMotorcycle)
                 .addGap(427, 427, 427))
             .addGroup(viewmmotorcycleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(viewmmotorcycleLayout.createSequentialGroup()
@@ -994,7 +994,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
             viewmmotorcycleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewmmotorcycleLayout.createSequentialGroup()
                 .addContainerGap(421, Short.MAX_VALUE)
-                .addComponent(btnsaveviewmotorcycle)
+                .addComponent(btnSaveViewMotorcycle)
                 .addGap(15, 15, 15))
             .addGroup(viewmmotorcycleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(viewmmotorcycleLayout.createSequentialGroup()
@@ -1047,56 +1047,56 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         ID.setFont(new java.awt.Font("Segoe UI Semilight", 0, 12)); // NOI18N
         ID.setText("Search ID:");
 
-        jTextField3.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jTextField3.addActionListener(this::jTextField3ActionPerformed);
+        txtSearch.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtSearch.addActionListener(this::txtSearchActionPerformed);
 
-        btnsearch.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btnsearch.setText("Search");
-        btnsearch.setFocusPainted(false);
-        btnsearch.setFocusable(false);
-        btnsearch.addActionListener(this::btnsearchActionPerformed);
+        btnSearch.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnSearch.setText("Search");
+        btnSearch.setFocusPainted(false);
+        btnSearch.setFocusable(false);
+        btnSearch.addActionListener(this::btnSearchActionPerformed);
 
-        btnviewinspectionrecord.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btnviewinspectionrecord.setText("View Inspection");
-        btnviewinspectionrecord.setFocusPainted(false);
-        btnviewinspectionrecord.setFocusable(false);
-        btnviewinspectionrecord.addActionListener(this::btnviewinspectionrecordActionPerformed);
+        btnViewInspectionRecord.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnViewInspectionRecord.setText("View Inspection");
+        btnViewInspectionRecord.setFocusPainted(false);
+        btnViewInspectionRecord.setFocusable(false);
+        btnViewInspectionRecord.addActionListener(this::btnViewInspectionRecordActionPerformed);
 
-        btnviewmaintenancerecord.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btnviewmaintenancerecord.setText("View Maintenance");
-        btnviewmaintenancerecord.setFocusPainted(false);
-        btnviewmaintenancerecord.setFocusable(false);
-        btnviewmaintenancerecord.addActionListener(this::btnviewmaintenancerecordActionPerformed);
+        btnViewMaintenanceRecord.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnViewMaintenanceRecord.setText("View Maintenance");
+        btnViewMaintenanceRecord.setFocusPainted(false);
+        btnViewMaintenanceRecord.setFocusable(false);
+        btnViewMaintenanceRecord.addActionListener(this::btnViewMaintenanceRecordActionPerformed);
 
-        btnviewdmg.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btnviewdmg.setText("View Damage Report");
-        btnviewdmg.setFocusPainted(false);
-        btnviewdmg.setFocusable(false);
-        btnviewdmg.addActionListener(this::btnviewdmgActionPerformed);
+        btnViewDmg.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnViewDmg.setText("View Damage Report");
+        btnViewDmg.setFocusPainted(false);
+        btnViewDmg.setFocusable(false);
+        btnViewDmg.addActionListener(this::btnViewDmgActionPerformed);
 
-        btndelete.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btndelete.setText("Delete");
-        btndelete.setFocusPainted(false);
-        btndelete.setFocusable(false);
-        btndelete.addActionListener(this::btndeleteActionPerformed);
+        btnDelete.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnDelete.setText("Delete");
+        btnDelete.setFocusPainted(false);
+        btnDelete.setFocusable(false);
+        btnDelete.addActionListener(this::btnDeleteActionPerformed);
 
-        btnrefresh.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btnrefresh.setText("Refresh");
-        btnrefresh.setFocusPainted(false);
-        btnrefresh.setFocusable(false);
-        btnrefresh.addActionListener(this::btnrefreshActionPerformed);
+        btnRefresh.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnRefresh.setText("Refresh");
+        btnRefresh.setFocusPainted(false);
+        btnRefresh.setFocusable(false);
+        btnRefresh.addActionListener(this::btnRefreshActionPerformed);
 
-        btnedit.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btnedit.setText("Edit");
-        btnedit.setFocusPainted(false);
-        btnedit.setFocusable(false);
-        btnedit.addActionListener(this::btneditActionPerformed);
+        btnEdit.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnEdit.setText("Edit");
+        btnEdit.setFocusPainted(false);
+        btnEdit.setFocusable(false);
+        btnEdit.addActionListener(this::btnEditActionPerformed);
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        jButton1.setText("View Further Details");
-        jButton1.setFocusPainted(false);
-        jButton1.setFocusable(false);
-        jButton1.addActionListener(this::jButton1ActionPerformed);
+        btnViewFurtherDetails.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnViewFurtherDetails.setText("View Further Details");
+        btnViewFurtherDetails.setFocusPainted(false);
+        btnViewFurtherDetails.setFocusable(false);
+        btnViewFurtherDetails.addActionListener(this::btnViewFurtherDetailsActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -1112,26 +1112,26 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(ID)
                             .addGap(18, 18, 18)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
-                            .addComponent(btnsearch))
+                            .addComponent(btnSearch))
                         .addComponent(recordsscrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 898, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(btnviewinspectionrecord, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnViewInspectionRecord, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(btndelete)
+                                .addComponent(btnDelete)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnrefresh)))
+                                .addComponent(btnRefresh)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnedit)
+                            .addComponent(btnEdit)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnviewmaintenancerecord, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnViewMaintenanceRecord, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnviewdmg, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnViewDmg, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(btnViewFurtherDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(112, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -1143,26 +1143,26 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(description)
                     .addComponent(ID)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnsearch))
+                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSearch))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(recordsscrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnviewinspectionrecord)
-                    .addComponent(btnviewmaintenancerecord)
-                    .addComponent(btnviewdmg)
-                    .addComponent(jButton1))
+                    .addComponent(btnViewInspectionRecord)
+                    .addComponent(btnViewMaintenanceRecord)
+                    .addComponent(btnViewDmg)
+                    .addComponent(btnViewFurtherDetails))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btndelete)
-                    .addComponent(btnrefresh)
-                    .addComponent(btnedit))
+                    .addComponent(btnDelete)
+                    .addComponent(btnRefresh)
+                    .addComponent(btnEdit))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnviewinspectionrecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewinspectionrecordActionPerformed
+    private void btnViewInspectionRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewInspectionRecordActionPerformed
         int selectedRow = recordstable.getSelectedRow();
     if (selectedRow == -1) {
         JOptionPane.showMessageDialog(this, "Please select a motorcycle row.", "Selection Required", JOptionPane.WARNING_MESSAGE);
@@ -1171,17 +1171,17 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
 
     selectedInspectionMotorId = recordstable.getValueAt(selectedRow, 0).toString().trim();
     
-    jTextField17.setText("");
+    txtSearchInspect.setText("");
     inspectfilter.setSelectedIndex(0);
 
-    inspectapplyfilterActionPerformed(evt);
-
+    InspectApplyFilterActionPerformed(evt);
+    
     viewinspectdialog.setSize(1520, 520);
     viewinspectdialog.setLocationRelativeTo(this);
     viewinspectdialog.setVisible(true);
-    }//GEN-LAST:event_btnviewinspectionrecordActionPerformed
+    }//GEN-LAST:event_btnViewInspectionRecordActionPerformed
 
-    private void btnviewmaintenancerecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewmaintenancerecordActionPerformed
+    private void btnViewMaintenanceRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewMaintenanceRecordActionPerformed
        int selectedRow = recordstable.getSelectedRow();
     if (selectedRow == -1) {
         JOptionPane.showMessageDialog(this, "Please select a motorcycle row.", "Selection Required", JOptionPane.WARNING_MESSAGE);
@@ -1189,7 +1189,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
     }
 
     selectedMaintenanceMotorId = recordstable.getValueAt(selectedRow, 0).toString().trim();
-    jTextField18.setText("");
+    txtSearchMaintenance.setText("");
     maintefilter.setSelectedIndex(0);
 
     mainteapplyfilterActionPerformed(evt);
@@ -1197,9 +1197,9 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
     viewmaintedialog.setSize(1520, 520);
     viewmaintedialog.setLocationRelativeTo(this);
     viewmaintedialog.setVisible(true);
-    }//GEN-LAST:event_btnviewmaintenancerecordActionPerformed
+    }//GEN-LAST:event_btnViewMaintenanceRecordActionPerformed
 
-    private void btnviewdmgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewdmgActionPerformed
+    private void btnViewDmgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDmgActionPerformed
       int selectedRow = recordstable.getSelectedRow();
     if (selectedRow == -1) {
         JOptionPane.showMessageDialog(this, "Please select a motorcycle row.", "Selection Required", JOptionPane.WARNING_MESSAGE);
@@ -1207,21 +1207,21 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
     }
 
     selectedDamageReportMotorId = recordstable.getValueAt(selectedRow, 0).toString().trim();
-    jTextField20.setText("");
-    damagrepfilter.setSelectedIndex(0);
+    txtSearchDamageReport.setText("");
+    DamagReportFilter.setSelectedIndex(0);
 
-    damagerepapplyfilterActionPerformed(evt);
+    DamageRepApplyFilterActionPerformed(evt);
 
     viewdamagereportdialog.setSize(1520, 520);
     viewdamagereportdialog.setLocationRelativeTo(this);
     viewdamagereportdialog.setVisible(true);
-    }//GEN-LAST:event_btnviewdmgActionPerformed
+    }//GEN-LAST:event_btnViewDmgActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-btnsearchActionPerformed(evt);
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
+    btnSearchActionPerformed(evt);
+    }//GEN-LAST:event_txtSearchActionPerformed
 
-    private void btneditinspect1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditinspect1ActionPerformed
+    private void btnEditInspectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditInspectActionPerformed
  int selectedRow = jTable2.getSelectedRow();
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(viewinspectdialog, "Please select an inspection record to edit.");
@@ -1267,7 +1267,7 @@ btnsearchActionPerformed(evt);
         }
         
         
-    }//GEN-LAST:event_btneditinspect1ActionPerformed
+    }//GEN-LAST:event_btnEditInspectActionPerformed
 
     private void btneditinspect2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditinspect2ActionPerformed
         int selectedRow = jTable3.getSelectedRow();
@@ -1312,7 +1312,7 @@ btnsearchActionPerformed(evt);
         }
     }//GEN-LAST:event_btneditinspect2ActionPerformed
 
-    private void btneditdamagarepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditdamagarepActionPerformed
+    private void btnEditDamageReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditDamageReportActionPerformed
         int selectedRow = jTable4.getSelectedRow();
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(viewdamagereportdialog, "Please select a damage report to edit.");
@@ -1352,13 +1352,13 @@ btnsearchActionPerformed(evt);
                 break;
             }
         }
-    }//GEN-LAST:event_btneditdamagarepActionPerformed
+    }//GEN-LAST:event_btnEditDamageReportActionPerformed
 
     private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox5ActionPerformed
 
-    private void btndamagereportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndamagereportActionPerformed
+    private void btnDamageReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDamageReportActionPerformed
         int selectedRow = jTable4.getSelectedRow();
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(viewdmgreport, "Please select a damage report row to save.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -1404,18 +1404,18 @@ btnsearchActionPerformed(evt);
             }
         }
 
-        damagerepapplyfilterActionPerformed(evt); 
+        DamageRepApplyFilterActionPerformed(evt);
         loadTableData();
         notifyDashboardRefresh(); 
         JOptionPane.showMessageDialog(viewdmgreport, "Damage report updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
         viewdmgreport.dispose();
-    }//GEN-LAST:event_btndamagereportActionPerformed
+    }//GEN-LAST:event_btnDamageReportActionPerformed
 
     private void txtmotoridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtmotoridActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtmotoridActionPerformed
 
-    private void btneditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditActionPerformed
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
        int selectedRow = recordstable.getSelectedRow();
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(this, "Please select a motorcycle from the table to edit.", "Selection Required", JOptionPane.WARNING_MESSAGE);
@@ -1452,13 +1452,13 @@ btnsearchActionPerformed(evt);
             viewmmotorcycle.setLocationRelativeTo(this);
             viewmmotorcycle.setVisible(true);
         }
-    }//GEN-LAST:event_btneditActionPerformed
+    }//GEN-LAST:event_btnEditActionPerformed
 
-    private void btnrefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrefreshActionPerformed
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
         loadTableData();
-    }//GEN-LAST:event_btnrefreshActionPerformed
+    }//GEN-LAST:event_btnRefreshActionPerformed
 
-    private void btndeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndeleteActionPerformed
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
    int selectedRow = recordstable.getSelectedRow();
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(this, "Please select a motorcycle row to delete.", "Selection Required", JOptionPane.WARNING_MESSAGE);
@@ -1480,9 +1480,9 @@ btnsearchActionPerformed(evt);
             notifyDashboardRefresh();
             JOptionPane.showMessageDialog(this, "Motorcycle " + id + " deleted successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
         }
-    }//GEN-LAST:event_btndeleteActionPerformed
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
-    private void btnsavemainteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsavemainteActionPerformed
+    private void btnSaveMainteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveMainteActionPerformed
     int tableRow = jTable3.getSelectedRow();
     if (tableRow == -1) return;
 
@@ -1534,9 +1534,9 @@ btnsearchActionPerformed(evt);
     } catch (NumberFormatException ex) {
         JOptionPane.showMessageDialog(viewmainte, "Please enter a valid numeric value for Maintenance Cost.", "Format Error", JOptionPane.ERROR_MESSAGE);
     }
-    }//GEN-LAST:event_btnsavemainteActionPerformed
+    }//GEN-LAST:event_btnSaveMainteActionPerformed
 
-    private void btnviewinspectsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewinspectsaveActionPerformed
+    private void btnViewInspectSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewInspectSaveActionPerformed
     int tableRow = jTable2.getSelectedRow();
     if (tableRow == -1) return;
 
@@ -1579,12 +1579,12 @@ btnsearchActionPerformed(evt);
         }
     }
 
-    inspectapplyfilterActionPerformed(evt); 
+    InspectApplyFilterActionPerformed(evt);
     loadTableData();
     notifyDashboardRefresh(); 
     JOptionPane.showMessageDialog(viewinspect, "Inspection record updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
     viewinspect.dispose();
-    }//GEN-LAST:event_btnviewinspectsaveActionPerformed
+    }//GEN-LAST:event_btnViewInspectSaveActionPerformed
 
     private void btndeleteinspectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndeleteinspectActionPerformed
         int selectedRow = jTable3.getSelectedRow();
@@ -1602,9 +1602,9 @@ btnsearchActionPerformed(evt);
         }
     }//GEN-LAST:event_btndeleteinspectActionPerformed
 
-    private void jTextField18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField18ActionPerformed
+    private void txtSearchMaintenanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchMaintenanceActionPerformed
         mainteapplyfilterActionPerformed(evt);
-    }//GEN-LAST:event_jTextField18ActionPerformed
+    }//GEN-LAST:event_txtSearchMaintenanceActionPerformed
 
     private void maintefilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maintefilterActionPerformed
         mainteapplyfilterActionPerformed(evt);
@@ -1618,7 +1618,7 @@ btnsearchActionPerformed(evt);
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void btninpsectdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninpsectdeleteActionPerformed
+    private void btnInpsectDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInpsectDeleteActionPerformed
         int selectedRow = jTable2.getSelectedRow();
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(viewinspectdialog, "Please select an inspection record to delete.", "Selection Required", JOptionPane.WARNING_MESSAGE);
@@ -1629,23 +1629,23 @@ btnsearchActionPerformed(evt);
         int confirm = JOptionPane.showConfirmDialog(viewinspectdialog, "Are you sure you want to delete inspection record " + recId + "?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
         if (confirm == JOptionPane.YES_OPTION) {
             TrimotoSystem.inspections.removeIf(r -> r.recordId.equalsIgnoreCase(recId));
-            inspectapplyfilterActionPerformed(evt);
+            InspectApplyFilterActionPerformed(evt);
             JOptionPane.showMessageDialog(viewinspectdialog, "Inspection record deleted.");
-        }    }//GEN-LAST:event_btninpsectdeleteActionPerformed
+        }    }//GEN-LAST:event_btnInpsectDeleteActionPerformed
 
     private void inspectfilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inspectfilterActionPerformed
-        inspectapplyfilterActionPerformed(evt);
+        InspectApplyFilterActionPerformed(evt);
     }//GEN-LAST:event_inspectfilterActionPerformed
 
-    private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
-        inspectapplyfilterActionPerformed(evt);
-    }//GEN-LAST:event_jTextField17ActionPerformed
+    private void txtSearchInspectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchInspectActionPerformed
+        InspectApplyFilterActionPerformed(evt);
+    }//GEN-LAST:event_txtSearchInspectActionPerformed
 
-    private void damagrepfilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_damagrepfilterActionPerformed
-        damagerepapplyfilterActionPerformed(evt);
-    }//GEN-LAST:event_damagrepfilterActionPerformed
+    private void DamagReportFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DamagReportFilterActionPerformed
+        DamageRepApplyFilterActionPerformed(evt);
+    }//GEN-LAST:event_DamagReportFilterActionPerformed
 
-    private void btndamagerepdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndamagerepdeleteActionPerformed
+    private void btnDamageReportDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDamageReportDeleteActionPerformed
         int selectedRow = jTable4.getSelectedRow();
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(viewdamagereportdialog, "Please select a damage report to delete.", "Selection Required", JOptionPane.WARNING_MESSAGE);
@@ -1656,16 +1656,16 @@ btnsearchActionPerformed(evt);
         int confirm = JOptionPane.showConfirmDialog(viewdamagereportdialog, "Are you sure you want to delete damage report " + recId + "?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
         if (confirm == JOptionPane.YES_OPTION) {
             TrimotoSystem.damageReports.removeIf(r -> r.contains("Report ID: " + recId));
-            damagerepapplyfilterActionPerformed(evt);
+            DamageRepApplyFilterActionPerformed(evt);
             JOptionPane.showMessageDialog(viewdamagereportdialog, "Damage report deleted.");
         }
-    }//GEN-LAST:event_btndamagerepdeleteActionPerformed
+    }//GEN-LAST:event_btnDamageReportDeleteActionPerformed
 
-    private void jTextField20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField20ActionPerformed
-        damagerepapplyfilterActionPerformed(evt);
-    }//GEN-LAST:event_jTextField20ActionPerformed
+    private void txtSearchDamageReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchDamageReportActionPerformed
+        DamageRepApplyFilterActionPerformed(evt);
+    }//GEN-LAST:event_txtSearchDamageReportActionPerformed
 
-    private void btnsaveviewmotorcycleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveviewmotorcycleActionPerformed
+    private void btnSaveViewMotorcycleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveViewMotorcycleActionPerformed
         int selectedRow = recordstable.getSelectedRow();
         if (selectedRow == -1) {
             viewmmotorcycle.dispose();
@@ -1716,11 +1716,11 @@ btnsearchActionPerformed(evt);
                 JOptionPane.showMessageDialog(viewmmotorcycle, "Please enter valid numeric values for Year, Mileage, Daily Rate, and Specifications.", "Input Error", JOptionPane.ERROR_MESSAGE);
             }
         }
-    }//GEN-LAST:event_btnsaveviewmotorcycleActionPerformed
+    }//GEN-LAST:event_btnSaveViewMotorcycleActionPerformed
 
     private void mainteapplyfilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainteapplyfilterActionPerformed
        String filterStatus = maintefilter.getSelectedItem() != null ? maintefilter.getSelectedItem().toString() : "All";
-    String keyword = jTextField18.getText().trim().toLowerCase();
+    String keyword = txtSearchMaintenance.getText().trim().toLowerCase();
 
     DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
     model.setRowCount(0);
@@ -1745,9 +1745,9 @@ btnsearchActionPerformed(evt);
     }
     }//GEN-LAST:event_mainteapplyfilterActionPerformed
 
-    private void inspectapplyfilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inspectapplyfilterActionPerformed
+    private void InspectApplyFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InspectApplyFilterActionPerformed
        String filterStatus = inspectfilter.getSelectedItem() != null ? inspectfilter.getSelectedItem().toString() : "All";
-    String keyword = jTextField17.getText().trim().toLowerCase();
+    String keyword = txtSearchInspect.getText().trim().toLowerCase();
 
     DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
     model.setRowCount(0);
@@ -1770,11 +1770,11 @@ btnsearchActionPerformed(evt);
             });
         }
     }
-    }//GEN-LAST:event_inspectapplyfilterActionPerformed
+    }//GEN-LAST:event_InspectApplyFilterActionPerformed
 
-    private void damagerepapplyfilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_damagerepapplyfilterActionPerformed
-        String filterStatus = damagrepfilter.getSelectedItem() != null ? damagrepfilter.getSelectedItem().toString() : "All";
-    String keyword = jTextField20.getText().trim().toLowerCase();
+    private void DamageRepApplyFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DamageRepApplyFilterActionPerformed
+        String filterStatus = DamagReportFilter.getSelectedItem() != null ? DamagReportFilter.getSelectedItem().toString() : "All";
+    String keyword = txtSearchDamageReport.getText().trim().toLowerCase();
 
     DefaultTableModel model = (DefaultTableModel) jTable4.getModel();
     model.setRowCount(0);
@@ -1808,10 +1808,10 @@ btnsearchActionPerformed(evt);
         }
     }
 
-    }//GEN-LAST:event_damagerepapplyfilterActionPerformed
+    }//GEN-LAST:event_DamageRepApplyFilterActionPerformed
 
-    private void btnsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsearchActionPerformed
-      String searchId = jTextField3.getText().trim();
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+      String searchId = txtSearch.getText().trim();
         if (searchId.isEmpty()) {
             loadTableData();
             return;
@@ -1827,9 +1827,9 @@ btnsearchActionPerformed(evt);
                 });
             }
         }
-    }//GEN-LAST:event_btnsearchActionPerformed
+    }//GEN-LAST:event_btnSearchActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnViewFurtherDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewFurtherDetailsActionPerformed
     int selectedRow = recordstable.getSelectedRow();
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(this, "Please select a motorcycle row to view details.", "Selection Required", JOptionPane.WARNING_MESSAGE);
@@ -1842,7 +1842,7 @@ btnsearchActionPerformed(evt);
         if (m != null) {
             showMotorcycleDetails(m);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnViewFurtherDetailsActionPerformed
 
     private void cmbtypesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbtypesActionPerformed
         String selectedType = cmbtypes.getSelectedItem() != null ? cmbtypes.getSelectedItem().toString().trim() : "Scooter";
@@ -1979,36 +1979,36 @@ btnsearchActionPerformed(evt);
    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> DamagReportFilter;
+    private javax.swing.JButton DamageRepApplyFilter;
     private javax.swing.JLabel ID;
+    private javax.swing.JButton InspectApplyFilter;
     private javax.swing.JLabel brand;
-    private javax.swing.JButton btndamagerepdelete;
-    private javax.swing.JButton btndamagereport;
-    private javax.swing.JButton btndelete;
+    private javax.swing.JButton btnDamageReport;
+    private javax.swing.JButton btnDamageReportDelete;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnEdit;
+    private javax.swing.JButton btnEditDamageReport;
+    private javax.swing.JButton btnEditInspect;
+    private javax.swing.JButton btnInpsectDelete;
+    private javax.swing.JButton btnRefresh;
+    private javax.swing.JButton btnSaveMainte;
+    private javax.swing.JButton btnSaveViewMotorcycle;
+    private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnViewDmg;
+    private javax.swing.JButton btnViewFurtherDetails;
+    private javax.swing.JButton btnViewInspectSave;
+    private javax.swing.JButton btnViewInspectionRecord;
+    private javax.swing.JButton btnViewMaintenanceRecord;
     private javax.swing.JButton btndeleteinspect;
-    private javax.swing.JButton btnedit;
-    private javax.swing.JButton btneditdamagarep;
-    private javax.swing.JButton btneditinspect1;
     private javax.swing.JButton btneditinspect2;
-    private javax.swing.JButton btninpsectdelete;
-    private javax.swing.JButton btnrefresh;
-    private javax.swing.JButton btnsavemainte;
-    private javax.swing.JButton btnsaveviewmotorcycle;
-    private javax.swing.JButton btnsearch;
-    private javax.swing.JButton btnviewdmg;
-    private javax.swing.JButton btnviewinspectionrecord;
-    private javax.swing.JButton btnviewinspectsave;
-    private javax.swing.JButton btnviewmaintenancerecord;
     private javax.swing.JComboBox<String> cbcondition;
     private javax.swing.JComboBox<String> cbheadlight;
     private javax.swing.JComboBox<String> cbinspectionphase;
     private javax.swing.JComboBox<String> cmbmotorcycle;
     private javax.swing.JComboBox<String> cmbtypes;
-    private javax.swing.JButton damagerepapplyfilter;
-    private javax.swing.JComboBox<String> damagrepfilter;
     private javax.swing.JLabel description;
-    private javax.swing.JButton inspectapplyfilter;
     private javax.swing.JComboBox<String> inspectfilter;
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox10;
     private javax.swing.JComboBox<String> jComboBox11;
@@ -2045,12 +2045,6 @@ btnsearchActionPerformed(evt);
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
@@ -2080,23 +2074,25 @@ btnsearchActionPerformed(evt);
     private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField20;
     private javax.swing.JTextField jTextField23;
     private javax.swing.JTextField jTextField24;
     private javax.swing.JTextField jTextField25;
     private javax.swing.JTextField jTextField26;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
+    private javax.swing.JLabel lblFilterStat;
+    private javax.swing.JLabel lblFilterStat1;
+    private javax.swing.JLabel lblFilterStat2;
     private javax.swing.JLabel lblInspectionphase;
     private javax.swing.JLabel lblMotorID;
+    private javax.swing.JLabel lblSearchId;
+    private javax.swing.JLabel lblSearchId1;
+    private javax.swing.JLabel lblSearchId2;
     private javax.swing.JLabel lbldailyrentalrate;
     private javax.swing.JLabel lblfuel;
     private javax.swing.JLabel lblheadlightandsignal;
@@ -2115,6 +2111,10 @@ btnsearchActionPerformed(evt);
     private javax.swing.JScrollPane recordsscrollpane;
     private javax.swing.JTable recordstable;
     private javax.swing.JLabel title;
+    private javax.swing.JTextField txtSearch;
+    private javax.swing.JTextField txtSearchDamageReport;
+    private javax.swing.JTextField txtSearchInspect;
+    private javax.swing.JTextField txtSearchMaintenance;
     private javax.swing.JTextField txtbrand;
     private javax.swing.JTextField txtdailyrentalrate;
     private javax.swing.JTextField txtfuel;

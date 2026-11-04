@@ -8,7 +8,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         UIManager.put("Button.focusWidth", 0);
         UIManager.put("ComboBox.drawFocusBackground", Boolean.FALSE);
         initComponents();
-        txtinspectdate.setText(java.time.LocalDate.now().toString());
+        txtInspectDate.setText(java.time.LocalDate.now().toString());
         refreshMotorcycleDropdown();
     }
 
@@ -17,7 +17,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         for (Motorcycle m : TrimotoSystem.motorcycles) {
             model.addElement(m.getId() + " - " + m.getBrand() + " " + m.getModel());
         }
-        cmbmotorcycle.setModel(model);
+        cmbMotorcycle.setModel(model);
     }
 
     @SuppressWarnings("unchecked")
@@ -29,38 +29,38 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         description = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         lblmotor = new javax.swing.JLabel();
-        cmbmotorcycle = new javax.swing.JComboBox<>();
+        cmbMotorcycle = new javax.swing.JComboBox<>();
         lblinspectiondate = new javax.swing.JLabel();
-        txtinspectdate = new javax.swing.JTextField();
+        txtInspectDate = new javax.swing.JTextField();
         lblInspectionphase = new javax.swing.JLabel();
-        cbinspectionphase = new javax.swing.JComboBox<>();
+        cbInspectionPhase = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtOdometer = new javax.swing.JTextField();
         lblfuel = new javax.swing.JLabel();
-        txtfuel = new javax.swing.JTextField();
+        txtFuel = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        cbTire = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cbBrake = new javax.swing.JComboBox<>();
         lblheadlightandsignal = new javax.swing.JLabel();
-        cbheadlight = new javax.swing.JComboBox<>();
+        cbHeadlight = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox6 = new javax.swing.JComboBox<>();
+        cbHorn = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
-        jComboBox5 = new javax.swing.JComboBox<>();
+        cbMirrors = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        cbMotoBody = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbEngineCondition = new javax.swing.JComboBox<>();
         lbloverallcondi = new javax.swing.JLabel();
-        cbcondition = new javax.swing.JComboBox<>();
+        cbOverallCondition = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
-        jComboBox7 = new javax.swing.JComboBox<>();
+        cbReadiness = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        btncreatedmgreport = new javax.swing.JButton();
-        btnsaveinspect = new javax.swing.JButton();
-        btnclear = new javax.swing.JButton();
+        txtInspectionNotes = new javax.swing.JTextField();
+        btnCreateDmgReport = new javax.swing.JButton();
+        btnSaveInspect = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
 
         javax.swing.GroupLayout viewinspectLayout = new javax.swing.GroupLayout(viewinspect.getContentPane());
         viewinspect.getContentPane().setLayout(viewinspectLayout);
@@ -90,146 +90,146 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         lblmotor.setText("Motorcycle:");
         jPanel1.add(lblmotor);
 
-        cmbmotorcycle.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        cmbmotorcycle.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cmbmotorcycle.setFocusable(false);
-        jPanel1.add(cmbmotorcycle);
+        cmbMotorcycle.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cmbMotorcycle.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbMotorcycle.setFocusable(false);
+        jPanel1.add(cmbMotorcycle);
 
         lblinspectiondate.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblinspectiondate.setText("Inspection Date:");
         jPanel1.add(lblinspectiondate);
 
-        txtinspectdate.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jPanel1.add(txtinspectdate);
+        txtInspectDate.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        jPanel1.add(txtInspectDate);
 
         lblInspectionphase.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblInspectionphase.setText("Inspection Phase:");
         jPanel1.add(lblInspectionphase);
 
-        cbinspectionphase.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        cbinspectionphase.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pre-Rental", "Post-Rental" }));
-        cbinspectionphase.setFocusable(false);
-        jPanel1.add(cbinspectionphase);
+        cbInspectionPhase.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbInspectionPhase.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pre-Rental", "Post-Rental" }));
+        cbInspectionPhase.setFocusable(false);
+        jPanel1.add(cbInspectionPhase);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel5.setText("Odometer Reading:");
         jPanel1.add(jLabel5);
 
-        jTextField1.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jPanel1.add(jTextField1);
+        txtOdometer.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        jPanel1.add(txtOdometer);
 
         lblfuel.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblfuel.setText("Fuel Level:");
         jPanel1.add(lblfuel);
 
-        txtfuel.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jPanel1.add(txtfuel);
+        txtFuel.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        jPanel1.add(txtFuel);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel2.setText("Tire Condition:");
         jPanel1.add(jLabel2);
 
-        jComboBox4.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Scratched", "Dented" }));
-        jComboBox4.setFocusable(false);
-        jPanel1.add(jComboBox4);
+        cbTire.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbTire.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Scratched", "Dented" }));
+        cbTire.setFocusable(false);
+        jPanel1.add(cbTire);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel3.setText("Brake Condition:");
         jPanel1.add(jLabel3);
 
-        jComboBox2.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Worn", "Damaged" }));
-        jComboBox2.setFocusable(false);
-        jPanel1.add(jComboBox2);
+        cbBrake.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbBrake.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Worn", "Damaged" }));
+        cbBrake.setFocusable(false);
+        jPanel1.add(cbBrake);
 
         lblheadlightandsignal.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblheadlightandsignal.setText("Headlight and Signal Lights:");
         jPanel1.add(lblheadlightandsignal);
 
-        cbheadlight.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        cbheadlight.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Functional", "Not Functional" }));
-        cbheadlight.setFocusable(false);
-        jPanel1.add(cbheadlight);
+        cbHeadlight.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbHeadlight.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Functional", "Not Functional" }));
+        cbHeadlight.setFocusable(false);
+        jPanel1.add(cbHeadlight);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel6.setText("Horns");
         jPanel1.add(jLabel6);
 
-        jComboBox6.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Functional", "Not Functional" }));
-        jComboBox6.setFocusable(false);
-        jPanel1.add(jComboBox6);
+        cbHorn.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbHorn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Functional", "Not Functional" }));
+        cbHorn.setFocusable(false);
+        jPanel1.add(cbHorn);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel8.setText("Mirrors");
         jPanel1.add(jLabel8);
 
-        jComboBox5.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Complete", "Missing", "Damaged" }));
-        jComboBox5.setFocusable(false);
-        jPanel1.add(jComboBox5);
+        cbMirrors.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbMirrors.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Complete", "Missing", "Damaged" }));
+        cbMirrors.setFocusable(false);
+        jPanel1.add(cbMirrors);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel4.setText("Motorcycle Body:");
         jPanel1.add(jLabel4);
 
-        jComboBox3.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Needs Repair" }));
-        jComboBox3.setFocusable(false);
-        jPanel1.add(jComboBox3);
+        cbMotoBody.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbMotoBody.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Needs Repair" }));
+        cbMotoBody.setFocusable(false);
+        jPanel1.add(cbMotoBody);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel1.setText("Engine Condition:");
         jPanel1.add(jLabel1);
 
-        jComboBox1.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Normal", "Unusual Noise", "Other Issue" }));
-        jComboBox1.setFocusable(false);
-        jPanel1.add(jComboBox1);
+        cbEngineCondition.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbEngineCondition.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Normal", "Unusual Noise", "Other Issue" }));
+        cbEngineCondition.setFocusable(false);
+        jPanel1.add(cbEngineCondition);
 
         lbloverallcondi.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lbloverallcondi.setText("Overall Condition:");
         jPanel1.add(lbloverallcondi);
 
-        cbcondition.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        cbcondition.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Minor Damage", "Needs Repair", "Unsafe" }));
-        cbcondition.setFocusable(false);
-        jPanel1.add(cbcondition);
+        cbOverallCondition.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbOverallCondition.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Good", "Minor Damage", "Needs Repair", "Unsafe" }));
+        cbOverallCondition.setFocusable(false);
+        jPanel1.add(cbOverallCondition);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel7.setText("Readiness Status:");
         jPanel1.add(jLabel7);
 
-        jComboBox7.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ready", "Not Ready" }));
-        jComboBox7.setFocusable(false);
-        jPanel1.add(jComboBox7);
+        cbReadiness.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbReadiness.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ready", "Not Ready" }));
+        cbReadiness.setFocusable(false);
+        jPanel1.add(cbReadiness);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel9.setText("Inspection Notes:");
         jPanel1.add(jLabel9);
 
-        jTextField2.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jPanel1.add(jTextField2);
+        txtInspectionNotes.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        jPanel1.add(txtInspectionNotes);
 
-        btncreatedmgreport.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btncreatedmgreport.setText("Create Damage Report");
-        btncreatedmgreport.setFocusPainted(false);
-        btncreatedmgreport.setFocusable(false);
-        btncreatedmgreport.addActionListener(this::btncreatedmgreportActionPerformed);
+        btnCreateDmgReport.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnCreateDmgReport.setText("Create Damage Report");
+        btnCreateDmgReport.setFocusPainted(false);
+        btnCreateDmgReport.setFocusable(false);
+        btnCreateDmgReport.addActionListener(this::btnCreateDmgReportActionPerformed);
 
-        btnsaveinspect.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btnsaveinspect.setText("Save Inspection");
-        btnsaveinspect.setFocusPainted(false);
-        btnsaveinspect.setFocusable(false);
-        btnsaveinspect.addActionListener(this::btnsaveinspectActionPerformed);
+        btnSaveInspect.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnSaveInspect.setText("Save Inspection");
+        btnSaveInspect.setFocusPainted(false);
+        btnSaveInspect.setFocusable(false);
+        btnSaveInspect.addActionListener(this::btnSaveInspectActionPerformed);
 
-        btnclear.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btnclear.setText("Clear");
-        btnclear.setFocusPainted(false);
-        btnclear.setFocusable(false);
-        btnclear.addActionListener(this::btnclearActionPerformed);
+        btnClear.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnClear.setText("Clear");
+        btnClear.setFocusPainted(false);
+        btnClear.setFocusable(false);
+        btnClear.addActionListener(this::btnClearActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -244,11 +244,11 @@ public class MotorcycleInspection extends javax.swing.JPanel {
                             .addComponent(title)
                             .addComponent(description)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnclear)
+                                .addComponent(btnClear)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btncreatedmgreport, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnCreateDmgReport, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnsaveinspect)))
+                                .addComponent(btnSaveInspect)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -262,48 +262,48 @@ public class MotorcycleInspection extends javax.swing.JPanel {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btncreatedmgreport)
-                    .addComponent(btnsaveinspect)
-                    .addComponent(btnclear)))
+                    .addComponent(btnCreateDmgReport)
+                    .addComponent(btnSaveInspect)
+                    .addComponent(btnClear)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btncreatedmgreportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncreatedmgreportActionPerformed
+    private void btnCreateDmgReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateDmgReportActionPerformed
         javax.swing.JDialog popupDialog = new javax.swing.JDialog(javax.swing.SwingUtilities.getWindowAncestor(this), "Damage Report", java.awt.Dialog.ModalityType.APPLICATION_MODAL);
         popupDialog.add(new ViewDamageReport());
         popupDialog.pack();
         popupDialog.setLocationRelativeTo(this);
         popupDialog.setVisible(true);
-    }//GEN-LAST:event_btncreatedmgreportActionPerformed
+    }//GEN-LAST:event_btnCreateDmgReportActionPerformed
 
-    private void btnsaveinspectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveinspectActionPerformed
-        if (cmbmotorcycle.getSelectedItem() == null) {
+    private void btnSaveInspectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveInspectActionPerformed
+        if (cmbMotorcycle.getSelectedItem() == null) {
             JOptionPane.showMessageDialog(this, "Please select a motorcycle.", "Input Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
-        String date = txtinspectdate.getText().trim();
-        String odometer = jTextField1.getText().trim();
-        String fuel = txtfuel.getText().trim();
+        String date = txtInspectDate.getText().trim();
+        String odometer = txtOdometer.getText().trim();
+        String fuel = txtFuel.getText().trim();
 
         if (date.isEmpty() || odometer.isEmpty() || fuel.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please fill in all required inspection fields (Inspection Date, Odometer, Fuel Level). Only Inspection Notes can be left blank.", "Input Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
-        String selectedItem = cmbmotorcycle.getSelectedItem().toString();
+        String selectedItem = cmbMotorcycle.getSelectedItem().toString();
         String motorId = selectedItem.split(" - ")[0];
-        String phase = cbinspectionphase.getSelectedItem().toString();
-        String tires = jComboBox4.getSelectedItem().toString();
-        String brakes = jComboBox2.getSelectedItem().toString();
-        String headlight = cbheadlight.getSelectedItem().toString();
-        String horns = jComboBox6.getSelectedItem().toString();
-        String mirrors = jComboBox5.getSelectedItem().toString();
-        String body = jComboBox3.getSelectedItem().toString();
-        String engine = jComboBox1.getSelectedItem().toString();
-        String condition = cbcondition.getSelectedItem().toString();
-        String readiness = jComboBox7.getSelectedItem().toString();
-        String notes = jTextField2.getText().trim(); // Optional
+        String phase = cbInspectionPhase.getSelectedItem().toString();
+        String tires = cbTire.getSelectedItem().toString();
+        String brakes = cbBrake.getSelectedItem().toString();
+        String headlight = cbHeadlight.getSelectedItem().toString();
+        String horns = cbHorn.getSelectedItem().toString();
+        String mirrors = cbMirrors.getSelectedItem().toString();
+        String body = cbMotoBody.getSelectedItem().toString();
+        String engine = cbEngineCondition.getSelectedItem().toString();
+        String condition = cbOverallCondition.getSelectedItem().toString();
+        String readiness = cbReadiness.getSelectedItem().toString();
+        String notes = txtInspectionNotes.getText().trim(); // Optional
 
         String insId = "INS-" + (TrimotoSystem.inspections.size() + 1001);
         TrimotoSystem.inspections.add(new InspectionRecord(
@@ -328,33 +328,33 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         }
 
         JOptionPane.showMessageDialog(this, "Inspection Saved Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-        btnclearActionPerformed(new java.awt.event.ActionEvent(btnclear, java.awt.event.ActionEvent.ACTION_PERFORMED, null));
+        btnClearActionPerformed(new java.awt.event.ActionEvent(btnClear, java.awt.event.ActionEvent.ACTION_PERFORMED, null));
     
-    }//GEN-LAST:event_btnsaveinspectActionPerformed
+    }//GEN-LAST:event_btnSaveInspectActionPerformed
 
-    private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclearActionPerformed
-        txtinspectdate.setText(java.time.LocalDate.now().toString());
-        txtfuel.setText("");
-        jTextField1.setText("");
-        jTextField2.setText("");    }//GEN-LAST:event_btnclearActionPerformed
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        txtInspectDate.setText(java.time.LocalDate.now().toString());
+        txtFuel.setText("");
+        txtOdometer.setText("");
+        txtInspectionNotes.setText("");    }//GEN-LAST:event_btnClearActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnclear;
-    private javax.swing.JButton btncreatedmgreport;
-    private javax.swing.JButton btnsaveinspect;
-    private javax.swing.JComboBox<String> cbcondition;
-    private javax.swing.JComboBox<String> cbheadlight;
-    private javax.swing.JComboBox<String> cbinspectionphase;
-    private javax.swing.JComboBox<String> cmbmotorcycle;
+    private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnCreateDmgReport;
+    private javax.swing.JButton btnSaveInspect;
+    private javax.swing.JComboBox<String> cbBrake;
+    private javax.swing.JComboBox<String> cbEngineCondition;
+    private javax.swing.JComboBox<String> cbHeadlight;
+    private javax.swing.JComboBox<String> cbHorn;
+    private javax.swing.JComboBox<String> cbInspectionPhase;
+    private javax.swing.JComboBox<String> cbMirrors;
+    private javax.swing.JComboBox<String> cbMotoBody;
+    private javax.swing.JComboBox<String> cbOverallCondition;
+    private javax.swing.JComboBox<String> cbReadiness;
+    private javax.swing.JComboBox<String> cbTire;
+    private javax.swing.JComboBox<String> cmbMotorcycle;
     private javax.swing.JLabel description;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -365,8 +365,6 @@ public class MotorcycleInspection extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel lblInspectionphase;
     private javax.swing.JLabel lblfuel;
     private javax.swing.JLabel lblheadlightandsignal;
@@ -374,8 +372,10 @@ public class MotorcycleInspection extends javax.swing.JPanel {
     private javax.swing.JLabel lblmotor;
     private javax.swing.JLabel lbloverallcondi;
     private javax.swing.JLabel title;
-    private javax.swing.JTextField txtfuel;
-    private javax.swing.JTextField txtinspectdate;
+    private javax.swing.JTextField txtFuel;
+    private javax.swing.JTextField txtInspectDate;
+    private javax.swing.JTextField txtInspectionNotes;
+    private javax.swing.JTextField txtOdometer;
     private javax.swing.JDialog viewinspect;
     // End of variables declaration//GEN-END:variables
 }

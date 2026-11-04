@@ -8,7 +8,7 @@ public class RentalProcessing extends javax.swing.JPanel {
         UIManager.put("Button.focusWidth", 0);
         UIManager.put("ComboBox.drawFocusBackground", Boolean.FALSE);
         initComponents();
-        txtreturn.setText("");
+        txtReturnDate.setText("");
         refreshMotorcycleDropdown();
     }
 
@@ -19,7 +19,7 @@ public class RentalProcessing extends javax.swing.JPanel {
                 model.addElement(m.getId() + " - " + m.getBrand() + " " + m.getModel() + " (₱" + m.getDailyRate() + "/day)");
             }
         }
-        motor.setModel(model);
+        cbMotor.setModel(model);
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -28,31 +28,31 @@ public class RentalProcessing extends javax.swing.JPanel {
         title = new javax.swing.JLabel();
         description = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        lblmotor = new javax.swing.JLabel();
-        motor = new javax.swing.JComboBox<>();
-        lblrenter = new javax.swing.JLabel();
-        txtname = new javax.swing.JTextField();
-        lblage = new javax.swing.JLabel();
-        txtage = new javax.swing.JTextField();
-        lbladdress = new javax.swing.JLabel();
-        txtaddress = new javax.swing.JTextField();
+        lblMotor = new javax.swing.JLabel();
+        cbMotor = new javax.swing.JComboBox<>();
+        lblRenter = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
+        lblAge = new javax.swing.JLabel();
+        txtAge = new javax.swing.JTextField();
+        lblAddress = new javax.swing.JLabel();
+        txtAddress = new javax.swing.JTextField();
         lblnumber = new javax.swing.JLabel();
-        txtcontnumber = new javax.swing.JTextField();
+        txtContNumber = new javax.swing.JTextField();
         lblduration = new javax.swing.JLabel();
-        lbldura = new javax.swing.JTextField();
+        txtRentalDays = new javax.swing.JTextField();
         driverlicense = new javax.swing.JLabel();
-        txtdriverslicense = new javax.swing.JTextField();
+        txtDriversLicense = new javax.swing.JTextField();
         lblamount = new javax.swing.JLabel();
-        txtamount = new javax.swing.JTextField();
+        txtAmount = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         cbpartial = new javax.swing.JCheckBox();
         cbfull = new javax.swing.JCheckBox();
-        lblexpectedreturn = new javax.swing.JLabel();
-        txtreturn = new javax.swing.JTextField();
-        btnprocessrental = new javax.swing.JButton();
-        calculateCost = new javax.swing.JButton();
-        btnclear = new javax.swing.JButton();
+        lblExpectedReturn = new javax.swing.JLabel();
+        txtReturnDate = new javax.swing.JTextField();
+        btnProcessRental = new javax.swing.JButton();
+        btnCalculateCost = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(900, 550));
 
@@ -66,65 +66,65 @@ public class RentalProcessing extends javax.swing.JPanel {
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
         jPanel1.setLayout(new java.awt.GridLayout(10, 2, 15, 15));
 
-        lblmotor.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        lblmotor.setText("Motorcycle:");
-        jPanel1.add(lblmotor);
+        lblMotor.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblMotor.setText("Motorcycle:");
+        jPanel1.add(lblMotor);
 
-        motor.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        motor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        motor.setFocusable(false);
-        motor.addActionListener(this::motorActionPerformed);
-        jPanel1.add(motor);
+        cbMotor.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        cbMotor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbMotor.setFocusable(false);
+        cbMotor.addActionListener(this::cbMotorActionPerformed);
+        jPanel1.add(cbMotor);
 
-        lblrenter.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        lblrenter.setText("Renter Name:");
-        jPanel1.add(lblrenter);
+        lblRenter.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblRenter.setText("Renter Name:");
+        jPanel1.add(lblRenter);
 
-        txtname.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jPanel1.add(txtname);
+        txtName.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        jPanel1.add(txtName);
 
-        lblage.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        lblage.setText("Age:");
-        jPanel1.add(lblage);
+        lblAge.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblAge.setText("Age:");
+        jPanel1.add(lblAge);
 
-        txtage.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jPanel1.add(txtage);
+        txtAge.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        jPanel1.add(txtAge);
 
-        lbladdress.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        lbladdress.setText("Address:");
-        jPanel1.add(lbladdress);
+        lblAddress.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblAddress.setText("Address:");
+        jPanel1.add(lblAddress);
 
-        txtaddress.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        txtaddress.addActionListener(this::txtaddressActionPerformed);
-        jPanel1.add(txtaddress);
+        txtAddress.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        txtAddress.addActionListener(this::txtAddressActionPerformed);
+        jPanel1.add(txtAddress);
 
         lblnumber.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblnumber.setText("Contact Number:");
         jPanel1.add(lblnumber);
 
-        txtcontnumber.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jPanel1.add(txtcontnumber);
+        txtContNumber.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        jPanel1.add(txtContNumber);
 
         lblduration.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblduration.setText("Rental Duration (Days):");
         jPanel1.add(lblduration);
 
-        lbldura.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jPanel1.add(lbldura);
+        txtRentalDays.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        jPanel1.add(txtRentalDays);
 
         driverlicense.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         driverlicense.setText("Driver's License #:");
         jPanel1.add(driverlicense);
 
-        txtdriverslicense.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jPanel1.add(txtdriverslicense);
+        txtDriversLicense.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        jPanel1.add(txtDriversLicense);
 
         lblamount.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblamount.setText("Enter Amount:");
         jPanel1.add(lblamount);
 
-        txtamount.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jPanel1.add(txtamount);
+        txtAmount.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        jPanel1.add(txtAmount);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jPanel1.add(jLabel6);
@@ -144,30 +144,30 @@ public class RentalProcessing extends javax.swing.JPanel {
 
         jPanel1.add(jPanel3);
 
-        lblexpectedreturn.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        lblexpectedreturn.setText("Expected Return Date: ");
-        jPanel1.add(lblexpectedreturn);
+        lblExpectedReturn.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblExpectedReturn.setText("Expected Return Date: ");
+        jPanel1.add(lblExpectedReturn);
 
-        txtreturn.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
-        jPanel1.add(txtreturn);
+        txtReturnDate.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
+        jPanel1.add(txtReturnDate);
 
-        btnprocessrental.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btnprocessrental.setText("Process Rental");
-        btnprocessrental.setFocusPainted(false);
-        btnprocessrental.setFocusable(false);
-        btnprocessrental.addActionListener(this::btnprocessrentalActionPerformed);
+        btnProcessRental.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnProcessRental.setText("Process Rental");
+        btnProcessRental.setFocusPainted(false);
+        btnProcessRental.setFocusable(false);
+        btnProcessRental.addActionListener(this::btnProcessRentalActionPerformed);
 
-        calculateCost.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        calculateCost.setText("Calculate Cost");
-        calculateCost.setFocusPainted(false);
-        calculateCost.setFocusable(false);
-        calculateCost.addActionListener(this::calculateCostActionPerformed);
+        btnCalculateCost.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnCalculateCost.setText("Calculate Cost");
+        btnCalculateCost.setFocusPainted(false);
+        btnCalculateCost.setFocusable(false);
+        btnCalculateCost.addActionListener(this::btnCalculateCostActionPerformed);
 
-        btnclear.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btnclear.setText("Clear");
-        btnclear.setFocusPainted(false);
-        btnclear.setFocusable(false);
-        btnclear.addActionListener(this::btnclearActionPerformed);
+        btnClear.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btnClear.setText("Clear");
+        btnClear.setFocusPainted(false);
+        btnClear.setFocusable(false);
+        btnClear.addActionListener(this::btnClearActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -183,11 +183,11 @@ public class RentalProcessing extends javax.swing.JPanel {
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnclear)
+                        .addComponent(btnClear)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(calculateCost)
+                        .addComponent(btnCalculateCost)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnprocessrental)
+                        .addComponent(btnProcessRental)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 882, Short.MAX_VALUE))
                 .addContainerGap())
@@ -203,27 +203,27 @@ public class RentalProcessing extends javax.swing.JPanel {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnprocessrental)
-                    .addComponent(calculateCost)
-                    .addComponent(btnclear))
+                    .addComponent(btnProcessRental)
+                    .addComponent(btnCalculateCost)
+                    .addComponent(btnClear))
                 .addContainerGap(76, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnprocessrentalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnprocessrentalActionPerformed
-        if (motor.getSelectedItem() == null) {
+    private void btnProcessRentalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessRentalActionPerformed
+        if (cbMotor.getSelectedItem() == null) {
             JOptionPane.showMessageDialog(this, "No available motorcycle selected.", "Input Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
-        String renter = txtname.getText().trim();
-        String age = txtage.getText().trim();
-        String address = txtaddress.getText().trim();
-        String contactNumber = txtcontnumber.getText().trim();
-        String daysStr = lbldura.getText().trim();
-        String licenseNumber = txtdriverslicense.getText().trim();
-        String amountStr = txtamount.getText().trim();
-        String returnDate = txtreturn.getText().trim();
+        String renter = txtName.getText().trim();
+        String age = txtAge.getText().trim();
+        String address = txtAddress.getText().trim();
+        String contactNumber = txtContNumber.getText().trim();
+        String daysStr = txtRentalDays.getText().trim();
+        String licenseNumber = txtDriversLicense.getText().trim();
+        String amountStr = txtAmount.getText().trim();
+        String returnDate = txtReturnDate.getText().trim();
 
         if (renter.isEmpty() || age.isEmpty() || address.isEmpty() || contactNumber.isEmpty() || 
             daysStr.isEmpty() || licenseNumber.isEmpty() || amountStr.isEmpty()) {
@@ -234,7 +234,7 @@ public class RentalProcessing extends javax.swing.JPanel {
         try {
             int days = Integer.parseInt(daysStr);
             double payment = Double.parseDouble(amountStr);
-            String motorId = motor.getSelectedItem().toString().split(" - ")[0];
+            String motorId = cbMotor.getSelectedItem().toString().split(" - ")[0];
 
             String paymentType = cbpartial.isSelected() ? "Partial" : (cbfull.isSelected() ? "Full" : "Standard");
 
@@ -265,27 +265,27 @@ public class RentalProcessing extends javax.swing.JPanel {
 
             JOptionPane.showMessageDialog(this, "Rental Processed Successfully!\nTransaction ID: " + transId + "\nTotal Cost: ₱" + totalCost, "Success", JOptionPane.INFORMATION_MESSAGE);
 
-            btnclearActionPerformed(evt);
+            btnClearActionPerformed(evt);
             refreshMotorcycleDropdown();
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "Please enter valid numbers for Age, Rental Duration, and Payment Amount.", "Format Error", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_btnprocessrentalActionPerformed
+    }//GEN-LAST:event_btnProcessRentalActionPerformed
 
-    private void txtaddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtaddressActionPerformed
+    private void txtAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddressActionPerformed
 
-    }//GEN-LAST:event_txtaddressActionPerformed
+    }//GEN-LAST:event_txtAddressActionPerformed
 
-    private void calculateCostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateCostActionPerformed
-      if (motor.getSelectedItem() == null) {
+    private void btnCalculateCostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateCostActionPerformed
+      if (cbMotor.getSelectedItem() == null) {
             JOptionPane.showMessageDialog(this, "Please select a motorcycle.");
             return;
         }
 
         try {
-            String selected = motor.getSelectedItem().toString();
+            String selected = cbMotor.getSelectedItem().toString();
             String motorId = selected.split(" - ")[0].trim();
-            int days = Integer.parseInt(lbldura.getText().trim());
+            int days = Integer.parseInt(txtRentalDays.getText().trim());
 
             Motorcycle m = TrimotoSystem.findMotorcycleById(motorId);
             if (m != null) {
@@ -295,8 +295,8 @@ public class RentalProcessing extends javax.swing.JPanel {
 
                 double totalCost = m.calculateRentalCost(days);
 
-                if (txtreturn.getText().trim().isEmpty()) {
-                    txtreturn.setText(java.time.LocalDate.now().plusDays(days).toString());
+                if (txtReturnDate.getText().trim().isEmpty()) {
+                    txtReturnDate.setText(java.time.LocalDate.now().plusDays(days).toString());
                 }
 
                 JOptionPane.showMessageDialog(this, "Calculated Total Rental Cost: ₱" + totalCost + "\n\nPlease enter the payment amount received in the 'Enter Amount' field.", "Rental Cost Calculation", JOptionPane.INFORMATION_MESSAGE);
@@ -304,7 +304,7 @@ public class RentalProcessing extends javax.swing.JPanel {
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "Please enter a valid number of rental days.", "Input Error", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_calculateCostActionPerformed
+    }//GEN-LAST:event_btnCalculateCostActionPerformed
 
     private void cbpartialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbpartialActionPerformed
         if (cbpartial.isSelected()) {
@@ -318,29 +318,30 @@ public class RentalProcessing extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_cbfullActionPerformed
 
-    private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclearActionPerformed
-    txtname.setText("");
-        txtage.setText("");
-        txtaddress.setText("");
-        txtcontnumber.setText("");
-        lbldura.setText("");
-        txtdriverslicense.setText("");
-        txtamount.setText("");
-        txtreturn.setText("");
-        txtreturn.setText("");
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        txtName.setText("");
+        txtAge.setText("");
+        txtAddress.setText("");
+        txtContNumber.setText("");
+        txtRentalDays.setText("");
+        txtDriversLicense.setText("");
+        txtAmount.setText("");
+        txtReturnDate.setText("");
+        txtReturnDate.setText("");
         cbpartial.setSelected(false);
         cbfull.setSelected(false);
-     }//GEN-LAST:event_btnclearActionPerformed
+     }//GEN-LAST:event_btnClearActionPerformed
 
-    private void motorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_motorActionPerformed
+    private void cbMotorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbMotorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_motorActionPerformed
+    }//GEN-LAST:event_cbMotorActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnclear;
-    private javax.swing.JButton btnprocessrental;
-    private javax.swing.JButton calculateCost;
+    private javax.swing.JButton btnCalculateCost;
+    private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnProcessRental;
+    private javax.swing.JComboBox<String> cbMotor;
     private javax.swing.JCheckBox cbfull;
     private javax.swing.JCheckBox cbpartial;
     private javax.swing.JLabel description;
@@ -348,23 +349,22 @@ public class RentalProcessing extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JLabel lbladdress;
-    private javax.swing.JLabel lblage;
+    private javax.swing.JLabel lblAddress;
+    private javax.swing.JLabel lblAge;
+    private javax.swing.JLabel lblExpectedReturn;
+    private javax.swing.JLabel lblMotor;
+    private javax.swing.JLabel lblRenter;
     private javax.swing.JLabel lblamount;
-    private javax.swing.JTextField lbldura;
     private javax.swing.JLabel lblduration;
-    private javax.swing.JLabel lblexpectedreturn;
-    private javax.swing.JLabel lblmotor;
     private javax.swing.JLabel lblnumber;
-    private javax.swing.JLabel lblrenter;
-    private javax.swing.JComboBox<String> motor;
     private javax.swing.JLabel title;
-    private javax.swing.JTextField txtaddress;
-    private javax.swing.JTextField txtage;
-    private javax.swing.JTextField txtamount;
-    private javax.swing.JTextField txtcontnumber;
-    private javax.swing.JTextField txtdriverslicense;
-    private javax.swing.JTextField txtname;
-    private javax.swing.JTextField txtreturn;
+    private javax.swing.JTextField txtAddress;
+    private javax.swing.JTextField txtAge;
+    private javax.swing.JTextField txtAmount;
+    private javax.swing.JTextField txtContNumber;
+    private javax.swing.JTextField txtDriversLicense;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtRentalDays;
+    private javax.swing.JTextField txtReturnDate;
     // End of variables declaration//GEN-END:variables
 }

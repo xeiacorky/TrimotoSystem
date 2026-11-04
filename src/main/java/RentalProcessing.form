@@ -33,11 +33,11 @@
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="btnclear" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnClear" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="calculateCost" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnCalculateCost" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnprocessrental" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnProcessRental" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Component id="jPanel1" pref="882" max="32767" attributes="0"/>
@@ -57,9 +57,9 @@
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnprocessrental" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="calculateCost" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnclear" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnProcessRental" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnCalculateCost" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnClear" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="76" max="32767" attributes="0"/>
           </Group>
@@ -102,7 +102,7 @@
         <Property name="verticalGap" type="int" value="15"/>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="lblmotor">
+        <Component class="javax.swing.JLabel" name="lblMotor">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semibold" size="12" style="0"/>
@@ -110,7 +110,7 @@
             <Property name="text" type="java.lang.String" value="Motorcycle:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="motor">
+        <Component class="javax.swing.JComboBox" name="cbMotor">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nirmala UI" size="12" style="0"/>
@@ -126,13 +126,13 @@
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="motorActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbMotorActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblrenter">
+        <Component class="javax.swing.JLabel" name="lblRenter">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semibold" size="12" style="0"/>
@@ -140,14 +140,14 @@
             <Property name="text" type="java.lang.String" value="Renter Name:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtname">
+        <Component class="javax.swing.JTextField" name="txtName">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nirmala UI" size="12" style="0"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblage">
+        <Component class="javax.swing.JLabel" name="lblAge">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semibold" size="12" style="0"/>
@@ -155,14 +155,14 @@
             <Property name="text" type="java.lang.String" value="Age:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtage">
+        <Component class="javax.swing.JTextField" name="txtAge">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nirmala UI" size="12" style="0"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lbladdress">
+        <Component class="javax.swing.JLabel" name="lblAddress">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semibold" size="12" style="0"/>
@@ -170,14 +170,14 @@
             <Property name="text" type="java.lang.String" value="Address:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtaddress">
+        <Component class="javax.swing.JTextField" name="txtAddress">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nirmala UI" size="12" style="0"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtaddressActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtAddressActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblnumber">
@@ -188,7 +188,7 @@
             <Property name="text" type="java.lang.String" value="Contact Number:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtcontnumber">
+        <Component class="javax.swing.JTextField" name="txtContNumber">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nirmala UI" size="12" style="0"/>
@@ -203,7 +203,7 @@
             <Property name="text" type="java.lang.String" value="Rental Duration (Days):"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="lbldura">
+        <Component class="javax.swing.JTextField" name="txtRentalDays">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nirmala UI" size="12" style="0"/>
@@ -218,7 +218,7 @@
             <Property name="text" type="java.lang.String" value="Driver&apos;s License #:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtdriverslicense">
+        <Component class="javax.swing.JTextField" name="txtDriversLicense">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nirmala UI" size="12" style="0"/>
@@ -233,7 +233,7 @@
             <Property name="text" type="java.lang.String" value="Enter Amount:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtamount">
+        <Component class="javax.swing.JTextField" name="txtAmount">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nirmala UI" size="12" style="0"/>
@@ -283,7 +283,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="lblexpectedreturn">
+        <Component class="javax.swing.JLabel" name="lblExpectedReturn">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semibold" size="12" style="0"/>
@@ -291,7 +291,7 @@
             <Property name="text" type="java.lang.String" value="Expected Return Date: "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtreturn">
+        <Component class="javax.swing.JTextField" name="txtReturnDate">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nirmala UI" size="12" style="0"/>
@@ -300,7 +300,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="btnprocessrental">
+    <Component class="javax.swing.JButton" name="btnProcessRental">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="13" style="0"/>
@@ -310,10 +310,10 @@
         <Property name="focusable" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnprocessrentalActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnProcessRentalActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="calculateCost">
+    <Component class="javax.swing.JButton" name="btnCalculateCost">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="13" style="0"/>
@@ -323,10 +323,10 @@
         <Property name="focusable" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calculateCostActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCalculateCostActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnclear">
+    <Component class="javax.swing.JButton" name="btnClear">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="13" style="0"/>
@@ -336,7 +336,7 @@
         <Property name="focusable" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnclearActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
