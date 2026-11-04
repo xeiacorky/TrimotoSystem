@@ -310,7 +310,9 @@ public class MotorcycleInspection extends javax.swing.JPanel {
             insId, motorId, date, phase, odometer, fuel, tires, brakes, 
             headlight, horns, mirrors, body, engine, condition, readiness, notes
         ));
-
+        
+        TrimotoSystem.saveAllData();
+        
         Motorcycle m = TrimotoSystem.findMotorcycleById(motorId);
         if (m != null) {
             if ("Needs Repair".equalsIgnoreCase(condition) || "Unsafe".equalsIgnoreCase(condition)) {

@@ -495,6 +495,7 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
 
                     loadTableData();
                     viewtransactapplyfilterActionPerformed(evt);
+                    TrimotoSystem.saveAllData();
                     notifyDashboardRefresh();
                     editviewtransac.dispose();
                     
@@ -559,6 +560,7 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
 
         if (confirm == JOptionPane.YES_OPTION) {
             TrimotoSystem.rentals.removeIf(r -> r.transactionId.equalsIgnoreCase(transId));
+            TrimotoSystem.saveAllData();
             loadTableData();
             viewtransactapplyfilterActionPerformed(evt);
             JOptionPane.showMessageDialog(viewtransacdialog, "Transaction deleted successfully.");
@@ -644,7 +646,7 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
                 break;
             }
         }
-
+        TrimotoSystem.saveAllData();
         loadTableData();
         java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
         if (topWindow instanceof MainDashboard) {

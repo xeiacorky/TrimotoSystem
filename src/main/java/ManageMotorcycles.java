@@ -234,7 +234,7 @@ public class ManageMotorcycles extends javax.swing.JPanel {
 
             TrimotoSystem.motorcycles.add(m);
 
-            FileManager.saveMotorcycle(m);
+            TrimotoSystem.saveAllData();
             
             java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
             if (topWindow instanceof MainDashboard) {

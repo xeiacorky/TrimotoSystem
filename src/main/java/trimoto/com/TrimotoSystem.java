@@ -10,6 +10,10 @@ public class TrimotoSystem {
     
      static {
         motorcycles.addAll(FileManager.loadMotorcycles());
+        inspections.addAll(FileManager.loadInspections());
+        maintenanceRecords.addAll(FileManager.loadMaintenanceRecords());
+        rentals.addAll(FileManager.loadRentals());
+        damageReports.addAll(FileManager.loadDamageReports());
     }
 
     public static Motorcycle findMotorcycleById(String id) {
@@ -21,7 +25,15 @@ public class TrimotoSystem {
         }
         return null;
     }
+    public static void saveAllData() {
+        FileManager.saveAllMotorcycles(motorcycles);
+        FileManager.saveAllInspections(inspections);
+        FileManager.saveAllMaintenanceRecords(maintenanceRecords);
+        FileManager.saveAllRentals(rentals);
+        FileManager.saveAllDamageReports(damageReports);
+    }
 }
+
 class MotorcycleFactory {
     public static Motorcycle createMotorcycle(String type, String id, String brand, String model, int year, 
                                               String transmission, int mileage, double dailyRate, 

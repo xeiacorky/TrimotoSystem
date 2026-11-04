@@ -257,6 +257,8 @@ public class RentalProcessing extends javax.swing.JPanel {
             ));
 
             m.setStatus("Rented");
+            
+            TrimotoSystem.saveAllData();
 
             java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
             if (topWindow instanceof MainDashboard) {

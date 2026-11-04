@@ -372,6 +372,7 @@ if (cbMotorId.getSelectedItem() == null) {
                                 "Cost: " + cost;
 
         TrimotoSystem.damageReports.add(formattedRecord);
+        TrimotoSystem.saveAllData();
         JOptionPane.showMessageDialog(this, "Damage Report Saved Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
     btnclearActionPerformed(evt);    }//GEN-LAST:event_btnDamageReportActionPerformed
 

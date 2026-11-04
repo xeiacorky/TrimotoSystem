@@ -245,6 +245,8 @@ public class MaintenanceRecording extends javax.swing.JPanel {
             if (m != null) {
                 m.setStatus(availability);
             }
+            
+            TrimotoSystem.saveAllData();
 
             java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
             if (topWindow instanceof MainDashboard) {
