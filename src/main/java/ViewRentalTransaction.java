@@ -40,6 +40,7 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
                 r.status
             });
         }
+        viewtransactapplyfilterActionPerformed(null);
     }
     
     private void notifyDashboardRefresh() {
@@ -493,9 +494,9 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
                         }
                     }
 
-                    loadTableData();
-                    viewtransactapplyfilterActionPerformed(evt);
                     TrimotoSystem.saveAllData();
+                    loadTableData();                           
+                    viewtransactapplyfilterActionPerformed(evt); 
                     notifyDashboardRefresh();
                     editviewtransac.dispose();
                     

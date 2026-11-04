@@ -26,23 +26,23 @@ public class ViewDamageReport extends javax.swing.JPanel {
         title1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
+        txtMotorcycle = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
+        txtDamageLoc = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox8 = new javax.swing.JComboBox<>();
+        cbDamageTypee = new javax.swing.JComboBox<>();
         jLabel21 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        txtDamageDescription = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
+        txtDatereported = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        jComboBox9 = new javax.swing.JComboBox<>();
+        cbActionRequired = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
-        jComboBox10 = new javax.swing.JComboBox<>();
+        cbDamageStatus = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        txtAdditionalNotes = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
+        txtEstimatedCost = new javax.swing.JTextField();
         btnclear1 = new javax.swing.JButton();
         btnsavemaintenance1 = new javax.swing.JButton();
         title = new javax.swing.JLabel();
@@ -79,59 +79,59 @@ public class ViewDamageReport extends javax.swing.JPanel {
         jLabel11.setText("Motorcycle:");
         jPanel3.add(jLabel11);
 
-        jTextField9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel3.add(jTextField9);
+        txtMotorcycle.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel3.add(txtMotorcycle);
 
         jLabel19.setText("Damage Location: ");
         jPanel3.add(jLabel19);
 
-        jTextField10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel3.add(jTextField10);
+        txtDamageLoc.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel3.add(txtDamageLoc);
 
         jLabel9.setText("Damage Type:");
         jPanel3.add(jLabel9);
 
-        jComboBox8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Scratch", "Dent", "Crack", "Broken Part" }));
-        jPanel3.add(jComboBox8);
+        cbDamageTypee.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        cbDamageTypee.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Scratch", "Dent", "Crack", "Broken Part" }));
+        jPanel3.add(cbDamageTypee);
 
         jLabel21.setText("Damage Description:");
         jPanel3.add(jLabel21);
 
-        jTextField6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel3.add(jTextField6);
+        txtDamageDescription.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel3.add(txtDamageDescription);
 
         jLabel7.setText("Date Reported:");
         jPanel3.add(jLabel7);
 
-        jTextField11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel3.add(jTextField11);
+        txtDatereported.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel3.add(txtDatereported);
 
         jLabel12.setText("Action Required:");
         jPanel3.add(jLabel12);
 
-        jComboBox9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Repair", "Monitor", "No Action" }));
-        jPanel3.add(jComboBox9);
+        cbActionRequired.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        cbActionRequired.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Repair", "Monitor", "No Action" }));
+        jPanel3.add(cbActionRequired);
 
         jLabel13.setText("Damage Status:");
         jPanel3.add(jLabel13);
 
-        jComboBox10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pending", "Under Repair", "Resolved" }));
-        jPanel3.add(jComboBox10);
+        cbDamageStatus.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        cbDamageStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pending", "Under Repair", "Resolved" }));
+        jPanel3.add(cbDamageStatus);
 
         jLabel3.setText("Additional Notes:");
         jPanel3.add(jLabel3);
 
-        jTextField3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel3.add(jTextField3);
+        txtAdditionalNotes.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel3.add(txtAdditionalNotes);
 
         jLabel14.setText("Estimated Repair Cost:");
         jPanel3.add(jLabel14);
 
-        jTextField12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel3.add(jTextField12);
+        txtEstimatedCost.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel3.add(txtEstimatedCost);
 
         btnclear1.setText("Clear");
         jPanel3.add(btnclear1);
@@ -409,12 +409,12 @@ if (cbMotorId.getSelectedItem() == null) {
     private javax.swing.JButton btnclear1;
     private javax.swing.JButton btnsavemaintenance1;
     private javax.swing.JComboBox<String> cbActionReq;
+    private javax.swing.JComboBox<String> cbActionRequired;
     private javax.swing.JComboBox<String> cbDamageStat;
+    private javax.swing.JComboBox<String> cbDamageStatus;
     private javax.swing.JComboBox<String> cbDamageType;
+    private javax.swing.JComboBox<String> cbDamageTypee;
     private javax.swing.JComboBox<String> cbMotorId;
-    private javax.swing.JComboBox<String> jComboBox10;
-    private javax.swing.JComboBox<String> jComboBox8;
-    private javax.swing.JComboBox<String> jComboBox9;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -429,12 +429,6 @@ if (cbMotorId.getSelectedItem() == null) {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JLabel lblActionRequired;
     private javax.swing.JLabel lblAddNotes;
     private javax.swing.JLabel lblDamageDescription;
@@ -447,9 +441,15 @@ if (cbMotorId.getSelectedItem() == null) {
     private javax.swing.JLabel title;
     private javax.swing.JLabel title1;
     private javax.swing.JTextField txtAddNotes;
+    private javax.swing.JTextField txtAdditionalNotes;
     private javax.swing.JTextField txtDamageDescrip;
+    private javax.swing.JTextField txtDamageDescription;
+    private javax.swing.JTextField txtDamageLoc;
     private javax.swing.JTextField txtDamageLocation;
     private javax.swing.JTextField txtDateReported;
+    private javax.swing.JTextField txtDatereported;
+    private javax.swing.JTextField txtEstimatedCost;
     private javax.swing.JTextField txtEstimatedRepairCost;
+    private javax.swing.JTextField txtMotorcycle;
     // End of variables declaration//GEN-END:variables
 }
