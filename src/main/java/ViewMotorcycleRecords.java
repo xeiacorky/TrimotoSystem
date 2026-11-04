@@ -13,6 +13,10 @@ import java.util.List;
 
 public class ViewMotorcycleRecords extends javax.swing.JPanel {
 
+    private String selectedInspectionMotorId = null;
+    private String selectedMaintenanceMotorId = null;
+    private String selectedDamageReportMotorId = null;
+    
     public ViewMotorcycleRecords() {
         javax.swing.UIManager.put("Button.focusWidth", 0);
         UIManager.put("ComboBox.drawFocusBackground", Boolean.FALSE);
@@ -1160,89 +1164,57 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
 
     private void btnviewinspectionrecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewinspectionrecordActionPerformed
         int selectedRow = recordstable.getSelectedRow();
-        if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(this, "Please select a motorcycle row.", "Selection Required", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
+    if (selectedRow == -1) {
+        JOptionPane.showMessageDialog(this, "Please select a motorcycle row.", "Selection Required", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
 
-        String selectedMotorId = recordstable.getValueAt(selectedRow, 0).toString();
-        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
-        model.setRowCount(0);
+    selectedInspectionMotorId = recordstable.getValueAt(selectedRow, 0).toString().trim();
+    
+    jTextField17.setText("");
+    inspectfilter.setSelectedIndex(0);
 
-        for (InspectionRecord record : TrimotoSystem.inspections) {
-            if (record.motorcycleId.trim().equalsIgnoreCase(selectedMotorId.trim())) {
-                model.addRow(new Object[]{
-                    record.recordId, record.motorcycleId, record.date, record.phase,
-                    record.odometer, record.fuel, record.tires, record.brakes,
-                    record.headlight, record.horns, record.mirrors, record.body,
-                    record.engine, record.condition, record.readiness, record.notes
-                });
-            }
-        }
+    inspectapplyfilterActionPerformed(evt);
 
-        viewinspectdialog.setSize(1520, 520);
-        viewinspectdialog.setLocationRelativeTo(this);
-        viewinspectdialog.setVisible(true);
+    viewinspectdialog.setSize(1520, 520);
+    viewinspectdialog.setLocationRelativeTo(this);
+    viewinspectdialog.setVisible(true);
     }//GEN-LAST:event_btnviewinspectionrecordActionPerformed
 
     private void btnviewmaintenancerecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewmaintenancerecordActionPerformed
-        int selectedRow = recordstable.getSelectedRow();
-        if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(this, "Please select a motorcycle row.", "Selection Required", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
+       int selectedRow = recordstable.getSelectedRow();
+    if (selectedRow == -1) {
+        JOptionPane.showMessageDialog(this, "Please select a motorcycle row.", "Selection Required", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
 
-        String selectedMotorId = recordstable.getValueAt(selectedRow, 0).toString();
-        DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
-        model.setRowCount(0);
+    selectedMaintenanceMotorId = recordstable.getValueAt(selectedRow, 0).toString().trim();
+    jTextField18.setText("");
+    maintefilter.setSelectedIndex(0);
 
-        for (MaintenanceRecord record : TrimotoSystem.maintenanceRecords) {
-            if (record.motorcycleId.equalsIgnoreCase(selectedMotorId)) {
-                model.addRow(new Object[]{
-                    record.recordId, record.motorcycleId, record.date, record.type,
-                    record.category, record.workPerformed, record.partsReplaced,
-                    record.odometer, record.cost, record.nextServiceMileage,
-                    record.status, record.availability, record.remarks
-                });
-            }
-        }
+    mainteapplyfilterActionPerformed(evt);
 
-        viewmaintedialog.setSize(1520, 520);
-        viewmaintedialog.setLocationRelativeTo(this);
-        viewmaintedialog.setVisible(true);
+    viewmaintedialog.setSize(1520, 520);
+    viewmaintedialog.setLocationRelativeTo(this);
+    viewmaintedialog.setVisible(true);
     }//GEN-LAST:event_btnviewmaintenancerecordActionPerformed
 
     private void btnviewdmgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewdmgActionPerformed
-        int selectedRow = recordstable.getSelectedRow();
-        if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(this, "Please select a motorcycle row.", "Selection Required", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
+      int selectedRow = recordstable.getSelectedRow();
+    if (selectedRow == -1) {
+        JOptionPane.showMessageDialog(this, "Please select a motorcycle row.", "Selection Required", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
 
-        String selectedMotorId = recordstable.getValueAt(selectedRow, 0).toString();
-        DefaultTableModel model = (DefaultTableModel) jTable4.getModel();
-        model.setRowCount(0);
+    selectedDamageReportMotorId = recordstable.getValueAt(selectedRow, 0).toString().trim();
+    jTextField20.setText("");
+    damagrepfilter.setSelectedIndex(0);
 
-        for (String report : TrimotoSystem.damageReports) {
-            if (report.contains("Motorcycle: " + selectedMotorId)) {
-                model.addRow(new Object[]{
-                    extractField(report, "Report ID"),
-                    selectedMotorId,
-                    extractField(report, "Date"),
-                    extractField(report, "Location"),
-                    extractField(report, "Type"),
-                    extractField(report, "Description"),
-                    extractField(report, "Action Required"),
-                    extractField(report, "Cost"),
-                    extractField(report, "Status"),
-                    extractField(report, "Notes")
-                });
-            }
-        }
+    damagerepapplyfilterActionPerformed(evt);
 
-        viewdamagereportdialog.setSize(1520, 520);
-        viewdamagereportdialog.setLocationRelativeTo(this);
-        viewdamagereportdialog.setVisible(true);
+    viewdamagereportdialog.setSize(1520, 520);
+    viewdamagereportdialog.setLocationRelativeTo(this);
+    viewdamagereportdialog.setVisible(true);
     }//GEN-LAST:event_btnviewdmgActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
@@ -1747,85 +1719,95 @@ btnsearchActionPerformed(evt);
     }//GEN-LAST:event_btnsaveviewmotorcycleActionPerformed
 
     private void mainteapplyfilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainteapplyfilterActionPerformed
-        String filterStatus = maintefilter.getSelectedItem() != null ? maintefilter.getSelectedItem().toString() : "All";
-        String keyword = jTextField18.getText().trim().toLowerCase();
+       String filterStatus = maintefilter.getSelectedItem() != null ? maintefilter.getSelectedItem().toString() : "All";
+    String keyword = jTextField18.getText().trim().toLowerCase();
 
-        DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
-        model.setRowCount(0);
+    DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
+    model.setRowCount(0);
 
-        for (MaintenanceRecord r : TrimotoSystem.maintenanceRecords) {
-            boolean matchesStatus = "All".equalsIgnoreCase(filterStatus) || r.status.equalsIgnoreCase(filterStatus);
-            boolean matchesKeyword = keyword.isEmpty() || 
-                                     r.recordId.toLowerCase().contains(keyword) || 
-                                     r.motorcycleId.toLowerCase().contains(keyword);
+    for (MaintenanceRecord r : TrimotoSystem.maintenanceRecords) {
+        boolean matchesMotorcycle = selectedMaintenanceMotorId == null || 
+                                     r.motorcycleId.trim().equalsIgnoreCase(selectedMaintenanceMotorId);
 
-            if (matchesStatus && matchesKeyword) {
-                model.addRow(new Object[]{
-                    r.recordId, r.motorcycleId, r.date, r.type,
-                    r.category, r.workPerformed, r.partsReplaced,
-                    r.odometer, r.cost, r.nextServiceMileage,
-                    r.status, r.availability, r.remarks
-                });
-            }
+        boolean matchesStatus = "All".equalsIgnoreCase(filterStatus) || r.status.equalsIgnoreCase(filterStatus);
+        boolean matchesKeyword = keyword.isEmpty() || 
+                                 r.recordId.toLowerCase().contains(keyword) || 
+                                 r.motorcycleId.toLowerCase().contains(keyword);
+
+        if (matchesMotorcycle && matchesStatus && matchesKeyword) {
+            model.addRow(new Object[]{
+                r.recordId, r.motorcycleId, r.date, r.type,
+                r.category, r.workPerformed, r.partsReplaced,
+                r.odometer, r.cost, r.nextServiceMileage,
+                r.status, r.availability, r.remarks
+            });
         }
+    }
     }//GEN-LAST:event_mainteapplyfilterActionPerformed
 
     private void inspectapplyfilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inspectapplyfilterActionPerformed
-        String filterStatus = inspectfilter.getSelectedItem() != null ? inspectfilter.getSelectedItem().toString() : "All";
-        String keyword = jTextField17.getText().trim().toLowerCase();
+       String filterStatus = inspectfilter.getSelectedItem() != null ? inspectfilter.getSelectedItem().toString() : "All";
+    String keyword = jTextField17.getText().trim().toLowerCase();
 
-        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
-        model.setRowCount(0);
+    DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+    model.setRowCount(0);
 
-        for (InspectionRecord r : TrimotoSystem.inspections) {
-            boolean matchesStatus = "All".equalsIgnoreCase(filterStatus) || r.condition.equalsIgnoreCase(filterStatus);
-            boolean matchesKeyword = keyword.isEmpty() || 
-                                     r.recordId.toLowerCase().contains(keyword) || 
-                                     r.motorcycleId.toLowerCase().contains(keyword);
+    for (InspectionRecord r : TrimotoSystem.inspections) {
+        boolean matchesMotorcycle = selectedInspectionMotorId == null || 
+                                     r.motorcycleId.trim().equalsIgnoreCase(selectedInspectionMotorId);
 
-            if (matchesStatus && matchesKeyword) {
-                model.addRow(new Object[]{
-                    r.recordId, r.motorcycleId, r.date, r.phase,
-                    r.odometer, r.fuel, r.tires, r.brakes,
-                    r.headlight, r.horns, r.mirrors, r.body,
-                    r.engine, r.condition, r.readiness, r.notes
-                });
-            }
+        boolean matchesStatus = "All".equalsIgnoreCase(filterStatus) || r.condition.equalsIgnoreCase(filterStatus);
+        boolean matchesKeyword = keyword.isEmpty() || 
+                                 r.recordId.toLowerCase().contains(keyword) || 
+                                 r.motorcycleId.toLowerCase().contains(keyword);
+
+        if (matchesMotorcycle && matchesStatus && matchesKeyword) {
+            model.addRow(new Object[]{
+                r.recordId, r.motorcycleId, r.date, r.phase,
+                r.odometer, r.fuel, r.tires, r.brakes,
+                r.headlight, r.horns, r.mirrors, r.body,
+                r.engine, r.condition, r.readiness, r.notes
+            });
         }
+    }
     }//GEN-LAST:event_inspectapplyfilterActionPerformed
 
     private void damagerepapplyfilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_damagerepapplyfilterActionPerformed
         String filterStatus = damagrepfilter.getSelectedItem() != null ? damagrepfilter.getSelectedItem().toString() : "All";
-        String keyword = jTextField20.getText().trim().toLowerCase();
+    String keyword = jTextField20.getText().trim().toLowerCase();
 
-        DefaultTableModel model = (DefaultTableModel) jTable4.getModel();
-        model.setRowCount(0);
+    DefaultTableModel model = (DefaultTableModel) jTable4.getModel();
+    model.setRowCount(0);
 
-        for (String report : TrimotoSystem.damageReports) {
-            String status = extractField(report, "Status");
-            String recId = extractField(report, "Report ID");
-            String motorId = extractField(report, "Motorcycle");
+    for (String report : TrimotoSystem.damageReports) {
+        String status = extractField(report, "Status");
+        String recId = extractField(report, "Report ID");
+        String motorId = extractField(report, "Motorcycle");
 
-            boolean matchesStatus = "All".equalsIgnoreCase(filterStatus) || status.equalsIgnoreCase(filterStatus);
-            boolean matchesKeyword = keyword.isEmpty() || 
-                                     recId.toLowerCase().contains(keyword) || 
-                                     motorId.toLowerCase().contains(keyword);
+        boolean matchesMotorcycle = selectedDamageReportMotorId == null || 
+                                     motorId.trim().equalsIgnoreCase(selectedDamageReportMotorId);
 
-            if (matchesStatus && matchesKeyword) {
-                model.addRow(new Object[]{
-                    recId,
-                    motorId,
-                    extractField(report, "Date"),
-                    extractField(report, "Location"),
-                    extractField(report, "Type"),
-                    extractField(report, "Description"),
-                    extractField(report, "Action Required"),
-                    extractField(report, "Cost"),
-                    status,
-                    extractField(report, "Notes")
-                });
-            }
+        boolean matchesStatus = "All".equalsIgnoreCase(filterStatus) || status.equalsIgnoreCase(filterStatus);
+        boolean matchesKeyword = keyword.isEmpty() || 
+                                 recId.toLowerCase().contains(keyword) || 
+                                 motorId.toLowerCase().contains(keyword);
+
+        if (matchesMotorcycle && matchesStatus && matchesKeyword) {
+            model.addRow(new Object[]{
+                recId,
+                motorId,
+                extractField(report, "Date"),
+                extractField(report, "Location"),
+                extractField(report, "Type"),
+                extractField(report, "Description"),
+                extractField(report, "Action Required"),
+                extractField(report, "Cost"),
+                status,
+                extractField(report, "Notes")
+            });
         }
+    }
+
     }//GEN-LAST:event_damagerepapplyfilterActionPerformed
 
     private void btnsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsearchActionPerformed
