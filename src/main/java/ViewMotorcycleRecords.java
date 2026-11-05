@@ -508,7 +508,15 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
             new String [] {
                 "Motorcycle ID/Plate #", "Date", "Type", "Service Category", "Work Performed", "Parts Replaced", "Odometer Reading (km)", "Maintenance Cost (₱)", "Next Service Mileage", "Remarks"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane8.setViewportView(jTable3);
 
         btnEditMainte.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
@@ -597,7 +605,15 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
             new String [] {
                 "Motorcycle ID/Plate #", "Date", "Phase", "Odometer", "Fuel Level / Battery Level", "Tire Condition", "Brake Condition", "Headlight & Signals", "Horns", "Mirrors", "Body Condition", "Engine Condition", "Overall Condition", "Readiness Status", "Inspection Notes"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane7.setViewportView(jTable2);
 
         btnEditInspect.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
@@ -696,7 +712,15 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
             new String [] {
                 "Motorcycle ID/Plate #", "Location", "Type", "Description", "Date", "Cost (₱)", "Status", "Notes"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane9.setViewportView(jTable4);
 
         DamagReportFilter.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
@@ -1014,7 +1038,15 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
             new String [] {
                 "ID", "Brand", "Model", "Year", "Type", "Mileage", "Daily Rate ₱", "Status"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         recordsscrollpane.setViewportView(recordstable);
 
         ID.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N

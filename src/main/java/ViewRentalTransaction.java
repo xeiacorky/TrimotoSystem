@@ -328,7 +328,15 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
             new String [] {
                 "Motorcycle ID", "Renter", "Rental Days", "Total Cost", "Initial Payment", "Balance", "Date Rented", "Return Date", "Status"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         ID.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N

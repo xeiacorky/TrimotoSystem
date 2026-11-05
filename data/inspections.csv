@@ -4,3 +4,8 @@ INS-1005,MTR-106,2026-11-04,Pre-Rental,0,80%,Good,Good,Functional,Functional,Com
 INS-1005,MTR-101,2026-11-06,Post-Rental,200,20%,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Ready,
 INS-1006,123123,2026-11-04,Pre-Rental,123,123,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Ready,123
 INS-1007,123123,2026-11-04,Pre-Rental,1000,100,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Available,
+INS-1007,123,2026-11-05,Pre-Rental,123,123,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Available,123
+INS-1008,123,2026-11-05,Post-Rental,123,123,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Available,123
+INS-1009,321,2026-11-05,Post-Rental,321,321,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Available,321
+INS-1010,123,2026-11-05,Post-Rental,123,123,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Available,123
+INS-1011,321,2026-11-05,Post-Rental,321,321,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Available,321
