@@ -43,6 +43,7 @@ public class ManageMotorcycles extends javax.swing.JPanel {
         btnAddMotorcycle = new javax.swing.JButton();
 
         setBackground(javax.swing.UIManager.getDefaults().getColor("Button.default.pressedBackground"));
+        setForeground(new java.awt.Color(51, 51, 51));
         setPreferredSize(new java.awt.Dimension(970, 551));
         setRequestFocusEnabled(false);
 
@@ -100,11 +101,11 @@ public class ManageMotorcycles extends javax.swing.JPanel {
         jPanel1.add(txtDailyRentalRate);
 
         lblmotortype.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        lblmotortype.setText("Motorcycle Type");
+        lblmotortype.setText("Motorcycle Type:");
         jPanel1.add(lblmotortype);
 
         cbMotorcycleTypes.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        cbMotorcycleTypes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Scooter", "Standard Bike", "Sports Bike", "Adventure Bike", "Electric Bike", "" }));
+        cbMotorcycleTypes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Scooter", "Standard Bike", "Sports Bike", "Adventure Bike", "Electric Bike" }));
         cbMotorcycleTypes.setFocusable(false);
         cbMotorcycleTypes.addActionListener(this::cbMotorcycleTypesActionPerformed);
         jPanel1.add(cbMotorcycleTypes);
@@ -176,7 +177,7 @@ public class ManageMotorcycles extends javax.swing.JPanel {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnClear)
                     .addComponent(btnAddMotorcycle))

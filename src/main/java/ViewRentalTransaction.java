@@ -18,6 +18,8 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
         UIManager.put("Button.focusWidth", 0);
         UIManager.put("ComboBox.drawFocusBackground", Boolean.FALSE);
         initComponents();
+        jTable1.getTableHeader().setReorderingAllowed(false);
+        jTable2.getTableHeader().setReorderingAllowed(false);
         loadTableData();
     }
 
@@ -225,7 +227,15 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
             new String [] {
                 "Motorcycle ID/Plate #", "Renter", "Age", "Address", "Driver's  License #", "Rental Days", "Total Cost", "Initial Payment", "Balance", "Date Rented", "Return Date", "Status"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane3.setViewportView(jTable2);
 
         viewtransactedit.setText("Edit");

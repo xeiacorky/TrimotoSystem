@@ -4,8 +4,14 @@ INS-1005,MTR-106,2026-11-04,Pre-Rental,0,80%,Good,Good,Functional,Functional,Com
 INS-1005,MTR-101,2026-11-06,Post-Rental,200,20%,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Ready,
 INS-1006,123123,2026-11-04,Pre-Rental,123,123,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Ready,123
 INS-1007,123123,2026-11-04,Pre-Rental,1000,100,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Available,
-INS-1007,123,2026-11-05,Pre-Rental,123,123,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Available,123
 INS-1008,123,2026-11-05,Post-Rental,123,123,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Available,123
 INS-1009,321,2026-11-05,Post-Rental,321,321,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Available,321
 INS-1010,123,2026-11-05,Post-Rental,123,123,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Available,123
 INS-1011,321,2026-11-05,Post-Rental,321,321,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Available,321
+INS-1012,1234,2026-11-06,Pre-Rental,123123,123123,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Available,123
+INS-1013,123,2026-11-06,Pre-Rental,123,123123,Good,Good,Functional,Functional,Complete,Good,Normal,Minor Damage,Available,123
+INS-1014,123,2026-11-06,Pre-Rental,123,123,Good,Good,Functional,Functional,Complete,Good,Normal,Needs Repair,Available,123
+INS-1015,1234,2026-11-06,Pre-Rental,123,123,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Available,123
+INS-1016,1234,2026-11-06,Pre-Rental,123,123,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Available,123
+INS-1017,123,2026-11-06,Pre-Rental,123,123123,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Available,123
+INS-1018,444,2026-11-06,Pre-Rental,123,123,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Available,123

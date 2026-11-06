@@ -35,8 +35,6 @@ public class ViewDamageReport extends javax.swing.JPanel {
         txtDamageDescrip = new javax.swing.JTextField();
         lblDamageReported = new javax.swing.JLabel();
         txtDateReported = new javax.swing.JTextField();
-        lblDamageStatus = new javax.swing.JLabel();
-        cbDamageStat = new javax.swing.JComboBox<>();
         lblAddNotes = new javax.swing.JLabel();
         txtAddNotes = new javax.swing.JTextField();
         lblEstimatedRepairCost = new javax.swing.JLabel();
@@ -50,7 +48,7 @@ public class ViewDamageReport extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
-        jPanel1.setLayout(new java.awt.GridLayout(8, 2, 15, 15));
+        jPanel1.setLayout(new java.awt.GridLayout(7, 2, 15, 15));
 
         lblMotorcycle.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblMotorcycle.setText("Motorcycle:");
@@ -91,15 +89,6 @@ public class ViewDamageReport extends javax.swing.JPanel {
 
         txtDateReported.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtDateReported);
-
-        lblDamageStatus.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        lblDamageStatus.setText("Damage Status:");
-        jPanel1.add(lblDamageStatus);
-
-        cbDamageStat.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        cbDamageStat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "For Inspection", "Under Repair", "Available" }));
-        cbDamageStat.setFocusable(false);
-        jPanel1.add(cbDamageStat);
 
         lblAddNotes.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblAddNotes.setText("Additional Notes:");
@@ -190,7 +179,6 @@ public class ViewDamageReport extends javax.swing.JPanel {
     String selected = cbMotorId.getSelectedItem().toString();
     String motorId = selected.split(" - ")[0];
     String type = cbDamageType.getSelectedItem().toString();
-    String status = cbDamageStat.getSelectedItem().toString();
 
     String dmgId = "DMG-" + (TrimotoSystem.damageReports.size() + 1001);
     
@@ -200,22 +188,13 @@ public class ViewDamageReport extends javax.swing.JPanel {
                             "Location: " + location + "\n" +
                             "Type: " + type + "\n" +
                             "Description: " + desc + "\n" +
-                            "Status: " + status + "\n" +
                             "Notes: " + notes + "\n" +
                             "Cost: " + cost;
 
     TrimotoSystem.damageReports.add(formattedRecord);
 
     Motorcycle m = TrimotoSystem.findMotorcycleById(motorId);
-    if (m != null) {
-        if ("Available".equalsIgnoreCase(status)) {
-            m.setStatus("Available");
-        } else if ("For Inspection".equalsIgnoreCase(status)) {
-            m.setStatus("For Inspection");
-        } else {
-            m.setStatus("Under Repair");
-        }
-    }
+
 
     TrimotoSystem.saveAllData();
 
@@ -242,7 +221,6 @@ public class ViewDamageReport extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDamageReport;
     private javax.swing.JButton btnclear;
-    private javax.swing.JComboBox<String> cbDamageStat;
     private javax.swing.JComboBox<String> cbDamageType;
     private javax.swing.JComboBox<String> cbMotorId;
     private javax.swing.JLabel jLabel15;
@@ -251,7 +229,6 @@ public class ViewDamageReport extends javax.swing.JPanel {
     private javax.swing.JLabel lblDamageDescription;
     private javax.swing.JLabel lblDamageLocation;
     private javax.swing.JLabel lblDamageReported;
-    private javax.swing.JLabel lblDamageStatus;
     private javax.swing.JLabel lblDamageType;
     private javax.swing.JLabel lblEstimatedRepairCost;
     private javax.swing.JLabel lblMotorcycle;

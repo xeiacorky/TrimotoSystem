@@ -160,7 +160,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         jPanel1.add(cbHeadlight);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel6.setText("Horns");
+        jLabel6.setText("Horns:");
         jPanel1.add(jLabel6);
 
         cbHorn.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -169,7 +169,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         jPanel1.add(cbHorn);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel8.setText("Mirrors");
+        jLabel8.setText("Mirrors:");
         jPanel1.add(jLabel8);
 
         cbMirrors.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
