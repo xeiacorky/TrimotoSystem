@@ -1740,36 +1740,37 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
     }//GEN-LAST:event_btnSaveViewMotorcycleActionPerformed
 
     private void mainteapplyfilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainteapplyfilterActionPerformed
-    String keyword = txtSearchMaintenance.getText().trim().toLowerCase();
+        String keyword = txtSearchMaintenance.getText().trim().toLowerCase();
 
-    TrimotoSystem.maintenanceRecords.sort((r1, r2) -> r2.date.compareToIgnoreCase(r1.date));
+        TrimotoSystem.maintenanceRecords.sort((r1, r2) -> r2.date.compareToIgnoreCase(r1.date));
 
-    DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
-    model.setRowCount(0);
+        DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
+        model.setRowCount(0);
 
-    for (MaintenanceRecord r : TrimotoSystem.maintenanceRecords) {
-        boolean matchesMotorcycle = selectedMaintenanceMotorId == null || 
-                                     r.motorcycleId.trim().equalsIgnoreCase(selectedMaintenanceMotorId);
+        for (MaintenanceRecord r : TrimotoSystem.maintenanceRecords) {
+            boolean matchesMotorcycle = selectedMaintenanceMotorId == null || 
+                                         r.motorcycleId.trim().equalsIgnoreCase(selectedMaintenanceMotorId);
 
-        boolean matchesKeyword = keyword.isEmpty() ||
-            r.motorcycleId.toLowerCase().contains(keyword) ||
-            r.date.toLowerCase().contains(keyword) ||
-            r.type.toLowerCase().contains(keyword) ||
-            r.category.toLowerCase().contains(keyword) ||
-            r.workPerformed.toLowerCase().contains(keyword) ||
-            r.partsReplaced.toLowerCase().contains(keyword) ||
-            r.odometer.toLowerCase().contains(keyword) ||
-            String.valueOf(r.cost).toLowerCase().contains(keyword) ||
-            r.nextServiceMileage.toLowerCase().contains(keyword) ||
-            r.remarks.toLowerCase().contains(keyword);
+            boolean matchesKeyword = keyword.isEmpty() ||
+                r.motorcycleId.toLowerCase().contains(keyword) ||
+                r.date.toLowerCase().contains(keyword) ||
+                r.type.toLowerCase().contains(keyword) ||
+                r.category.toLowerCase().contains(keyword) ||
+                r.workPerformed.toLowerCase().contains(keyword) ||
+                r.partsReplaced.toLowerCase().contains(keyword) ||
+                r.odometer.toLowerCase().contains(keyword) ||
+                String.valueOf(r.cost).toLowerCase().contains(keyword) ||
+                r.nextServiceMileage.toLowerCase().contains(keyword) ||
+                r.remarks.toLowerCase().contains(keyword);
 
-        if (matchesMotorcycle && matchesKeyword) {
-            model.addRow(new Object[]{
-                r.motorcycleId, r.date, r.type, r.category, r.workPerformed,
-                r.partsReplaced, r.odometer, r.cost, r.nextServiceMileage, r.remarks
-            });
+            if (matchesMotorcycle && matchesKeyword) {
+                model.addRow(new Object[]{
+                    r.motorcycleId, r.date, r.type, r.category, r.workPerformed,
+                    r.partsReplaced, r.odometer, r.cost, r.nextServiceMileage, r.remarks
+                });
+            }
         }
-    }
+    
     }//GEN-LAST:event_mainteapplyfilterActionPerformed
 
     private void InspectApplyFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InspectApplyFilterActionPerformed
