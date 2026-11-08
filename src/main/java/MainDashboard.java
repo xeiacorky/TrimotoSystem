@@ -290,11 +290,13 @@ public class MainDashboard extends javax.swing.JFrame {
         pnloverview.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.default.pressedBackground"));
         pnloverview.setForeground(java.awt.Color.gray);
         pnloverview.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        pnloverview.setPreferredSize(new java.awt.Dimension(1100, 653));
 
         jLabel4.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         jLabel4.setText("Dashboard Overview");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(153, 153, 153));
         jLabel5.setText("Manage motorcycles, inspections, maintenance, and rentals.");
 
         quickactions.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.default.pressedBackground"));
@@ -345,7 +347,7 @@ public class MainDashboard extends javax.swing.JFrame {
         jPanel8.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.default.pressedBackground"));
         jPanel8.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel10.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("SansSerif", 3, 18)); // NOI18N
         jLabel10.setText("Quick Actions");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -353,12 +355,15 @@ public class MainDashboard extends javax.swing.JFrame {
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addComponent(jLabel10)
-                .addGap(0, 783, Short.MAX_VALUE))
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 770, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
 
         overview.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.default.pressedBackground"));
@@ -592,8 +597,8 @@ public class MainDashboard extends javax.swing.JFrame {
             pnloverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnloverviewLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addGap(0, 0, 0)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(overview, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)

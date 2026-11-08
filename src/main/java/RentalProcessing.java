@@ -60,13 +60,14 @@ public class RentalProcessing extends javax.swing.JPanel {
         title.setText("Rental Processing");
 
         description.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
+        description.setForeground(new java.awt.Color(153, 153, 153));
         description.setText("Record repairs, servicing, and maintenance expenses");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
         jPanel1.setLayout(new java.awt.GridLayout(10, 2, 15, 15));
 
-        lblMotor.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblMotor.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblMotor.setText("Motorcycle:");
         jPanel1.add(lblMotor);
 
@@ -76,21 +77,21 @@ public class RentalProcessing extends javax.swing.JPanel {
         cbMotor.addActionListener(this::cbMotorActionPerformed);
         jPanel1.add(cbMotor);
 
-        lblRenter.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblRenter.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblRenter.setText("Renter Name:");
         jPanel1.add(lblRenter);
 
         txtName.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtName);
 
-        lblAge.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblAge.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblAge.setText("Age:");
         jPanel1.add(lblAge);
 
         txtAge.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtAge);
 
-        lblAddress.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblAddress.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblAddress.setText("Address:");
         jPanel1.add(lblAddress);
 
@@ -98,35 +99,35 @@ public class RentalProcessing extends javax.swing.JPanel {
         txtAddress.addActionListener(this::txtAddressActionPerformed);
         jPanel1.add(txtAddress);
 
-        lblnumber.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblnumber.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblnumber.setText("Contact Number:");
         jPanel1.add(lblnumber);
 
         txtContNumber.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtContNumber);
 
-        lblduration.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblduration.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblduration.setText("Rental Duration (Days):");
         jPanel1.add(lblduration);
 
         txtRentalDays.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtRentalDays);
 
-        driverlicense.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        driverlicense.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         driverlicense.setText("Driver's License #:");
         jPanel1.add(driverlicense);
 
         txtDriversLicense.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtDriversLicense);
 
-        lblamount.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblamount.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblamount.setText("Enter Amount:");
         jPanel1.add(lblamount);
 
         txtAmount.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtAmount);
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         jPanel1.add(jLabel6);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -144,7 +145,7 @@ public class RentalProcessing extends javax.swing.JPanel {
 
         jPanel1.add(jPanel3);
 
-        lblExpectedReturn.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblExpectedReturn.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblExpectedReturn.setText("Expected Return Date: ");
         jPanel1.add(lblExpectedReturn);
 
@@ -174,9 +175,9 @@ public class RentalProcessing extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 882, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 888, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(title)
@@ -195,11 +196,11 @@ public class RentalProcessing extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(title)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(description)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnProcessRental)
                     .addComponent(btnCalculateCost)
@@ -240,7 +241,7 @@ public class RentalProcessing extends javax.swing.JPanel {
             if (m == null) return;
 
             double totalCost = m.calculateRentalCost(days);
-            String transId = "TRX-" + (TrimotoSystem.rentals.size() + 1001);
+            String transId = "TRX-" + (TrimotoSystem.rentals.size() + 0001);
             String date = java.time.LocalDate.now().toString();
 
             if (returnDate.isEmpty()) {

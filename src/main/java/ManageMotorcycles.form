@@ -48,7 +48,7 @@
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="jPanel1" pref="888" max="32767" attributes="0"/>
+                          <Component id="jPanel1" pref="958" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -59,13 +59,13 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" pref="26" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" pref="444" max="-2" attributes="0"/>
-              <EmptySpace pref="114" max="32767" attributes="0"/>
+              <Component id="jPanel1" min="-2" pref="450" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnClear" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnAddMotorcycle" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -88,6 +88,9 @@
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="12" style="2"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Register a motorcycle in the system."/>
       </Properties>
@@ -114,7 +117,7 @@
         <Component class="javax.swing.JLabel" name="lblMotorID">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI Semibold" size="12" style="0"/>
+              <Font name="Segoe UI Semibold" size="13" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Motorcycle ID:"/>
           </Properties>
@@ -131,6 +134,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblPlate">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI Semibold" size="13" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Plate #:"/>
           </Properties>
         </Component>
@@ -144,7 +150,7 @@
         <Component class="javax.swing.JLabel" name="brand">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI Semibold" size="12" style="0"/>
+              <Font name="Segoe UI Semibold" size="13" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Brand:"/>
           </Properties>
@@ -159,7 +165,7 @@
         <Component class="javax.swing.JLabel" name="model">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI Semibold" size="12" style="0"/>
+              <Font name="Segoe UI Semibold" size="13" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Model:"/>
           </Properties>
@@ -174,7 +180,7 @@
         <Component class="javax.swing.JLabel" name="lblyear">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI Semibold" size="12" style="0"/>
+              <Font name="Segoe UI Semibold" size="13" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Year:"/>
           </Properties>
@@ -189,7 +195,7 @@
         <Component class="javax.swing.JLabel" name="lblmileage">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI Semibold" size="12" style="0"/>
+              <Font name="Segoe UI Semibold" size="13" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Mileage (km):"/>
           </Properties>
@@ -204,7 +210,7 @@
         <Component class="javax.swing.JLabel" name="lbldailyrentalrate">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI Semibold" size="12" style="0"/>
+              <Font name="Segoe UI Semibold" size="13" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Daily Rental Rate:"/>
           </Properties>
@@ -219,7 +225,7 @@
         <Component class="javax.swing.JLabel" name="lblmotortype">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI Semibold" size="12" style="0"/>
+              <Font name="Segoe UI Semibold" size="13" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Motorcycle Type:"/>
           </Properties>
@@ -250,7 +256,7 @@
         <Component class="javax.swing.JLabel" name="lblTransmissionType">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI Semibold" size="12" style="0"/>
+              <Font name="Segoe UI Semibold" size="13" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Transmission Type:"/>
           </Properties>
@@ -268,7 +274,7 @@
         <Component class="javax.swing.JLabel" name="lblSpec1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI Semibold" size="12" style="0"/>
+              <Font name="Segoe UI Semibold" size="13" style="0"/>
             </Property>
           </Properties>
         </Component>
@@ -282,7 +288,7 @@
         <Component class="javax.swing.JLabel" name="lblSpec2">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI Semibold" size="12" style="0"/>
+              <Font name="Segoe UI Semibold" size="13" style="0"/>
             </Property>
           </Properties>
         </Component>
@@ -296,7 +302,7 @@
         <Component class="javax.swing.JLabel" name="lblSpec3">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI Semibold" size="12" style="0"/>
+              <Font name="Segoe UI Semibold" size="13" style="0"/>
             </Property>
           </Properties>
         </Component>

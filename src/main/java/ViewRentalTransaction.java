@@ -101,6 +101,8 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
         btnReturnedMark = new javax.swing.JButton();
         btnViewTransac = new javax.swing.JButton();
 
+        editviewtransac.setResizable(false);
+
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
         jPanel2.setLayout(new java.awt.GridLayout(10, 2, 15, 15));
@@ -215,21 +217,23 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        viewtransacdialog.setSize(new java.awt.Dimension(0, 0));
+
         jScrollPane3.setToolTipText("");
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Transaction ID", "Motorcycle ID/Plate #", "Renter", "Age", "Address", "Driver's  License #", "Rental Days", "Total Cost", "Initial Payment", "Balance", "Date Rented", "Return Date", "Status"
+                "Transaction ID", "Motorcycle ID/Plate #", "Renter Name", "Age", "Address", "Contact #", "Driver's  License #", "Rental Days", "Total Cost", "Initial Payment", "Balance", "Date Rented", "Return Date", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -284,7 +288,7 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
                         .addComponent(lblFilterStat)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(viewtranasactfilter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 429, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1185, Short.MAX_VALUE)
                         .addComponent(lblSearchId)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSearchTransaction, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -294,7 +298,7 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
             .addGroup(viewtransacdialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(viewtransacdialogLayout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 876, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3)
                     .addContainerGap()))
         );
         viewtransacdialogLayout.setVerticalGroup(
@@ -307,7 +311,7 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
                     .addComponent(lblSearchId)
                     .addComponent(txtSearchTransaction, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(viewtransactapplyfilter))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 353, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 443, Short.MAX_VALUE)
                 .addGroup(viewtransacdialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(viewtransactedit)
                     .addComponent(viewtransactdelete))
@@ -315,11 +319,12 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
             .addGroup(viewtransacdialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(viewtransacdialogLayout.createSequentialGroup()
                     .addGap(36, 36, 36)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(36, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane3)
+                    .addContainerGap(39, Short.MAX_VALUE)))
         );
 
         description.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
+        description.setForeground(new java.awt.Color(153, 153, 153));
         description.setText("Review rental history and transaction status.");
 
         title.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
@@ -374,7 +379,7 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
         btnReturnedMark.addActionListener(this::btnReturnedMarkActionPerformed);
 
         btnViewTransac.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        btnViewTransac.setText("View Transaction Details");
+        btnViewTransac.setText("View Further Details");
         btnViewTransac.setFocusPainted(false);
         btnViewTransac.setFocusable(false);
         btnViewTransac.addActionListener(this::btnViewTransacActionPerformed);
@@ -387,12 +392,9 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 896, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(title)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())
+                        .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(description)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -400,30 +402,29 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSearch)
-                        .addGap(16, 16, 16))
+                        .addComponent(btnSearch))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnRefresh)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnViewTransac)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnReturnedMark)
-                        .addContainerGap())))
+                        .addComponent(btnReturnedMark)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(12, 12, 12)
                 .addComponent(title)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(ID)
                         .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnSearch))
-                    .addComponent(description))
+                    .addComponent(description, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 446, Short.MAX_VALUE)
+                .addComponent(jScrollPane1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRefresh)
@@ -435,7 +436,7 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
 
     private void btnViewTransacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewTransacActionPerformed
         viewtransactapplyfilterActionPerformed(evt);
-        viewtransacdialog.setSize(1500, 450);
+        viewtransacdialog.setSize(1880, 540);
         viewtransacdialog.setLocationRelativeTo(this);
         viewtransacdialog.setVisible(true);
        
@@ -447,7 +448,7 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
 
     private void txtaddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtaddressActionPerformed
         viewtransactapplyfilterActionPerformed(evt);
-        viewtransacdialog.setSize(900, 480);
+        viewtransacdialog.setSize(1000, 100);
         viewtransacdialog.setLocationRelativeTo(this);
         viewtransacdialog.setVisible(true);
     }//GEN-LAST:event_txtaddressActionPerformed
@@ -552,7 +553,7 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
                 jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Active", "Completed" }));
                 jComboBox1.setSelectedItem(r.status);
 
-                editviewtransac.setSize(700, 474);
+                editviewtransac.setSize(700, 500);
                 editviewtransac.setLocationRelativeTo(this);
                 editviewtransac.setVisible(true);
                 break;
@@ -598,11 +599,11 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
     }//GEN-LAST:event_viewtransactdeleteActionPerformed
 
     private void viewtransactapplyfilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewtransactapplyfilterActionPerformed
-    String filterStatus = viewtranasactfilter.getSelectedItem() != null ? viewtranasactfilter.getSelectedItem().toString() : "All";
-    String keyword = txtSearchTransaction.getText().trim().toLowerCase();
+   String filterStatus = viewtranasactfilter.getSelectedItem() != null ? viewtranasactfilter.getSelectedItem().toString() : "All";
+        String keyword = txtSearchTransaction.getText().trim().toLowerCase();
 
-    DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
-    model.setRowCount(0);
+        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+        model.setRowCount(0);
 
         for (RentalTransaction r : TrimotoSystem.rentals) {
             boolean matchesStatus = "All".equalsIgnoreCase(filterStatus) || r.status.equalsIgnoreCase(filterStatus);
@@ -616,10 +617,11 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
                 double balance = r.totalCost - r.initialPayment;
                 String age = r.renterProfile != null ? r.renterProfile.getAge() : "-";
                 String address = r.renterProfile != null ? r.renterProfile.getAddress() : "-";
+                String contactNumber = r.renterProfile != null ? r.renterProfile.getContactNumber() : "-"; // Grabs the contact number
                 String license = r.renterProfile != null ? r.renterProfile.getLicenseNumber() : "-";
 
                 model.addRow(new Object[]{
-                    r.transactionId, r.motorcycleId, renterName, age, address, license,
+                    r.transactionId, r.motorcycleId, renterName, age, address, contactNumber, license, // Adds contactNumber into the array
                     r.days, r.totalCost, r.initialPayment, balance, r.date,
                     r.returnDate, r.status
                 });
@@ -739,3 +741,4 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
     private javax.swing.JButton viewtransactedit;
     // End of variables declaration//GEN-END:variables
 }
+

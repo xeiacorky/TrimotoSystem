@@ -53,13 +53,14 @@ public class ManageMotorcycles extends javax.swing.JPanel {
         jLabel1.setText("Manage Motorcycles");
 
         jLabel2.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(153, 153, 153));
         jLabel2.setText("Register a motorcycle in the system.");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
         jPanel1.setLayout(new java.awt.GridLayout(12, 2, 15, 15));
 
-        lblMotorID.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblMotorID.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblMotorID.setText("Motorcycle ID:");
         jPanel1.add(lblMotorID);
 
@@ -67,48 +68,49 @@ public class ManageMotorcycles extends javax.swing.JPanel {
         txtMotorId.addActionListener(this::txtMotorIdActionPerformed);
         jPanel1.add(txtMotorId);
 
+        lblPlate.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblPlate.setText("Plate #:");
         jPanel1.add(lblPlate);
 
         txtPlate.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtPlate);
 
-        brand.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        brand.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         brand.setText("Brand:");
         jPanel1.add(brand);
 
         txtBrand.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtBrand);
 
-        model.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        model.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         model.setText("Model:");
         jPanel1.add(model);
 
         txtModel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtModel);
 
-        lblyear.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblyear.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblyear.setText("Year:");
         jPanel1.add(lblyear);
 
         txtYear.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtYear);
 
-        lblmileage.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblmileage.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblmileage.setText("Mileage (km):");
         jPanel1.add(lblmileage);
 
         txtMileage.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtMileage);
 
-        lbldailyrentalrate.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lbldailyrentalrate.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lbldailyrentalrate.setText("Daily Rental Rate:");
         jPanel1.add(lbldailyrentalrate);
 
         txtDailyRentalRate.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtDailyRentalRate);
 
-        lblmotortype.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblmotortype.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblmotortype.setText("Motorcycle Type:");
         jPanel1.add(lblmotortype);
 
@@ -118,7 +120,7 @@ public class ManageMotorcycles extends javax.swing.JPanel {
         cbMotorcycleTypes.addActionListener(this::cbMotorcycleTypesActionPerformed);
         jPanel1.add(cbMotorcycleTypes);
 
-        lblTransmissionType.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblTransmissionType.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblTransmissionType.setText("Transmission Type:");
         jPanel1.add(lblTransmissionType);
 
@@ -126,19 +128,19 @@ public class ManageMotorcycles extends javax.swing.JPanel {
         txtTransmissionType.addActionListener(this::txtTransmissionTypeActionPerformed);
         jPanel1.add(txtTransmissionType);
 
-        lblSpec1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblSpec1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         jPanel1.add(lblSpec1);
 
         txtSpec1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtSpec1);
 
-        lblSpec2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblSpec2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         jPanel1.add(lblSpec2);
 
         txtSpec2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtSpec2);
 
-        lblSpec3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblSpec3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         jPanel1.add(lblSpec3);
 
         txtSpec3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -176,19 +178,19 @@ public class ManageMotorcycles extends javax.swing.JPanel {
                                         .addComponent(btnAddMotorcycle))
                                     .addComponent(jLabel1))
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 888, Short.MAX_VALUE))
+                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 958, Short.MAX_VALUE))
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(12, 12, 12)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnClear)
                     .addComponent(btnAddMotorcycle))

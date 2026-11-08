@@ -56,13 +56,14 @@ public class MaintenanceRecording extends javax.swing.JPanel {
         title.setText("Maintenance Recording");
 
         description.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
+        description.setForeground(new java.awt.Color(153, 153, 153));
         description.setText("Record repairs, servicing, and maintenance expenses");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
         jPanel1.setLayout(new java.awt.GridLayout(10, 2, 15, 15));
 
-        lblmotor.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblmotor.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblmotor.setText("Motorcycle:");
         jPanel1.add(lblmotor);
 
@@ -72,14 +73,14 @@ public class MaintenanceRecording extends javax.swing.JPanel {
         cbMotorcycle.addActionListener(this::cbMotorcycleActionPerformed);
         jPanel1.add(cbMotorcycle);
 
-        lblmaintenancedate.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblmaintenancedate.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblmaintenancedate.setText("Maintenance Date:");
         jPanel1.add(lblmaintenancedate);
 
         txtMaintedate.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtMaintedate);
 
-        lblmaintenancetype.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblmaintenancetype.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblmaintenancetype.setText("Maintenance Type:");
         jPanel1.add(lblmaintenancetype);
 
@@ -88,49 +89,49 @@ public class MaintenanceRecording extends javax.swing.JPanel {
         cbMainteType.setFocusable(false);
         jPanel1.add(cbMainteType);
 
-        lblServiceCategory.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblServiceCategory.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblServiceCategory.setText("Service Category");
         jPanel1.add(lblServiceCategory);
 
         txtServiceCat.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtServiceCat);
 
-        lblWorkPerformed.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblWorkPerformed.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblWorkPerformed.setText("Work Performed:");
         jPanel1.add(lblWorkPerformed);
 
         txtWorkPerfo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtWorkPerfo);
 
-        lblPartsReplaced.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblPartsReplaced.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblPartsReplaced.setText("Parts Replaced:");
         jPanel1.add(lblPartsReplaced);
 
         txtPartsRepla.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtPartsRepla);
 
-        lblOdometer.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblOdometer.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblOdometer.setText("Odometer Reading(km):");
         jPanel1.add(lblOdometer);
 
         txtOdometer.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtOdometer);
 
-        lblMaintenanceCost.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblMaintenanceCost.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblMaintenanceCost.setText("Maintenance Cost:");
         jPanel1.add(lblMaintenanceCost);
 
         txtMainteCost.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtMainteCost);
 
-        lblNextServiceMileage.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblNextServiceMileage.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblNextServiceMileage.setText("Next Service Mileage:");
         jPanel1.add(lblNextServiceMileage);
 
         txtServiceMile.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtServiceMile);
 
-        lblRemarks.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblRemarks.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblRemarks.setText("Remarks");
         jPanel1.add(lblRemarks);
 
@@ -154,35 +155,33 @@ public class MaintenanceRecording extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 882, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 888, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(title)
-                            .addComponent(description))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnclear)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnsavemaintenance))
+                            .addComponent(description)
+                            .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnclear)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnsavemaintenance)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(title)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(description)
+                .addGap(12, 12, 12)
+                .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(description, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(148, 148, 148)
+                .addGap(160, 160, 160)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnclear)
-                    .addComponent(btnsavemaintenance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnsavemaintenance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnclear))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents

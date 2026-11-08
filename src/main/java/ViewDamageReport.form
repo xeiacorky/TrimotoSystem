@@ -17,18 +17,18 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel1" pref="882" max="32767" attributes="0"/>
+                  <Component id="jPanel1" alignment="0" pref="888" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <Component id="btnclear" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="btnDamageReport" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="title" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                          <Component id="title" min="-2" pref="163" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
@@ -42,11 +42,11 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="title" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Component id="jLabel15" min="-2" pref="16" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" pref="299" max="-2" attributes="0"/>
-              <EmptySpace pref="185" max="32767" attributes="0"/>
+              <Component id="jPanel1" min="-2" pref="283" max="-2" attributes="0"/>
+              <EmptySpace pref="195" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnclear" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnDamageReport" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -87,7 +87,7 @@
         <Component class="javax.swing.JLabel" name="lblMotorcycle">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI Semibold" size="12" style="0"/>
+              <Font name="Segoe UI Semibold" size="13" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Motorcycle:"/>
           </Properties>
@@ -117,7 +117,7 @@
         <Component class="javax.swing.JLabel" name="lblDamageLocation">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI Semibold" size="12" style="0"/>
+              <Font name="Segoe UI Semibold" size="13" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Damage Location: "/>
           </Properties>
@@ -132,7 +132,7 @@
         <Component class="javax.swing.JLabel" name="lblDamageType">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI Semibold" size="12" style="0"/>
+              <Font name="Segoe UI Semibold" size="13" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Damage Type:"/>
           </Properties>
@@ -159,7 +159,7 @@
         <Component class="javax.swing.JLabel" name="lblDamageDescription">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI Semibold" size="12" style="0"/>
+              <Font name="Segoe UI Semibold" size="13" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Damage Description:"/>
           </Properties>
@@ -174,7 +174,7 @@
         <Component class="javax.swing.JLabel" name="lblDamageReported">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI Semibold" size="12" style="0"/>
+              <Font name="Segoe UI Semibold" size="13" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Date Reported:"/>
           </Properties>
@@ -189,7 +189,7 @@
         <Component class="javax.swing.JLabel" name="lblAddNotes">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI Semibold" size="12" style="0"/>
+              <Font name="Segoe UI Semibold" size="13" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Additional Notes:"/>
           </Properties>
@@ -204,7 +204,7 @@
         <Component class="javax.swing.JLabel" name="lblEstimatedRepairCost">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI Semibold" size="12" style="0"/>
+              <Font name="Segoe UI Semibold" size="13" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Estimated Repair Cost:"/>
           </Properties>
@@ -248,6 +248,9 @@
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="12" style="2"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="99" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Record damage report records and notes"/>
       </Properties>

@@ -49,7 +49,7 @@ public class ViewDamageReport extends javax.swing.JPanel {
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
         jPanel1.setLayout(new java.awt.GridLayout(7, 2, 15, 15));
 
-        lblMotorcycle.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblMotorcycle.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblMotorcycle.setText("Motorcycle:");
         jPanel1.add(lblMotorcycle);
 
@@ -59,14 +59,14 @@ public class ViewDamageReport extends javax.swing.JPanel {
         cbMotorId.addActionListener(this::cbMotorIdActionPerformed);
         jPanel1.add(cbMotorId);
 
-        lblDamageLocation.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblDamageLocation.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblDamageLocation.setText("Damage Location: ");
         jPanel1.add(lblDamageLocation);
 
         txtDamageLocation.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtDamageLocation);
 
-        lblDamageType.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblDamageType.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblDamageType.setText("Damage Type:");
         jPanel1.add(lblDamageType);
 
@@ -75,28 +75,28 @@ public class ViewDamageReport extends javax.swing.JPanel {
         cbDamageType.setFocusable(false);
         jPanel1.add(cbDamageType);
 
-        lblDamageDescription.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblDamageDescription.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblDamageDescription.setText("Damage Description:");
         jPanel1.add(lblDamageDescription);
 
         txtDamageDescrip.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtDamageDescrip);
 
-        lblDamageReported.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblDamageReported.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblDamageReported.setText("Date Reported:");
         jPanel1.add(lblDamageReported);
 
         txtDateReported.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtDateReported);
 
-        lblAddNotes.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblAddNotes.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblAddNotes.setText("Additional Notes:");
         jPanel1.add(lblAddNotes);
 
         txtAddNotes.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtAddNotes);
 
-        lblEstimatedRepairCost.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        lblEstimatedRepairCost.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblEstimatedRepairCost.setText("Estimated Repair Cost:");
         jPanel1.add(lblEstimatedRepairCost);
 
@@ -116,6 +116,7 @@ public class ViewDamageReport extends javax.swing.JPanel {
         btnDamageReport.addActionListener(this::btnDamageReportActionPerformed);
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(153, 153, 153));
         jLabel15.setText("Record damage report records and notes");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -123,17 +124,17 @@ public class ViewDamageReport extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 882, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 888, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnclear)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnDamageReport))
-                            .addComponent(title)
-                            .addComponent(jLabel15))
+                            .addComponent(jLabel15)
+                            .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -142,11 +143,11 @@ public class ViewDamageReport extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(title)
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 195, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnclear)
                     .addComponent(btnDamageReport))
