@@ -17,24 +17,26 @@ public class TrimotoSystem {
     }
 
     public static List<Motorcycle> getMotorcycles() {
-        return new ArrayList<>(motorcycles);
+        return motorcycles;
     }
 
     public static List<InspectionRecord> getInspections() {
-        return new ArrayList<>(inspections);
+       return inspections;
     }
 
     public static List<MaintenanceRecord> getMaintenanceRecords() {
-        return new ArrayList<>(maintenanceRecords);
-    }
-
-    public static List<RentalTransaction> getRentals() {
-        return new ArrayList<>(rentals);
+        return maintenanceRecords;
     }
 
     public static List<DamageReport> getDamageReports() {
-        return new ArrayList<>(damageReports);
+        return damageReports;
     }
+
+        public static List<RentalTransaction> getRentals() {
+            return new ArrayList<>(rentals);
+        }
+
+
 
     public static void addMotorcycle(Motorcycle m) {
         if (m != null) {
