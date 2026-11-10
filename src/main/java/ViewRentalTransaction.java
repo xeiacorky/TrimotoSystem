@@ -367,7 +367,7 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jTable1);
 
         ID.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        ID.setText("Search Keyword:");
+        ID.setText("Search ID/Keyword:");
 
         txtSearch.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         txtSearch.addActionListener(this::txtSearchActionPerformed);
@@ -412,7 +412,7 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(ID)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnSearch))
                     .addGroup(layout.createSequentialGroup()

@@ -1027,7 +1027,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         recordsscrollpane.setViewportView(recordstable);
 
         ID.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        ID.setText("Search ID/ Keyword:");
+        ID.setText("Search ID/Keyword:");
 
         txtSearch.setFont(new java.awt.Font("Nirmala UI", 0, 12)); // NOI18N
         txtSearch.addActionListener(this::txtSearchActionPerformed);
