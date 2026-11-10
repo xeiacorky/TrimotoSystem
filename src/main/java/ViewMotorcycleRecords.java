@@ -997,7 +997,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         txtSpec3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel2.add(txtSpec3);
 
-        jLabel42.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
+        jLabel42.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jPanel2.add(jLabel42);
 
         txtSpec4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -2110,49 +2110,61 @@ int selectedRow = jTable4.getSelectedRow();
     
    private void populateSubclassFieldsFromInfo(Motorcycle m) {
     String info = m.displayMotorcycleInfo();
-        if (info == null || info.trim().isEmpty()) {
-            jLabel39.setText(""); txtSpec1.setText("");
-            jLabel40.setText(""); txtSpec2.setText("");
-            jLabel41.setText(""); txtSpec3.setText("");
-            return;
+    if (info == null || info.trim().isEmpty()) {
+        jLabel39.setText(""); txtSpec1.setText("");
+        jLabel40.setText(""); txtSpec2.setText("");
+        jLabel41.setText(""); txtSpec3.setText("");
+        if (jLabel42 != null) jLabel42.setText(""); 
+        if (txtSpec4 != null) txtSpec4.setText("");
+        return;
+    }
+
+    String[] lines = info.split("\n");
+
+    if (lines.length > 0 && lines[0].contains(":")) {
+        String[] parts = lines[0].split(":", 2);
+        jLabel39.setText(parts[0].trim() + ":");
+        txtSpec1.setText(parts[1].replaceAll("[^0-9.]", "").trim());
+    } else {
+        jLabel39.setText(""); txtSpec1.setText("");
+    }
+
+    if (lines.length > 1 && lines[1].contains(":")) {
+        String[] parts = lines[1].split(":", 2);
+        jLabel40.setText(parts[0].trim() + ":");
+        txtSpec2.setText(parts[1].replaceAll("[^0-9.]", "").trim());
+    } else {
+        jLabel40.setText(""); txtSpec2.setText("");
+    }
+
+    if (lines.length > 2 && lines[2].contains(":")) {
+        String[] parts = lines[2].split(":", 2);
+        jLabel41.setText(parts[0].trim() + ":");
+        txtSpec3.setText(parts[1].replaceAll("[^0-9.]", "").trim());
+        jLabel41.setVisible(true);
+        txtSpec3.setVisible(true);
+        txtSpec3.setEditable(true);
+    } else {
+        jLabel41.setText(""); txtSpec3.setText("");
+        jLabel41.setVisible(false); txtSpec3.setVisible(false);
+    }
+
+    if (lines.length > 3 && lines[3].contains(":")) {
+        String[] parts = lines[3].split(":", 2);
+        if (jLabel42 != null) jLabel42.setText(parts[0].trim() + ":");
+        if (txtSpec4 != null) {
+            txtSpec4.setText(parts[1].replaceAll("[^0-9.]", "").trim());
+            txtSpec4.setVisible(true);
+            txtSpec4.setEditable(true);
         }
-
-        String[] lines = info.split("\n");
-
-        if (lines.length > 0 && lines[0].contains(":")) {
-            String[] parts = lines[0].split(":", 2);
-            jLabel39.setText(parts[0].trim() + ":");
-            String val = parts[1].replaceAll("[^0-9.]", "").trim();
-            txtSpec1.setText(val);
-        } else {
-            jLabel39.setText(""); txtSpec1.setText("");
-        }
-
-        if (lines.length > 1 && lines[1].contains(":")) {
-            String[] parts = lines[1].split(":", 2);
-            jLabel40.setText(parts[0].trim() + ":");
-            String val = parts[1].replaceAll("[^0-9.]", "").trim();
-            txtSpec2.setText(val);
-        } else {
-            jLabel40.setText(""); txtSpec2.setText("");
-        }
-
-        if (lines.length > 2 && lines[2].contains(":")) {
-            String[] parts = lines[2].split(":", 2);
-            jLabel41.setText(parts[0].trim() + ":");
-            String val = parts[1].replaceAll("[^0-9.]", "").trim();
-            txtSpec3.setText(val);
-            jLabel41.setVisible(true);
-            txtSpec3.setVisible(true);
-            txtSpec3.setEditable(true);
-        } else {
-            jLabel41.setText("");
-            txtSpec3.setText("");
-            jLabel41.setVisible(false);
-            txtSpec3.setVisible(false);
-            txtSpec3.setEditable(false);
+    } else {
+        if (jLabel42 != null) jLabel42.setText("");
+        if (txtSpec4 != null) {
+            txtSpec4.setText("");
+            txtSpec4.setVisible(false);
         }
     }
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton DamageRepApplyFilter;
     private javax.swing.JLabel ID;
