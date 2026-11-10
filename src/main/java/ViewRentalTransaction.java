@@ -26,7 +26,19 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
     DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
     model.setRowCount(0);
 
-    for (RentalTransaction r : TrimotoSystem.rentals) {
+    java.util.Set<String> activeMotorcycles = new java.util.HashSet<>();
+
+    for (int i = TrimotoSystem.rentals.size() - 1; i >= 0; i--) {
+        RentalTransaction r = TrimotoSystem.rentals.get(i);
+
+        if ("Active".equalsIgnoreCase(r.status)) {
+            if (activeMotorcycles.contains(r.motorcycleId)) {
+                r.status = "Completed"; 
+            } else {
+                activeMotorcycles.add(r.motorcycleId);
+            }
+        }
+
         double balance = r.totalCost - r.initialPayment;
         String renterName = r.getRenterName();
 
@@ -599,13 +611,26 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
     }//GEN-LAST:event_viewtransactdeleteActionPerformed
 
     private void viewtransactapplyfilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewtransactapplyfilterActionPerformed
-   String filterStatus = viewtranasactfilter.getSelectedItem() != null ? viewtranasactfilter.getSelectedItem().toString() : "All";
-        String keyword = txtSearchTransaction.getText().trim().toLowerCase();
+    String filterStatus = viewtranasactfilter.getSelectedItem() != null ? viewtranasactfilter.getSelectedItem().toString() : "All";
+    String keyword = txtSearchTransaction.getText().trim().toLowerCase();
 
-        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
-        model.setRowCount(0);
+    DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+    model.setRowCount(0);
 
-        for (RentalTransaction r : TrimotoSystem.rentals) {
+    java.util.Set<String> activeMotorcycles = new java.util.HashSet<>();
+
+    
+        for (int i = TrimotoSystem.rentals.size() - 1; i >= 0; i--) {
+            RentalTransaction r = TrimotoSystem.rentals.get(i);
+
+            if ("Active".equalsIgnoreCase(r.status)) {
+                if (activeMotorcycles.contains(r.motorcycleId)) {
+                    r.status = "Completed";
+                } else {
+                    activeMotorcycles.add(r.motorcycleId);
+                }
+            }
+
             boolean matchesStatus = "All".equalsIgnoreCase(filterStatus) || r.status.equalsIgnoreCase(filterStatus);
             String renterName = r.getRenterName();
             boolean matchesKeyword = keyword.isEmpty() || 
@@ -617,11 +642,11 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
                 double balance = r.totalCost - r.initialPayment;
                 String age = r.renterProfile != null ? r.renterProfile.getAge() : "-";
                 String address = r.renterProfile != null ? r.renterProfile.getAddress() : "-";
-                String contactNumber = r.renterProfile != null ? r.renterProfile.getContactNumber() : "-"; // Grabs the contact number
+                String contactNumber = r.renterProfile != null ? r.renterProfile.getContactNumber() : "-";
                 String license = r.renterProfile != null ? r.renterProfile.getLicenseNumber() : "-";
 
                 model.addRow(new Object[]{
-                    r.transactionId, r.motorcycleId, renterName, age, address, contactNumber, license, // Adds contactNumber into the array
+                    r.transactionId, r.motorcycleId, renterName, age, address, contactNumber, license,
                     r.days, r.totalCost, r.initialPayment, balance, r.date,
                     r.returnDate, r.status
                 });
