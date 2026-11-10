@@ -72,7 +72,6 @@ public class FileManager {
                     data[10] = String.valueOf(a.getEngineDisplacement());
                     data[11] = String.valueOf(a.getStorageCapacity());
                     data[12] = String.valueOf(a.getFuelCapacity());
-                    data[16] = String.valueOf(a.getGroundClearance());
                 }
 
                 writer.write(String.join(",", data));
@@ -124,7 +123,7 @@ public class FileManager {
                         break;
                     case "Adventure Bike":
                         motorcycle = new AdventureBike(id, plate, brand, model, year, transmission, mileage, rate,
-                                Integer.parseInt(data[10]), Double.parseDouble(data[11]), Double.parseDouble(data[12]), Double.parseDouble(data[16]));
+                                Integer.parseInt(data[10]), Double.parseDouble(data[11]), Double.parseDouble(data[12]));
                         break;
                 }
 

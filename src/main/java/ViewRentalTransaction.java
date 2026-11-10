@@ -10,6 +10,10 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
+import java.awt.Component;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.table.TableCellRenderer;
 
 public class ViewRentalTransaction extends javax.swing.JPanel {
 
@@ -19,6 +23,14 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
         initComponents();
         jTable1.getTableHeader().setReorderingAllowed(false);
         jTable2.getTableHeader().setReorderingAllowed(false);
+        WordWrapCellRenderer wrapRenderer = new WordWrapCellRenderer();
+    
+        for (int i = 0; i < jTable1.getColumnCount(); i++) {
+            jTable1.getColumnModel().getColumn(i).setCellRenderer(wrapRenderer);
+        }
+        for (int i = 0; i < jTable2.getColumnCount(); i++) {
+            jTable2.getColumnModel().getColumn(i).setCellRenderer(wrapRenderer);
+        }
         loadTableData();
     }
 
@@ -65,6 +77,7 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
             ((MainDashboard) topWindow).refreshAllPanels();
         }
     }
+    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -769,3 +782,40 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 }
 
+class WordWrapCellRenderer extends javax.swing.JTextArea implements javax.swing.table.TableCellRenderer {
+    public WordWrapCellRenderer() {
+        setLineWrap(true);
+        setWrapStyleWord(true);
+        setOpaque(true);
+    }
+
+    @Override
+    public java.awt.Component getTableCellRendererComponent(javax.swing.JTable table, Object value,
+            boolean isSelected, boolean hasFocus, int row, int column) {
+        
+        setText(value != null ? value.toString() : "");
+        setFont(table.getFont());
+
+        if (isSelected) {
+            setBackground(table.getSelectionBackground());
+            setForeground(table.getSelectionForeground());
+        } else {
+            setBackground(table.getBackground());
+            setForeground(table.getForeground());
+        }
+
+        // Set width matching column bounds so line wrapping calculates accurately
+        int columnWidth = table.getColumnModel().getColumn(column).getWidth();
+        if (columnWidth > 0) {
+            setSize(columnWidth, getPreferredSize().height);
+        }
+
+        // Calculate line wrapping and enforce minimum padded row height
+        int preferredHeight = getPreferredSize().height + 6; // Adds 6px vertical padding
+        if (table.getRowHeight(row) < preferredHeight) {
+            table.setRowHeight(row, Math.max(preferredHeight, 28));
+        }
+
+        return this;
+    }
+}

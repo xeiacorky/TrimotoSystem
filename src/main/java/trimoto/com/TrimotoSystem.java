@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TrimotoSystem {
-    // Encapsulated private static collections (Data Hiding)
     private static final List<Motorcycle> motorcycles = new ArrayList<>();
     private static final List<InspectionRecord> inspections = new ArrayList<>();
     private static final List<MaintenanceRecord> maintenanceRecords = new ArrayList<>();
@@ -17,7 +16,6 @@ public class TrimotoSystem {
         damageReports.addAll(FileManager.loadDamageReports());
     }
 
-    // --- ENCAPSULATED ACCESSORS (Defensive Copies) ---
     public static List<Motorcycle> getMotorcycles() {
         return new ArrayList<>(motorcycles);
     }
@@ -38,7 +36,6 @@ public class TrimotoSystem {
         return new ArrayList<>(damageReports);
     }
 
-    // --- REPOSITORY MUTATOR METHODS ---
     public static void addMotorcycle(Motorcycle m) {
         if (m != null) {
             motorcycles.add(m);
@@ -108,7 +105,7 @@ class MotorcycleFactory {
             case "Scooter":
                 return new Scooter(id, plate, brand, model, year, transmission, mileage, dailyRate, (int) spec1, spec2, spec3);
             case "Adventure Bike":
-                return new AdventureBike(id, plate, brand, model, year, transmission, mileage, rateToDouble(dailyRate), (int) spec1, spec2, spec3, 220.0);
+                return new AdventureBike(id, plate, brand, model, year, transmission, mileage, rateToDouble(dailyRate), (int) spec1, spec2, spec3);
             case "Standard Bike":
                 return new StandardBike(id, plate, brand, model, year, transmission, mileage, dailyRate, (int) spec1, spec2);
             case "Sports Bike":
@@ -270,14 +267,12 @@ class AdventureBike extends Motorcycle {
     private int engineDisplacement;
     private double storageCapacity;
     private double fuelCapacity;
-    private double groundClearance;
 
-    public AdventureBike(String id, String plate, String brand, String model, int year, String transmissionType, int mileage, double dailyRate, int engineDisplacement, double storageCapacity, double fuelCapacity, double groundClearance) {
+    public AdventureBike(String id, String plate, String brand, String model, int year, String transmissionType, int mileage, double dailyRate, int engineDisplacement, double storageCapacity, double fuelCapacity) {
         super(id, plate, brand, model, year, "Adventure Bike", transmissionType, mileage, dailyRate);
         this.engineDisplacement = engineDisplacement;
         this.storageCapacity = storageCapacity;
         this.fuelCapacity = fuelCapacity;
-        this.groundClearance = groundClearance;
     }
     
     public int getEngineDisplacement() { 
@@ -292,16 +287,11 @@ class AdventureBike extends Motorcycle {
         return fuelCapacity; 
     }
 
-    public double getGroundClearance() { 
-        return groundClearance; 
-    }
-
     @Override
     public String displayMotorcycleInfo() {
         return "Engine Displacement: " + engineDisplacement + " cc\n" +
                "Compartment Capacity: " + storageCapacity + " L\n" +
-               "Fuel Capacity: " + fuelCapacity + " L\n" +
-               "Ground Clearance: " + groundClearance + " mm\n";
+               "Fuel Capacity: " + fuelCapacity + " L\n" ;
     }
 }
 

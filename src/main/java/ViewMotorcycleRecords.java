@@ -10,6 +10,10 @@ import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 import java.util.List;
+import java.awt.Component;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.table.TableCellRenderer;
 
 public class ViewMotorcycleRecords extends javax.swing.JPanel {
 
@@ -25,8 +29,19 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         jTable3.getTableHeader().setReorderingAllowed(false);
         jTable4.getTableHeader().setReorderingAllowed(false);
         recordstable.getTableHeader().setReorderingAllowed(false);
+        WordWrapCellRenderer wrapRenderer = new WordWrapCellRenderer();
+        applyWordWrapToTable(recordstable, wrapRenderer);
+        applyWordWrapToTable(jTable2, wrapRenderer);
+        applyWordWrapToTable(jTable3, wrapRenderer);
+        applyWordWrapToTable(jTable4, wrapRenderer);
         loadTableData();
     }
+    
+    private void applyWordWrapToTable(javax.swing.JTable table, WordWrapCellRenderer renderer) {
+    for (int i = 0; i < table.getColumnCount(); i++) {
+        table.getColumnModel().getColumn(i).setCellRenderer(renderer);
+    }
+}
 
     private void notifyDashboardRefresh() {
         java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
@@ -67,6 +82,41 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
             return "-";
         }
     }
+    
+    class WordWrapCellRenderer extends JTextArea implements TableCellRenderer {
+    public WordWrapCellRenderer() {
+        setLineWrap(true);
+        setWrapStyleWord(true);
+        setOpaque(true);
+    }
+
+    @Override
+    public Component getTableCellRendererComponent(JTable table, Object value,
+            boolean isSelected, boolean hasFocus, int row, int column) {
+        
+        setText(value != null ? value.toString() : "");
+        setFont(table.getFont());
+
+        if (isSelected) {
+            setBackground(table.getSelectionBackground());
+            setForeground(table.getSelectionForeground());
+        } else {
+            setBackground(table.getBackground());
+            setForeground(table.getForeground());
+        }
+
+        int columnWidth = table.getColumnModel().getColumn(column).getWidth();
+        if (columnWidth > 0) {
+            setSize(columnWidth, getPreferredSize().height);
+        }
+        int preferredHeight = getPreferredSize().height;
+        if (table.getRowHeight(row) != preferredHeight) {
+            table.setRowHeight(row, Math.max(preferredHeight, 24));
+        }
+
+        return this;
+    }
+}
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
