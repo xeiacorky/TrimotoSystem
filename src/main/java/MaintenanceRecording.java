@@ -209,7 +209,8 @@ public class MaintenanceRecording extends javax.swing.JPanel {
 
     try {
         double cost = Double.parseDouble(costText);
-        String motorId = cbMotorcycle.getSelectedItem().toString().split(" - ")[0];
+        String selectedItem = cbMotorcycle.getSelectedItem().toString();
+        String motorId = selectedItem.split(" - ")[0].trim();
         String type = cbMainteType.getSelectedItem().toString();
 
         String mntId = "MNT-" + (TrimotoSystem.maintenanceRecords.size() + 1001);
@@ -231,8 +232,15 @@ public class MaintenanceRecording extends javax.swing.JPanel {
             ((MainDashboard) topWindow).refreshAllPanels();
         }
 
+        for (int i = 0; i < cbMotorcycle.getItemCount(); i++) {
+            if (cbMotorcycle.getItemAt(i).startsWith(motorId)) {
+                cbMotorcycle.setSelectedIndex(i);
+                break;
+            }
+        }
+
         JOptionPane.showMessageDialog(this, "Maintenance Record Saved!", "Success", JOptionPane.INFORMATION_MESSAGE);
-        btnclearActionPerformed(new java.awt.event.ActionEvent(btnclear, java.awt.event.ActionEvent.ACTION_PERFORMED, null));
+        btnclearActionPerformed(evt);
     } catch (NumberFormatException ex) {
         JOptionPane.showMessageDialog(this, "Maintenance cost must be a valid number.", "Invalid Format", JOptionPane.ERROR_MESSAGE);
     }

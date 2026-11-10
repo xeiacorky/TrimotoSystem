@@ -304,7 +304,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
     try {
         int newMileage = Integer.parseInt(odometerStr);
         String selectedItem = cmbMotorcycle.getSelectedItem().toString();
-        String motorId = selectedItem.split(" - ")[0];
+        String motorId = selectedItem.split(" - ")[0].trim();
         String phase = cbInspectionPhase.getSelectedItem().toString();
         String tires = cbTire.getSelectedItem().toString();
         String brakes = cbBrake.getSelectedItem().toString();
@@ -330,25 +330,30 @@ public class MotorcycleInspection extends javax.swing.JPanel {
             }
 
             if ("Under Repair".equalsIgnoreCase(readiness) || "Unsafe".equalsIgnoreCase(condition) || "Needs Repair".equalsIgnoreCase(condition)) {
-            m.setStatus("Under Repair");
+                m.setStatus("Under Repair");
             } 
             else if ("Under Maintenance".equalsIgnoreCase(readiness)) {
-            m.setStatus("Under Maintenance");
+                m.setStatus("Under Maintenance");
             } 
             else {
-            m.setStatus("Available");
+                m.setStatus("Available");
             }
         }
-        
-        TrimotoSystem.saveAllData();
 
-        java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
-        if (topWindow instanceof MainDashboard) {
-            ((MainDashboard) topWindow).refreshAllPanels();
+        TrimotoSystem.saveAllData();
+        notifyDashboardRefresh();
+
+        for (int i = 0; i < cmbMotorcycle.getItemCount(); i++) {
+            if (cmbMotorcycle.getItemAt(i).startsWith(motorId)) {
+                cmbMotorcycle.setSelectedIndex(i);
+                break;
+            }
         }
 
         JOptionPane.showMessageDialog(this, "Inspection Saved Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-        btnClearActionPerformed(new java.awt.event.ActionEvent(btnClear, java.awt.event.ActionEvent.ACTION_PERFORMED, null));
+        txtFuel.setText("");
+        txtOdometer.setText("");
+        txtInspectionNotes.setText("");
     } catch (NumberFormatException ex) {
         JOptionPane.showMessageDialog(this, "Odometer Reading must be a valid numeric integer.", "Input Error", JOptionPane.ERROR_MESSAGE);
     }
@@ -358,6 +363,16 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         txtInspectDate.setText(java.time.LocalDate.now().toString());
         txtFuel.setText("");
         txtOdometer.setText("");
+        cbInspectionPhase.setSelectedIndex(0);
+        cbTire.setSelectedIndex(0);
+        cbBrake.setSelectedIndex(0);
+        cbHeadlight.setSelectedIndex(0);
+        cbHorn.setSelectedIndex(0);
+        cbMirrors.setSelectedIndex(0);
+        cbMotoBody.setSelectedIndex(0);
+        cbEngineCondition.setSelectedIndex(0);
+        cbOverallCondition.setSelectedIndex(0);
+        cbReadiness.setSelectedIndex(0);
         txtInspectionNotes.setText("");    }//GEN-LAST:event_btnClearActionPerformed
 
 

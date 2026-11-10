@@ -1,2 +1,7 @@
-INS-1001,H-001,2026-11-08,Pre-Rental,0,25%,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Available,
-INS-1002,H-001,2026-11-08,Post-Rental,56,25%,Good,Good,Functional,Functional,Damaged,Needs Repair,Normal,Needs Repair,Under Repair,Subject for damage report
+INS-1002,S-001,2026-11-10,Pre-Rental,1500,Full,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Available,
+INS-1003,K-001,2026-11-10,Pre-Rental,800,Full,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Available,
+INS-1004,B-001,2026-11-10,Pre-Rental,2500,Full,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Available,
+INS-1005,Z-001,2026-11-10,Pre-Rental,300,100%,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Available,
+INS-1006,Y-001,2026-11-10,Pre-Rental,1,DWA,Good,Good,Functional,Functional,Complete,Good,Normal,Good,Under Maintenance,
+INS-1006,Y-001,2026-11-10,Post-Rental,250,75%,Good,Worn,Functional,Functional,Complete,Good,Normal,Good,Under Maintenance,Returned from rental. Scheduled for 250km post-rental check and oil refresh.
+INS-1007,K-001,2026-11-10,Post-Rental,1100,40%,Scratched,Damaged,Not Functional,Functional,Damaged,Needs Repair,Unusual Noise,Needs Repair,Under Repair,Returned from rental with left mirror damage and loose chain.

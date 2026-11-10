@@ -21,6 +21,13 @@ public class RentalProcessing extends javax.swing.JPanel {
         }
         cbMotor.setModel(model);
     }
+    
+    private void notifyDashboardRefresh() {
+    java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
+    if (topWindow instanceof MainDashboard) {
+        ((MainDashboard) topWindow).refreshAllPanels();
+    }
+}
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -259,18 +266,14 @@ public class RentalProcessing extends javax.swing.JPanel {
             
             TrimotoSystem.saveAllData();
 
-            java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
-            if (topWindow instanceof MainDashboard) {
-                ((MainDashboard) topWindow).refreshAllPanels();
-            }
+           JOptionPane.showMessageDialog(this, "Rental Processed Successfully!\nTransaction ID: " + transId + "\nTotal Cost: ₱" + totalCost, "Success", JOptionPane.INFORMATION_MESSAGE);
 
-            JOptionPane.showMessageDialog(this, "Rental Processed Successfully!\nTransaction ID: " + transId + "\nTotal Cost: ₱" + totalCost, "Success", JOptionPane.INFORMATION_MESSAGE);
-
+            notifyDashboardRefresh();
             btnClearActionPerformed(evt);
-            refreshMotorcycleDropdown();
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Please enter valid numbers for Age, Rental Duration, and Payment Amount.", "Format Error", JOptionPane.ERROR_MESSAGE);
-        }
+
+    } catch (NumberFormatException ex) {
+        JOptionPane.showMessageDialog(this, "Please enter valid numbers for Age, Rental Duration, and Payment Amount.", "Format Error", JOptionPane.ERROR_MESSAGE);
+    }
     }//GEN-LAST:event_btnProcessRentalActionPerformed
 
     private void txtAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddressActionPerformed
