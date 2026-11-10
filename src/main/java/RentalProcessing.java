@@ -14,7 +14,7 @@ public class RentalProcessing extends javax.swing.JPanel {
 
     public void refreshMotorcycleDropdown() {
         DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
-        for (Motorcycle m : TrimotoSystem.motorcycles) {
+        for (Motorcycle m : TrimotoSystem.getMotorcycles()) {
             if ("Available".equalsIgnoreCase(m.getStatus())) {
                 model.addElement(m.getId() + " - " + m.getBrand() + " " + m.getModel() + " (₱" + m.getDailyRate() + "/day)");
             }
@@ -248,7 +248,7 @@ public class RentalProcessing extends javax.swing.JPanel {
             if (m == null) return;
 
             double totalCost = m.calculateRentalCost(days);
-            String transId = "TRX-" + (TrimotoSystem.rentals.size() + 0001);
+            String transId = "TRX-" + (TrimotoSystem.getRentals().size() + 1001);
             String date = java.time.LocalDate.now().toString();
 
             if (returnDate.isEmpty()) {
@@ -257,23 +257,22 @@ public class RentalProcessing extends javax.swing.JPanel {
 
             RenterProfile profile = new RenterProfile(renter, address, contactNumber, licenseNumber, age);
 
-            TrimotoSystem.rentals.add(new RentalTransaction(
+            TrimotoSystem.addRentalTransaction(new RentalTransaction(
                 transId, motorId, profile, days, totalCost, payment,
                 paymentType, date, returnDate, "Active"
             ));
 
             m.setStatus("Rented");
-            
             TrimotoSystem.saveAllData();
 
-           JOptionPane.showMessageDialog(this, "Rental Processed Successfully!\nTransaction ID: " + transId + "\nTotal Cost: ₱" + totalCost, "Success", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Rental Processed Successfully!\nTransaction ID: " + transId + "\nTotal Cost: ₱" + totalCost, "Success", JOptionPane.INFORMATION_MESSAGE);
 
             notifyDashboardRefresh();
             btnClearActionPerformed(evt);
 
-    } catch (NumberFormatException ex) {
-        JOptionPane.showMessageDialog(this, "Please enter valid numbers for Age, Rental Duration, and Payment Amount.", "Format Error", JOptionPane.ERROR_MESSAGE);
-    }
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Please enter valid numbers for Age, Rental Duration, and Payment Amount.", "Format Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnProcessRentalActionPerformed
 
     private void txtAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddressActionPerformed

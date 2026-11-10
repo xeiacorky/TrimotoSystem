@@ -247,8 +247,12 @@ public class ManageMotorcycles extends javax.swing.JPanel {
             double spec3 = txtSpec3.getText().trim().isEmpty() ? 0 : Double.parseDouble(txtSpec3.getText().trim());
 
             Motorcycle m = MotorcycleFactory.createMotorcycle(type, id, plate, brand, model, year, transmission, mileage, rate, spec1, spec2, spec3);
-            m.setStatus("For Inspection");
-            TrimotoSystem.motorcycles.add(m);
+            if (m != null) {
+                m.setStatus("For Inspection");
+                TrimotoSystem.addMotorcycle(m);
+            }
+            
+            TrimotoSystem.addMotorcycle(m);
 
             TrimotoSystem.saveAllData();
             

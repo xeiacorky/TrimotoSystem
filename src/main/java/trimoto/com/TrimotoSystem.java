@@ -2,18 +2,83 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TrimotoSystem {
-    public static final List<Motorcycle> motorcycles = new ArrayList<>();
-    public static final List<InspectionRecord> inspections = new ArrayList<>();
-    public static final List<MaintenanceRecord> maintenanceRecords = new ArrayList<>();
-    public static final List<RentalTransaction> rentals = new ArrayList<>();
-    public static final List<DamageReport> damageReports = new ArrayList<>();
+    // Encapsulated private static collections (Data Hiding)
+    private static final List<Motorcycle> motorcycles = new ArrayList<>();
+    private static final List<InspectionRecord> inspections = new ArrayList<>();
+    private static final List<MaintenanceRecord> maintenanceRecords = new ArrayList<>();
+    private static final List<RentalTransaction> rentals = new ArrayList<>();
+    private static final List<DamageReport> damageReports = new ArrayList<>();
     
-     static {
+    static {
         motorcycles.addAll(FileManager.loadMotorcycles());
         inspections.addAll(FileManager.loadInspections());
         maintenanceRecords.addAll(FileManager.loadMaintenanceRecords());
         rentals.addAll(FileManager.loadRentals());
         damageReports.addAll(FileManager.loadDamageReports());
+    }
+
+    // --- ENCAPSULATED ACCESSORS (Defensive Copies) ---
+    public static List<Motorcycle> getMotorcycles() {
+        return new ArrayList<>(motorcycles);
+    }
+
+    public static List<InspectionRecord> getInspections() {
+        return new ArrayList<>(inspections);
+    }
+
+    public static List<MaintenanceRecord> getMaintenanceRecords() {
+        return new ArrayList<>(maintenanceRecords);
+    }
+
+    public static List<RentalTransaction> getRentals() {
+        return new ArrayList<>(rentals);
+    }
+
+    public static List<DamageReport> getDamageReports() {
+        return new ArrayList<>(damageReports);
+    }
+
+    // --- REPOSITORY MUTATOR METHODS ---
+    public static void addMotorcycle(Motorcycle m) {
+        if (m != null) {
+            motorcycles.add(m);
+            saveAllData();
+        }
+    }
+
+    public static void addInspection(InspectionRecord r) {
+        if (r != null) {
+            inspections.add(r);
+            saveAllData();
+        }
+    }
+
+    public static void addMaintenanceRecord(MaintenanceRecord r) {
+        if (r != null) {
+            maintenanceRecords.add(r);
+            saveAllData();
+        }
+    }
+
+    public static void addRentalTransaction(RentalTransaction r) {
+        if (r != null) {
+            rentals.add(r);
+            saveAllData();
+        }
+    }
+
+    public static void addDamageReport(DamageReport r) {
+        if (r != null) {
+            damageReports.add(r);
+            saveAllData();
+        }
+    }
+
+    public static void removeRentalTransaction(String transactionId) {
+        if (transactionId != null) {
+            rentals.removeIf(r -> r.getTransactionId().equalsIgnoreCase(transactionId.trim()));
+            saveAllData();
+        }
     }
 
     public static Motorcycle findMotorcycleById(String id) {
@@ -25,6 +90,7 @@ public class TrimotoSystem {
         }
         return null;
     }
+
     public static void saveAllData() {
         FileManager.saveAllMotorcycles(motorcycles);
         FileManager.saveAllInspections(inspections);
@@ -49,7 +115,6 @@ class MotorcycleFactory {
                 return new SportsBike(id, plate, brand, model, year, transmission, mileage, dailyRate, (int) spec1, spec2, spec3);
             case "Electric Bike":
                 return new ElectricBike(id, plate, brand, model, year, mileage, dailyRate, spec1, spec2, spec3);
-       
         }
         return null;
     }
@@ -163,7 +228,10 @@ abstract class Motorcycle {
     }
 
     public abstract String displayMotorcycleInfo();
-    public abstract double calculateRentalCost(int days);
+    
+    public double calculateRentalCost(int days) {
+        return days * getDailyRate();
+    }
 }
 
 class Scooter extends Motorcycle {
@@ -178,30 +246,23 @@ class Scooter extends Motorcycle {
         this.fuelCapacity = fuelCapacity;
     }
     
-    
-public int getEngineDisplacement() {
-    return engineDisplacement;
-}
+    public int getEngineDisplacement() { 
+        return engineDisplacement; 
+    }
 
-public double getStorageCapacity() {
-    return storageCapacity;
-}
+    public double getStorageCapacity() { 
+        return storageCapacity; 
+    }
 
-public double getFuelCapacity() {
-    return fuelCapacity;
-}
-
+    public double getFuelCapacity() { 
+        return fuelCapacity; 
+    }
 
     @Override
     public String displayMotorcycleInfo() {
         return "Engine Displacement: " + engineDisplacement + " cc\n" +
                "Compartment Capacity: " + storageCapacity + " L\n" +
                "Fuel Capacity: " + fuelCapacity + " L\n";
-    }
-
-    @Override
-    public double calculateRentalCost(int days) {
-        return days * getDailyRate();
     }
 }
 
@@ -219,21 +280,21 @@ class AdventureBike extends Motorcycle {
         this.groundClearance = groundClearance;
     }
     
-    public int getEngineDisplacement() {
-    return engineDisplacement;
-}
+    public int getEngineDisplacement() { 
+        return engineDisplacement; 
+    }
 
-public double getStorageCapacity() {
-    return storageCapacity;
-}
+    public double getStorageCapacity() { 
+        return storageCapacity; 
+    }
 
-public double getFuelCapacity() {
-    return fuelCapacity;
-}
+    public double getFuelCapacity() { 
+        return fuelCapacity; 
+    }
 
-public double getGroundClearance() {
-    return groundClearance;
-}
+    public double getGroundClearance() { 
+        return groundClearance; 
+    }
 
     @Override
     public String displayMotorcycleInfo() {
@@ -241,11 +302,6 @@ public double getGroundClearance() {
                "Compartment Capacity: " + storageCapacity + " L\n" +
                "Fuel Capacity: " + fuelCapacity + " L\n" +
                "Ground Clearance: " + groundClearance + " mm\n";
-    }
-
-    @Override
-    public double calculateRentalCost(int days) {
-        return (days * getDailyRate()); 
     }
 }
 
@@ -259,23 +315,18 @@ class StandardBike extends Motorcycle {
         this.fuelCapacity = fuelCapacity;
     }
 
-    public int getEngineDisplacement() {
-    return engineDisplacement;
-}
+    public int getEngineDisplacement() { 
+        return engineDisplacement; 
+    }
 
-public double getFuelCapacity() {
-    return fuelCapacity;
-}
+    public double getFuelCapacity() { 
+        return fuelCapacity; 
+    }
     
     @Override
     public String displayMotorcycleInfo() {
         return "Engine Displacement: " + engineDisplacement + " cc\n" +
                "Fuel Capacity: " + fuelCapacity + " L\n";
-    }
-
-    @Override
-    public double calculateRentalCost(int days) {
-        return days * getDailyRate();
     }
 }
 
@@ -291,28 +342,23 @@ class SportsBike extends Motorcycle {
         this.powerOutput = powerOutput;
     }
 
-    public int getEngineDisplacement() {
-    return engineDisplacement;
-}
+    public int getEngineDisplacement() { 
+        return engineDisplacement; 
+    }
 
-public double getFuelCapacity() {
-    return fuelCapacity;
-}
+    public double getFuelCapacity() { 
+        return fuelCapacity; 
+    }
 
-public double getPowerOutput() {
-    return powerOutput;
-}
+    public double getPowerOutput() { 
+        return powerOutput; 
+    }
     
     @Override
     public String displayMotorcycleInfo() {
         return "Engine Displacement: " + engineDisplacement + " cc\n" +
                "Fuel Capacity: " + fuelCapacity + " L\n" +
                "Power Output: " + powerOutput + " HP\n";
-    }
-
-    @Override
-    public double calculateRentalCost(int days) {
-        return (days * getDailyRate()) ; 
     }
 }
 
@@ -328,28 +374,23 @@ class ElectricBike extends Motorcycle {
         this.chargingTime = chargingTime;
     }
 
-    public double getMotorPower() {
-    return motorPower;
-}
+    public double getMotorPower() { 
+        return motorPower; 
+    }
 
-public double getBatteryCapacity() {
-    return batteryCapacity;
-}
+    public double getBatteryCapacity() { 
+        return batteryCapacity; 
+    }
 
-public double getChargingTime() {
-    return chargingTime;
-}
+    public double getChargingTime() { 
+        return chargingTime; 
+    }
     
     @Override
     public String displayMotorcycleInfo() {
         return "Motor Power: " + motorPower + " W\n" +
                "Battery Capacity: " + batteryCapacity + " Ah\n" +
                "Charging Time: " + chargingTime + " hrs\n";
-    }
-
-    @Override
-    public double calculateRentalCost(int days) {
-        return (days * getDailyRate()); 
     }
 }
 
@@ -367,7 +408,6 @@ class RenterProfile {
         this.licenseNumber = licenseNumber;
         this.age = age;
     }
-    
 
     public String getName() { 
         return name; 
@@ -411,7 +451,22 @@ class RenterProfile {
 }
 
 class InspectionRecord {
-    String recordId, motorcycleId, date, phase, odometer, fuel, tires, brakes, headlight, horns, mirrors, body, engine, condition, readiness, notes;
+    private String recordId;
+    private String motorcycleId;
+    private String date;
+    private String phase;
+    private String odometer;
+    private String fuel;
+    private String tires;
+    private String brakes;
+    private String headlight;
+    private String horns;
+    private String mirrors;
+    private String body;
+    private String engine;
+    private String condition;
+    private String readiness;
+    private String notes;
 
     public InspectionRecord(String recordId, String motorcycleId, String date, String phase, String odometer, String fuel,
                             String tires, String brakes, String headlight, String horns, String mirrors,
@@ -433,20 +488,148 @@ class InspectionRecord {
         this.readiness = readiness;
         this.notes = notes;
     }
+
+    public String getRecordId() { 
+        return recordId; 
+    }
+    
+    public void setRecordId(String recordId) { 
+        this.recordId = recordId; 
+    }
+
+    public String getMotorcycleId() { 
+        return motorcycleId; 
+    }
+    
+    public void setMotorcycleId(String motorcycleId) { 
+        this.motorcycleId = motorcycleId; 
+    }
+
+    public String getDate() { 
+        return date; 
+    }
+    
+    public void setDate(String date) { 
+        this.date = date; 
+    }
+
+    public String getPhase() { 
+        return phase; 
+    }
+    
+    public void setPhase(String phase) { 
+        this.phase = phase; 
+    }
+
+    public String getOdometer() { 
+        return odometer; 
+    }
+    
+    public void setOdometer(String odometer) { 
+        this.odometer = odometer; 
+    }
+
+    public String getFuel() { 
+        return fuel; 
+    }
+    
+    public void setFuel(String fuel) { 
+        this.fuel = fuel; 
+    }
+
+    public String getTires() { 
+        return tires; 
+    }
+    
+    public void setTires(String tires) { 
+        this.tires = tires; 
+    }
+
+    public String getBrakes() { 
+        return brakes; 
+    }
+    
+    public void setBrakes(String brakes) { 
+        this.brakes = brakes; 
+    }
+
+    public String getHeadlight() { 
+        return headlight; 
+    }
+    
+    public void setHeadlight(String headlight) { 
+        this.headlight = headlight; 
+    }
+
+    public String getHorns() { 
+        return horns; 
+    }
+    
+    public void setHorns(String horns) { 
+        this.horns = horns; 
+    }
+
+    public String getMirrors() { 
+        return mirrors; 
+    }
+    
+    public void setMirrors(String mirrors) { 
+        this.mirrors = mirrors; 
+    }
+
+    public String getBody() { 
+        return body; 
+    }
+    
+    public void setBody(String body) { 
+        this.body = body; 
+    }
+
+    public String getEngine() { 
+        return engine; 
+    }
+    
+    public void setEngine(String engine) { 
+        this.engine = engine; 
+    }
+
+    public String getCondition() { 
+        return condition; 
+    }
+    
+    public void setCondition(String condition) { 
+        this.condition = condition; 
+    }
+
+    public String getReadiness() { 
+        return readiness; 
+    }
+    
+    public void setReadiness(String readiness) { 
+        this.readiness = readiness; 
+    }
+
+    public String getNotes() { 
+        return notes; 
+    }
+    
+    public void setNotes(String notes) { 
+        this.notes = notes; 
+    }
 }
 
 class MaintenanceRecord {
-    public String recordId;
-    public String motorcycleId;
-    public String date;
-    public String type;
-    public String category;
-    public String workPerformed;
-    public String partsReplaced;
-    public String odometer;
-    public double cost;
-    public String nextServiceMileage;
-    public String remarks;
+    private String recordId;
+    private String motorcycleId;
+    private String date;
+    private String type;
+    private String category;
+    private String workPerformed;
+    private String partsReplaced;
+    private String odometer;
+    private double cost;
+    private String nextServiceMileage;
+    private String remarks;
 
     public MaintenanceRecord(String recordId, String motorcycleId, String date, 
                              String type, String category, String workPerformed, 
@@ -464,19 +647,107 @@ class MaintenanceRecord {
         this.nextServiceMileage = nextServiceMileage;
         this.remarks = remarks;
     }
+
+    public String getRecordId() { 
+        return recordId; 
+    }
+    
+    public void setRecordId(String recordId) { 
+        this.recordId = recordId; 
+    }
+
+    public String getMotorcycleId() { 
+        return motorcycleId; 
+    }
+    
+    public void setMotorcycleId(String motorcycleId) { 
+        this.motorcycleId = motorcycleId; 
+    }
+
+    public String getDate() { 
+        return date; 
+    }
+    
+    public void setDate(String date) { 
+        this.date = date; 
+    }
+
+    public String getType() { 
+        return type; 
+    }
+    
+    public void setType(String type) { 
+        this.type = type; 
+    }
+
+    public String getCategory() { 
+        return category; 
+    }
+    
+    public void setCategory(String category) { 
+        this.category = category; 
+    }
+
+    public String getWorkPerformed() { 
+        return workPerformed; 
+    }
+    
+    public void setWorkPerformed(String workPerformed) { 
+        this.workPerformed = workPerformed; 
+    }
+
+    public String getPartsReplaced() { 
+        return partsReplaced; 
+    }
+    
+    public void setPartsReplaced(String partsReplaced) { 
+        this.partsReplaced = partsReplaced; 
+    }
+
+    public String getOdometer() { 
+        return odometer; 
+    }
+    
+    public void setOdometer(String odometer) { 
+        this.odometer = odometer; 
+    }
+
+    public double getCost() { 
+        return cost; 
+    }
+    
+    public void setCost(double cost) { 
+        this.cost = cost; 
+    }
+
+    public String getNextServiceMileage() { 
+        return nextServiceMileage; 
+    }
+    
+    public void setNextServiceMileage(String nextServiceMileage) { 
+        this.nextServiceMileage = nextServiceMileage; 
+    }
+
+    public String getRemarks() { 
+        return remarks; 
+    }
+    
+    public void setRemarks(String remarks) { 
+        this.remarks = remarks; 
+    }
 }
 
 class RentalTransaction {
-    public String transactionId;
-    public String motorcycleId;
-    public RenterProfile renterProfile;
-    public int days;
-    public double totalCost;
-    public double initialPayment;
-    public String paymentType;
-    public String date;
-    public String returnDate;
-    public String status;
+    private String transactionId;
+    private String motorcycleId;
+    private RenterProfile renterProfile;
+    private int days;
+    private double totalCost;
+    private double initialPayment;
+    private String paymentType;
+    private String date;
+    private String returnDate;
+    private String status;
 
     public RentalTransaction(String transactionId, String motorcycleId, RenterProfile renterProfile, 
                              int days, double totalCost, double initialPayment, 
@@ -493,20 +764,100 @@ class RentalTransaction {
         this.status = status;
     }
 
+    public String getTransactionId() { 
+        return transactionId; 
+    }
+    
+    public void setTransactionId(String transactionId) { 
+        this.transactionId = transactionId; 
+    }
+
+    public String getMotorcycleId() { 
+        return motorcycleId; 
+    }
+    
+    public void setMotorcycleId(String motorcycleId) { 
+        this.motorcycleId = motorcycleId; 
+    }
+
+    public RenterProfile getRenterProfile() { 
+        return renterProfile; 
+    }
+    
+    public void setRenterProfile(RenterProfile renterProfile) { 
+        this.renterProfile = renterProfile; 
+    }
+
+    public int getDays() { 
+        return days; 
+    }
+    
+    public void setDays(int days) { 
+        this.days = days; 
+    }
+
+    public double getTotalCost() { 
+        return totalCost; 
+    }
+    
+    public void setTotalCost(double totalCost) { 
+        this.totalCost = totalCost; 
+    }
+
+    public double getInitialPayment() { 
+        return initialPayment; 
+    }
+    
+    public void setInitialPayment(double initialPayment) { 
+        this.initialPayment = initialPayment; 
+    }
+
+    public String getPaymentType() { 
+        return paymentType; 
+    }
+    
+    public void setPaymentType(String paymentType) { 
+        this.paymentType = paymentType; 
+    }
+
+    public String getDate() { 
+        return date; 
+    }
+    
+    public void setDate(String date) { 
+        this.date = date; 
+    }
+
+    public String getReturnDate() { 
+        return returnDate; 
+    }
+    
+    public void setReturnDate(String returnDate) { 
+        this.returnDate = returnDate; 
+    }
+
+    public String getStatus() { 
+        return status; 
+    }
+    
+    public void setStatus(String status) { 
+        this.status = status; 
+    }
+
     public String getRenterName() {
         return renterProfile != null ? renterProfile.getName() : "";
     }
 }
 
 class DamageReport {
-    public String reportId;
-    public String motorcycleId;
-    public String date;
-    public String location;
-    public String type;
-    public String description;
-    public double estimatedCost;
-    public String notes;
+    private String reportId;
+    private String motorcycleId;
+    private String date;
+    private String location;
+    private String type;
+    private String description;
+    private double estimatedCost;
+    private String notes;
 
     public DamageReport(String reportId, String motorcycleId, String date, 
                         String location, String type, String description, 
@@ -519,5 +870,69 @@ class DamageReport {
         this.description = description;
         this.estimatedCost = estimatedCost;
         this.notes = notes;
+    }
+
+    public String getReportId() { 
+        return reportId; 
+    }
+    
+    public void setReportId(String reportId) { 
+        this.reportId = reportId; 
+    }
+
+    public String getMotorcycleId() { 
+        return motorcycleId; 
+    }
+    
+    public void setMotorcycleId(String motorcycleId) { 
+        this.motorcycleId = motorcycleId; 
+    }
+
+    public String getDate() { 
+        return date; 
+    }
+    
+    public void setDate(String date) { 
+        this.date = date; 
+    }
+
+    public String getLocation() { 
+        return location; 
+    }
+    
+    public void setLocation(String location) { 
+        this.location = location; 
+    }
+
+    public String getType() { 
+        return type; 
+    }
+    
+    public void setType(String type) { 
+        this.type = type; 
+    }
+
+    public String getDescription() { 
+        return description; 
+    }
+    
+    public void setDescription(String description) { 
+        this.description = description; 
+    }
+
+    public double getEstimatedCost() { 
+        return estimatedCost; 
+    }
+    
+    public void setEstimatedCost(double estimatedCost) { 
+        this.estimatedCost = estimatedCost; 
+    }
+
+    public String getNotes() { 
+        return notes; 
+    }
+    
+    public void setNotes(String notes) { 
+        this.notes = notes; 
     }
 }

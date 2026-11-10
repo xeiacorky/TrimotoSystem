@@ -12,7 +12,7 @@ public class ViewDamageReport extends javax.swing.JPanel {
 
     public void refreshMotorcycleDropdown() {
         DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
-        for (Motorcycle m : TrimotoSystem.motorcycles) {
+        for (Motorcycle m : TrimotoSystem.getMotorcycles()) {
             model.addElement(m.getId() + " - " + m.getBrand() + " " + m.getModel());
         }
         cbMotorId.setModel(model);
@@ -178,10 +178,9 @@ public class ViewDamageReport extends javax.swing.JPanel {
             String motorId = selected.split(" - ")[0];
             String type = cbDamageType.getSelectedItem().toString();
 
-            String dmgId = "DMG-" + (TrimotoSystem.damageReports.size() + 1001);
-
+            String dmgId = "DMG-" + (TrimotoSystem.getDamageReports().size() + 1001);
             DamageReport newReport = new DamageReport(dmgId, motorId, date, location, type, desc, cost, notes);
-            TrimotoSystem.damageReports.add(newReport);
+            TrimotoSystem.addDamageReport(newReport);
 
             TrimotoSystem.saveAllData();
 

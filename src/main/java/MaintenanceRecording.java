@@ -14,7 +14,7 @@ public class MaintenanceRecording extends javax.swing.JPanel {
     
     public void refreshMotorcycleDropdown() {
         DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
-        for (Motorcycle m : TrimotoSystem.motorcycles) {
+        for (Motorcycle m : TrimotoSystem.getMotorcycles()) {
             model.addElement(m.getId() + " - " + m.getBrand() + " " + m.getModel());
         }
         cbMotorcycle.setModel(model);
@@ -213,9 +213,8 @@ public class MaintenanceRecording extends javax.swing.JPanel {
         String motorId = selectedItem.split(" - ")[0].trim();
         String type = cbMainteType.getSelectedItem().toString();
 
-        String mntId = "MNT-" + (TrimotoSystem.maintenanceRecords.size() + 1001);
-        
-        TrimotoSystem.maintenanceRecords.add(new MaintenanceRecord(
+        String mntId = "MNT-" + (TrimotoSystem.getMaintenanceRecords().size() + 1001);
+        TrimotoSystem.addMaintenanceRecord(new MaintenanceRecord(
             mntId, motorId, date, type, category, workPerformed, partsReplaced, 
             odometer, cost, nextServiceMileage, remarks
         ));

@@ -14,7 +14,7 @@ public class MotorcycleInspection extends javax.swing.JPanel {
 
     public void refreshMotorcycleDropdown() {
         DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
-        for (Motorcycle m : TrimotoSystem.motorcycles) {
+        for (Motorcycle m : TrimotoSystem.getMotorcycles()) {
             model.addElement(m.getId() + " - " + m.getBrand() + " " + m.getModel());
         }
         cmbMotorcycle.setModel(model);
@@ -317,8 +317,8 @@ public class MotorcycleInspection extends javax.swing.JPanel {
         String readiness = cbReadiness.getSelectedItem().toString();
         String notes = txtInspectionNotes.getText().trim();
 
-        String insId = "INS-" + (TrimotoSystem.inspections.size() + 1001);
-        TrimotoSystem.inspections.add(new InspectionRecord(
+        String insId = "INS-" + (TrimotoSystem.getInspections().size() + 1001);
+        TrimotoSystem.addInspection(new InspectionRecord(
             insId, motorId, date, phase, odometerStr, fuel, tires, brakes, 
             headlight, horns, mirrors, body, engine, condition, readiness, notes
         ));

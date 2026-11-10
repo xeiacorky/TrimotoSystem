@@ -31,112 +31,112 @@ public class FileManager {
     }
 
     public static void saveAllMotorcycles(List<Motorcycle> motorcycles) {
-    ensureDataDirExists();
-    try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(MOTORCYCLES_FILE))) {
-        for (Motorcycle motorcycle : motorcycles) {
-            String[] data = new String[18];
-            data[0] = motorcycle.getId();
-            data[1] = motorcycle.getPlate();
-            data[2] = motorcycle.getBrand();
-            data[3] = motorcycle.getModel();
-            data[4] = String.valueOf(motorcycle.getYear());
-            data[5] = motorcycle.getType();
-            data[6] = motorcycle.getTransmissionType();
-            data[7] = String.valueOf(motorcycle.getMileage());
-            data[8] = String.valueOf(motorcycle.getDailyRate());
-            data[9] = motorcycle.getStatus();
+        ensureDataDirExists();
+        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(MOTORCYCLES_FILE))) {
+            for (Motorcycle motorcycle : motorcycles) {
+                String[] data = new String[18];
+                data[0] = motorcycle.getId();
+                data[1] = motorcycle.getPlate();
+                data[2] = motorcycle.getBrand();
+                data[3] = motorcycle.getModel();
+                data[4] = String.valueOf(motorcycle.getYear());
+                data[5] = motorcycle.getType();
+                data[6] = motorcycle.getTransmissionType();
+                data[7] = String.valueOf(motorcycle.getMileage());
+                data[8] = String.valueOf(motorcycle.getDailyRate());
+                data[9] = motorcycle.getStatus();
 
-            for (int i = 10; i < 18; i++) data[i] = "";
+                for (int i = 10; i < 18; i++) data[i] = "";
 
-            if (motorcycle instanceof Scooter) {
-                Scooter s = (Scooter) motorcycle;
-                data[10] = String.valueOf(s.getEngineDisplacement());
-                data[11] = String.valueOf(s.getStorageCapacity());
-                data[12] = String.valueOf(s.getFuelCapacity());
-            } else if (motorcycle instanceof StandardBike) {
-                StandardBike s = (StandardBike) motorcycle;
-                data[10] = String.valueOf(s.getEngineDisplacement());
-                data[11] = String.valueOf(s.getFuelCapacity());
-            } else if (motorcycle instanceof SportsBike) {
-                SportsBike s = (SportsBike) motorcycle;
-                data[10] = String.valueOf(s.getEngineDisplacement());
-                data[11] = String.valueOf(s.getFuelCapacity());
-                data[12] = String.valueOf(s.getPowerOutput());
-            } else if (motorcycle instanceof ElectricBike) {
-                ElectricBike e = (ElectricBike) motorcycle;
-                data[13] = String.valueOf(e.getMotorPower());
-                data[14] = String.valueOf(e.getBatteryCapacity());
-                data[15] = String.valueOf(e.getChargingTime());
-            } else if (motorcycle instanceof AdventureBike) {
-                AdventureBike a = (AdventureBike) motorcycle;
-                data[10] = String.valueOf(a.getEngineDisplacement());
-                data[11] = String.valueOf(a.getStorageCapacity());
-                data[12] = String.valueOf(a.getFuelCapacity());
-                data[16] = String.valueOf(a.getGroundClearance());
+                if (motorcycle instanceof Scooter) {
+                    Scooter s = (Scooter) motorcycle;
+                    data[10] = String.valueOf(s.getEngineDisplacement());
+                    data[11] = String.valueOf(s.getStorageCapacity());
+                    data[12] = String.valueOf(s.getFuelCapacity());
+                } else if (motorcycle instanceof StandardBike) {
+                    StandardBike s = (StandardBike) motorcycle;
+                    data[10] = String.valueOf(s.getEngineDisplacement());
+                    data[11] = String.valueOf(s.getFuelCapacity());
+                } else if (motorcycle instanceof SportsBike) {
+                    SportsBike s = (SportsBike) motorcycle;
+                    data[10] = String.valueOf(s.getEngineDisplacement());
+                    data[11] = String.valueOf(s.getFuelCapacity());
+                    data[12] = String.valueOf(s.getPowerOutput());
+                } else if (motorcycle instanceof ElectricBike) {
+                    ElectricBike e = (ElectricBike) motorcycle;
+                    data[13] = String.valueOf(e.getMotorPower());
+                    data[14] = String.valueOf(e.getBatteryCapacity());
+                    data[15] = String.valueOf(e.getChargingTime());
+                } else if (motorcycle instanceof AdventureBike) {
+                    AdventureBike a = (AdventureBike) motorcycle;
+                    data[10] = String.valueOf(a.getEngineDisplacement());
+                    data[11] = String.valueOf(a.getStorageCapacity());
+                    data[12] = String.valueOf(a.getFuelCapacity());
+                    data[16] = String.valueOf(a.getGroundClearance());
+                }
+
+                writer.write(String.join(",", data));
+                writer.newLine();
             }
-
-            writer.write(String.join(",", data));
-            writer.newLine();
+        } catch (IOException e) {
+            System.err.println("Error saving motorcycles: " + e.getMessage());
         }
-    } catch (IOException e) {
-        System.err.println("Error saving motorcycles: " + e.getMessage());
     }
-}
 
-public static ArrayList<Motorcycle> loadMotorcycles() {
-    ArrayList<Motorcycle> list = new ArrayList<>();
-    Path path = Paths.get(MOTORCYCLES_FILE);
-    if (!Files.exists(path)) return list;
+    public static ArrayList<Motorcycle> loadMotorcycles() {
+        ArrayList<Motorcycle> list = new ArrayList<>();
+        Path path = Paths.get(MOTORCYCLES_FILE);
+        if (!Files.exists(path)) return list;
 
-    try (BufferedReader reader = Files.newBufferedReader(path)) {
-        String line;
-        while ((line = reader.readLine()) != null) {
-            if (line.trim().isEmpty()) continue;
-            String[] data = line.split(",", -1);
-            String id = data[0];
-            String plate = data[1];
-            String brand = data[2];
-            String model = data[3];
-            int year = Integer.parseInt(data[4]);
-            String type = data[5];
-            String transmission = data[6];
-            int mileage = Integer.parseInt(data[7]);
-            double rate = Double.parseDouble(data[8]);
-            String status = data[9];
+        try (BufferedReader reader = Files.newBufferedReader(path)) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (line.trim().isEmpty()) continue;
+                String[] data = line.split(",", -1);
+                String id = data[0];
+                String plate = data[1];
+                String brand = data[2];
+                String model = data[3];
+                int year = Integer.parseInt(data[4]);
+                String type = data[5];
+                String transmission = data[6];
+                int mileage = Integer.parseInt(data[7]);
+                double rate = Double.parseDouble(data[8]);
+                String status = data[9];
 
-            Motorcycle motorcycle = null;
-            switch (type.trim()) {
-                case "Scooter":
-                    motorcycle = new Scooter(id, plate, brand, model, year, transmission, mileage, rate,
-                            Integer.parseInt(data[10]), Double.parseDouble(data[11]), Double.parseDouble(data[12]));
-                    break;
-                case "Standard Bike":
-                    motorcycle = new StandardBike(id, plate, brand, model, year, transmission, mileage, rate,
-                            Integer.parseInt(data[10]), Double.parseDouble(data[11]));
-                    break;
-                case "Sports Bike":
-                    motorcycle = new SportsBike(id, plate, brand, model, year, transmission, mileage, rate,
-                            Integer.parseInt(data[10]), Double.parseDouble(data[11]), Double.parseDouble(data[12]));
-                    break;
-                case "Electric Bike":
-                    motorcycle = new ElectricBike(id, plate, brand, model, year, mileage, rate,
-                            Double.parseDouble(data[13]), Double.parseDouble(data[14]), Double.parseDouble(data[15]));
-                    break;
-                case "Adventure Bike":
-                    motorcycle = new AdventureBike(id, plate, brand, model, year, transmission, mileage, rate,
-                            Integer.parseInt(data[10]), Double.parseDouble(data[11]), Double.parseDouble(data[12]), Double.parseDouble(data[16]));
-                    break;
+                Motorcycle motorcycle = null;
+                switch (type.trim()) {
+                    case "Scooter":
+                        motorcycle = new Scooter(id, plate, brand, model, year, transmission, mileage, rate,
+                                Integer.parseInt(data[10]), Double.parseDouble(data[11]), Double.parseDouble(data[12]));
+                        break;
+                    case "Standard Bike":
+                        motorcycle = new StandardBike(id, plate, brand, model, year, transmission, mileage, rate,
+                                Integer.parseInt(data[10]), Double.parseDouble(data[11]));
+                        break;
+                    case "Sports Bike":
+                        motorcycle = new SportsBike(id, plate, brand, model, year, transmission, mileage, rate,
+                                Integer.parseInt(data[10]), Double.parseDouble(data[11]), Double.parseDouble(data[12]));
+                        break;
+                    case "Electric Bike":
+                        motorcycle = new ElectricBike(id, plate, brand, model, year, mileage, rate,
+                                Double.parseDouble(data[13]), Double.parseDouble(data[14]), Double.parseDouble(data[15]));
+                        break;
+                    case "Adventure Bike":
+                        motorcycle = new AdventureBike(id, plate, brand, model, year, transmission, mileage, rate,
+                                Integer.parseInt(data[10]), Double.parseDouble(data[11]), Double.parseDouble(data[12]), Double.parseDouble(data[16]));
+                        break;
+                }
+
+                if (motorcycle != null) {
+                    motorcycle.setStatus(status);
+                    list.add(motorcycle);
+                }
             }
-
-            if (motorcycle != null) {
-                motorcycle.setStatus(status);
-                list.add(motorcycle);
-            }
+        } catch (IOException | NumberFormatException e) {
+            System.err.println("Error loading motorcycles: " + e.getMessage());
         }
-    } catch (IOException | NumberFormatException e) {
-        System.err.println("Error loading motorcycles: " + e.getMessage());
-    }
-    return list;
+        return list;
     }
 
     public static void saveAllInspections(List<InspectionRecord> inspections) {
@@ -144,12 +144,12 @@ public static ArrayList<Motorcycle> loadMotorcycles() {
         try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(INSPECTIONS_FILE))) {
             for (InspectionRecord r : inspections) {
                 String line = String.join(",",
-                        escapeCsv(r.recordId), escapeCsv(r.motorcycleId), escapeCsv(r.date),
-                        escapeCsv(r.phase), escapeCsv(r.odometer), escapeCsv(r.fuel),
-                        escapeCsv(r.tires), escapeCsv(r.brakes), escapeCsv(r.headlight),
-                        escapeCsv(r.horns), escapeCsv(r.mirrors), escapeCsv(r.body),
-                        escapeCsv(r.engine), escapeCsv(r.condition), escapeCsv(r.readiness),
-                        escapeCsv(r.notes)
+                        escapeCsv(r.getRecordId()), escapeCsv(r.getMotorcycleId()), escapeCsv(r.getDate()),
+                        escapeCsv(r.getPhase()), escapeCsv(r.getOdometer()), escapeCsv(r.getFuel()),
+                        escapeCsv(r.getTires()), escapeCsv(r.getBrakes()), escapeCsv(r.getHeadlight()),
+                        escapeCsv(r.getHorns()), escapeCsv(r.getMirrors()), escapeCsv(r.getBody()),
+                        escapeCsv(r.getEngine()), escapeCsv(r.getCondition()), escapeCsv(r.getReadiness()),
+                        escapeCsv(r.getNotes())
                 );
                 writer.write(line);
                 writer.newLine();
@@ -189,17 +189,17 @@ public static ArrayList<Motorcycle> loadMotorcycles() {
         try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(MAINTENANCE_FILE))) {
             for (MaintenanceRecord r : records) {
                 String line = String.join(",",
-                        escapeCsv(r.recordId), 
-                        escapeCsv(r.motorcycleId), 
-                        escapeCsv(r.date),
-                        escapeCsv(r.type), 
-                        escapeCsv(r.category), 
-                        escapeCsv(r.workPerformed),
-                        escapeCsv(r.partsReplaced), 
-                        escapeCsv(r.odometer), 
-                        String.valueOf(r.cost),
-                        escapeCsv(r.nextServiceMileage), 
-                        escapeCsv(r.remarks)
+                        escapeCsv(r.getRecordId()), 
+                        escapeCsv(r.getMotorcycleId()), 
+                        escapeCsv(r.getDate()),
+                        escapeCsv(r.getType()), 
+                        escapeCsv(r.getCategory()), 
+                        escapeCsv(r.getWorkPerformed()),
+                        escapeCsv(r.getPartsReplaced()), 
+                        escapeCsv(r.getOdometer()), 
+                        String.valueOf(r.getCost()),
+                        escapeCsv(r.getNextServiceMileage()), 
+                        escapeCsv(r.getRemarks())
                 );
                 writer.write(line);
                 writer.newLine();
@@ -252,7 +252,7 @@ public static ArrayList<Motorcycle> loadMotorcycles() {
         ensureDataDirExists();
         try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(RENTALS_FILE))) {
             for (RentalTransaction r : rentals) {
-                RenterProfile p = r.renterProfile;
+                RenterProfile p = r.getRenterProfile();
                 String name = p != null ? p.getName() : "";
                 String address = p != null ? p.getAddress() : "";
                 String contact = p != null ? p.getContactNumber() : "";
@@ -260,12 +260,12 @@ public static ArrayList<Motorcycle> loadMotorcycles() {
                 String age = p != null ? p.getAge() : "";
 
                 String line = String.join(",",
-                        escapeCsv(r.transactionId), escapeCsv(r.motorcycleId),
+                        escapeCsv(r.getTransactionId()), escapeCsv(r.getMotorcycleId()),
                         escapeCsv(name), escapeCsv(address), escapeCsv(contact),
-                        escapeCsv(license), escapeCsv(age), String.valueOf(r.days),
-                        String.valueOf(r.totalCost), String.valueOf(r.initialPayment),
-                        escapeCsv(r.paymentType), escapeCsv(r.date),
-                        escapeCsv(r.returnDate), escapeCsv(r.status)
+                        escapeCsv(license), escapeCsv(age), String.valueOf(r.getDays()),
+                        String.valueOf(r.getTotalCost()), String.valueOf(r.getInitialPayment()),
+                        escapeCsv(r.getPaymentType()), escapeCsv(r.getDate()),
+                        escapeCsv(r.getReturnDate()), escapeCsv(r.getStatus())
                 );
                 writer.write(line);
                 writer.newLine();
@@ -312,14 +312,14 @@ public static ArrayList<Motorcycle> loadMotorcycles() {
         try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(DAMAGE_REPORTS_FILE))) {
             for (DamageReport r : reports) {
                 String line = String.join(",",
-                        escapeCsv(r.reportId),
-                        escapeCsv(r.motorcycleId),
-                        escapeCsv(r.date),
-                        escapeCsv(r.location),
-                        escapeCsv(r.type),
-                        escapeCsv(r.description),
-                        String.valueOf(r.estimatedCost),
-                        escapeCsv(r.notes)
+                        escapeCsv(r.getReportId()),
+                        escapeCsv(r.getMotorcycleId()),
+                        escapeCsv(r.getDate()),
+                        escapeCsv(r.getLocation()),
+                        escapeCsv(r.getType()),
+                        escapeCsv(r.getDescription()),
+                        String.valueOf(r.getEstimatedCost()),
+                        escapeCsv(r.getNotes())
                 );
                 writer.write(line);
                 writer.newLine();

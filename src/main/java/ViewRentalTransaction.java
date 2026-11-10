@@ -1,5 +1,6 @@
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -10,10 +11,9 @@ import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 
-
 public class ViewRentalTransaction extends javax.swing.JPanel {
 
-   public ViewRentalTransaction() {
+    public ViewRentalTransaction() {
         UIManager.put("Button.focusWidth", 0);
         UIManager.put("ComboBox.drawFocusBackground", Boolean.FALSE);
         initComponents();
@@ -23,40 +23,41 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
     }
 
     public void loadTableData() {
-    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-    model.setRowCount(0);
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setRowCount(0);
 
-    java.util.Set<String> activeMotorcycles = new java.util.HashSet<>();
+        java.util.Set<String> activeMotorcycles = new java.util.HashSet<>();
+        List<RentalTransaction> rentals = TrimotoSystem.getRentals();
 
-    for (int i = TrimotoSystem.rentals.size() - 1; i >= 0; i--) {
-        RentalTransaction r = TrimotoSystem.rentals.get(i);
+        for (int i = rentals.size() - 1; i >= 0; i--) {
+            RentalTransaction r = rentals.get(i);
 
-        if ("Active".equalsIgnoreCase(r.status)) {
-            if (activeMotorcycles.contains(r.motorcycleId)) {
-                r.status = "Completed"; 
-            } else {
-                activeMotorcycles.add(r.motorcycleId);
+            if ("Active".equalsIgnoreCase(r.getStatus())) {
+                if (activeMotorcycles.contains(r.getMotorcycleId())) {
+                    r.setStatus("Completed"); 
+                } else {
+                    activeMotorcycles.add(r.getMotorcycleId());
+                }
             }
+
+            double balance = r.getTotalCost() - r.getInitialPayment();
+            String renterName = r.getRenterName();
+
+            model.addRow(new Object[]{
+                r.getTransactionId(),
+                r.getMotorcycleId(), 
+                renterName, 
+                r.getDays(), 
+                r.getTotalCost(), 
+                r.getInitialPayment(), 
+                balance, 
+                r.getDate(), 
+                r.getReturnDate(), 
+                r.getStatus()   
+            });
         }
-
-        double balance = r.totalCost - r.initialPayment;
-        String renterName = r.getRenterName();
-
-        model.addRow(new Object[]{
-            r.transactionId,
-            r.motorcycleId, 
-            renterName, 
-            r.days, 
-            r.totalCost, 
-            r.initialPayment, 
-            balance, 
-            r.date, 
-            r.returnDate, 
-            r.status   
-        });
+        viewtransactapplyfilterActionPerformed(null);
     }
-    viewtransactapplyfilterActionPerformed(null);
-}
     
     private void notifyDashboardRefresh() {
         java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
@@ -492,33 +493,34 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
 
         String transId = targetTable.getValueAt(selectedRow, 0).toString().trim();
 
-        for (RentalTransaction r : TrimotoSystem.rentals) {
-            if (r.transactionId.equalsIgnoreCase(transId)) {
+       for (RentalTransaction r : TrimotoSystem.getRentals()) {
+            if (r.getTransactionId().equalsIgnoreCase(transId)) {
                 try {
                     int days = Integer.parseInt(duraStr);
                     double cost = Double.parseDouble(costStr);
                     double payment = Double.parseDouble(paymentStr);
 
-                    if (r.renterProfile != null) {
-                        r.renterProfile.setName(renterName);
-                        r.renterProfile.setAddress(address);
-                        r.renterProfile.setContactNumber(contactNumber);
-                        r.renterProfile.setLicenseNumber(licenseNumber);
+                    RenterProfile profile = r.getRenterProfile();
+                    if (profile != null) {
+                        profile.setName(renterName);
+                        profile.setAddress(address);
+                        profile.setContactNumber(contactNumber);
+                        profile.setLicenseNumber(licenseNumber);
                     }
-                    r.days = days;
-                    r.totalCost = cost;
-                    r.initialPayment = payment;
-                    r.returnDate = returnDate;
-                    r.paymentType = cbpartial.isSelected() ? "Partial" : "Full";
+                    r.setDays(days);
+                    r.setTotalCost(cost);
+                    r.setInitialPayment(payment);
+                    r.setReturnDate(returnDate);
+                    r.setPaymentType(cbpartial.isSelected() ? "Partial" : "Full");
                     if (jComboBox1.getSelectedItem() != null) {
-                        r.status = jComboBox1.getSelectedItem().toString();
+                        r.setStatus(jComboBox1.getSelectedItem().toString());
                     }
 
-                    Motorcycle m = TrimotoSystem.findMotorcycleById(r.motorcycleId);
+                    Motorcycle m = TrimotoSystem.findMotorcycleById(r.getMotorcycleId());
                     if (m != null) {
-                        if ("Completed".equalsIgnoreCase(r.status) || "Returned".equalsIgnoreCase(r.status) || "Cancelled".equalsIgnoreCase(r.status)) {
+                        if ("Completed".equalsIgnoreCase(r.getStatus()) || "Returned".equalsIgnoreCase(r.getStatus()) || "Cancelled".equalsIgnoreCase(r.getStatus())) {
                             m.setStatus("Available");
-                        } else if ("Active".equalsIgnoreCase(r.status)) {
+                        } else if ("Active".equalsIgnoreCase(r.getStatus())) {
                             m.setStatus("Rented");
                         }
                     }
@@ -547,23 +549,24 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
 
         String transId = jTable2.getValueAt(selectedRow, 0).toString().trim();
 
-        for (RentalTransaction r : TrimotoSystem.rentals) {
-            if (r.transactionId.equalsIgnoreCase(transId)) {
-                if (r.renterProfile != null) {
-                    txtname.setText(r.renterProfile.getName());
-                    txtaddress.setText(r.renterProfile.getAddress());
-                    txtcontnumber.setText(r.renterProfile.getContactNumber());
-                    txtdriverslicense.setText(r.renterProfile.getLicenseNumber());
+        for (RentalTransaction r : TrimotoSystem.getRentals()) {
+            if (r.getTransactionId().equalsIgnoreCase(transId)) {
+                RenterProfile profile = r.getRenterProfile();
+                if (profile != null) {
+                    txtname.setText(profile.getName());
+                    txtaddress.setText(profile.getAddress());
+                    txtcontnumber.setText(profile.getContactNumber());
+                    txtdriverslicense.setText(profile.getLicenseNumber());
                 }
-                lbldura.setText(String.valueOf(r.days));
-                jTextField1.setText(String.valueOf(r.totalCost));
-                jTextField2.setText(String.valueOf(r.initialPayment));
-                cbpartial.setSelected("Partial".equalsIgnoreCase(r.paymentType));
-                cbfull.setSelected("Full".equalsIgnoreCase(r.paymentType));
-                txtreturn.setText(r.returnDate);
+                lbldura.setText(String.valueOf(r.getDays()));
+                jTextField1.setText(String.valueOf(r.getTotalCost()));
+                jTextField2.setText(String.valueOf(r.getInitialPayment()));
+                cbpartial.setSelected("Partial".equalsIgnoreCase(r.getPaymentType()));
+                cbfull.setSelected("Full".equalsIgnoreCase(r.getPaymentType()));
+                txtreturn.setText(r.getReturnDate());
 
                 jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Active", "Completed" }));
-                jComboBox1.setSelectedItem(r.status);
+                jComboBox1.setSelectedItem(r.getStatus());
 
                 editviewtransac.setSize(700, 500);
                 editviewtransac.setLocationRelativeTo(this);
@@ -599,13 +602,12 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
         );
 
         if (confirm == JOptionPane.YES_OPTION) {
-            TrimotoSystem.rentals.removeIf(r -> r.transactionId.equalsIgnoreCase(transId));
+            TrimotoSystem.removeRentalTransaction(transId);
 
-            TrimotoSystem.saveAllData();
             loadTableData();
             viewtransactapplyfilterActionPerformed(evt);
             notifyDashboardRefresh();
-
+            
             JOptionPane.showMessageDialog(viewtransacdialog, "Selected rental transaction deleted successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_viewtransactdeleteActionPerformed
@@ -619,36 +621,36 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
 
     java.util.Set<String> activeMotorcycles = new java.util.HashSet<>();
 
-    
-        for (int i = TrimotoSystem.rentals.size() - 1; i >= 0; i--) {
-            RentalTransaction r = TrimotoSystem.rentals.get(i);
+    List<RentalTransaction> rentals = TrimotoSystem.getRentals();
+        for (int i = rentals.size() - 1; i >= 0; i--) {
+            RentalTransaction r = rentals.get(i);
 
-            if ("Active".equalsIgnoreCase(r.status)) {
-                if (activeMotorcycles.contains(r.motorcycleId)) {
-                    r.status = "Completed";
+            if ("Active".equalsIgnoreCase(r.getStatus())) {
+                if (activeMotorcycles.contains(r.getMotorcycleId())) {
+                    r.setStatus("Completed");
                 } else {
-                    activeMotorcycles.add(r.motorcycleId);
+                    activeMotorcycles.add(r.getMotorcycleId());
                 }
             }
 
-            boolean matchesStatus = "All".equalsIgnoreCase(filterStatus) || r.status.equalsIgnoreCase(filterStatus);
+            boolean matchesStatus = "All".equalsIgnoreCase(filterStatus) || r.getStatus().equalsIgnoreCase(filterStatus);
             String renterName = r.getRenterName();
             boolean matchesKeyword = keyword.isEmpty() || 
-                                     r.transactionId.toLowerCase().contains(keyword) ||
-                                     r.motorcycleId.toLowerCase().contains(keyword) || 
+                                     r.getTransactionId().toLowerCase().contains(keyword) ||
+                                     r.getMotorcycleId().toLowerCase().contains(keyword) || 
                                      renterName.toLowerCase().contains(keyword);
 
             if (matchesStatus && matchesKeyword) {
-                double balance = r.totalCost - r.initialPayment;
-                String age = r.renterProfile != null ? r.renterProfile.getAge() : "-";
-                String address = r.renterProfile != null ? r.renterProfile.getAddress() : "-";
-                String contactNumber = r.renterProfile != null ? r.renterProfile.getContactNumber() : "-";
-                String license = r.renterProfile != null ? r.renterProfile.getLicenseNumber() : "-";
+                double balance = r.getTotalCost() - r.getInitialPayment();
+                String age = r.getRenterProfile() != null ? r.getRenterProfile().getAge() : "-";
+                String address = r.getRenterProfile() != null ? r.getRenterProfile().getAddress() : "-";
+                String contactNumber = r.getRenterProfile() != null ? r.getRenterProfile().getContactNumber() : "-";
+                String license = r.getRenterProfile() != null ? r.getRenterProfile().getLicenseNumber() : "-";
 
                 model.addRow(new Object[]{
-                    r.transactionId, r.motorcycleId, renterName, age, address, contactNumber, license,
-                    r.days, r.totalCost, r.initialPayment, balance, r.date,
-                    r.returnDate, r.status
+                    r.getTransactionId(), r.getMotorcycleId(), renterName, age, address, contactNumber, license,
+                    r.getDays(), r.getTotalCost(), r.getInitialPayment(), balance, r.getDate(),
+                    r.getReturnDate(), r.getStatus()
                 });
             }
         }
@@ -664,25 +666,25 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0);
 
-        for (RentalTransaction r : TrimotoSystem.rentals) {
-            if (r.transactionId.toLowerCase().contains(searchId) || 
-                r.motorcycleId.toLowerCase().contains(searchId) || 
+        for (RentalTransaction r : TrimotoSystem.getRentals()) {
+            if (r.getTransactionId().toLowerCase().contains(searchId) || 
+                r.getMotorcycleId().toLowerCase().contains(searchId) || 
                 r.getRenterName().toLowerCase().contains(searchId)) {
 
-                double balance = r.totalCost - r.initialPayment;
+                double balance = r.getTotalCost() - r.getInitialPayment();
                 String renterName = r.getRenterName();
 
                 model.addRow(new Object[]{
-                    r.transactionId,
-                    r.motorcycleId, 
+                    r.getTransactionId(),
+                    r.getMotorcycleId(), 
                     renterName, 
-                    r.days, 
-                    r.totalCost, 
-                    r.initialPayment, 
+                    r.getDays(), 
+                    r.getTotalCost(), 
+                    r.getInitialPayment(), 
                     balance, 
-                    r.date, 
-                    r.returnDate, 
-                    r.status
+                    r.getDate(), 
+                    r.getReturnDate(), 
+                    r.getStatus()
                 });
             }
         }
@@ -697,11 +699,11 @@ public class ViewRentalTransaction extends javax.swing.JPanel {
 
         String transId = jTable1.getValueAt(selectedRow, 0).toString().trim();
 
-        for (RentalTransaction r : TrimotoSystem.rentals) {
-            if (r.transactionId.equalsIgnoreCase(transId) && "Active".equalsIgnoreCase(r.status)) {
-                r.status = "Completed";
+        for (RentalTransaction r : TrimotoSystem.getRentals()) {
+            if (r.getTransactionId().equalsIgnoreCase(transId) && "Active".equalsIgnoreCase(r.getStatus())) {
+                r.setStatus("Completed");
 
-                Motorcycle m = TrimotoSystem.findMotorcycleById(r.motorcycleId);
+                Motorcycle m = TrimotoSystem.findMotorcycleById(r.getMotorcycleId());
                 if (m != null) {
                     m.setStatus("For Inspection");
                 }

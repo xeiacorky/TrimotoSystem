@@ -1,4 +1,5 @@
 import java.awt.CardLayout;
+import java.util.List;
 import javax.swing.UIManager;
 
 public class MainDashboard extends javax.swing.JFrame {  
@@ -24,42 +25,43 @@ public class MainDashboard extends javax.swing.JFrame {
     }
    
     public void refreshDashboardCounters() {
-        long total = TrimotoSystem.motorcycles.size();
+    List<Motorcycle> motorcycles = TrimotoSystem.getMotorcycles();
+    long total = motorcycles.size();
+    
+    long available = motorcycles.stream()
+        .filter(m -> m.getStatus() != null && "Available".equalsIgnoreCase(m.getStatus().trim())).count();
         
-        long available = TrimotoSystem.motorcycles.stream()
-            .filter(m -> m.getStatus() != null && "Available".equalsIgnoreCase(m.getStatus().trim())).count();
-            
-        long rented = TrimotoSystem.motorcycles.stream()
-            .filter(m -> m.getStatus() != null && 
-                ("Rented".equalsIgnoreCase(m.getStatus().trim()) || "Active".equalsIgnoreCase(m.getStatus().trim()))).count();
-            
-        long maintenance = TrimotoSystem.motorcycles.stream()
-            .filter(m -> m.getStatus() != null && 
-                ("Under Maintenance".equalsIgnoreCase(m.getStatus().trim()) || 
-                 "Maintenance".equalsIgnoreCase(m.getStatus().trim()) || 
-                 "In Progress".equalsIgnoreCase(m.getStatus().trim()) ||
-                 "Pending".equalsIgnoreCase(m.getStatus().trim()))).count();
-                         
-        long inspection = TrimotoSystem.motorcycles.stream()
-            .filter(m -> m.getStatus() != null && 
-                ("For Inspection".equalsIgnoreCase(m.getStatus().trim()) || 
-                 "Inspection".equalsIgnoreCase(m.getStatus().trim()) ||
-                 "Needs Repair".equalsIgnoreCase(m.getStatus().trim()) ||
-                 "Minor Damage".equalsIgnoreCase(m.getStatus().trim()))).count();
-                         
-        long repair = TrimotoSystem.motorcycles.stream()
-            .filter(m -> m.getStatus() != null && 
-                ("Under Repair".equalsIgnoreCase(m.getStatus().trim()) ||
-                 "Repair".equalsIgnoreCase(m.getStatus().trim()) ||
-                 "Unsafe".equalsIgnoreCase(m.getStatus().trim()))).count();
+    long rented = motorcycles.stream()
+        .filter(m -> m.getStatus() != null && 
+            ("Rented".equalsIgnoreCase(m.getStatus().trim()) || "Active".equalsIgnoreCase(m.getStatus().trim()))).count();
         
-        lbltotalvalue.setText(String.valueOf(total));
-        lbltotalvalue2.setText(String.valueOf(available));
-        lbltotalvalue1.setText(String.valueOf(rented));
-        lbltotalvalue3.setText(String.valueOf(maintenance));
-        lbltotalvalue5.setText(String.valueOf(inspection));
-        lbltotalvalue4.setText(String.valueOf(repair));
-    }
+    long maintenance = motorcycles.stream()
+        .filter(m -> m.getStatus() != null && 
+            ("Under Maintenance".equalsIgnoreCase(m.getStatus().trim()) || 
+             "Maintenance".equalsIgnoreCase(m.getStatus().trim()) || 
+             "In Progress".equalsIgnoreCase(m.getStatus().trim()) ||
+             "Pending".equalsIgnoreCase(m.getStatus().trim()))).count();
+                     
+    long inspection = motorcycles.stream()
+        .filter(m -> m.getStatus() != null && 
+            ("For Inspection".equalsIgnoreCase(m.getStatus().trim()) || 
+             "Inspection".equalsIgnoreCase(m.getStatus().trim()) ||
+             "Needs Repair".equalsIgnoreCase(m.getStatus().trim()) ||
+             "Minor Damage".equalsIgnoreCase(m.getStatus().trim()))).count();
+                     
+    long repair = motorcycles.stream()
+        .filter(m -> m.getStatus() != null && 
+            ("Under Repair".equalsIgnoreCase(m.getStatus().trim()) ||
+             "Repair".equalsIgnoreCase(m.getStatus().trim()) ||
+             "Unsafe".equalsIgnoreCase(m.getStatus().trim()))).count();
+    
+    lbltotalvalue.setText(String.valueOf(total));
+    lbltotalvalue2.setText(String.valueOf(available));
+    lbltotalvalue1.setText(String.valueOf(rented));
+    lbltotalvalue3.setText(String.valueOf(maintenance));
+    lbltotalvalue5.setText(String.valueOf(inspection));
+    lbltotalvalue4.setText(String.valueOf(repair));
+}
 
     private void showCard(String name) {
         CardLayout cl = (CardLayout) pnlswitcher.getLayout();
