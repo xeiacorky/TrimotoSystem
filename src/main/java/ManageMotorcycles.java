@@ -222,58 +222,59 @@ public class ManageMotorcycles extends javax.swing.JPanel {
         txtSpec1.setText("");
         txtSpec2.setText("");
         txtSpec3.setText("");
+        txtSpec4.setText("");
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void btnAddMotorcycleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMotorcycleActionPerformed
-        String id = txtMotorId.getText().trim();
-        String plate = txtPlate.getText().trim();
-        String brand = txtBrand.getText().trim();
-        String model = txtModel.getText().trim();
-        String yearStr = txtYear.getText().trim();
-        String mileageStr = txtMileage.getText().trim();
-        String rateStr = txtDailyRentalRate.getText().trim();
-        String transmission = txtTransmissionType.getText().trim().isEmpty() ? "Manual" : txtTransmissionType.getText().trim();
+                                                 
+            String id = txtMotorId.getText().trim();
+            String plate = txtPlate.getText().trim();
+            String brand = txtBrand.getText().trim();
+            String model = txtModel.getText().trim();
+            String yearStr = txtYear.getText().trim();
+            String mileageStr = txtMileage.getText().trim();
+            String rateStr = txtDailyRentalRate.getText().trim();
+            String transmission = txtTransmissionType.getText().trim().isEmpty() ? "Manual" : txtTransmissionType.getText().trim();
 
-        if (id.isEmpty() || brand.isEmpty() || model.isEmpty() || yearStr.isEmpty() || mileageStr.isEmpty() || rateStr.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Please fill in all primary fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        if (TrimotoSystem.findMotorcycleById(id) != null) {
-            JOptionPane.showMessageDialog(this, "Motorcycle ID '" + id + "' already exists!", "Duplicate ID", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        try {
-            int year = Integer.parseInt(yearStr);
-            int mileage = Integer.parseInt(mileageStr);
-            double rate = Double.parseDouble(rateStr);
-            String type = cbMotorcycleTypes.getSelectedItem() != null ? cbMotorcycleTypes.getSelectedItem().toString().trim() : "Scooter";
-
-            double spec1 = txtSpec1.getText().trim().isEmpty() ? 0 : Double.parseDouble(txtSpec1.getText().trim());
-            double spec2 = txtSpec2.getText().trim().isEmpty() ? 0 : Double.parseDouble(txtSpec2.getText().trim());
-            double spec3 = txtSpec3.getText().trim().isEmpty() ? 0 : Double.parseDouble(txtSpec3.getText().trim());
-
-            Motorcycle m = MotorcycleFactory.createMotorcycle(type, id, plate, brand, model, year, transmission, mileage, rate, spec1, spec2, spec3);
-            if (m != null) {
-                m.setStatus("For Inspection");
-                TrimotoSystem.addMotorcycle(m);
-            }
-            
-            TrimotoSystem.addMotorcycle(m);
-
-            TrimotoSystem.saveAllData();
-            
-            java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
-            if (topWindow instanceof MainDashboard) {
-                ((MainDashboard) topWindow).refreshAllPanels();
+            if (id.isEmpty() || brand.isEmpty() || model.isEmpty() || yearStr.isEmpty() || mileageStr.isEmpty() || rateStr.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Please fill in all primary fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                return;
             }
 
-            JOptionPane.showMessageDialog(this, "Motorcycle Registered Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-            btnClearActionPerformed(new java.awt.event.ActionEvent(btnClear, java.awt.event.ActionEvent.ACTION_PERFORMED, null));
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Please enter valid numeric values only.", "Invalid Format", JOptionPane.ERROR_MESSAGE);
-        }
+            if (TrimotoSystem.findMotorcycleById(id) != null) {
+                JOptionPane.showMessageDialog(this, "Motorcycle ID '" + id + "' already exists!", "Duplicate ID", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            try {
+                int year = Integer.parseInt(yearStr);
+                int mileage = Integer.parseInt(mileageStr);
+                double rate = Double.parseDouble(rateStr);
+                String type = cbMotorcycleTypes.getSelectedItem() != null ? cbMotorcycleTypes.getSelectedItem().toString().trim() : "Scooter";
+
+                double spec1 = txtSpec1.getText().trim().isEmpty() ? 0 : Double.parseDouble(txtSpec1.getText().trim());
+                double spec2 = txtSpec2.getText().trim().isEmpty() ? 0 : Double.parseDouble(txtSpec2.getText().trim());
+                double spec3 = txtSpec3.getText().trim().isEmpty() ? 0 : Double.parseDouble(txtSpec3.getText().trim());
+                double spec4 = txtSpec4.getText().trim().isEmpty() ? 0 : Double.parseDouble(txtSpec4.getText().trim()); // Added parsing for spec4
+
+                Motorcycle m = MotorcycleFactory.createMotorcycle(type, id, plate, brand, model, year, transmission, mileage, rate, spec1, spec2, spec3, spec4);
+                if (m != null) {
+                    m.setStatus("For Inspection");
+                    TrimotoSystem.addMotorcycle(m);
+                }
+
+                TrimotoSystem.saveAllData();
+
+                java.awt.Window topWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
+                if (topWindow instanceof MainDashboard) {
+                    ((MainDashboard) topWindow).refreshAllPanels();
+                }
+
+                JOptionPane.showMessageDialog(this, "Motorcycle Registered Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                btnClearActionPerformed(new java.awt.event.ActionEvent(btnClear, java.awt.event.ActionEvent.ACTION_PERFORMED, null));
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "Please enter valid numeric values only.", "Invalid Format", JOptionPane.ERROR_MESSAGE);
+            }
     }//GEN-LAST:event_btnAddMotorcycleActionPerformed
 
     private void txtTransmissionTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTransmissionTypeActionPerformed

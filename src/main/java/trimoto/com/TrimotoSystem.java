@@ -100,12 +100,12 @@ public class TrimotoSystem {
 class MotorcycleFactory {
     public static Motorcycle createMotorcycle(String type, String id, String plate, String brand, String model, int year, 
                                               String transmission, int mileage, double dailyRate, 
-                                              double spec1, double spec2, double spec3) {
+                                              double spec1, double spec2, double spec3, double spec4) {
         switch (type.trim()) {
             case "Scooter":
                 return new Scooter(id, plate, brand, model, year, transmission, mileage, dailyRate, (int) spec1, spec2, spec3);
             case "Adventure Bike":
-                return new AdventureBike(id, plate, brand, model, year, transmission, mileage, rateToDouble(dailyRate), (int) spec1, spec2, spec3);
+                return new AdventureBike(id, plate, brand, model, year, transmission, mileage, rateToDouble(dailyRate), (int) spec1, spec2, spec3, spec4);
             case "Standard Bike":
                 return new StandardBike(id, plate, brand, model, year, transmission, mileage, dailyRate, (int) spec1, spec2);
             case "Sports Bike":
@@ -267,14 +267,18 @@ class AdventureBike extends Motorcycle {
     private int engineDisplacement;
     private double storageCapacity;
     private double fuelCapacity;
+    private double groundClearance;
 
-    public AdventureBike(String id, String plate, String brand, String model, int year, String transmissionType, int mileage, double dailyRate, int engineDisplacement, double storageCapacity, double fuelCapacity) {
+    public AdventureBike(String id, String plate, String brand, String model, int year, 
+                         String transmissionType, int mileage, double dailyRate, 
+                         int engineDisplacement, double storageCapacity, 
+                         double fuelCapacity, double groundClearance) {
         super(id, plate, brand, model, year, "Adventure Bike", transmissionType, mileage, dailyRate);
         this.engineDisplacement = engineDisplacement;
         this.storageCapacity = storageCapacity;
         this.fuelCapacity = fuelCapacity;
+        this.groundClearance = groundClearance;
     }
-    
     public int getEngineDisplacement() { 
         return engineDisplacement; 
     }
@@ -286,13 +290,16 @@ class AdventureBike extends Motorcycle {
     public double getFuelCapacity() { 
         return fuelCapacity; 
     }
-
-    @Override
-    public String displayMotorcycleInfo() {
-        return "Engine Displacement: " + engineDisplacement + " cc\n" +
-               "Compartment Capacity: " + storageCapacity + " L\n" +
-               "Fuel Capacity: " + fuelCapacity + " L\n" ;
+    public double getGroundClearance() { 
+        return groundClearance; 
     }
+        @Override
+        public String displayMotorcycleInfo() {
+            return "Engine Displacement: " + engineDisplacement + " cc\n" +
+                   "Compartment Capacity: " + storageCapacity + " L\n" +
+                   "Fuel Capacity: " + fuelCapacity + " L\n" +
+                   "Ground Clearance: " + groundClearance + " mm\n";
+        }
 }
 
 class StandardBike extends Motorcycle {

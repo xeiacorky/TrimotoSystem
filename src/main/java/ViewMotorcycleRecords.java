@@ -245,6 +245,8 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
         txtSpec2 = new javax.swing.JTextField();
         jLabel41 = new javax.swing.JLabel();
         txtSpec3 = new javax.swing.JTextField();
+        jLabel42 = new javax.swing.JLabel();
+        txtSpec4 = new javax.swing.JTextField();
         viewfurtherdetails = new javax.swing.JDialog();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
@@ -908,7 +910,7 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
-        jPanel2.setLayout(new java.awt.GridLayout(12, 2, 15, 15));
+        jPanel2.setLayout(new java.awt.GridLayout(13, 2, 15, 15));
 
         lblMotorID.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         lblMotorID.setText("Motorcycle ID:");
@@ -994,6 +996,12 @@ public class ViewMotorcycleRecords extends javax.swing.JPanel {
 
         txtSpec3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel2.add(txtSpec3);
+
+        jLabel42.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
+        jPanel2.add(jLabel42);
+
+        txtSpec4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel2.add(txtSpec4);
 
         javax.swing.GroupLayout viewmmotorcycleLayout = new javax.swing.GroupLayout(viewmmotorcycle.getContentPane());
         viewmmotorcycle.getContentPane().setLayout(viewmmotorcycleLayout);
@@ -1760,75 +1768,78 @@ int selectedRow = jTable4.getSelectedRow();
     }//GEN-LAST:event_txtSearchDamageReportActionPerformed
 
     private void btnSaveViewMotorcycleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveViewMotorcycleActionPerformed
-    int selectedRow = recordstable.getSelectedRow();
-        if (selectedRow == -1) {
-            viewmmotorcycle.dispose();
-            return;
-        }
-        
-        
-        String plate = txtPlate.getText().trim();
-        String brand = txtBrand.getText().trim();
-        String model = txtModel.getText().trim();
-        String yearStr = txtYear.getText().trim();
-        String mileageStr = txtMileage.getText().trim();
-        String rateStr = txtDailyRentalRate.getText().trim();
-
-        String spec1Str = txtSpec1.getText().trim();
-        String spec2Str = txtSpec2.getText().trim();
-        String spec3Str = txtSpec3.getText().trim();
-
-        if (spec1Str.matches(".*[a-zA-Z].*") || spec2Str.matches(".*[a-zA-Z].*") || spec3Str.matches(".*[a-zA-Z].*")) {
-            JOptionPane.showMessageDialog(viewmmotorcycle, "Specifications cannot contain letters.", "Input Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        if (brand.isEmpty() || model.isEmpty() || yearStr.isEmpty() || mileageStr.isEmpty() || rateStr.isEmpty()) {
-            JOptionPane.showMessageDialog(viewmmotorcycle, "Please fill in all primary motorcycle details (Brand, Model, Year, Mileage, Daily Rate).", "Input Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        String targetId = txtMotorcycleID.getText().trim();
-        Motorcycle m = TrimotoSystem.findMotorcycleById(targetId);
-
-        if (m != null) {
-            try {
-                int year = Integer.parseInt(yearStr);
-                int mileage = Integer.parseInt(mileageStr);
-                double rate = Double.parseDouble(rateStr);
-                String trans = txtTransmissionType.getText().trim().isEmpty() ? "Manual" : txtTransmissionType.getText().trim();
-                String type = cbTypes.getSelectedItem() != null ? cbTypes.getSelectedItem().toString() : m.getType();
-
-                double spec1 = spec1Str.isEmpty() ? 0 : Double.parseDouble(spec1Str);
-                double spec2 = spec2Str.isEmpty() ? 0 : Double.parseDouble(spec2Str);
-                double spec3 = spec3Str.isEmpty() ? 0 : Double.parseDouble(spec3Str);
-
-                Motorcycle updatedMotorcycle = MotorcycleFactory.createMotorcycle(
-                    type, targetId, plate, brand, model, year, trans, mileage, rate, spec1, spec2, spec3
-                );
-                updatedMotorcycle.setStatus(m.getStatus());
-
-                List<Motorcycle> motorcycles = TrimotoSystem.getMotorcycles();
-                int index = -1;
-                for (int i = 0; i < motorcycles.size(); i++) {
-                    if (motorcycles.get(i).getId().equalsIgnoreCase(targetId)) {
-                        index = i;
-                        break;
-                    }
-                }
-
-                if (index != -1) {
-                    motorcycles.set(index, updatedMotorcycle);
-                }
-                TrimotoSystem.saveAllData();
-                loadTableData();
-                notifyDashboardRefresh();
-                JOptionPane.showMessageDialog(viewmmotorcycle, "Motorcycle record updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                                                     
+            int selectedRow = recordstable.getSelectedRow();
+            if (selectedRow == -1) {
                 viewmmotorcycle.dispose();
-            } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(viewmmotorcycle, "Please enter valid numeric values for Year, Mileage, Daily Rate, and Specifications.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                return;
             }
-        }
+
+            String plate = txtPlate.getText().trim();
+            String brand = txtBrand.getText().trim();
+            String model = txtModel.getText().trim();
+            String yearStr = txtYear.getText().trim();
+            String mileageStr = txtMileage.getText().trim();
+            String rateStr = txtDailyRentalRate.getText().trim();
+
+            String spec1Str = txtSpec1.getText().trim();
+            String spec2Str = txtSpec2.getText().trim();
+            String spec3Str = txtSpec3.getText().trim();
+            String spec4Str = txtSpec4.getText().trim();
+
+            if (spec1Str.matches(".*[a-zA-Z].*") || spec2Str.matches(".*[a-zA-Z].*") || 
+                spec3Str.matches(".*[a-zA-Z].*") || spec4Str.matches(".*[a-zA-Z].*")) {
+                JOptionPane.showMessageDialog(viewmmotorcycle, "Specifications cannot contain letters.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            if (brand.isEmpty() || model.isEmpty() || yearStr.isEmpty() || mileageStr.isEmpty() || rateStr.isEmpty()) {
+                JOptionPane.showMessageDialog(viewmmotorcycle, "Please fill in all primary motorcycle details (Brand, Model, Year, Mileage, Daily Rate).", "Input Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            String targetId = txtMotorcycleID.getText().trim();
+            Motorcycle m = TrimotoSystem.findMotorcycleById(targetId);
+
+            if (m != null) {
+                try {
+                    int year = Integer.parseInt(yearStr);
+                    int mileage = Integer.parseInt(mileageStr);
+                    double rate = Double.parseDouble(rateStr);
+                    String trans = txtTransmissionType.getText().trim().isEmpty() ? "Manual" : txtTransmissionType.getText().trim();
+                    String type = cbTypes.getSelectedItem() != null ? cbTypes.getSelectedItem().toString() : m.getType();
+
+                    double spec1 = spec1Str.isEmpty() ? 0 : Double.parseDouble(spec1Str);
+                    double spec2 = spec2Str.isEmpty() ? 0 : Double.parseDouble(spec2Str);
+                    double spec3 = spec3Str.isEmpty() ? 0 : Double.parseDouble(spec3Str);
+                    double spec4 = spec4Str.isEmpty() ? 0 : Double.parseDouble(spec4Str); // Parsed spec4
+
+                    Motorcycle updatedMotorcycle = MotorcycleFactory.createMotorcycle(
+                        type, targetId, plate, brand, model, year, trans, mileage, rate, spec1, spec2, spec3, spec4
+                    );
+                    updatedMotorcycle.setStatus(m.getStatus());
+
+                    List<Motorcycle> motorcycles = TrimotoSystem.getMotorcycles();
+                    int index = -1;
+                    for (int i = 0; i < motorcycles.size(); i++) {
+                        if (motorcycles.get(i).getId().equalsIgnoreCase(targetId)) {
+                            index = i;
+                            break;
+                        }
+                    }
+
+                    if (index != -1) {
+                        motorcycles.set(index, updatedMotorcycle);
+                    }
+                    TrimotoSystem.saveAllData();
+                    loadTableData();
+                    notifyDashboardRefresh();
+                    JOptionPane.showMessageDialog(viewmmotorcycle, "Motorcycle record updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                    viewmmotorcycle.dispose();
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(viewmmotorcycle, "Please enter valid numeric values for Year, Mileage, Daily Rate, and Specifications.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
     }//GEN-LAST:event_btnSaveViewMotorcycleActionPerformed
 
     private void mainteapplyfilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainteapplyfilterActionPerformed
@@ -1975,75 +1986,93 @@ int selectedRow = jTable4.getSelectedRow();
     }//GEN-LAST:event_btnViewFurtherDetailsActionPerformed
 
     private void cbTypesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTypesActionPerformed
-    String selectedType = cbTypes.getSelectedItem() != null ? cbTypes.getSelectedItem().toString().trim() : "Scooter";
+                                        
+            String selectedType = cbTypes.getSelectedItem() != null ? cbTypes.getSelectedItem().toString().trim() : "Scooter";
 
-        switch (selectedType) {
-            case "Scooter":
-                jLabel39.setText("Engine Displacement (cc):");
-                jLabel40.setText("Compartment Capacity (L):");
-                jLabel41.setText("Fuel Capacity (L):");
-                
-                txtSpec1.setVisible(true);
-                txtSpec2.setVisible(true);
-                jLabel41.setVisible(true);
-                txtSpec3.setVisible(true);
-                txtSpec3.setEditable(true);
-                break;
+            switch (selectedType) {
+                case "Scooter":
+                    jLabel39.setText("Engine Displacement (cc):");
+                    jLabel40.setText("Compartment Capacity (L):");
+                    jLabel41.setText("Fuel Capacity (L):");
+                    if (jLabel42 != null) jLabel42.setText("");
 
-            case "Adventure Bike":
-                jLabel39.setText("Engine Displacement (cc):");
-                jLabel40.setText("Compartment Capacity (L):");
-                jLabel41.setText("Fuel Capacity (L):");
-                
-                txtSpec1.setVisible(true);
-                txtSpec2.setVisible(true);
-                jLabel41.setVisible(true);
-                txtSpec3.setVisible(true);
-                txtSpec3.setEditable(true);
-                break;
+                    txtSpec1.setVisible(true);
+                    txtSpec2.setVisible(true);
+                    jLabel41.setVisible(true);
+                    txtSpec3.setVisible(true);
+                    txtSpec3.setEditable(true);
+                    if (txtSpec4 != null) txtSpec4.setVisible(false);
+                    break;
 
-            case "Standard Bike":
-                jLabel39.setText("Engine Displacement (cc):");
-                jLabel40.setText("Fuel Capacity (L):");
-                jLabel41.setText("");
-                
-                txtSpec1.setVisible(true);
-                txtSpec2.setVisible(true);
-                jLabel41.setVisible(false);
-                txtSpec3.setVisible(false);
-                txtSpec3.setEditable(false);
-                break;
+                case "Adventure Bike":
+                    jLabel39.setText("Engine Displacement (cc):");
+                    jLabel40.setText("Compartment Capacity (L):");
+                    jLabel41.setText("Fuel Capacity (L):");
+                    if (jLabel42 != null) {
+                        jLabel42.setText("Ground Clearance (mm):");
+                        jLabel42.setVisible(true);
+                    }
 
-            case "Sports Bike":
-                jLabel39.setText("Engine Displacement (cc):");
-                jLabel40.setText("Fuel Capacity (L):");
-                jLabel41.setText("Power Output (HP):");
-                
-                txtSpec1.setVisible(true);
-                txtSpec2.setVisible(true);
-                jLabel41.setVisible(true);
-                txtSpec3.setVisible(true);
-                txtSpec3.setEditable(true);
-                break;
+                    txtSpec1.setVisible(true);
+                    txtSpec2.setVisible(true);
+                    jLabel41.setVisible(true);
+                    txtSpec3.setVisible(true);
+                    txtSpec3.setEditable(true);
+                    if (txtSpec4 != null) {
+                        txtSpec4.setVisible(true);
+                        txtSpec4.setEditable(true);
+                    }
+                    break;
 
-            case "Electric Bike":
-                jLabel39.setText("Motor Power (W):");
-                jLabel40.setText("Battery Capacity (Ah):");
-                jLabel41.setText("Charging Time (hrs):");
-                
-                txtSpec1.setVisible(true);
-                txtSpec2.setVisible(true);
-                jLabel41.setVisible(true);
-                txtSpec3.setVisible(true);
-                txtSpec3.setEditable(true);
-                break;
+                case "Standard Bike":
+                    jLabel39.setText("Engine Displacement (cc):");
+                    jLabel40.setText("Fuel Capacity (L):");
+                    jLabel41.setText("");
+                    if (jLabel42 != null) jLabel42.setText("");
 
-            default:
-                jLabel39.setText(" ");
-                jLabel40.setText(" ");
-                jLabel41.setText(" ");
-                break;
-        }
+                    txtSpec1.setVisible(true);
+                    txtSpec2.setVisible(true);
+                    jLabel41.setVisible(false);
+                    txtSpec3.setVisible(false);
+                    txtSpec3.setEditable(false);
+                    if (txtSpec4 != null) txtSpec4.setVisible(false);
+                    break;
+
+                case "Sports Bike":
+                    jLabel39.setText("Engine Displacement (cc):");
+                    jLabel40.setText("Fuel Capacity (L):");
+                    jLabel41.setText("Power Output (HP):");
+                    if (jLabel42 != null) jLabel42.setText("");
+
+                    txtSpec1.setVisible(true);
+                    txtSpec2.setVisible(true);
+                    jLabel41.setVisible(true);
+                    txtSpec3.setVisible(true);
+                    txtSpec3.setEditable(true);
+                    if (txtSpec4 != null) txtSpec4.setVisible(false);
+                    break;
+
+                case "Electric Bike":
+                    jLabel39.setText("Motor Power (W):");
+                    jLabel40.setText("Battery Capacity (Ah):");
+                    jLabel41.setText("Charging Time (hrs):");
+                    if (jLabel42 != null) jLabel42.setText("");
+
+                    txtSpec1.setVisible(true);
+                    txtSpec2.setVisible(true);
+                    jLabel41.setVisible(true);
+                    txtSpec3.setVisible(true);
+                    txtSpec3.setEditable(true);
+                    if (txtSpec4 != null) txtSpec4.setVisible(false);
+                    break;
+
+                default:
+                    jLabel39.setText(" ");
+                    jLabel40.setText(" ");
+                    jLabel41.setText(" ");
+                    if (jLabel42 != null) jLabel42.setText(" ");
+                    break;
+            }
     }//GEN-LAST:event_cbTypesActionPerformed
 
     private void btnMarkAsAvailableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMarkAsAvailableActionPerformed
@@ -2189,6 +2218,7 @@ int selectedRow = jTable4.getSelectedRow();
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -2256,6 +2286,7 @@ int selectedRow = jTable4.getSelectedRow();
     private javax.swing.JTextField txtSpec1;
     private javax.swing.JTextField txtSpec2;
     private javax.swing.JTextField txtSpec3;
+    private javax.swing.JTextField txtSpec4;
     private javax.swing.JTextField txtTransmissionType;
     private javax.swing.JTextField txtWorkPerformed;
     private javax.swing.JTextField txtYear;
@@ -2270,5 +2301,4 @@ int selectedRow = jTable4.getSelectedRow();
     private javax.swing.JDialog viewmaintedialog;
     private javax.swing.JDialog viewmmotorcycle;
     // End of variables declaration//GEN-END:variables
-
 }
