@@ -41,6 +41,8 @@ public class ManageMotorcycles extends javax.swing.JPanel {
         txtSpec2 = new javax.swing.JTextField();
         lblSpec3 = new javax.swing.JLabel();
         txtSpec3 = new javax.swing.JTextField();
+        lblSpec4 = new javax.swing.JLabel();
+        txtSpec4 = new javax.swing.JTextField();
         btnClear = new javax.swing.JButton();
         btnAddMotorcycle = new javax.swing.JButton();
 
@@ -58,7 +60,7 @@ public class ManageMotorcycles extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 15, 15, 15));
-        jPanel1.setLayout(new java.awt.GridLayout(12, 2, 15, 15));
+        jPanel1.setLayout(new java.awt.GridLayout(13, 2, 15, 15));
 
         lblMotorID.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         lblMotorID.setText("Motorcycle ID:");
@@ -146,6 +148,12 @@ public class ManageMotorcycles extends javax.swing.JPanel {
         txtSpec3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtSpec3);
 
+        lblSpec4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
+        jPanel1.add(lblSpec4);
+
+        txtSpec4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel1.add(txtSpec4);
+
         btnClear.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         btnClear.setText("Clear");
         btnClear.setFocusPainted(false);
@@ -189,8 +197,8 @@ public class ManageMotorcycles extends javax.swing.JPanel {
                 .addGap(0, 0, 0)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 456, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnClear)
                     .addComponent(btnAddMotorcycle))
@@ -280,51 +288,62 @@ public class ManageMotorcycles extends javax.swing.JPanel {
                 lblSpec1.setText("Engine Displacement (cc):");
                 lblSpec2.setText("Compartment Capacity (L):");
                 lblSpec3.setText("Fuel Capacity (L):");
+                lblSpec4.setText(" ");
                 txtSpec1.setVisible(true);
                 txtSpec2.setVisible(true);
                 txtSpec3.setVisible(true);
+                txtSpec4.setVisible(false);
                 break;
 
             case "Adventure Bike":
                 lblSpec1.setText("Engine Displacement (cc):");
                 lblSpec2.setText("Compartment Capacity (L):");
                 lblSpec3.setText("Fuel Capacity (L):");
+                lblSpec4.setText("Ground Clearance (mm): ");
                 txtSpec1.setVisible(true);
                 txtSpec2.setVisible(true);
                 txtSpec3.setVisible(true);
+                txtSpec4.setVisible(true);
                 break;
 
             case "Standard Bike":
                 lblSpec1.setText("Engine Displacement (cc):");
                 lblSpec2.setText("Fuel Capacity (L):");
                 lblSpec3.setText("");
+                lblSpec4.setText(" ");
                 txtSpec1.setVisible(true);
                 txtSpec2.setVisible(true);
                 txtSpec3.setVisible(false);
+                txtSpec4.setVisible(false);
                 break;
 
             case "Sports Bike":
                 lblSpec1.setText("Engine Displacement (cc):");
                 lblSpec2.setText("Fuel Capacity (L):");
                 lblSpec3.setText("Power Output (HP):");
+                lblSpec4.setText(" ");
                 txtSpec1.setVisible(true);
                 txtSpec2.setVisible(true);
                 txtSpec3.setVisible(true);
+                txtSpec4.setVisible(false);
                 break;
 
             case "Electric Bike":
                 lblSpec1.setText("Motor Power (W):");
                 lblSpec2.setText("Battery Capacity (Ah):");
                 lblSpec3.setText("Charging Time (hrs):");
+                lblSpec4.setText(" ");
                 txtSpec1.setVisible(true);
                 txtSpec2.setVisible(true);
                 txtSpec3.setVisible(true);
+                txtSpec4.setVisible(false);
                 break;
 
             default:
                 lblSpec1.setText(" ");
                 lblSpec2.setText(" ");
                 lblSpec3.setText(" ");
+                lblSpec4.setText(" ");
                 break;
         }
     }//GEN-LAST:event_cbMotorcycleTypesActionPerformed
@@ -345,6 +364,7 @@ public class ManageMotorcycles extends javax.swing.JPanel {
     private javax.swing.JLabel lblSpec1;
     private javax.swing.JLabel lblSpec2;
     private javax.swing.JLabel lblSpec3;
+    private javax.swing.JLabel lblSpec4;
     private javax.swing.JLabel lblTransmissionType;
     private javax.swing.JLabel lbldailyrentalrate;
     private javax.swing.JLabel lblmileage;
@@ -360,6 +380,7 @@ public class ManageMotorcycles extends javax.swing.JPanel {
     private javax.swing.JTextField txtSpec1;
     private javax.swing.JTextField txtSpec2;
     private javax.swing.JTextField txtSpec3;
+    private javax.swing.JTextField txtSpec4;
     private javax.swing.JTextField txtTransmissionType;
     private javax.swing.JTextField txtYear;
     // End of variables declaration//GEN-END:variables
