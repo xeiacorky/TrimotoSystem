@@ -248,7 +248,14 @@ public class RentalProcessing extends javax.swing.JPanel {
             if (m == null) return;
 
             double totalCost = m.calculateRentalCost(days);
-            String transId = "TRX-" + (TrimotoSystem.getRentals().size() + 1);
+            int maxId = 1000;
+                for (RentalTransaction t : TrimotoSystem.getRentals()) {
+                    try {
+                        int num = Integer.parseInt(t.getTransactionId().replace("TRX-", "").trim());
+                        if (num > maxId) maxId = num;
+                    } catch (NumberFormatException ignored) {}
+                }
+                String transId = "TRX-" + (maxId + 1);
             String date = java.time.LocalDate.now().toString();
 
             if (returnDate.isEmpty()) {
