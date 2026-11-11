@@ -1891,6 +1891,7 @@ int selectedRow = jTable4.getSelectedRow();
         DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
         model.setRowCount(0);
 
+        
         for (InspectionRecord r : inspections) {
             boolean matchesMotorcycle = selectedInspectionMotorId == null || 
                                          r.getMotorcycleId().trim().equalsIgnoreCase(selectedInspectionMotorId);
